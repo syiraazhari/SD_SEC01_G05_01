@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<html>
+    <body>
+        <!--
+        <form action= "processFacility.php" method="POST">
+            Facility Id:<input type="text" name="facilityId" require>
+            <br>Name:<input type="text" name="name">
+            <br>Category:<input type="text" name="category">
+            <br>Capacity:<input type="text" name="capacity">
+            <br>Facility Detail:<input type="text" name="facilityDetail">
+            <br>Rate Per Day:<input type="number" name="ratePerDay">
+            <br>status:<input type="text" name="status">
+            <br><input type="submit" value="add" name="addFacilityButton">        
+
+
+        </form>
+-->
+<?php
+session_start();
+?>
+
+<h2 style="text-align: center"> Customer Login </h2>
+            <div class="container">
+            <form action= "..\case1\processFBS.php" method="POST">
+            
+            <div class="row">
+                <!--username-->
+                <div class="col-25">
+                <label for="id">Email:</label>
+                </div>
+                <div class="col-75">
+                <input type="text" name="username" placeholder="Your Email..">
+                </div>
+            </div>
+            <!--password-->
+            <div class="row">
+                <div class="col-25">
+                <label for="name">Password:</label>
+                </div>
+                <div class="col-75">
+                <input type="text" name="password" placeholder="Your password..">
+                </div>
+            </div>
+           
+            <br>
+            <div class="row">
+                <input type="submit" value="Login" name="login">
+                <input type="submit" value="Register" name="registerbutton">
+            </div>
+            
+            </form>
+            </div>
+
+    </body>
+
+</html>
