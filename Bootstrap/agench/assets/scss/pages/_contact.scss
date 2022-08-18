@@ -1,0 +1,246 @@
+/* 12.05 Contact CSS */
+.contact-section{
+    position: relative;
+
+    & .shape {
+        position: absolute;
+        z-index: -1;
+
+        &-1 {
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    // Responsive
+    @media #{$large-mobile}{
+        & .shape {
+    
+            &-1 {
+                width: 250px;
+            }
+        }
+    }
+}
+.contact-info{
+    display: flex;
+    align-items: flex-start;
+    padding: 45px 30px 50px;
+    border-radius: 5px;
+    background-color: $white;
+    box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+    transition: $transition;
+    // Responsive
+    @media #{$large-mobile}{
+        padding: 25px 30px 30px;
+        flex-wrap: wrap;
+    }
+    &.info-light{
+        padding: 25px 0;
+        background-color: transparent;
+        border-radius: 0;
+        border-bottom: 1px solid $white;
+        &:last-child{
+            border-bottom: 0 none;
+            padding-bottom: 0;
+        }
+        .icon{
+            svg{
+                & path{
+                    stroke: $white;
+                }
+            }
+            // Responsive
+            @media #{$desktop-device}{
+                margin-right: 20px;
+            }
+            @media #{$large-mobile}{
+                margin-right: 15px;
+            }
+            @media #{$extra-small-mobile}{
+                margin-right: 0px;
+                margin-bottom: 15px;
+            }
+        }
+        .info{
+            .title{
+                color: $white;
+            }
+            .info-text{
+                color: $white;
+                strong{
+                    color: $white;
+                }
+            }
+        }
+    }
+    .icon{
+        margin-right: 40px;
+        // Responsive
+        @media #{$desktop-device}{
+            margin-right: 20px;
+        }
+        @media #{$large-mobile}{
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        @media #{$extra-small-mobile}{
+            margin-right: 30px;
+            margin-bottom: 0px;
+        }
+        svg{
+            width: 50px;
+            & path{
+                stroke: $primary;
+            }
+        }
+    }
+    .info{
+        .title{
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        .info-text{
+            font-size: 16px;
+            display: block;
+            line-height: 27px;
+            strong{
+                color: $heading-color;
+            }
+        }
+    }
+}
+
+.contact-map-area{
+    iframe{
+        width: 100%;
+        height: 500px;
+        border: 0 none;
+        // Responsive
+        @media #{$desktop-device}{
+            height: 400px;
+        }
+        @media #{$tablet-device}{
+            height: 350px;
+        }
+        @media #{$large-mobile}{
+            height: 300px;
+        }
+    }
+}
+
+.contact-form-area{
+    padding: 70px 90px;
+    border-radius: 10px;
+    background-color: $white;
+    position: relative;
+    // Responsive
+    @media #{$desktop-device}{
+        padding: 50px 30px;
+    }
+    @media #{$large-mobile}{
+        padding: 50px 40px;
+    }
+    @media #{$extra-small-mobile}{
+        padding: 30px 20px;
+    }
+    & .shape {
+        position: absolute;
+        z-index: -1;
+
+        &-1 {
+            top: auto;
+            left: auto;
+            bottom: -45px;
+            right: -60px;
+        }
+    }
+
+    // Responsive
+    @media #{$laptop-device}{
+        & .shape {
+    
+            &-1 {
+                right: -5px;
+            }
+        }
+    }
+    @media #{$desktop-device}{
+        & .shape {
+    
+            &-1 {
+                right: -5px;
+            }
+        }
+    }
+    @media #{$tablet-device}{
+        & .shape {
+    
+            &-1 {
+                right: -5px;
+            }
+        }
+    }
+    @media #{$large-mobile}{
+        & .shape {
+    
+            &-1 {
+                right: -5px;
+            }
+        }
+    }
+}
+
+.shape-animate{
+    position: relative;
+    & .shape {
+        position: absolute;
+        z-index: -1;
+
+        &-1 {
+            bottom: -45px;
+            right: -40px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    // Responsive
+    @media #{$laptop-device}{
+        & .shape {
+    
+            &-1 {
+                bottom: -20px;
+                right: 0px;
+            }
+        }
+    }
+    @media #{$desktop-device}{
+        & .shape {
+    
+            &-1 {
+                bottom: -20px;
+                right: 0px;
+            }
+        }
+    }
+    @media #{$tablet-device}{
+        & .shape {
+            &-1 {
+                display: none;
+            }
+        }
+    }
+    @media #{$large-mobile}{
+        & .shape {
+            &-1 {
+                display: none;
+            }
+        }
+    }
+}

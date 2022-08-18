@@ -1,0 +1,165 @@
+/* 04.8 Icon Box CSS */
+
+.icon-box {
+    position: relative;
+    display: block;
+
+    padding: 50px 52px;
+
+    transition: $transition;
+    border-radius: 5px;
+    z-index: 99;
+    background-color: $white;
+    box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+    &.box-border{
+        box-shadow: none;
+        border: 1px solid #e7e7e7;
+        &:hover{
+            border-color:  $white;
+            box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+        }
+    }
+    // Responsive
+    @media #{$desktop-device}{
+        padding: 30px 35px;
+    }
+    @media #{$tablet-device}{
+        padding: 40px 35px;
+    }
+    @media #{$large-mobile}{
+        padding: 20px 25px;
+    }
+
+    & .icon {
+        margin-bottom: 35px;
+        @media #{$desktop-device}{
+            margin-bottom: 20px;
+        }
+        @media #{$large-mobile}{
+            margin-bottom: 20px;
+        }
+
+        & svg {
+            width: 50px;
+            height: 50px;
+            & path{
+                stroke: $primary;
+            }
+        }
+    }
+
+    & .content {
+        & .title {
+            font-size: 20px;
+            line-height: 1;
+
+            margin: 0;
+
+            color: $heading-color;
+        }
+
+        & .desc {
+            margin-top: 25px;
+            // Responsive
+            @media #{$desktop-device}{
+                margin-top: 20px;
+            }
+            @media #{$large-mobile}{
+                margin-top: 20px;
+            }
+            & p {
+                line-height: 1.6;
+
+                color: $body-color;
+            }
+        }
+
+        & .link {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 35px;
+            color: $primary;
+            // Responsive
+            @media #{$desktop-device}{
+                margin-top: 20px;
+            }
+            @media #{$large-mobile}{
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        z-index: 1;
+
+        
+        
+
+        & .content {
+            & .link {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.icon-box-shape-animation{
+    position: relative;
+
+    & .shape {
+        position: absolute;
+        z-index: 1;
+
+        &-1 {
+            top: -40px;
+            left: -50px;
+            z-index: -1;
+        }
+    }
+
+    // Responsive
+    @media #{$laptop-device}{
+        & .shape {
+    
+            &-1 {
+                top: -40px;
+                left: 0px;
+                z-index: -1;
+            }
+        }
+    }
+    @media #{$desktop-device}{
+        & .shape {
+    
+            &-1 {
+                top: -20px;
+                left: 0px;
+                z-index: -1;
+            }
+        }
+    }
+    @media #{$tablet-device}{
+        & .shape {
+    
+            &-1 {
+                top: -20px;
+                left: 0px;
+                z-index: -1;
+            }
+        }
+    }
+    @media #{$large-mobile}{
+        & .shape {
+    
+            &-1 {
+                top: -20px;
+                left: 0px;
+                z-index: -1;
+            }
+        }
+    }
+}

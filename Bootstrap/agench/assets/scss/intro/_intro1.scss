@@ -1,0 +1,210 @@
+/* 06.01. Home One Intro CSS */
+.intro-section {
+    position: relative;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 50px 0;
+
+    & .container {
+        z-index: 9;
+    }
+
+    @media #{$tablet-device} {
+        height: 550px;
+    }
+    @media #{$large-mobile} {
+        height: 500px;
+    }
+}
+
+.intro-content {
+    max-width: 760px;
+    & .title {
+        font-size: 72px;
+        line-height: 1;
+        color: $white;
+        margin-bottom: 40px;
+    }
+
+    & .desc {
+        max-width: 700px;
+
+        & p {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.67;
+            color: $white;
+        }
+    }
+
+    & .btn {
+        margin: 0 5px;
+        margin-top: 60px;
+    }
+
+    @media #{$tablet-device,
+    $large-mobile
+    } {
+        & .title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 16px;
+            }
+        }
+        & .btn {
+            margin-top: 30px;
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+
+        & .title {
+            font-size: 30px;
+        }
+
+        & .desc {
+            & p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.intro-content {
+
+    & > * {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name: fadeOutUp;
+    }
+}
+
+.intro-slider{
+    .main-slider-nav{
+        cursor: pointer;
+        background: rgba(0,0,0,0.25);
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        display: block;
+        text-align: center;
+        color: $white;
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition;
+        &::after{
+            display: none;
+        }
+        & i{
+            font-size: 40px;
+            line-height: 1;
+            vertical-align: middle;
+            
+        }
+        &:hover{
+            color: $primary;
+        }
+        // Responsive
+        @media #{$laptop-device}{
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            & i{
+                font-size: 30px;
+            }
+        }
+        @media #{$tablet-device}{
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            & i{
+                font-size: 24px;
+            }
+        }
+        @media #{$desktop-device}{
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            & i{
+                font-size: 24px;
+            }
+        }
+        @media #{$large-mobile}{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            & i{
+                font-size: 24px;
+            }
+        }
+    }
+    .home-slider-prev{
+        left: 30px;
+        
+    }
+    .home-slider-next{
+        right: 30px;
+        &::after{
+            display: none;
+        }
+    }
+    &:hover{
+        .main-slider-nav{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+.swiper-slide-active{
+    & .intro-content {
+
+        // All Element Selector
+        & > * {
+            animation-name: fadeInUp;
+            
+            // Child Selector
+            &:nth-child(1) {
+                animation-delay: 0.5s;
+            }
+            &:nth-child(2) {
+                animation-delay: 1s;
+            }
+            &:nth-child(3) {
+                animation-delay: 1.5s;
+            }
+            &:nth-child(4) {
+                animation-delay: 2s;
+            }
+            &:nth-child(5) {
+                animation-delay: 2.5s;
+            }
+            &:nth-child(6) {
+                animation-delay: 3s;
+            }
+            
+        }
+    }
+}
+
+
+.intro11-slider{
+    .intro11-section{
+        transform: scale(1.35);
+        transform:scale(1.35);
+        backface-visibility: hidden
+    }
+}
+
+
+.swiper-slide-active {
+    .intro11-section{
+        transform: scale(1);
+        transition: transform 11s cubic-bezier(.1,.2,.7,1)
+    }
+}
