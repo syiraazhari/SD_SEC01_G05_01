@@ -93,10 +93,10 @@ else if(isSet($_POST['register'])){
     $_SESSION['name'] = $userInfoRecord['name'];
     
     print_r($_POST);
-    if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Customer')){
+    if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')){
 
         header('Location:..\Login\customerHome.php');
-    }else if (($_POST['username'] = $userRecord['userId']) && ($_POST['password'] = $userRecord['password']) && ($userRecord['userType'] == 'Staff')){
+    }else if (($_POST['username'] = $userRecord['userId']) && ($_POST['password'] = $userRecord['password']) && ($userRecord['userType'] == 'Admin')){
 
         header('Location:..\Login\staffHome.php');
     }else{
