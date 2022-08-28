@@ -26,7 +26,7 @@ function addFacility()
 }
 function getListOfFacility()
 {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -37,7 +37,7 @@ function getListOfFacility()
 }
 function deleteFacility()
 {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -51,7 +51,7 @@ function deleteFacility()
 function updateFacilityInformation()
 {
 
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -75,7 +75,7 @@ function updateFacilityInformation()
 
 function searchByFacilityId()
 {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -88,7 +88,7 @@ function searchByFacilityId()
 
 function searchByName()
 {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -100,7 +100,7 @@ function searchByName()
 }
 function searchByCategory()
 {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -112,7 +112,7 @@ function searchByCategory()
 }
 function getFacilityInformation($facilityId)
 {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -146,7 +146,7 @@ function addRegister(){
     echo "<br>";
     echo $_POST['postcode'];;
     echo "<br>";
-    $con = mysqli_connect("localhost","g07sec38","g07sec38","g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if(mysqli_connect_errno()){
         echo 'fail to connect to mysql'.mysqli_connect_error();
@@ -185,7 +185,7 @@ function addRegister(){
 function userLogin($userId){
     $userName =$_POST['username'];
     $password =$_POST['password'];
-    $con = mysqli_connect("localhost","g07sec38","g07sec38","g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     echo 'in login';
     if(mysqli_connect_errno()){
         echo 'fail to connect to mysql'.mysqli_connect_error();
@@ -240,7 +240,7 @@ function displayHeaderStaff(){
 }
 
 function getListOfUser(){
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $$con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -251,7 +251,7 @@ function getListOfUser(){
 }
 
 function searchByIcNum(){
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -263,7 +263,7 @@ function searchByIcNum(){
 }
 
 function searchByNameUser(){
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -275,7 +275,7 @@ function searchByNameUser(){
 }
 
 function searchByEmail(){
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -287,7 +287,7 @@ function searchByEmail(){
 }
 
 function searchByState(){
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -299,7 +299,7 @@ function searchByState(){
 }
 
 function deleteUser(){
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -312,10 +312,10 @@ function deleteUser(){
 
 function updateUserInformation(){
 
-    session_start(); 
+    session_start();
 
 
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -366,7 +366,7 @@ function updateUserInformation(){
 
 function getUserInformation($userId)
 {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -379,7 +379,7 @@ function getUserInformation($userId)
 }
 
 function getListOfUserCustomer($userId){
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -392,7 +392,7 @@ function getListOfUserCustomer($userId){
 
 function getListOfpassword($userId){
 
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -408,7 +408,7 @@ function getListOfpassword($userId){
 
 function getUserName(){
     session_start();
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -452,10 +452,10 @@ function bookFacility() {
     $dateRentStart = $_SESSION['startDate'];
     $dateRentEnd = $_SESSION['endDate'];
     $facilityId = $_POST['bookFacilityId'];
-    $totalPrice = getTotalPrice($dateRentStart, $dateRentEnd, $facilityId);                               
+    $totalPrice = getTotalPrice($dateRentStart, $dateRentEnd, $facilityId);
 
 
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -478,7 +478,7 @@ function checkAvailable() {
     $dateRentStart = $_SESSION['startDate'];
     $dateRentEnd = $_SESSION['endDate'];
 
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -501,7 +501,7 @@ function checkAvailable() {
 
 function bookingHistory() {
     // session_start();
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -524,7 +524,7 @@ function bookingHistory() {
 
 function bookingHistoryStaff() {
     // session_start();
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -545,7 +545,7 @@ function bookingHistoryStaff() {
 }
 
 function bookingHistoryByFacilityId($facilityId) {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -566,7 +566,7 @@ function bookingHistoryByFacilityId($facilityId) {
 }
 
 function bookingHistoryByFacilityName($facilityName) {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -587,7 +587,7 @@ function bookingHistoryByFacilityName($facilityName) {
 }
 
 function bookingHistoryByUserId($userId) {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -608,7 +608,7 @@ function bookingHistoryByUserId($userId) {
 }
 
 function bookingHistoryByUserName($userName) {
-    $con = mysqli_connect("localhost", "g07sec38", "g07sec38", "g07s38fbsdb");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
