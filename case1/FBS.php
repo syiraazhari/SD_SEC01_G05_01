@@ -9,7 +9,7 @@ function addFacility()
     $facilityDetail = $_POST['facilityDetail'];
     $ratePerDay = $_POST['ratePerDay'];
     $status = $_POST['status'];
-    $con = mysqli_connect('localhost','g07sec38','g07sec38','g07s38fbsdb');
+    $con = mysqli_connect('localhost','projectsd','projectsd','projectsd');
 
     $sql="INSERT INTO facility(facilityId, name, category, capacity, facilityDetail, ratePerDay, status)
     VALUES ('$facilityId', '$name', '$category', '$capacity', '$facilityDetail', '$ratePerDay', '$status')";
