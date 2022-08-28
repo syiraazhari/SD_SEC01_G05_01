@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 18, 2022 at 12:01 PM
+-- Generation Time: Aug 28, 2022 at 09:06 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -160,10 +160,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`userId`, `password`, `userType`) VALUES
-('9@gmail.com', 'azaf', 'Customer'),
-('admin', 'admin123', 'Staff'),
-('shazanur0@gmail.com', 'shaza', 'Customer'),
-('tancheesen123@hotmail.com', 'Lone#2002', 'Customer');
+('admin', 'admin123', 'Admin'),
+('test123@gmail.com', 'test111', 'Student'),
+('ydk1421@gmail.com', 'test123', 'Staff');
 
 -- --------------------------------------------------------
 
@@ -192,10 +191,7 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 --
 
 INSERT INTO `userinfo` (`icNum`, `name`, `userId`, `phoneNum`, `address1`, `address2`, `state`, `district`, `postcode`, `dateOfBirth`) VALUES
-('011152648', 'admin', 'admin', '0123456', 'admin', 'admin', 'admin', NULL, NULL, '2022-04-06'),
-('0202020202', 'Mohamad Azafri', '9@gmail.com', '09823612', 'Suasana', 'Permai', 'Kedah', 'ads', 123123, '2022-04-16'),
-('021217020209', 'TANCHEESEN', 'tancheesen123@hotmail.com', '01115386485', '8b lorong 4 pekan kuala ketill,09300,kuala ketil kedah', '', 'KEDAH', 'BANDAR BAHARU', 34950, '2002-12-17'),
-('12312312314561235', 'testing 123123', 'shazanur0@gmail.com', '123412543145', '8b lorong 4 pekan kuala ketill,09300,kuala ketil kedah', '8b lorong 4 pekan kuala ketill,09300,kuala ketil kedah', 'NEGERI SEMBILAN', 'MANTIN', 71750, '2022-04-05');
+('011152648', 'admin', 'admin', '0123456', 'admin', 'admin', 'admin', NULL, NULL, '2022-04-06');
 
 --
 -- Constraints for dumped tables
