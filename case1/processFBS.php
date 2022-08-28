@@ -1,7 +1,7 @@
 <?php
 
 include "FBS.php";
-include "../email/email.php";
+//include "../email/email.php";
 //echo'your in processFBS';
 
 
@@ -95,10 +95,10 @@ else if(isSet($_POST['register'])){
     print_r($_POST);
     if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')){
 
-        header('Location:..\Login\customerHome.php');
+        header('Location:..\Bootstrap\agench');
     }else if (($_POST['username'] = $userRecord['userId']) && ($_POST['password'] = $userRecord['password']) && ($userRecord['userType'] == 'Admin')){
 
-        header('Location:..\Login\staffHome.php');
+        header('Location:..\Bootstrap\NiceAdmin');
     }else{
 
         header('Location:..\Login\index.php');
