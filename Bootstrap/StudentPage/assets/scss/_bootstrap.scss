@@ -1,0 +1,148 @@
+/* Bootstrap Theming Variable CSS */
+
+// Your variable overrides
+$body-bg: #000;
+$body-color: #748494;
+$body-bg: white;
+$heading-color: #030f27;
+$primary: #1292ee;
+$primary-two: #3a7e69;
+$primary-three: #ef6f31;
+$secondary: #748494;
+$secondary-light: #8C89A2;
+$secondary-three: #6ac5f1;
+$success: #67d68a;
+$danger: #F44336;
+$warning: #FFC107;
+$info: #17A2B8;
+$light: #F8F9FA;
+$off-white: #f6f2ed;
+$white-gray: #f2f2f2;
+$white-light: #cacaca;
+$white-opacity-50: rgba(255,255,255,0.5);
+$white: #fff;
+
+$overlay-black: #030f27;
+$light-orange: rgba(239,111,49,.1);
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  black,
+  "success":    green,
+  "info":       yellow,
+  "warning":    yellow,
+  "danger":     red,
+  "light":      $white,
+  "dark":       #000,
+  "white-gray":       $white-gray,
+  "white-opacity-50":     $white-opacity-50,
+  "white":       $white,
+  "overlay-black":       $overlay-black,
+);
+
+// Color system
+
+$white:    #fff;
+$gray-100: #748494;
+$gray-200: #3f5054;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #cacaca;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+// fusv-disable
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+);
+
+$grid-gutter-width: 30px;
+
+$spacers: (
+  0: 0,
+  1: 5px,
+  2: 10px,
+  3: 15px,
+  4: 20px,
+  5: 25px,
+  6: 30px,
+  7: 35px,
+  8: 40px,
+  9: 45px,
+  10: 50px,
+  11: 55px,
+  12: 60px,
+  13: 65px,
+  14: 70px,
+  15: 75px,
+  16: 80px,
+  17: 85px,
+  18: 90px,
+  19: 95px,
+  20: 100px,
+  21: 105px,
+  22: 110px,
+  23: 115px,
+  24: 120px,
+  25: 125px,
+  26: 130px,
+  27: 135px,
+  28: 140px,
+  29: 145px,
+  30: 150px,
+  31: 155px,
+  32: 160px,
+  33: 165px,
+  34: 170px,
+  35: 175px,
+  36: 180px,
+  37: 185px,
+  38: 190px,
+  39: 195px,
+  40: 200px,
+  41: 205px,
+  42: 210px,
+  43: 215px,
+  44: 220px,
+  45: 225px,
+  46: 230px,
+  47: 235px,
+  48: 240px,
+  49: 245px,
+  50: 250px,
+);
+
+$enable-negative-margins:     true;
+
+// Grid Responsive
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Bootstrap and its default variables
+// @import "node_modules/bootstrap/scss/bootstrap";
+@import "./bootstrap/bootstrap";

@@ -95,10 +95,13 @@ else if(isSet($_POST['register'])){
     print_r($_POST);
     if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')){
 
-        header('Location:..\Bootstrap\agench');
+        header('Location:..\Bootstrap\StudentPage');
     }else if (($_POST['username'] = $userRecord['userId']) && ($_POST['password'] = $userRecord['password']) && ($userRecord['userType'] == 'Admin')){
 
         header('Location:..\Bootstrap\NiceAdmin');
+    }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')){
+
+        header('Location:..\Bootstrap\StaffPage');
     }else{
 
         header('Location:..\Login\index.php');

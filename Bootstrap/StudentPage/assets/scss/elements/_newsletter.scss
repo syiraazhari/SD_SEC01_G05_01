@@ -1,0 +1,72 @@
+/* 04.9 Newsletter CSS */
+
+
+.newsletter-section{
+    position: relative;
+
+    & .shape {
+        position: absolute;
+        z-index: -1;
+
+        &-1 {
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    // Responsive
+    @media #{$large-mobile}{
+        & .shape {
+    
+            &-1 {
+                width: 250px;
+            }
+        }
+    }
+}
+
+.newsletter-form{
+    form{
+        position: relative;
+        input{
+            border-width: 1px 0 1px 1px;
+            border-radius: 5px;
+            min-height: 55px;
+            padding: 3px 20px;
+            padding-right: 60px;
+            // Responsive
+            @media #{$large-mobile}{
+                border-width: 1px;
+                border-radius: 5px;
+                margin-bottom: 15px;
+            }
+        }
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+            border: 0;
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            display: block;
+            color: $success;
+            i{
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

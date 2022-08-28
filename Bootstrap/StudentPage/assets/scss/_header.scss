@@ -1,0 +1,158 @@
+/*----------------------------------------*/
+/*  05. Header CSS
+/*----------------------------------------*/
+
+/* Header Section */
+.header-section {
+    z-index: 999;
+
+    min-height: 100px;
+    border-bottom: 1px solid $white-opacity-50;
+    // Responsive
+    @media #{$tablet-device}{
+        min-height: 80px;
+    }
+    @media #{$large-mobile}{
+        min-height: 80px;
+    }
+
+    & .header-inner {
+        z-index: 999;
+
+        display: flex;
+        align-items: center;
+
+        min-height: 100px;
+
+        background-color: $white;
+        // Responsive
+        @media #{$tablet-device}{
+            min-height: 80px;
+        }
+        @media #{$large-mobile}{
+            min-height: 80px;
+        }
+    }
+    &.is-sticky {
+        & .header-inner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #030e22 !important;
+            width: 100%;
+            height: 80px;
+            animation: headerSlideDown 0.95s ease forwards;
+
+            box-shadow: 0 8px 20px 0 rgba($black, 0.1);
+        }
+    }
+
+    // Header Fluid
+    &.header-fluid {
+        & .container {
+            max-width: 100%;
+
+            @media #{$extraBig-device} {
+                padding-right: 150px;
+                padding-left: 150px;
+            }
+        }
+    }
+    &.header-fluid-two {
+        & .container {
+            max-width: 100%;
+
+            @media #{$extraBig-device} {
+                padding-right: 240px;
+                padding-left: 240px;
+            }
+        }
+    }
+
+    // Header Shadow
+    &.header-shadow {
+        & .header-inner {
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    // Header Transparent
+    &.header-transparent {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
+        & .header-inner {
+            background-color: transparent;
+        }
+    }
+
+    // Header Light
+    &.header-light {
+        & .header-login {
+            & a {
+                color: $white;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+@keyframes headerSlideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@import "header/logo";
+
+/* header Search Area */ 
+.header-search-area{
+    display: flex;
+    align-items: center;
+}
+
+/* Header Right */
+
+.header-search {
+    & a {
+        line-height: 1;
+
+        display: flex;
+
+        padding: 6px 5px;
+
+        color: $white;
+
+        & i {
+            font-size: 26px;
+        }
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    @media #{$extra-small-mobile} {
+        & a {
+            padding-right: 7px;
+            padding-left: 7px;
+        }
+    }
+}
+
+
+
+@import "header/search";
+@import "header/main-menu";
+@import "header/mobile-menu-toggle";
+@import "header/mobile-menu";

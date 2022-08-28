@@ -1,0 +1,214 @@
+/* 12.02 Portfolio CSS */
+
+.messonry-button{
+    button{
+        padding: 0;
+        border: 0 none;
+        position: relative;
+        background-color: transparent;
+        font-family: $link-font;
+        span{
+            position: relative;
+            display: inline-block;
+            padding: 5px 15px;
+            // Responsive
+            @media #{$large-mobile}{
+                padding: 5px 10px;
+            }
+            @media #{$extra-small-mobile}{
+                padding: 10px 10px;
+            }
+            &.filter-text{
+                font-weight: 400;
+                line-height: 1;
+                font-size: 16px;
+                transition: all .3s cubic-bezier(.645,.045,.355,1);
+            }
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            width: 7px;
+            height: 7px;
+            background: $primary;
+            text-align: center;
+            margin: auto;
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transition: $transition;
+            // Responsive
+            @media #{$extra-small-mobile}{
+                bottom: -8px;
+            }
+        }
+        &:hover{
+            span{
+                &.filter-text{
+                    color: $primary;
+                }
+            }
+            &::before{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &.is-checked{
+            span{
+                &.filter-text{
+                    color: $primary;
+                }
+            }
+            &::before{
+                opacity: 1;
+                visibility: visible;
+            }
+
+        }
+    }
+
+}
+.single-portfolio{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    .thumbnail{
+        position: relative;
+        &::before{
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            transition: all .5s ease 0s;
+            opacity: 0;
+            background-color: rgba(0,0,0,.5);
+        }
+        img{
+            width: 100%;
+        }
+    }
+    .content{
+        position: absolute;
+        z-index: 9;
+        top: 70%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        transition: all .5s ease 0s;
+        text-align: center;
+        opacity: 0;
+        .title{
+            font-size: 20px;
+            line-height: 1;
+            color: $white;
+            font-weight: 400;
+            margin-bottom: 0;
+            a{
+                font-family: $link-font;
+                img{
+                    margin-left: 10px;
+                    vertical-align: baseline;
+                }
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+    }
+    &:hover{
+        .thumbnail{
+            &::before{
+                opacity: 1;
+            }
+        }
+        .content{
+            transform: translateY(-70%);
+            opacity: 1;
+        }
+    }
+}
+
+
+/* Work CSS */
+.work{
+    overflow: hidden;
+    height: 100%;
+    transition: $transition; 
+    & .thumbnail {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px 5px 0 0;
+
+        & .image {
+            display: block;
+
+            & img {
+                width: 100%;
+                transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    }
+    & .info {
+        position: relative;
+        padding: 35px 30px;
+        border: 1px solid #e7e7e7;
+        border-top: 0;
+        border-radius: 0px 0px 5px 5px;
+        // Responsive
+        @media #{$desktop-device}{
+            padding: 25px 20px;
+        }
+        @media #{$tablet-device}{
+            padding: 25px 22px;
+        }
+        @media #{$extra-small-mobile}{
+            padding: 25px 20px;
+        }
+        & .title {
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 400;
+            margin: 0;
+            // Responsive
+            @media #{$desktop-device}{
+               font-size: 16px;
+               line-height: 24px;
+            }
+            @media #{$extra-small-mobile}{
+               font-size: 17px;
+               line-height: 24px;
+            }
+
+            & > a {
+            }
+        }
+
+        & .desc {
+            margin-top: 15px;
+        }
+        & > a{
+            font-family: $link-font;
+            color: $secondary;
+            position: relative;
+            display: inline-block;
+            &:hover{
+                color: $primary;
+            }
+        }
+    }
+    &:hover {
+        & .thumbnail {
+            & .image {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

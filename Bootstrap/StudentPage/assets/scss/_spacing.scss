@@ -1,0 +1,195 @@
+/*----------------------------------------*/
+/*  02. Template Spacing CSS
+/*----------------------------------------*/
+
+/* Section Spacing */
+.section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    // Responsive
+    @media #{$tablet-device} {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @media #{$large-mobile} {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+.section-padding-150{
+    padding-top: 140px;
+    padding-bottom: 150px;
+    // Responsive
+    @media #{$desktop-device}{
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+    @media #{$tablet-device}{
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+    @media #{$large-mobile}{
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+}
+.section-padding-250{
+    padding-top: 250px;
+    padding-bottom: 250px;
+    // Responsive
+    @media #{$tablet-device}{
+        padding-top: 180px;
+        padding-bottom: 180px;
+    }
+    @media #{$large-mobile}{
+        padding-top: 160px;
+        padding-bottom: 160px;
+    }
+}
+.section-padding-t90-b100 {
+  padding-top: 90px;
+  padding-bottom: 100px;
+
+  // Responsive
+  @media #{$tablet-device} {
+      padding-top: 75px;
+      padding-bottom: 80px;
+  }
+
+  @media #{$large-mobile} {
+      padding-top: 55px;
+      padding-bottom: 60px;
+  }
+}
+.section-padding-t90{
+  padding-top: 90px;
+  // Responsive
+  @media #{$tablet-device}{
+      padding-top: 70px;
+  }
+  @media #{$large-mobile}{
+      padding-top: 50px;
+  }
+}
+.section-padding-t110-b120{
+  padding-top: 110px;
+  padding-bottom: 120px;
+  // Responsive
+  @media #{$desktop-device}{
+      padding-top: 90px;
+      padding-bottom: 100px;
+  }
+  @media #{$tablet-device}{
+      padding-top: 70px;
+      padding-bottom: 80px;
+  }
+  @media #{$large-mobile}{
+      padding-top: 50px;
+      padding-bottom: 60px;
+  }
+}
+.section-padding-top {
+    padding-top: 100px;
+
+    // Responsive
+    @media #{$tablet-device} {
+        padding-top: 80px;
+    }
+
+    @media #{$large-mobile} {
+        padding-top: 60px;
+    }
+}
+.section-padding-bottom {
+    padding-bottom: 100px !important;
+
+    // Responsive
+    @media #{$tablet-device} {
+        padding-bottom: 80px !important;
+    }
+
+    @media #{$large-mobile} {
+        padding-bottom: 60px !important;
+    }
+}
+.section-padding-bottom-150{
+    padding-bottom: 150px;
+    // Responsive
+    @media #{$tablet-device}{
+        padding-bottom: 180px;
+    }
+    @media #{$large-mobile}{
+        padding-bottom: 160px;
+    }
+  }
+.section-padding-bottom-160 {
+    padding-bottom: 160px;
+
+    // Responsive
+    @media #{$desktop-device} {
+        padding-bottom: 200px;
+    }
+    @media #{$tablet-device} {
+        padding-bottom: 80px;
+    }
+
+    @media #{$large-mobile} {
+        padding-bottom: 60px;
+    }
+}
+.section-padding-bottom-170{
+    padding-bottom: 170px;
+
+    // Responsive
+    @media #{$laptop-device} {
+        padding-bottom: 130px;
+    }
+    @media #{$desktop-device} {
+        padding-bottom: 200px;
+    }
+    @media #{$tablet-device} {
+        padding-bottom: 50px;
+    }
+
+    @media #{$large-mobile} {
+        padding-bottom: 30px;
+    }
+}
+.section-padding-bottom-190{
+    padding-bottom: 190px;
+    // Responsive
+    @media #{$desktop-device}{
+        padding-bottom: 200px;
+    }
+    @media #{$tablet-device}{
+        padding-bottom: 80px;
+    }
+    @media #{$large-mobile}{
+        padding-bottom: 60px;
+    }
+  }
+.section-padding-bottom-200{
+    padding-bottom: 200px;
+
+    // Responsive
+    @media #{$desktop-device} {
+        padding-bottom: 150px;
+    }
+    @media #{$tablet-device} {
+        padding-bottom: 180px;
+    }
+
+    @media #{$large-mobile} {
+        padding-bottom: 160px;
+    }
+}
+
+
+
+
+
+
+
+

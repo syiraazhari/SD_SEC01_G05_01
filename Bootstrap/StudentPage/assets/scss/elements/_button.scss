@@ -1,0 +1,191 @@
+/* 04.04 Button CSS */
+
+.btn {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 50px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 52px;
+    padding: 0 40px;
+
+    cursor: pointer;
+    white-space: nowrap;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 2px;
+    outline: none;
+    font-family: $link-font;
+    // Responsive
+    @media #{$large-mobile}{
+        font-size: 14px;
+        line-height: 35px;
+        height: 40px;
+        padding: 0 20px;
+    }
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    &-icon {
+        width: 56px;
+        padding: 15px;
+    }
+
+    &.disabled {
+        opacity: 0.65;
+    }
+}
+/* Button Color & Style (Solid & Outline) */
+@each $name,
+$value in $theme-colors {
+    .btn-#{$name} {
+        border-color: $value;
+        background-color: $value;
+
+        @if $name==warning or $name==light {
+            color: $primary;
+        }
+
+        @else if $name==white-gray {
+            color: $primary;
+        }
+
+        @else {
+            color: $white;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: transparent;
+            background-color: darken($value, 7.5%);
+
+            @if $name==warning or $name==light {
+                color: $heading-color;
+            }
+
+            @else {
+                color: $white;
+            }
+        }
+    }
+
+    .btn-outline-#{$name} {
+        color: $value;
+        border-color: $value;
+        background-color: transparent;
+
+        &:hover {
+            border-color: transparent;
+            background-color: $value;
+
+            @if $name==warning or $name==light {
+                color: $heading-color;
+            }
+
+            @else if $name==white-opacity-50 {
+                color: $white;
+            }
+
+            @else {
+                color: $white;
+            }
+        }
+    }
+}
+
+/* Button Hover Color & Style (Solid & Outline) */
+@each $name,
+$value in $theme-colors {
+    .btn-hover-#{$name} {
+        &:hover,
+        &:not(:disabled):not(.disabled).active {
+            border-color: transparent;
+            background-color: $value;
+
+            @if $name==warning or $name==light {
+                color: $heading-color;
+            }
+
+            @else {
+                color: $white;
+            }
+        }
+    }
+
+    .btn-outline-hover-#{$name} {
+        &:hover,
+        &:not(:disabled):not(.disabled).active {
+            color: $value;
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+}
+
+
+.link {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+
+    &-lg {
+        font-size: 18px;
+    }
+    & mark {
+        font-weight: 400;
+        line-height: 1;
+
+        position: relative;
+
+        padding: 3px 0;
+
+        color: $primary;
+        background-color: transparent;
+
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+
+            content: "";
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+            transform: scaleX(1) translateZ(0);
+            transform-origin: right;
+
+            background: #E0E0E0;
+        }
+
+        &::after {
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: scaleX(0) translateZ(0);
+            transform-origin: left;
+
+            background-color: $primary;
+        }
+    }
+
+    &:hover {
+        color: $secondary-light;
+
+        & mark {
+            &::before {
+                transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transform: scaleX(0) translateZ(0);
+            }
+
+            &::after {
+                transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+                transform: scaleX(1) translateZ(0);
+            }
+        }
+    }
+}

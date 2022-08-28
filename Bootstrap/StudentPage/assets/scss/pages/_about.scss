@@ -1,0 +1,232 @@
+/* 12.01 About CSS */
+
+.about-image-area{
+    position: relative;
+    z-index: 9;
+    height: 100%;
+    margin-right: 45px;
+    &.right-0{
+        .about-image{
+            right: 0;
+        }
+    }
+    .about-image{
+        position: relative;
+        top: 0;
+        right: 45px;
+        float: right;
+        z-index: 9;
+        &.right-n50{
+            right: -50px !important;
+            // Responsive
+            @media #{$laptop-device}{
+                right: 0 !important;
+            }
+            @media #{$desktop-device}{
+                right: 0 !important;
+            }
+            @media #{$tablet-device}{
+                right: 0 !important;
+            }
+            @media #{$large-mobile}{
+                right: 0 !important;
+            }
+        }
+        // Responsive
+        @media #{$desktop-device}{
+            right: 0;
+        }
+        @media #{$large-mobile}{
+            right: 0;
+        }
+        @media #{$extra-small-mobile}{
+            right: 0;
+            width: 250px;
+        }
+        &:nth-child(2){
+            position: absolute;
+            top: 70px;
+            left: 0;
+            z-index: 8;
+            float: left;
+            text-align: left;
+        }
+        img{
+            border-radius: 5px;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05), 0 1.5rem 2.2rem rgba(0, 0, 0, 0.1);
+            transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+        }
+        &:hover {
+            & img {
+                box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.1), 0 2rem 3rem rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+
+    & .shape {
+        position: absolute;
+        z-index: 1;
+
+        &-1 {
+            right: 0;
+            top: 50px;
+            z-index: -1;
+        }
+    }
+
+    // Responsive
+    @media #{$desktop-device}{
+        margin-right: 0;
+        & .shape {
+            position: absolute;
+            z-index: -1;
+    
+            &-1 {
+                right: 0;
+                top: 50px;
+                z-index: -1;
+                span{
+                    width: 200px;
+                }
+                
+            }
+        }
+    }
+    @media #{$tablet-device}{
+        margin-right: 0;
+        & .shape {
+            position: absolute;
+            z-index: -1;
+    
+            &-1 {
+                right: 0;
+                top: 50px;
+                z-index: -1;
+                span{
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    @media #{$large-mobile}{
+        margin-right: 0;
+        & .shape {
+            position: absolute;
+            z-index: -1;
+    
+            &-1 {
+                right: 0;
+                top: 50px;
+                z-index: -1;
+                span{
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.about-content-area{
+    p{
+        max-width: 450px;
+        margin-bottom: 0;
+        // Responsive
+        @media #{$tablet-device}{
+            max-width: 100%;
+        }
+        @media #{$large-mobile}{
+            max-width: 100%;
+        }
+    }
+    // Responsive
+    @media #{$tablet-device}{
+        margin-top: 150px;
+    }
+    @media #{$large-mobile}{
+        margin-top: 150px;
+    }
+}
+
+.about-funfact{
+    .number{
+        font-size: 41px;
+        line-height: 1;
+        color: $primary;
+        margin-bottom: 15px;
+    }
+    .text{
+        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        // Responsive
+        @media #{$large-mobile}{
+            margin-bottom: 20px;
+        }
+    }
+    p{
+        max-width: 230px;
+        // Responsive
+        @media #{$large-mobile}{
+            max-width: 100%;
+        }
+    }
+}
+
+.about-shape-animation{
+    position: relative;
+
+    & .shape {
+        position: absolute;
+        z-index: 1;
+
+        &-1 {
+            top: auto;
+            bottom: 0px;
+            right: -35px;
+            z-index: -1;
+        }
+    }
+
+    // Responsive
+    @media #{$laptop-device}{
+        & .shape {
+    
+            &-1 {
+                bottom: -60px;
+                right: 0px;
+                z-index: -1;
+            }
+        }
+    }
+    @media #{$desktop-device}{
+        & .shape {
+    
+            &-1 {
+                bottom: -60px;
+                right: 0px;
+                z-index: -1;
+            }
+        }
+    }
+    @media #{$tablet-device}{
+        & .shape {
+    
+            &-1 {
+                bottom: -60px;
+                right: 0px;
+                z-index: -1;
+            }
+        }
+    }
+    @media #{$large-mobile}{
+        & .shape {
+    
+            &-1 {
+                bottom: -60px;
+                right: 0px;
+                z-index: -1;
+            }
+        }
+    }
+}
