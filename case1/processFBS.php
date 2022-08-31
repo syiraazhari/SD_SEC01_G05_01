@@ -103,10 +103,10 @@ else if(isSet($_POST['register'])){
         header('Location:..\Bootstrap\NiceAdmin');
     }else if(($_POST['username'] = $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')){
 
-        header('Location:..\Bootstrap\StaffPage');
+        header('Location:..\StaffPage');
     }else{
 
-        header('Location:..\Login\index.php');
+        header('Location:..\LoginSignupPage\index.php');
         
     }
     
@@ -136,10 +136,10 @@ else if(isSet($_POST['register'])){
         header('Location:..\Bootstrap\NiceAdmin');
     }else if(($_POST['username'] = $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')){
 
-        header('Location:..\Bootstrap\StaffPage');
+        header('Location:..\StaffPage');
     }else{
 
-        header('Location:..\Login\index.php');
+        header('Location:..\LoginSignupPage\index.php');
         
     }
 
