@@ -75,6 +75,41 @@ else if(isSet($_POST['register'])){
     
     
     header('Location:..\Login\index.php');
+}else if(isSet($_POST['login1'])){
+    
+    
+    session_start(); 
+
+    $_SESSION['username']=$_POST['username'];  
+    $_SESSION['password']=$_POST['password'];  
+    $_SESSION['curTime']=date('G:i:sA',strtotime('+8 hours'));//GMT 8
+
+    $userId = $_POST['username'];
+    $userQry = userLogin($userId);
+    $userRecord =mysqli_fetch_assoc($userQry);
+    
+    $userEmail = $_POST['username'];
+    $userInfoQry = getListOfUserCustomer($userEmail);
+    $userInfoRecord =mysqli_fetch_assoc($userInfoQry);
+    $_SESSION['email'] = $userInfoRecord['userId'];
+    $_SESSION['name'] = $userInfoRecord['name'];
+    
+    print_r($_POST);
+    if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')){
+
+        header('Location:..\Bootstrap\StudentPage');
+    }else if (($_POST['username'] = $userRecord['userId']) && ($_POST['password'] = $userRecord['password']) && ($userRecord['userType'] == 'Admin')){
+
+        header('Location:..\Bootstrap\NiceAdmin');
+    }else if(($_POST['username'] = $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')){
+
+        header('Location:..\Bootstrap\StaffPage');
+    }else{
+
+        header('Location:..\Login\index.php');
+        
+    }
+    
 }else if(isSet($_POST['login'])){
     session_start(); 
 
