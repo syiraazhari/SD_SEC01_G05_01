@@ -104,27 +104,6 @@ include "..\LoginSignupPage\utility.php";
                                                     <input type="number" name="userNumber" class="form-style" placeholder="Your Contact Number" autocomplete="off">
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
-                                                <div class="form-group mt-2">
-                                                    <input type="text" name="address1" class="form-style" placeholder="Address 1" autocomplete="off">
-                                                    <i class="input-icon uil uil-at"></i>
-                                                </div>
-                                                <div class="form-group mt-2">
-                                                    <input type="text" name="address2" class="form-style" placeholder="Address 2" autocomplete="off">
-                                                    <i class="input-icon uil uil-at"></i>
-                                                </div>
-
-                                                <?php showListOfState(); ?>
-
-                                                <div class="row">
-                                                    <div id = "districtDiv" name = "district">
-
-                                                    </div>
-
-                                                    <!--Postcode--------------------------------------------------------------->
-
-                                                    <div id = "postcodeDiv" name = "postcode">
-
-                                                    </div>
 
                                                 <div class="form-group mt-2">
 												<input type="email" name="userId" class="form-style" placeholder="Your Email" autocomplete="off">
