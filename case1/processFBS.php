@@ -65,8 +65,8 @@ else if(isSet($_POST['register'])){
     //echo 'in register';////////////////////////////////////////////////////////////////////////////////////
     
     addRegister();
-    sendConfirmationEmail();
-    header('Location:..\Login\index.php');
+    //sendConfirmationEmail();
+    header('Location:..\StaffPage');
 }else if(isSet($_POST['registerbutton'])){
     
     

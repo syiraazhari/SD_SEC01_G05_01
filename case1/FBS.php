@@ -133,19 +133,9 @@ function addRegister(){
     $name = $_POST['name'];
     $icNum = $_POST['icNum'];
     $userNumber =$_POST['userNumber'];
-    $address1 = $_POST['address1'];
-    $address2 = $_POST['address2'];
-    $dateOfBirth = $_POST['dateOfBirth'];
-    $state = $_POST['state'];
-    $district = $_POST['district'];
-    $postcode = $_POST['postcode'];
     $userId =$_POST['userId'];
     $password =$_POST['password'];
-    echo "<br>";
-    echo $_POST['district'];
-    echo "<br>";
-    echo $_POST['postcode'];;
-    echo "<br>";
+
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
     if(mysqli_connect_errno()){
@@ -156,8 +146,8 @@ function addRegister(){
     }
     $sql = "insert into user(userId, password)
     values('$userId','$password')";
-    $sql2 ="insert into userinfo(name,userId, phoneNum,icNum,address1,address2,state,district,postcode,dateOfBirth)
-    values('$name','$userId','$userNumber','$icNum','$address1','$address2','$state','$district','$postcode','$dateOfBirth')";
+    $sql2 ="insert into userinfo(name,userId, phoneNum,icNum)
+    values('$name','$userId','$userNumber','$icNum')";
 
     echo $sql;
     echo $sql2;

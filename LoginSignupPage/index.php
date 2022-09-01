@@ -72,7 +72,8 @@
 												<input type="password" name="password" class="form-style" placeholder="Your Password" autocomplete="off">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
-                                                <input type="submit" value="Register" class="btn mt-4" name="register">
+                                                <input type="submit" value="Register As Student" class="btn mt-4" name="registerstudent">
+                                                <input type="submit" value="Register    As    Staff" class="btn mt-4" name="register">
                                             </form>
 				      					</div>
 			      					</div>
