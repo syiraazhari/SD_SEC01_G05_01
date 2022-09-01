@@ -66,6 +66,12 @@ else if(isSet($_POST['register'])){
     
     addRegister();
     //sendConfirmationEmail();
+    header('Location:..\StudentPage');
+}else if(isSet($_POST['registerstaff'])){
+    //echo 'in register';////////////////////////////////////////////////////////////////////////////////////
+    
+    addRegisterStaff();
+    //sendConfirmationEmail();
     header('Location:..\StaffPage');
 }else if(isSet($_POST['registerbutton'])){
     
@@ -97,7 +103,7 @@ else if(isSet($_POST['register'])){
     print_r($_POST);
     if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')){
 
-        header('Location:..\Bootstrap\StudentPage');
+        header('Location:..\StudentPage');
     }else if (($_POST['username'] = $userRecord['userId']) && ($_POST['password'] = $userRecord['password']) && ($userRecord['userType'] == 'Admin')){
 
         header('Location:..\Bootstrap\NiceAdmin');
@@ -130,7 +136,7 @@ else if(isSet($_POST['register'])){
     print_r($_POST);
     if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')){
 
-        header('Location:..\Bootstrap\StudentPage');
+        header('Location:..\StudentPage');
     }else if (($_POST['username'] = $userRecord['userId']) && ($_POST['password'] = $userRecord['password']) && ($userRecord['userType'] == 'Admin')){
 
         header('Location:..\Bootstrap\NiceAdmin');

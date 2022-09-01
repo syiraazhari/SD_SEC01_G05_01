@@ -124,6 +124,54 @@ function getFacilityInformation($facilityId)
     return $qry;
 }
 
+function addRegisterStaff(){
+    session_start(); 
+    $_SESSION['username']=$_POST['name']; 
+    $_SESSION['email']=$_POST['userId'];
+    
+
+    $name = $_POST['name'];
+    $MatricNum = $_POST['MatricNum'];
+    $userId =$_POST['userId'];
+    $password =$_POST['password'];
+    $phoneNum = $_POST['phoneNum'];
+
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+
+    if(mysqli_connect_errno()){
+        echo 'fail to connect to mysql'.mysqli_connect_error();
+        exit;
+    }else{
+        echo 'connected to mysql';
+    }
+    $sql = "insert into userStaff(userId, password)
+    values('$userId','$password')";
+    $sql2 ="insert into userinfoStaff(MatricNum,name, userId,phoneNum) 
+    values('$MatricNum','$name','$userId','$phoneNum')";
+
+    echo $sql;
+    echo $sql2;
+    $qry =mysqli_query($con,$sql);//execute query
+    $qry2 =mysqli_query($con,$sql2);
+      if(!$qry){
+          echo 'Record adding error';
+          return false;
+      }else{
+          echo 'Record added';
+          return true;
+      }
+
+      echo $sql2;
+      if(!$qry2){
+        echo 'Record adding error';
+        return false;
+    }else{
+        echo 'Record added';
+        return true;
+    }
+
+}
+
 function addRegister(){
     session_start(); 
     $_SESSION['username']=$_POST['name']; 
@@ -131,10 +179,10 @@ function addRegister(){
     
 
     $name = $_POST['name'];
-    $icNum = $_POST['icNum'];
-    $userNumber =$_POST['userNumber'];
+    $MatricNum = $_POST['MatricNum'];
     $userId =$_POST['userId'];
     $password =$_POST['password'];
+    $phoneNum = $_POST['phoneNum'];
 
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
@@ -146,8 +194,8 @@ function addRegister(){
     }
     $sql = "insert into user(userId, password)
     values('$userId','$password')";
-    $sql2 ="insert into userinfo(name,userId, phoneNum,icNum)
-    values('$name','$userId','$userNumber','$icNum')";
+    $sql2 ="insert into userinfo(MatricNum,name, userId,phoneNum) 
+    values('$MatricNum','$name','$userId','$phoneNum')";
 
     echo $sql;
     echo $sql2;

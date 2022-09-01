@@ -56,11 +56,11 @@
 												<i class="input-icon uil uil-user"></i>
 											</div>
                                                 <div class="form-group mt-2">
-                                                    <input type="text" name="icNum" class="form-style" placeholder="Your Matric Number" autocomplete="off">
+                                                    <input type="text" name="MatricNum" class="form-style" placeholder="Your Matric Number" autocomplete="off">
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="number" name="userNumber" class="form-style" placeholder="Your Contact Number" autocomplete="off">
+                                                    <input type="number" name="phoneNum" class="form-style" placeholder="Your Contact Number" autocomplete="off">
                                                     <i class="input-icon uil uil-mobile-android"></i>
                                                 </div>
 
@@ -72,8 +72,8 @@
 												<input type="password" name="password" class="form-style" placeholder="Your Password" autocomplete="off">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
-                                                <input type="submit" value="Register As Student" class="btn mt-4" name="registerstudent">
-                                                <input type="submit" value="Register    As    Staff" class="btn mt-4" name="register">
+                                                <input type="submit" value="Register As Staff" class="btn mt-4" name="registerstaff">
+                                                <input type="submit" value="Register As Student" class="btn mt-4" name="register">
                                             </form>
 				      					</div>
 			      					</div>
