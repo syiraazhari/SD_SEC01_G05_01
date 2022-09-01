@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 28, 2022 at 09:06 AM
+-- Generation Time: Sep 01, 2022 at 01:58 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -162,7 +162,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`userId`, `password`, `userType`) VALUES
 ('admin', 'admin123', 'Admin'),
 ('test123@gmail.com', 'test111', 'Student'),
-('ydk1421@gmail.com', 'test123', 'Staff');
+('ydk1421@gmail.com', 'test123', 'Staff'),
+('ydk8615@gmail.com', 'abc12345', 'Customer');
 
 -- --------------------------------------------------------
 
