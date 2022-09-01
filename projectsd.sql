@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 01, 2022 at 01:58 PM
+-- Generation Time: Sep 01, 2022 at 02:46 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -151,7 +151,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `userId` varchar(100) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `userType` varchar(30) NOT NULL DEFAULT 'Customer',
+  `userType` varchar(30) NOT NULL DEFAULT 'Student',
   PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -160,7 +160,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`userId`, `password`, `userType`) VALUES
+('31231231@gmail.com', '12312312312312', 'Student'),
+('3131@gmail.com', '123', 'Student'),
 ('admin', 'admin123', 'Admin'),
+('Student@gmail.com', 'Students', 'Student'),
 ('test123@gmail.com', 'test111', 'Student'),
 ('ydk1421@gmail.com', 'test123', 'Staff'),
 ('ydk8615@gmail.com', 'abc12345', 'Customer');
@@ -173,17 +176,11 @@ INSERT INTO `user` (`userId`, `password`, `userType`) VALUES
 
 DROP TABLE IF EXISTS `userinfo`;
 CREATE TABLE IF NOT EXISTS `userinfo` (
-  `icNum` varchar(100) NOT NULL,
+  `MatricNum` varchar(100) NOT NULL,
   `name` varchar(20) NOT NULL,
   `userId` varchar(100) NOT NULL,
   `phoneNum` varchar(30) NOT NULL,
-  `address1` varchar(100) NOT NULL,
-  `address2` varchar(100) NOT NULL,
-  `state` varchar(30) NOT NULL,
-  `district` varchar(50) DEFAULT NULL,
-  `postcode` int(5) DEFAULT NULL,
-  `dateOfBirth` varchar(30) NOT NULL,
-  PRIMARY KEY (`icNum`),
+  PRIMARY KEY (`MatricNum`),
   KEY `userId` (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -191,8 +188,59 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 -- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfo` (`icNum`, `name`, `userId`, `phoneNum`, `address1`, `address2`, `state`, `district`, `postcode`, `dateOfBirth`) VALUES
-('011152648', 'admin', 'admin', '0123456', 'admin', 'admin', 'admin', NULL, NULL, '2022-04-06');
+INSERT INTO `userinfo` (`MatricNum`, `name`, `userId`, `phoneNum`) VALUES
+('011152648', 'admin', 'admin', '0123456'),
+('12312312', '123123', '31231231@gmail.com', '321321312'),
+('StudentTest', 'StudentTest', 'Student@gmail.com', '123123123123123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userinfostaff`
+--
+
+DROP TABLE IF EXISTS `userinfostaff`;
+CREATE TABLE IF NOT EXISTS `userinfostaff` (
+  `MatricNum` varchar(100) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `userId` varchar(100) NOT NULL,
+  `phoneNum` varchar(30) NOT NULL,
+  PRIMARY KEY (`MatricNum`),
+  KEY `userId` (`userId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userinfostaff`
+--
+
+INSERT INTO `userinfostaff` (`MatricNum`, `name`, `userId`, `phoneNum`) VALUES
+('213', '123', '123', '123'),
+('A20DW114', 'tancheesen', 'tan@gmail.com', '011231231231');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userstaff`
+--
+
+DROP TABLE IF EXISTS `userstaff`;
+CREATE TABLE IF NOT EXISTS `userstaff` (
+  `userId` varchar(100) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `userType` varchar(30) NOT NULL DEFAULT 'Staff',
+  PRIMARY KEY (`userId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userstaff`
+--
+
+INSERT INTO `userstaff` (`userId`, `password`, `userType`) VALUES
+('123', '123', 'Staff'),
+('abc@gmail.com', 'abc', 'Staff'),
+('', '', 'Staff'),
+('21@gmail.com', '21', 'Staff'),
+('tan@gmail.com', 'tan123', 'Staff');
 
 --
 -- Constraints for dumped tables
