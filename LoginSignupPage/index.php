@@ -46,9 +46,7 @@
     </script>
 </head>
 <body>
-<?php
-include "..\LoginSignupPage\utility.php";
-?>
+
 
 <!-- partial:index.partial.html -->
 <a href="https://front.codes/" class="logo" target="_blank">
