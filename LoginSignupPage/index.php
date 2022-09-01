@@ -9,10 +9,10 @@
 <body>
 
 
-<!-- partial:index.partial.html -->
+<!-- partial:index.partial.html
 <a href="https://front.codes/" class="logo" target="_blank">
-		<img src="https://assets.codepen.io/1462889/fcy.png" alt="">
-	</a>
+		//<img src="https://assets.codepen.io/1462889/fcy.png" alt="">
+	//</a>-->
 
 	<div class="section">
 		
@@ -56,7 +56,7 @@
 												<i class="input-icon uil uil-user"></i>
 											</div>
                                                 <div class="form-group mt-2">
-                                                    <input type="text" name="MatricNum" class="form-style" placeholder="Your Matric Number" autocomplete="off">
+                                                    <input type="text" name="MatricNum" class="form-style" placeholder="Your Staff ID / Matric Number" autocomplete="off">
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
