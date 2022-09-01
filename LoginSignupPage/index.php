@@ -5,45 +5,6 @@
   <title>UTMKL Facility Booking System</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="./style.css">
-    <script>
-        function showDistrictByState(str)
-        {
-            if (str == "") {
-                document.getElementById("districtDiv").innerHTML = "";
-                return;
-            } else {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("districtDiv").innerHTML = this.responseText;
-                    }
-                };
-                xmlhttp.open("GET","../Login/showDistrictByState.php?state="+str,true);
-                xmlhttp.send();
-            }
-
-        }
-
-        function showPostCodeByDistrict(str)
-        {
-//alert(str);
-            if (str == "") {
-                document.getElementById("postcodeDiv").innerHTML = "";
-                return;
-            } else {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("postcodeDiv").innerHTML = this.responseText;
-                    }
-                };
-                xmlhttp.open("GET","../Login/showPostCodeByDistrict.php?district="+str,true);
-                xmlhttp.send();
-            }
-
-        }
-
-    </script>
 </head>
 <body>
 
@@ -100,7 +61,7 @@
                                                 </div>
                                                 <div class="form-group mt-2">
                                                     <input type="number" name="userNumber" class="form-style" placeholder="Your Contact Number" autocomplete="off">
-                                                    <i class="input-icon uil uil-at"></i>
+                                                    <i class="input-icon uil uil-mobile-android"></i>
                                                 </div>
 
                                                 <div class="form-group mt-2">
@@ -129,20 +90,4 @@
 
 </body>
 </html>
-<?php
-function showListOfState(){
 
-    $qry = getListOfState();
-    //create the select input
-    echo '<select name = "state" class="form-control" id="state" placeholder="state" onchange="showDistrictByState(this.value)">';
-    while($row=mysqli_fetch_assoc($qry))//Display car information
-    {
-        echo '<option value="'.$row['state'].'">'.$row['state'].'</option>';//add state list
-    }
-
-    echo '</select>';
-
-
-}
-
-?>
