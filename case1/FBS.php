@@ -135,17 +135,24 @@ function addRegisterStaff(){
     $userId =$_POST['userId'];
     $password =$_POST['password'];
     $phoneNum = $_POST['phoneNum'];
+    
 
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
+    $mysqli = new MySQLi("localhost", "projectsd", "projectsd", "projectsd");
+    
     if(mysqli_connect_errno()){
         echo 'fail to connect to mysql'.mysqli_connect_error();
         exit;
     }else{
         echo 'connected to mysql';
     }
-    $sql = "insert into userStaff(userId, password)
-    values('$userId','$password')";
+    $name = $mysqli->real_escape_string($name);
+    $vkey = md5(time().$name);
+    //$password = md5($password);
+
+    $sql = "insert into user(userId, password, userType,vkey)
+    values('$userId','$password','Staff','$vkey')";
     $sql2 ="insert into userinfoStaff(MatricNum,name, userId,phoneNum) 
     values('$MatricNum','$name','$userId','$phoneNum')";
 
@@ -154,20 +161,41 @@ function addRegisterStaff(){
     $qry =mysqli_query($con,$sql);//execute query
     $qry2 =mysqli_query($con,$sql2);
       if(!$qry){
-          echo 'Record adding error';
-          return false;
+          echo 'Record adding error 1';
+          
       }else{
           echo 'Record added';
-          return true;
+          
       }
 
       echo $sql2;
       if(!$qry2){
         echo 'Record adding error';
-        return false;
+        
     }else{
         echo 'Record added';
-        return true;
+        
+    }
+    echo "we in email";
+    $email = $userId;
+    //echo $email;
+    //echo $username;
+    $subject = "Email Verification";
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: cheesen987@gmail.com';
+
+    $message = ' ';
+    $message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
+    //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
+
+    //if (mail($email,$subject,$message)) {
+
+    if (mail($email,$subject,$message,$headers)) {
+            echo "<h4>Thank you for Booking. Please check your email at $email.</h4>";
+    } else {
+            echo "<h4>Can't send email to $email</h4>";
     }
 
 }
@@ -185,6 +213,7 @@ function addRegister(){
     $phoneNum = $_POST['phoneNum'];
 
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    $mysqli = new MySQLi("localhost", "projectsd", "projectsd", "projectsd");
 
     if(mysqli_connect_errno()){
         echo 'fail to connect to mysql'.mysqli_connect_error();
@@ -192,30 +221,54 @@ function addRegister(){
     }else{
         echo 'connected to mysql';
     }
-    $sql = "insert into user(userId, password)
-    values('$userId','$password')";
-    $sql2 ="insert into userinfo(MatricNum,name, userId,phoneNum) 
-    values('$MatricNum','$name','$userId','$phoneNum')";
+    $name = $mysqli->real_escape_string($name);
+    $vkey = md5(time().$name);
 
+
+    $sql = "insert into user(userId, password, userType,vkey)
+    values('$userId','$password','Student','$vkey')";
+    $sql2 ="insert into userinfoStaff(MatricNum,name, userId,phoneNum) 
+    values('$MatricNum','$name','$userId','$phoneNum')";
     echo $sql;
     echo $sql2;
     $qry =mysqli_query($con,$sql);//execute query
     $qry2 =mysqli_query($con,$sql2);
       if(!$qry){
-          echo 'Record adding error';
-          return false;
+          echo 'Record adding error 1';
+          
       }else{
           echo 'Record added';
-          return true;
+          
       }
 
       echo $sql2;
       if(!$qry2){
         echo 'Record adding error';
-        return false;
+        
     }else{
         echo 'Record added';
-        return true;
+        
+    }
+    echo "we in email";
+    $email = $userId;
+    //echo $email;
+    //echo $username;
+    $subject = "Email Verification";
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: cheesen987@gmail.com';
+
+    $message = ' ';
+    $message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='$vkey'>Register Account<a/>";
+    //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
+
+    //if (mail($email,$subject,$message)) {
+
+    if (mail($email,$subject,$message,$headers)) {
+            echo "<h4>Thank you for Booking. Please check your email at $email.</h4>";
+    } else {
+            echo "<h4>Can't send email to $email</h4>";
     }
 
 }
@@ -665,4 +718,6 @@ function bookingHistoryByUserName($userName) {
     return $qry;
     
 }
+
+
 ?>
