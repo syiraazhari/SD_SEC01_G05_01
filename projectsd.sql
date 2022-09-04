@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 01, 2022 at 02:46 PM
+-- Generation Time: Sep 04, 2022 at 07:18 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -55,6 +55,22 @@ INSERT INTO `facility` (`facilityId`, `name`, `category`, `capacity`, `facilityD
 ('R60', 'LANDSKAP/WATER PLAZA', 'RUANG SERBAGUNA', 300, '-', '720.00', 'Available'),
 ('S60', 'GELANGGANG FUTSAL', 'SUKAN', NULL, '-', '70.00', 'Available'),
 ('S61', 'BasketBall', 'Basketball Court', 100, '-', '100.00', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pwdreset`
+--
+
+DROP TABLE IF EXISTS `pwdreset`;
+CREATE TABLE IF NOT EXISTS `pwdreset` (
+  `pwdResetId` int(11) NOT NULL,
+  `pwdResetEmail` text NOT NULL,
+  `pwdResetSelector` text NOT NULL,
+  `pwdResetToken` longtext NOT NULL,
+  `pwdResetExpires` text NOT NULL,
+  PRIMARY KEY (`pwdResetId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -152,6 +168,9 @@ CREATE TABLE IF NOT EXISTS `user` (
   `userId` varchar(100) NOT NULL,
   `password` varchar(30) NOT NULL,
   `userType` varchar(30) NOT NULL DEFAULT 'Student',
+  `vkey` varchar(45) NOT NULL,
+  `verified` tinyint(1) DEFAULT '0',
+  `createdate` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -159,14 +178,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`userId`, `password`, `userType`) VALUES
-('31231231@gmail.com', '12312312312312', 'Student'),
-('3131@gmail.com', '123', 'Student'),
-('admin', 'admin123', 'Admin'),
-('Student@gmail.com', 'Students', 'Student'),
-('test123@gmail.com', 'test111', 'Student'),
-('ydk1421@gmail.com', 'test123', 'Staff'),
-('ydk8615@gmail.com', 'abc12345', 'Customer');
+INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `createdate`) VALUES
+('cheesen987@gmail.com', 'Lone#2002', 'Student', '6fbd07a60045e64687d60ff6771bed1e', 1, '2022-09-04 06:43:10.036086'),
+('lonely1233@hotmail.com', 'lonely1233', 'Staff', '2194d4b41f5ba23cea43762dedf1ef4c', 0, '2022-09-04 03:31:44.190718'),
+('tancheesen123@hotmail.com', '123', 'Staff', '2c9ffcf1168ffd179a0eec3c40143055', 1, '2022-09-04 04:48:34.411488');
 
 -- --------------------------------------------------------
 
@@ -183,15 +198,6 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
   PRIMARY KEY (`MatricNum`),
   KEY `userId` (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `userinfo`
---
-
-INSERT INTO `userinfo` (`MatricNum`, `name`, `userId`, `phoneNum`) VALUES
-('011152648', 'admin', 'admin', '0123456'),
-('12312312', '123123', '31231231@gmail.com', '321321312'),
-('StudentTest', 'StudentTest', 'Student@gmail.com', '123123123123123');
 
 -- --------------------------------------------------------
 
@@ -215,32 +221,14 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 
 INSERT INTO `userinfostaff` (`MatricNum`, `name`, `userId`, `phoneNum`) VALUES
 ('213', '123', '123', '123'),
-('A20DW114', 'tancheesen', 'tan@gmail.com', '011231231231');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `userstaff`
---
-
-DROP TABLE IF EXISTS `userstaff`;
-CREATE TABLE IF NOT EXISTS `userstaff` (
-  `userId` varchar(100) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `userType` varchar(30) NOT NULL DEFAULT 'Staff',
-  PRIMARY KEY (`userId`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `userstaff`
---
-
-INSERT INTO `userstaff` (`userId`, `password`, `userType`) VALUES
-('123', '123', 'Staff'),
-('abc@gmail.com', 'abc', 'Staff'),
-('', '', 'Staff'),
-('21@gmail.com', '21', 'Staff'),
-('tan@gmail.com', 'tan123', 'Staff');
+('A20DW114', 'tancheesen', 'tan@gmail.com', '011231231231'),
+('A20d123123', 'tancheesen', 'tan@gmail.com', '12312'),
+('A20DW1114', 'lonely123', 'lonely123@hotmail.com', '01115386485'),
+('A20DW11143', 'lonely1233', 'lonely1233@hotmail.com', '011153864853'),
+('TEST01', 'TEST01', 'TEST01@hotmail.com', '01320'),
+('testing', 'testing', 'cheesen987@gmail.com', '12312'),
+('qweqwe', 'qweqwe', 'cheesen987@gmail.com', '132123'),
+('A20dw1231231', 'tancheesen123', 'tancheesen123@hotmail.com', '1230123');
 
 --
 -- Constraints for dumped tables
