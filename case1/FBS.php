@@ -475,8 +475,19 @@ function getListOfUserCustomer($userId){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfostaff where userId = "'.$userId.'"';
+    $sql = 'select * from userinfo where userId = "'.$userId.'"';
     
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+function getListOfUserStaff($userId){
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from userinfostaff where userId = "'.$userId.'"';
+
     $qry = mysqli_query($con, $sql);
     return $qry;
 }

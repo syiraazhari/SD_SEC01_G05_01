@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Update User Form</title>
+    <title>Staff Profile Update</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
@@ -49,32 +49,18 @@ $listOfPassword = getListOfpassword($userId);
 $row2 = mysqli_fetch_assoc($listOfPassword);
 
 echo '<div class="w3-bar w3-large"; style="background-color:#154360;";>';
-echo'<b><h2 style="text-align: center; color:white;"> User Update Form </h2></b>';
+echo'<b><h2 style="text-align: center; color:white;"> Staff Profile Update </h2></b>';
 echo '</div>';
 echo'<div style="background-color: #EBF5FB">';
 echo'<form class="w3-container" action="..\case1\processFBS.php" method="POST">';
 
 echo'<br>';
-echo'IC Number: <input class="w3-input" type="text" name="icNum" value="'.$UserRecord['icNum'].'"readonly>';
+echo'Staff Id: <input class="w3-input" type="text" name="MatricNum" value="'.$UserRecord['MatricNum'].'"readonly>';
 echo'<br>Email address: <input class="w3-input" type="text" name="userId" value="'.$row2['userId'].'" readonly>';
 echo'<br>Password: <input class="w3-input" type="text" name="password" value="'.$row2['password'].'" >';
 echo'<br>Name: <input class="w3-input" type="text" name="name" value="'.$UserRecord['name'].'">';
 echo'<br>Phone Number: <input class="w3-input" type="number" name="phoneNum" value="'.$UserRecord['phoneNum'].'">';
-echo'<br>Address 1: <input class="w3-input" type="text" name="address1" value="'.$UserRecord['address1'].'">';
-echo'<br>Address 2: <input class="w3-input" type="text" name="address2" value="'.$UserRecord['address2'].'">';
-echo'<br>State: <input class="w3-input" type="text" name="state" value="'.$UserRecord['state'].'">';
 
-
-
-echo'<br>State: <input class="w3-input" type="text" name="district" value="'.$UserRecord['district'].'">';
-echo'<br>State: <input class="w3-input" type="text" name="postcode" value="'.$UserRecord['postcode'].'">';
-
-
-
-
-
-
-echo'<br>Birthday date: <input class="w3-input" type="date" name="dateOfBirth" value="'.$UserRecord['dateOfBirth'].'">';
         echo'<br><input class="button button2" style="vertical-align:middle" type="submit" name="updateCustomerUserButton" value"="Save">';
 		echo '<br><br>';
     echo'</form>';

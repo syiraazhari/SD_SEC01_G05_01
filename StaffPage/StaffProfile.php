@@ -90,10 +90,12 @@ if (!(isset($_SESSION['username']) && $_SESSION['username'] != '')) {
 }
 
 $userId = $_SESSION['username'];
-$listOfUser = getListOfUserCustomer($userId);
+$listOfUser = getListOfUserStaff($userId);
 
-echo "<b style='font-size: 25px;'>There are ". mysqli_num_rows($listOfUser). ' record</b><br><br>';
-
+//echo "<b style='font-size: 25px;'>There are ". mysqli_num_rows($listOfUser). ' record</b><br><br>';
+echo"<br>";
+echo"<br>";
+echo"<br>";
 if(mysqli_num_rows($listOfUser) > 0)
     displayTableHeader();
 
@@ -114,7 +116,7 @@ while($row = mysqli_fetch_assoc($listOfUser))
     $userId = $row2['userId'];
 
     echo '<td>';//update option
-    echo'<form action="updateCustomerUserFacilityForm.php" method="POST">';
+    echo '<form action="updateStaffProfileForm.php" method="POST">';
     echo"<input type='hidden' value='$userId' name='CustomerUserIdToUpdate'>";
     echo'<input class= "button button1" type="submit" name="updateCustomerUserButton" value="Update">';
     echo'</form>';

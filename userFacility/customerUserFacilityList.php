@@ -81,7 +81,7 @@ while($row = mysqli_fetch_assoc($listOfUser))
     $userId = $row2['userId'];
     
     echo '<td>';//update option
-        echo'<form action="updateCustomerUserFacilityForm.php" method="POST">';
+        echo '<form action="../StaffPage/updateStaffProfileForm.php" method="POST">';
             echo"<input type='hidden' value='$userId' name='CustomerUserIdToUpdate'>";
             echo'<input class= "button button1" type="submit" name="updateCustomerUserButton" value="Update">';
         echo'</form>';
