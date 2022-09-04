@@ -183,11 +183,11 @@ else if(isSet($_POST['register'])){
     }else{
         addRegisterStaff();
         //sendConfirmationEmail($userId,$vkey);
-        header('Location:..\LoginSignupPage\Thankyoupage.php');
+        //header('Location:..\LoginSignupPage\Thankyoupage.php');
     }
     //addRegisterStaff();
     //sendConfirmationEmail();
-    //header('Location:..\StaffPage');
+    header('Location:..\StaffPage');
 }else if(isSet($_POST['registerbutton'])){
     
     

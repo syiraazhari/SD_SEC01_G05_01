@@ -331,7 +331,7 @@ function displayHeaderStaff(){
 }
 
 function getListOfUser(){
-    $$con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
@@ -463,7 +463,7 @@ function getUserInformation($userId)
         exit;
     }
 
-    $sql = 'select * from userinfo ';
+    $sql = 'select * from userinfostaff ';
     $sql .= 'where userId = "'.$userId.'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
@@ -475,7 +475,7 @@ function getListOfUserCustomer($userId){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo where userId = "'.$userId.'"';
+    $sql = 'select * from userinfostaff where userId = "'.$userId.'"';
     
     $qry = mysqli_query($con, $sql);
     return $qry;

@@ -105,7 +105,7 @@ while($row = mysqli_fetch_assoc($listOfUser))
 
     echo'<tr>';
     echo '<td>'.$count.'</td>';
-    echo '<td>'.strtoupper($row['icNum']).'</td>';
+    echo '<td>'.strtoupper($row['MatricNum']).'</td>';
     echo '<td>'.strtoupper($row['name']).'</td>';
     echo '<td>'.($row2['userId']).'</td>';
     echo '<td>'.($row2['password']).'</td>';
@@ -156,7 +156,7 @@ function displayTableHeader()
     echo'<table class="w3-table w3-striped w3-border">';
     echo'<tr style="background-color: #2F4F4F; color: white;">
             <th>Bil</th>
-            <th>IC Number</th>
+            <th>Matric Number</th>
             <th>Name</th>
             <th>Email Address</th>
             <th>Password</th>
