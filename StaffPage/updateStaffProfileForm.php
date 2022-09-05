@@ -61,7 +61,7 @@ echo'<br>Password: <input class="w3-input" type="text" name="password" value="'.
 echo'<br>Name: <input class="w3-input" type="text" name="name" value="'.$UserRecord['name'].'">';
 echo'<br>Phone Number: <input class="w3-input" type="number" name="phoneNum" value="'.$UserRecord['phoneNum'].'">';
 
-        echo'<br><input class="button button2" style="vertical-align:middle" type="submit" name="updateCustomerUserButton" value"="Save">';
+        echo'<br><input class="button button2" style="vertical-align:middle" type="submit" name="updateStaffProfileButton" value"="Save">';
 		echo '<br><br>';
     echo'</form>';
 echo'</div>';

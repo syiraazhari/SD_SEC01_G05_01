@@ -58,7 +58,11 @@ else if(isSet($_POST['updateFacilityButton'])) {
 }else if(isSet($_POST['updateCustomerUserButton'])) {
 
     updateUserInformation();
-    header("Refresh:1;url=..\userFacility\customerUserFacilityList.php");
+    header("Refresh:0;url=..\userFacility\customerUserFacilityList.php");
+}else if(isSet($_POST['updateStaffProfileButton'])) {
+
+    updateStaffProfile();
+    header("Refresh:1;url=..\StaffPage\StaffProfile.php");
 
 }else if(isSet($_POST['forgotpassword'])){
     echo 'in forgotpassword';////////////////////////////////////////////////////////////////////////////////////

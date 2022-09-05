@@ -412,14 +412,8 @@ function updateUserInformation(){
         exit;
     }
     $name = $_POST['name'];
-    $icNum = $_POST['icNum'];
+    $MatricNum = $_POST['MatricNum'];
     $phoneNum =$_POST['phoneNum'];
-    $address1 = $_POST['address1'];
-    $address2 = $_POST['address2'];
-    $dateOfBirth = $_POST['dateOfBirth'];
-    $state = $_POST['state'];
-    $district = $_POST['district'];
-    $postcode = $_POST['postcode'];
     $userId =$_POST['userId'];
     $password = $_POST['password'];
     
@@ -427,9 +421,9 @@ function updateUserInformation(){
     $_SESSION['password']=$password; 
     
     $sql = 'update userinfo set ';
-    $sql .= 'icNum= "' . $icNum . '",name="' . $name . '"
-    , phoneNum="' . $phoneNum . '", address1="' . $address1 . '", address2="' . $address2 . '", state="' . $state . '", district="' . $district . '", postcode="' . $postcode . '", dateOfBirth="' . $dateOfBirth . '"';
-    $sql .= 'where icNum = "' . $icNum . '"';
+    $sql .= 'MatricNum= "' . $MatricNum . '",name="' . $name . '"
+    , phoneNum="' . $phoneNum . '"';
+    $sql .= 'where MatricNum = "' . $MatricNum . '"';
     
     $sql2 = 'update user set ';
     $sql2 .= 'userId= "' . $userId . '",password="' . $password . '"';
@@ -454,7 +448,53 @@ function updateUserInformation(){
 
     //return $qry2;
 }
+function updateStaffProfile(){
 
+    session_start();
+
+
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $name = $_POST['name'];
+    $MatricNum = $_POST['MatricNum'];
+    $phoneNum =$_POST['phoneNum'];
+    $userId =$_POST['userId'];
+    $password = $_POST['password'];
+
+    $_SESSION['username']=$userId;
+    $_SESSION['password']=$password;
+
+    $sql = 'update userinfostaff set ';
+    $sql .= 'MatricNum= "' . $MatricNum . '",name="' . $name . '"
+    , phoneNum="' . $phoneNum . '"';
+    $sql .= 'where MatricNum = "' . $MatricNum . '"';
+
+    $sql2 = 'update user set ';
+    $sql2 .= 'userId= "' . $userId . '",password="' . $password . '"';
+    $sql2 .= 'where userId = "' . $userId . '"';
+
+    //echo $sql;
+    //echo'<br>'.$sql2;
+    $qry = mysqli_query($con, $sql);
+    $qry2 = mysqli_query($con, $sql2);
+
+    echo $_SESSION['username'];
+
+    if((!$qry) && (!$qry2)){
+        echo 'Record adding error';
+
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+
+
+    //return $qry2;
+}
 function getUserInformation($userId)
 {
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");

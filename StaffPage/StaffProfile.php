@@ -106,7 +106,6 @@ while($row = mysqli_fetch_assoc($listOfUser))
     $row2 = mysqli_fetch_assoc($listOfPassword);
 
     echo'<tr>';
-    echo '<td>'.$count.'</td>';
     echo '<td>'.strtoupper($row['MatricNum']).'</td>';
     echo '<td>'.strtoupper($row['name']).'</td>';
     echo '<td>'.($row2['userId']).'</td>';
@@ -118,7 +117,7 @@ while($row = mysqli_fetch_assoc($listOfUser))
     echo '<td>';//update option
     echo '<form action="updateStaffProfileForm.php" method="POST">';
     echo"<input type='hidden' value='$userId' name='CustomerUserIdToUpdate'>";
-    echo'<input class= "button button1" type="submit" name="updateCustomerUserButton" value="Update">';
+    echo'<input class= "button button1" type="submit" name="updateStaffProfileButton" value="Update">';
     echo'</form>';
     echo'</td>';
 
@@ -157,8 +156,8 @@ function displayTableHeader()
 {
     echo'<table class="w3-table w3-striped w3-border">';
     echo'<tr style="background-color: #2F4F4F; color: white;">
-            <th>Bil</th>
-            <th>Matric Number</th>
+            
+            <th>Staff ID</th>
             <th>Name</th>
             <th>Email Address</th>
             <th>Password</th>
