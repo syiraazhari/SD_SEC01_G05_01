@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 05, 2022 at 11:57 AM
+-- Generation Time: Sep 05, 2022 at 12:05 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -181,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `createdate`) VALUES
 ('cheesen987@gmail.com', 'Lone#2002', 'Student', '6fbd07a60045e64687d60ff6771bed1e', 1, '2022-09-04 06:43:10.036086'),
 ('lonely1233@hotmail.com', 'lonely1233', 'Staff', '2194d4b41f5ba23cea43762dedf1ef4c', 0, '2022-09-04 03:31:44.190718'),
-('tancheesen123@hotmail.com', 'staff1', 'Staff', '2c9ffcf1168ffd179a0eec3c40143055', 1, '2022-09-04 04:48:34.411488'),
+('tancheesen123@hotmail.com', 'staff123', 'Staff', '2c9ffcf1168ffd179a0eec3c40143055', 1, '2022-09-04 04:48:34.411488'),
 ('ydk1421@gmail.com', 'staff1', 'Staff', '095a1f52c80279b6d5f80ff5745a0de4', 0, '2022-09-04 14:14:18.177735');
 
 -- --------------------------------------------------------
