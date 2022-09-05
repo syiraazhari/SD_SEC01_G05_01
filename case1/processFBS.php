@@ -53,16 +53,16 @@ else if(isSet($_POST['updateFacilityButton'])) {
 }else if(isSet($_POST['updateUserButton'])) {
 
     updateUserInformation();
-    header("Refresh:1;url=..\userFacility\staffUserFacilityList.php");
+    header("Location:..\userFacility\staffUserFacilityList.php");
 
 }else if(isSet($_POST['updateCustomerUserButton'])) {
 
     updateUserInformation();
-    header("Refresh:0;url=..\userFacility\customerUserFacilityList.php");
+    header("Location:..\userFacility\customerUserFacilityList.php");
 }else if(isSet($_POST['updateStaffProfileButton'])) {
 
     updateStaffProfile();
-    header("Refresh:1;url=..\StaffPage\StaffProfile.php");
+    header("Location:..\StaffPage\StaffProfile.php");
 
 }else if(isSet($_POST['forgotpassword'])){
     echo 'in forgotpassword';////////////////////////////////////////////////////////////////////////////////////
