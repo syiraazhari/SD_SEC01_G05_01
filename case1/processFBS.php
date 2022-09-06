@@ -53,16 +53,16 @@ else if(isSet($_POST['updateFacilityButton'])) {
 }else if(isSet($_POST['updateUserButton'])) {
 
     updateUserInformation();
-    header("Location:..\userFacility\staffUserFacilityList.php");
+    header("Refresh:1;url=..\userFacility\staffUserFacilityList.php");
 
 }else if(isSet($_POST['updateCustomerUserButton'])) {
 
     updateUserInformation();
-    header("Location:..\userFacility\customerUserFacilityList.php");
+    header("Refresh:0;url=..\userFacility\customerUserFacilityList.php");
 }else if(isSet($_POST['updateStaffProfileButton'])) {
 
     updateStaffProfile();
-    header("Location:..\StaffPage\StaffProfile.php");
+    header("location:..\StaffPage\StaffProfile.php");
 
 }else if(isSet($_POST['forgotpassword'])){
     echo 'in forgotpassword';////////////////////////////////////////////////////////////////////////////////////
@@ -187,11 +187,11 @@ else if(isSet($_POST['register'])){
     }else{
         addRegisterStaff();
         //sendConfirmationEmail($userId,$vkey);
-        //header('Location:..\LoginSignupPage\Thankyoupage.php');
+        header('Location:..\LoginSignupPage\Thankyoupage.php');
     }
     //addRegisterStaff();
     //sendConfirmationEmail();
-    header('Location:..\StaffPage');
+    //header('Location:..\StaffPage');
 }else if(isSet($_POST['registerbutton'])){
     
     
