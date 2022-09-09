@@ -28,7 +28,21 @@
 										<div class="section text-center">
 
 											<h4 class="mb-4 pb-3">Reset your password.</h4>
-											<p>An e-mail will be send to you with instructions on how to reset your password </p>
+											
+											<?php
+                                                          //session_start();
+														  if(isset($_GET['statusEmail'])){
+															if($_GET['statusEmail'] == "success"){
+																echo "<p>An e-mail will be send to you with instructions on how to reset your password </p>";
+															}else if($_GET['statusEmail'] == "emailed"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">We emailed you a password reset link</p>';
+															}else if($_GET['statusEmail'] == "error"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">Something went wrong. #1</p>';
+															}else if($_GET['statusEmail'] == "noEmail"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">No Email Found</p>';
+															}
+														}
+                                                        ?>
                                             <form action= "..\case1\processFBS.php" method="POST">
 											<div class="form-group">
 												<input type="text" name="userEmail" class="form-style" placeholder="Enter your e-mail address" autocomplete="off">

@@ -28,37 +28,63 @@
 										<div class="section text-center">
 
 											<h4 class="mb-4 pb-3">Reset your password.</h4>
-											<p>An e-mail will be send to you with instructions on how to reset your password </p>
-                                            <?php
-                                                $selector = $_GET["selector"];
-                                                $validator = $_GET["validator"];
-                                                
-                                                //echo $selector;
-                                                //echo $validator;
-                                                if(empty($selector) || empty($validator)){
-                                                    echo 'could not validate your request';
-                                                }else{
-                                                    if(ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false ){
-                                                        ?>
+											<p> </p>
+
                                                         <form action= "..\case1\processFBS.php" method="post">
+                                                        <?php
+                                                          //session_start();
+                                                          //$status = $_SESSION["status"];
+                                                          //echo '<h4 class="mb-4 pb-3" style="color:red">'.$status.'</h4>';
+                                                          $email = $_GET['email'];
+                                                          $token = $_GET['vkey'];
+
+                                                          if(isset($_GET['statusReset'])){
+															if($_GET['statusReset'] == "normal"){
+																//echo "<p>Please Enter your new password </p>";
+															}else if($_GET['statusReset'] == "Success"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">New Password Successfully Update!</p>';
+															}else if($_GET['statusReset'] == "fail"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">Fail to change the password</p>';
+															}else if($_GET['statusReset'] == "passwordNotSame"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">Password was not same!</p>';
+															}else if($_GET['statusReset'] == "InvalidToken"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">Invalid Token</p>';
+															}else if($_GET['statusReset'] == "MantedoryField"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">All field are mantedory</p>';
+															}else if($_GET['statusReset'] == "errorToken"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">Error Token</p>';
+															}
+														}
+                                                        ?>
                                                         <div class="form-group">
-                                                            <input type="Hidden" name="selector" value="<?php echo $selector ?>"class="form-style" placeholder="" autocomplete="off">
+                                                            <?php 
+
+                                                            echo '<input type="text" name="email" value ='.$email.' class="form-style"  autocomplete="off" readonly>';
+                                                            ?>
+                                                            <i class="input-icon uil uil-user"></i>
+                                                        </div>
+                                                        
+                                                        <div class="form-group mt-2">
+                                                            <?php 
+
+                                                            echo '<input type="hidden" name="token" value ='.$token.' class="form-style"  autocomplete="off" readonly>';
+                                                            ?>
+                                                            <i class="input-icon uil uil-user"></i>
+                                                        </div>	
+
+                                                        <div class="form-group mt-2">
+                                                            <input type="text" name="password" class="form-style" placeholder="Enter a new password" autocomplete="off">
                                                             <i class="input-icon uil uil-at"></i>
-                                                            <input type="Hidden" name="validator" value="<?php echo $validator ?>"class="form-style" placeholder="" autocomplete="off">
-                                                            <i class="input-icon uil uil-at"></i>
-                                                            <input type="password" name="pwd" class="form-style" placeholder="Enter a new password" autocomplete="off">
-                                                            <i class="input-icon uil uil-at"></i>
-                                                            <input type="password" name="pwd-repeat" class="form-style" placeholder="Repeat new password" autocomplete="off">
-                                                            <i class="input-icon uil uil-at"></i>
-											            </div>	
-                                                        <input type="submit" value="RECEIVE NEW PASSWORD BY MAIL" class="btn mt-4" name="reset-password-submit">
+                                                        </div>	
+                                                        <div class="form-group mt-2">
+                                                            <input type="password" name="re-password" class="form-style" placeholder="Repeat new password" autocomplete="off">
+                                                            <i class="input-icon uil uil-lock-alt"></i>
+                                                        </div>	
+                                                        <input type="submit" value="Change Password" class="btn mt-4" name="reset-password-submit">
+                                                        <p class="mb-0 mt-4 text-center"><a href="..\LoginSignupPage\index.php" class="link">Go back to login page?</a></p>
 
                                                     </form>
-                                                        <?php
-                                                    }
 
-                                                }
-                                            ?>
                                             <!--
                                             <form action= "..\case1\processFBS.php" method="POST">
 											<div class="form-group">

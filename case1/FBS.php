@@ -770,5 +770,34 @@ function bookingHistoryByUserName($userName) {
     
 }
 
+function send_password_reset($get_email,$token){
+    $email = $get_email;
+    //echo $email;
+    //echo $username;
+    $subject = 'Reset your password for UTMKL Facility account';
+
+
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: cheesen987@gmail.com';
+
+
+    $message = '<p>We received a password reset request. The link to reset your password</p>';
+    $message .= '<p>Here is your password reset link: </br>';
+    $message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/ForgotPassword/create-new-password.php?vkey=$token&email=$get_email&statusReset=normal>Register Account<a/>";
+    //$message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
+    //C:\wamp64\www\masterprofile\SD_SEC01_G05_01\ForgotPassword\create-new-password.php
+
+    //if (mail($email,$subject,$message)) {
+
+    if (mail($email,$subject,$message,$headers)) {
+            echo "<h4>Thank you for Booking. Please check your email at $email.</h4>";
+    } else {
+            echo "<h4>Can't send email to $email</h4>";
+    }
+}
+
 
 ?>

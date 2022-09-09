@@ -66,15 +66,9 @@ else if(isSet($_POST['updateFacilityButton'])) {
 
 }else if(isSet($_POST['forgotpassword'])){
     echo 'in forgotpassword';////////////////////////////////////////////////////////////////////////////////////
-    
-    $selector = bin2hex(random_bytes(8));
-    $token = random_bytes(32);
-
-    $url = "http://localhost/masterprofile/SD_SEC01_G05_01/ForgotPassword/create-new-password.php?selector=" .$selector . "&validator=". bin2hex($token);
-    $expires = date("U") + 1800;
+    session_start();
 
     $userEmail = $_POST["userEmail"];
-    //print_r($_POST);
     echo $userEmail;
 
             $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
@@ -85,61 +79,39 @@ else if(isSet($_POST['updateFacilityButton'])) {
             }else{
                 echo "Connected to database";
             }
+            
+            $findEmail = mysqli_real_escape_string($con, $userEmail);
+            $token = md5(rand());
 
-            $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
-            $stmt = mysqli_stmt_init($con);
-            if(!mysqli_stmt_prepare($stmt,$sql)){
-                echo 'Error :D';
-                exit();
+            $check_email = "SELECT userId FROM user WHERE userId = '$findEmail' LIMIT 1 ";
+            echo $check_email;
+            $check_email_run = mysqli_query($con, $check_email);
+
+            if(mysqli_num_rows($check_email_run) > 0){
+
+                $row =  mysqli_fetch_array($check_email_run);
+                $get_email = $row['userId'];
+
+                $update_token = "UPDATE user SET vkey = '$token' WHERE userId = '$get_email' LIMIT 1";
+                $update_token_run = mysqli_query($con, $update_token);
+
+                if($update_token_run){
+                    send_password_reset($get_email,$token);
+                    //$_SESSION['statusEmail'] = "We emailed you a password reset link";
+                    header("Location:../ForgotPassword/resetpassword.php?statusEmail=emailed");
+                    exit(0);
+                }else{
+                    //$_SESSION['statusEmail'] = "Something went wrong. #1";
+                    header("Location:../ForgotPassword/resetpassword.php?statusEmail=error");
+                    
+                    exit(0);
+                }
             }else{
-                mysqli_stmt_bind_param($stmt,"s",$userEmail);
-                mysqli_stmt_execute($stmt);
+                //$_SESSION['statusEmail'] = "No Email Found";
+                header("Location:../ForgotPassword/resetpassword.php?statusEmail=noEmail");
+                exit(0);
             }
 
-            $sql2 = "INSERT INTO pwdReset (pwdResetEmail, pwdResetSelector,pwdResetToken,pwdResetExpires) VALUES (?,?,?,?);";
-            $stmt = mysqli_stmt_init($con);
-            if(!mysqli_stmt_prepare($stmt,$sql2)){
-                echo 'Error :D';
-                exit();
-            }else{
-                $hashedToken = password_hash($token,PASSWORD_DEFAULT);
-                echo "this is the hashed token : <br>".$hashedToken;
-                mysqli_stmt_bind_param($stmt,"ssss",$userEmail,$selector,$hashedToken,$expires);
-                mysqli_stmt_execute($stmt);
-            }
-
-            mysqli_stmt_close($stmt);
-            mysqli_close($con);
-
-            //sendBookEmailToCustomer();
-
-
-                    $email = $userEmail;
-                    //echo $email;
-                    //echo $username;
-                    $subject = 'Reset your password for UTMKL Facility account';
-
-
-
-                    // To send HTML mail, the Content-type header must be set
-                    $headers  = 'MIME-Version: 1.0' . "\r\n";
-                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-                    $headers .= 'From: cheesen987@gmail.com';
-
-
-                    $message = '<p>We received a password reset request. The link to reset your password</p>';
-                    $message .= '<p>Here is your password reset link: </br>';
-                    $message .= '<a href ="'. $url.'">'.$url.'</a></p>';
-
-                    //if (mail($email,$subject,$message)) {
-
-                    if (mail($email,$subject,$message,$headers)) {
-                            echo "<h4>Thank you for Booking. Please check your email at $email.</h4>";
-                    } else {
-                            echo "<h4>Can't send email to $email</h4>";
-                    }
-
-            header('Location:..\ForgotPassword\forgotpassword.php?reset=success');
     //sendConfirmationEmail();
     //header('Location:..\StudentPage');
 }
@@ -292,104 +264,85 @@ else if(isSet($_POST['Scase3'])){
 }
 
 if(isSet($_POST['reset-password-submit'])){
-    
-    $selector = $_POST["selector"];
-    $validator = $_POST["validator"];
-    $password = $_POST["pwd"];
-    $passwordRepeat = $_POST["pwd-repeat"];
+    echo "in reset password";
+    session_start(); 
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+   $repeatPassword = $_POST['re-password'];
+   $token = $_POST['token'];
+   echo $email;
+   echo "<p></p>";
+   echo $password;
+   echo "<p></p>";
+   echo $repeatPassword;
+   echo "<p></p>";
+   echo $token;
 
-    if(empty($password) || empty($passwordRepeat)){
-        echo 'could not validate your request';
-        header('Location:..\ForgotPassword\create-new-password.php?newpwd=empty');
-        exit();
-    }else if($password != $passwordRepeat){
+   $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
-        header('Location:..\ForgotPassword\create-new-password.php?newpwd=pwdnotsame');
-        exit();
-    }
-
-    $currentDate = date("U");
-
-    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
-
-    if(mysqli_connect_errno()){
-        echo 'fail to connect to mysql'.mysqli_connect_error();
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
-    }else{
-        echo 'connected to mysql';
     }
 
-    $sql = "SELECT * FROM pwdReset WHERE pwdResetSelector=? AND pwdResetExpires >= ?";
-    $stmt = mysqli_stmt_init($con);
-            if(!mysqli_stmt_prepare($stmt,$sql)){
-                echo 'Error database:D 1';
-                exit();
-            }else{
-                mysqli_stmt_bind_param($stmt,"s",$selector);
-                mysqli_stmt_execute($stmt);
+    $email = mysqli_real_escape_string($con,$_POST['email']);
+    $new_password = mysqli_real_escape_string($con,$_POST['password']);
+    $confirm_password = mysqli_real_escape_string($con,$_POST['re-password']);
+    $token = mysqli_real_escape_string($con,$_POST['token']);
 
-                $result = mysqli_stmt_get_result($stmt);
-                if(!$row = mysqli_fetch_assoc($result)){
-                    echo "You need to re-submit your reset request.";
-                    exit();
-                }else{
-                    $tokenBin = hex2bin($validator);
-                    $tokenCheck = password_verify($tokenBin, $row["pwdResetToken"]);
+    if(!empty($token)){
 
-                    if ($tokenCheck === false){
-                        echo "Your need to re-submit your reset request";
-                        exit();
-                    }else if($tokenCheck === true){
-                        $tokenEmail = $row['pwdResetEmail'];
-                        $sql = "SELECT * FROM user WHERE userId =?;";
-                        $stmt = mysqli_stmt_init($con);
-                        if(!mysqli_stmt_prepare($stmt,$sql)){
-                            echo 'Error database:D 2';
-                            exit();
-                        }else{
-                            mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
-                            mysqli_stmt_execute($stmt);
-                            $result = mysqli_stmt_get_result($stmt);
-                            if(!$row = mysqli_fetch_assoc($result)){
-                                echo "There was an error";
-                                exit();
-                            }else{
-                                $sql ="UPDATE user SET password=? WHERE userId=?";
-                                $stmt = mysqli_stmt_init($con);
-                                if(!mysqli_stmt_prepare($stmt,$sql)){
-                                    echo 'Error database:D 3';
-                                    exit();
-                                }else{
-                                    $newPwsHash = password_hash($password,PASSWORD_DEFAULT);
-                                    mysqli_stmt_bind_param($stmt,"ss",$newPwsHash,$tokenEmail);
-                                    mysqli_stmt_execute($stmt);
+        if(!empty($email) && !empty($new_password) && !empty($confirm_password)){
 
-                                    $sql ="DELETE FROM pwdReset WHERE pwdResetEmail=?";
-                                    $stmt = mysqli_stmt_init($con);
-                                    if(!mysqli_stmt_prepare($stmt,$sql)){
-                                        echo 'Error database:D 4';
-                                        exit();
-                                    }else{
-                                        
-                                        mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
-                                        mysqli_stmt_execute($stmt);
-                                        header("Location: .. /LoginSignupPage/Signup.php?newpwd=passwordupdated");
-
-                                        
-                                         }
-                                    
-                                    }
-                            }
-
-
-                        }
-
-                    }
-
-                    }
+            $check_token = "SELECT vkey FROM user WHERE vkey = '$token'";
+            $check_token_run = mysqli_query($con,$check_token);
+            if(mysqli_num_rows($check_token_run) > 0){
                 
+                if($new_password == $confirm_password){
+
+                    $update_password = "UPDATE user SET password = '$new_password' WHERE vkey = '$token' LIMIT 1";
+                    $update_password_run = mysqli_query($con,$update_password);
+
+                    if($update_password_run){
+                        $_SESSION['status'] = "New Password Successfully Update!";
+                        header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=Success");
+                        exit(0);
+                    }else{
+                        $_SESSION['status'] = "Fail to change the password";
+                        header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=fail");
+                        exit(0);
+                        
+                    }
+
+                }else{
+                    $_SESSION['status'] = "Password was not same!";
+                    header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=passwordNotSame");
+                    exit(0);
+                    
                 }
+
+
+            }else{
+                $_SESSION['status'] = "Invalid Token";
+                header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=InvalidToken");
+                exit(0);
+                
             }
+
+        }else{
+            $_SESSION['status'] = "All field are mantedory";
+            header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=MantedoryField");
+            exit(0);
+            
+        }
+
+    }else{
+        $_SESSION['status'] = "Error Token";
+        header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=errorToken");
+        exit(0);
+        
+    }
+}
 
 
 function sendBookEmailToCustomer()

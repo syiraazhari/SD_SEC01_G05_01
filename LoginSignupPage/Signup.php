@@ -91,7 +91,7 @@
 											</div>
 												<input type="submit" value="Login" class="btn mt-4" name="login1">
                                             </form>
-                            				<p class="mb-0 mt-4 text-center"><a href="..\ForgotPassword\forgotpassword.php" class="link">Forgot your password?</a></p>
+                            				<p class="mb-0 mt-4 text-center"><a href="..\ForgotPassword\resetpassword.php?statusEmail=success" class="link">Forgot your password?</a></p>
 				      					</div>
 			      					</div>
 			      				</div>
