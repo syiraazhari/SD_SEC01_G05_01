@@ -35,11 +35,11 @@
 															if($_GET['statusEmail'] == "success"){
 																echo "<p>An e-mail will be send to you with instructions on how to reset your password </p>";
 															}else if($_GET['statusEmail'] == "emailed"){
-																echo '<p class="mb-4 pb-3" style="color:yellow">We emailed you a password reset link</p>';
+																echo '<p class="mb-4 pb-3">We emailed you a password reset link</p>';
 															}else if($_GET['statusEmail'] == "error"){
-																echo '<p class="mb-4 pb-3" style="color:yellow">Something went wrong. #1</p>';
+																echo '<p class="mb-4 pb-3" >Something went wrong. #1</p>';
 															}else if($_GET['statusEmail'] == "noEmail"){
-																echo '<p class="mb-4 pb-3" style="color:yellow">No Email Found</p>';
+																echo '<p class="mb-4 pb-3" >No Email Found</p>';
 															}
 														}
                                                         ?>
@@ -51,6 +51,7 @@
 											
 												<input type="submit" value="RECEIVE NEW PASSWORD BY MAIL" class="btn mt-4" name="forgotpassword">
                                             </form>
+											<p class="mb-0 mt-4 text-center"><a href="..\LoginSignupPage\index.php" class="link">Go back to login page?</a></p>
 											<?php
 											
 												if(isset($_GET['reset'])){

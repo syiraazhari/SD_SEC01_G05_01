@@ -44,9 +44,17 @@
 											<?php
 												if(isset($_GET['error'])){
 													if($_GET['error'] == "falseemailorpassword"){
-														echo '<h5 class="mb-4 pb-3" style="color:red">Email or password was invalid</h5>';
+														echo '<div class="form-group mt-2">';
+														echo '<h5 class="mb-4 pb-3" >Email Or Password Was Invalid</h5>';
+														echo '</div>';
 													}else if($_GET['error'] == "noverify"){
-														echo '<h5 class="mb-4 pb-3" style="color:red">Your email havent done verification</h5>';
+														echo '<div class="form-group mt-2">';
+														echo '<h5 class="mb-4 pb-3" >Your Email Havent Done Verification</h5>';
+														echo '</div>';
+													}else if($_GET['error'] == "noEmail"){
+														echo '<div class="form-group mt-2">';
+														echo '<h5 class="mb-4 pb-3" >Invalid Email</h5>';
+														echo '</div>';
 													}
 												}
 											?>

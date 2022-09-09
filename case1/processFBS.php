@@ -187,31 +187,38 @@ else if(isSet($_POST['register'])){
     $userQry = userLogin($userId);
     $userRecord =mysqli_fetch_assoc($userQry);
     $userEmail = $_POST['username'];
-    
+    echo $userEmail;
     $userInfoQry = getListOfUserCustomer($userEmail);
     $userInfoRecord =mysqli_fetch_assoc($userInfoQry);
-    
-    print_r($_POST);
-    if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')&& ($userRecord['verified'] == 1)){
 
-        header('Location:..\StudentPage');
-    }else if (($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Admin')&& ($userRecord['verified'] == 1)){
+    if(($userRecord) > 0){
+        print_r($_POST);
+        if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')&& ($userRecord['verified'] == 1)){
 
-        header('Location:..\Bootstrap\NiceAdmin');
-        
-    }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')&& ($userRecord['verified'] == 1)){
-        header('Location:..\StaffPage');
-    }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] != $userRecord['password'])){
-        
-        header('Location:..\LoginSignupPage\index.php?error=falseemailorpassword');
-    }else if($userRecord['verified'] == 0){
-        
-        header('Location:..\LoginSignupPage\index.php?error=noverify');
-    }else{
+            header('Location:..\StudentPage');
+        }else if (($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Admin')&& ($userRecord['verified'] == 1)){
 
-        header('Location:..\LoginSignupPage\index.php');
-        
+            header('Location:..\Bootstrap\NiceAdmin');
+            
+        }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')&& ($userRecord['verified'] == 1)){
+            header('Location:..\StaffPage');
+        }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] != $userRecord['password'])){
+            
+            header('Location:..\LoginSignupPage\index.php?error=falseemailorpassword');
+        }else if($userRecord['verified'] == 0){
+            
+            header('Location:..\LoginSignupPage\index.php?error=noverify');
+        }else{
+
+            header('Location:..\LoginSignupPage\index.php');
+            
+        }
+
+    }else {
+
+        header('Location:..\LoginSignupPage\index.php?error=noEmail');
     }
+    
     
 }else if(isSet($_POST['home'])){  //CUSTOMER HEADERRRRRRRRRRRRRRRRRRRR
 
