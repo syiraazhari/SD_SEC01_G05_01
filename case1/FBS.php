@@ -187,7 +187,7 @@ function addRegisterStaff(){
     $headers .= 'From: cheesen987@gmail.com';
 
     $message = ' ';
-    $message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
+    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
 
     //if (mail($email,$subject,$message)) {
@@ -260,7 +260,7 @@ function addRegister(){
     $headers .= 'From: cheesen987@gmail.com';
 
     $message = ' ';
-    $message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='$vkey'>Register Account<a/>";
+    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/LoginSignupPage/verify.php?vkey='$vkey'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
 
     //if (mail($email,$subject,$message)) {
@@ -786,7 +786,7 @@ function send_password_reset($get_email,$token){
 
     $message = '<p>We received a password reset request. The link to reset your password</p>';
     $message .= '<p>Here is your password reset link: </br>';
-    $message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/ForgotPassword/create-new-password.php?vkey=$token&email=$get_email&statusReset=normal>Register Account<a/>";
+    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/ForgotPassword/create-new-password.php?vkey=$token&email=$get_email&statusReset=normal>Register Account<a/>";
     //$message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //C:\wamp64\www\masterprofile\SD_SEC01_G05_01\ForgotPassword\create-new-password.php
 
