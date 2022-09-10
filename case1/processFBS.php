@@ -198,7 +198,7 @@ else if(isSet($_POST['register'])){
             header('Location:..\StudentPage');
         }else if (($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Admin')&& ($userRecord['verified'] == 1)){
 
-            header('Location:..\Bootstrap\NiceAdmin');
+            header('Location:..\NiceAdmin\homepage.php');
             
         }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')&& ($userRecord['verified'] == 1)){
             header('Location:..\StaffPage');
