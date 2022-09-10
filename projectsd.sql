@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 05, 2022 at 12:05 PM
+-- Generation Time: Sep 10, 2022 at 08:05 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -179,9 +179,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `createdate`) VALUES
+('admin', 'admin', 'Admin', 'fcb352813a49608905deef5404d55109', 1, '2022-09-06 12:12:41.245271'),
+('chee.sen987@gmail.com', 'lol', 'Staff', '3bf5a045a6bf31b3b258b3e8838baefc', 1, '2022-09-09 16:30:56.812795'),
 ('cheesen987@gmail.com', 'Lone#2002', 'Student', '6fbd07a60045e64687d60ff6771bed1e', 1, '2022-09-04 06:43:10.036086'),
+('lol@hotmail.com', 'admin', 'Staff', '6c89d978e6a9579e9236d9d16bc8d198', 0, '2022-09-06 12:17:39.760777'),
 ('lonely1233@hotmail.com', 'lonely1233', 'Staff', '2194d4b41f5ba23cea43762dedf1ef4c', 0, '2022-09-04 03:31:44.190718'),
-('tancheesen123@hotmail.com', 'staff123', 'Staff', '2c9ffcf1168ffd179a0eec3c40143055', 1, '2022-09-04 04:48:34.411488'),
+('tancheesen123@hotmail.com', 'hoho', 'Staff', '11aafa02d8ea66933a5a5c524b6a78e2', 1, '2022-09-05 14:22:40.424895'),
 ('ydk1421@gmail.com', 'staff1', 'Staff', '095a1f52c80279b6d5f80ff5745a0de4', 0, '2022-09-04 14:14:18.177735');
 
 -- --------------------------------------------------------
@@ -229,8 +232,10 @@ INSERT INTO `userinfostaff` (`MatricNum`, `name`, `userId`, `phoneNum`) VALUES
 ('TEST01', 'TEST01', 'TEST01@hotmail.com', '01320'),
 ('testing', 'testing', 'cheesen987@gmail.com', '12312'),
 ('qweqwe', 'qweqwe', 'cheesen987@gmail.com', '132123'),
-('A20dw1231231', 'Tan Chee Sen', 'tancheesen123@hotmail.com', '1230123'),
-('staff1', 'Yap Deh Kai', 'ydk1421@gmail.com', '01159908615');
+('staff1', 'Yap Deh Kai', 'ydk1421@gmail.com', '01159908615'),
+('lonely123', 'lonely', 'lol@hotmail.com', '123'),
+('admin', 'Admin', 'admin123@hotmail.com', '123'),
+('A20DW312331231', 'lol', 'chee.sen987@gmail.com', '0123123123');
 
 --
 -- Constraints for dumped tables
