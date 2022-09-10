@@ -27,7 +27,7 @@
 									<div class="center-wrap">
 										<div class="section text-center">
 
-											<h4 class="mb-4 pb-3">Reset your password.</h4>
+											<h4 class="mb-4 pb-3">Reset your password</h4>
 											<p> </p>
 
                                                         <form action= "..\case1\processFBS.php" method="post">
@@ -73,8 +73,8 @@
                                                         </div>	
 
                                                         <div class="form-group mt-2">
-                                                            <input type="text" name="password" class="form-style" placeholder="Enter a new password" autocomplete="off">
-                                                            <i class="input-icon uil uil-at"></i>
+                                                            <input type="password" name="password" class="form-style" placeholder="Enter a new password" autocomplete="off">
+                                                            <i class="input-icon uil uil-lock-alt"></i>
                                                         </div>	
                                                         <div class="form-group mt-2">
                                                             <input type="password" name="re-password" class="form-style" placeholder="Repeat new password" autocomplete="off">
