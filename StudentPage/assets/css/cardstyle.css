@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #ff4656db;
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif, system-ui, -apple-system;
+  font-size: 1.6rem;
+  background: #171d20;
+  color: #fff;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  cursor: url(assets/cursors/panda.png), auto !important;
+}
+
+h3 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ff4656;
+}
+
+.card {
+  max-width: 300px;
+  background: #1e2529;
+  border: 1px solid #343637;
+  position: relative;
+  cursor: url(assets/cursors/hover-panda.png), pointer !important;
+}
+.card .image-container {
+  width: 100%;
+  height: 170px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: #ff4656d8;
+  mix-blend-mode: multiply;
+  transform: translateX(-120%) skewX(-10deg);
+  transition: transform 0.3s ease-out;
+}
+
+.card-footer {
+  padding: 2rem 2rem 3.5rem 2rem;
+  color: rgb(236, 232, 225);
+  transition: all 0.3s ease;
+}
+
+.card-footer h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.card-footer span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #5a6469;
+}
+
+.card-footer p {
+  font-size: 1.5rem;
+  line-height: 25px;
+}
+
+.read-more {
+  font-weight: 500;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.read-more span {
+  display: block;
+  margin-left: 0.4rem;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .read-more {
+  color: rgb(56, 62, 58);
+}
+.card:hover .read-more span {
+  transform: translateX(5px);
+}
+.card:hover .image-container::before {
+  transform: translateX(0) skewX(-10deg) scaleX(1.3);
+}
+
+.card:hover .card-footer {
+  background: #ffffff;
+  color: rgb(56, 62, 58);
+}
+
+.card:hover span {
+  color: #ff4656;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(to right, #ff4656 50%, rgb(56, 62, 58) 50%);
+  background-size: 200%;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  transition: all 0.5s;
+}
+
+.card:hover::before {
+  background-position: 0%;
+}
