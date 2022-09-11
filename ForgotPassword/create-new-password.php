@@ -42,7 +42,7 @@
 															if($_GET['statusReset'] == "normal"){
 																//echo "<p>Please Enter your new password </p>";
 															}else if($_GET['statusReset'] == "Success"){
-																echo '<p class="mb-4 pb-3" style="color:yellow">New Password Successfully Update!</p>';
+																echo '<p class="mb-4 pb-3" style="color:yellow">Your Password has been reset !</p>';
 															}else if($_GET['statusReset'] == "fail"){
 																echo '<p class="mb-4 pb-3" style="color:yellow">Fail to change the password</p>';
 															}else if($_GET['statusReset'] == "passwordNotSame"){
@@ -80,7 +80,7 @@
                                                             <input type="password" name="re-password" class="form-style" placeholder="Repeat new password" autocomplete="off">
                                                             <i class="input-icon uil uil-lock-alt"></i>
                                                         </div>	
-                                                        <input type="submit" value="Change Password" class="btn mt-4" name="reset-password-submit">
+                                                        <input type="submit" value="Reset Password" class="btn mt-4" name="reset-password-submit">
                                                         <p class="mb-0 mt-4 text-center"><a href="..\LoginSignupPage\index.php" class="link">Go back to login page?</a></p>
 
                                                     </form>
