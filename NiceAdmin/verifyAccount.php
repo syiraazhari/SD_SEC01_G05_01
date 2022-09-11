@@ -569,18 +569,19 @@ include "..\case1\FBS.php";
                     echo'</tr>';
 
                     }else{
+                      echo '<form action= "..\case1\processFBS.php" method="POST">';
                       echo'<tr>';
                     echo '<th scope ="row">'.$count.'</th>';
-                    echo '<td>'.($acc['userId']).'</td>';
-                    echo '<td>'.($acc['password']).'</td>';
-                    echo '<td>'.($acc['userType']).'</td>';
-                    echo '<td>'.($acc['vkey']).'</td>';
-                    echo '<td>'.$acc['verified'].'</td>';
-                    echo '<td>'.$acc['createdate'].'</td>';
-                    echo '<td><button type="button" class="btn btn-success"><i class="bi bi-check-circle"></i></button></td>';
-                    echo '<td><button type="button" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button></td>';
+                    echo '<td><input type="hidden" name="email" value='.($acc['userId']).' placeholder="Your Email" autocomplete="off">'.($acc['userId']).'</td>';
+                    echo '<td name = "password" >'.($acc['password']).'</td>';
+                    echo '<td name = "userType" >'.($acc['userType']).'</td>';
+                    echo '<td name = "vkey" >'.($acc['vkey']).'</td>';
+                    echo '<td name = "verified" >'.$acc['verified'].'</td>';
+                    echo '<td name = "createdate" >'.$acc['createdate'].'</td>';
+                    echo '<td><button type="submit" name="approveVerify" class="btn btn-success"><i class="bi bi-check-circle"></i></button></td>';
+                    echo '<td><button type="submit" name="disapproveVerify" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button></td>';
                     echo'</tr>';
-
+                      echo '</form>';
                     }
                     
                     $count++;

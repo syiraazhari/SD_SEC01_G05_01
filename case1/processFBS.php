@@ -148,7 +148,7 @@ else if(isSet($_POST['register'])){
     //echo 'in register';///////////////////////////////////A20Dw1114/////////////////////////////////////////////////
     $name = $_POST['name'];
     $MatricNum = $_POST['MatricNum'];
-    $userId =$_POST['userId'];
+    $userId =$_POST['userId']; // email
     $password =$_POST['password'];
     $phoneNum = $_POST['phoneNum'];
 
@@ -156,14 +156,21 @@ else if(isSet($_POST['register'])){
     if(empty($name) || empty($MatricNum) ||empty($userId) ||empty($password) ||empty($phoneNum)){
         header("Location:../LoginSignupPage/Signup.php?error=emptyfields&userId=".$userId."&password=".$password);
         exit();
+    }else if(strlen($password) >= 13 || strlen($password) <= 7){
+        header("Location:../LoginSignupPage/Signup.php?error=passwordErrors&userId=".$userId."&password=".$password);
+        exit();
+    }else if(strlen($phoneNum) > 11 ||  strlen($phoneNum) < 10){
+        header("Location:../LoginSignupPage/Signup.php?error=phoneNumErrors&userId=".$userId."&password=".$password);
+        exit();
+
     }else{
-        addRegisterStaff();
+        //addRegisterStaff();
         //sendConfirmationEmail($userId,$vkey);
-        header('Location:..\LoginSignupPage\Thankyoupage.php');
+        //header('Location:..\LoginSignupPage\Thankyoupage.php');
     }
-    //addRegisterStaff();
+    addRegisterStaff();
     //sendConfirmationEmail();
-    //header('Location:..\StaffPage');
+    header('Location:..\StaffPage');
 }else if(isSet($_POST['registerbutton'])){
     
     
@@ -177,7 +184,7 @@ else if(isSet($_POST['register'])){
     
     session_start(); 
 
-    $_SESSION['username']=$_POST['username'];  
+    $_SESSION['username']=$_POST['username'];  //username = email
     $_SESSION['password']=$_POST['password'];  
     $_SESSION['curTime']=date('G:i:sA',strtotime('+8 hours'));//GMT 8
 
@@ -268,6 +275,17 @@ else if(isSet($_POST['Scase3'])){
     
     header('Location:facilityBookingForm.php');
 
+}else if(isSet($_POST['approveVerify'])){
+    $email = $_POST['email'];
+    echo $email;
+    echo '  Approve';
+    //header('Location:../NiceAdmin/verifyAccount.php');
+
+
+}else if(isSet($_POST['disapproveVerify'])){
+    //$_POST['username']
+    echo 'disapprove';
+    //header('Location:../NiceAdmin/verifyAccount.php');
 }
 
 if(isSet($_POST['reset-password-submit'])){

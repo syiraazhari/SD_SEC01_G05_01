@@ -35,13 +35,18 @@
 											<?php
 												if(isset($_GET['error'])){
 													if($_GET['error'] == "emptyfields"){
-														echo '<h5 class="mb-4 pb-3" style="color:red">Please Fill in all the field!!!!!</h5>';
+														echo '<h6 class="mb-4 pb-3" style="color:red">Please Fill in all the field!!!!!</h6>';
+													}else if($_GET['error'] == "passwordErrors"){
+														echo '<h6 class="mb-4 pb-3" style="color:red">Your Password number must between 8 - 12 alphabet or number.</h6>';
+													}else if($_GET['error'] == "phoneNumErrors"){
+														echo '<h6 class="mb-4 pb-3" style="color:red">Your Phone number must between 10 - 11 digit.</h6>';
 													}
 												}
+												
 											?>
 											<?php
 												if(isset($_GET['newpwd'])){
-													if($_GET['newpwd'] == "passwordupdated"){
+													if($_GET['newpwd'] == "passwordError"){
 														echo '<h5 class="mb-4 pb-3" style="color:red">Your password has been reset</h5>';
 													}
 												}
@@ -49,6 +54,7 @@
 											<div class="form-group">
 												<input type="text" name="name" class="form-style" placeholder="Your Full Name" autocomplete="off"><!-- name-->
 												<i class="input-icon uil uil-user"></i>
+												
 											</div>
                                                 <div class="form-group mt-2">
                                                     <input type="text" name="MatricNum" class="form-style" placeholder="Your Staff ID / Matric Number" autocomplete="off"><!-- Matricnum-->
@@ -64,9 +70,12 @@
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="password" name="password" class="form-style" placeholder="Your Password" autocomplete="off"><!-- password-->
+											<input type="password" name="password" class="form-style" placeholder="Your Password" autocomplete="off"><!-- password-->';
+											
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
+
+											
                                                 <input type="submit" value="Register As Staff" class="btn mt-4" name="registerstaff"><!-- Button-->
                                                 <input type="submit" value="Register As Student" class="btn mt-4" name="register"><!-- Button-->
                                             </form>
