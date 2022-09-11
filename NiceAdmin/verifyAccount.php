@@ -390,13 +390,13 @@ include "..\case1\FBS.php";
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="tables-general.html" class="active">
-              <i class="bi bi-circle"></i><span>General Tables</span>
+              <i class="bi bi-circle"></i><span>Verify Account</span>
             </a>
           </li>
           <li>
@@ -462,6 +462,11 @@ include "..\case1\FBS.php";
         </a>
       </li><!-- End Profile Page Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link "  href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Verify Account</span>
+        </a>
+      </li><!-- End Tables Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.html">
           <i class="bi bi-question-circle"></i>
@@ -541,6 +546,8 @@ include "..\case1\FBS.php";
                       <th scope="col">Verify Key</th>
                       <th scope="col">Verify Status</th>
                       <th scope="col">Create Date</th>
+                      <th scope="col">Approve</th>
+                      <th scope="col">Disapprove</th>
                     </tr>
                   </thead>';
                 while($acc = mysqli_fetch_assoc($listOfAccount))
@@ -548,7 +555,7 @@ include "..\case1\FBS.php";
                     //$listOfPassword = getListOfpassword($row['userId']);
                    // $row2 = mysqli_fetch_assoc($listOfPassword);
                     
-
+                    if($acc['userType'] == 'Admin'){
                     echo'<tr>';
                     echo '<th scope ="row">'.$count.'</th>';
                     echo '<td>'.($acc['userId']).'</td>';
@@ -557,7 +564,25 @@ include "..\case1\FBS.php";
                     echo '<td>'.($acc['vkey']).'</td>';
                     echo '<td>'.$acc['verified'].'</td>';
                     echo '<td>'.$acc['createdate'].'</td>';
+                    echo '<td></td>';
+                    echo '<td></td>';
                     echo'</tr>';
+
+                    }else{
+                      echo'<tr>';
+                    echo '<th scope ="row">'.$count.'</th>';
+                    echo '<td>'.($acc['userId']).'</td>';
+                    echo '<td>'.($acc['password']).'</td>';
+                    echo '<td>'.($acc['userType']).'</td>';
+                    echo '<td>'.($acc['vkey']).'</td>';
+                    echo '<td>'.$acc['verified'].'</td>';
+                    echo '<td>'.$acc['createdate'].'</td>';
+                    echo '<td><button type="button" class="btn btn-success"><i class="bi bi-check-circle"></i></button></td>';
+                    echo '<td><button type="button" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button></td>';
+                    echo'</tr>';
+
+                    }
+                    
                     $count++;
                 }
                 }else{

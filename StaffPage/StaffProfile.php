@@ -106,7 +106,7 @@ while($row = mysqli_fetch_assoc($listOfUser))
     $row2 = mysqli_fetch_assoc($listOfPassword);
 
     echo'<tr>';
-    echo '<td>'.strtoupper($row['MatricNum']).'</td>';
+    echo '<td>'.strtoupper($row['staffId']).'</td>';
     echo '<td>'.strtoupper($row['name']).'</td>';
     echo '<td>'.($row2['userId']).'</td>';
     echo '<td>'.($row2['password']).'</td>';
