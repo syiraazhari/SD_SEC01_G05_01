@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 10, 2022 at 08:05 AM
+-- Generation Time: Sep 11, 2022 at 09:23 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -185,7 +185,7 @@ INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `creat
 ('lol@hotmail.com', 'admin', 'Staff', '6c89d978e6a9579e9236d9d16bc8d198', 0, '2022-09-06 12:17:39.760777'),
 ('lonely1233@hotmail.com', 'lonely1233', 'Staff', '2194d4b41f5ba23cea43762dedf1ef4c', 0, '2022-09-04 03:31:44.190718'),
 ('tancheesen123@hotmail.com', 'hoho', 'Staff', '11aafa02d8ea66933a5a5c524b6a78e2', 1, '2022-09-05 14:22:40.424895'),
-('ydk1421@gmail.com', 'staff1', 'Staff', '095a1f52c80279b6d5f80ff5745a0de4', 0, '2022-09-04 14:14:18.177735');
+('ydk1421@gmail.com', 'staff2', 'Staff', 'c1068d17eebb486a11091ca197066068', 1, '2022-09-10 12:04:28.886888');
 
 -- --------------------------------------------------------
 
