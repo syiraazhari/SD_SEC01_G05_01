@@ -578,10 +578,29 @@ include "..\case1\FBS.php";
                     echo '<td name = "vkey" >'.($acc['vkey']).'</td>';
                     echo '<td name = "verified" >'.$acc['verified'].'</td>';
                     echo '<td name = "createdate" >'.$acc['createdate'].'</td>';
-                    echo '<td><button type="submit" name="approveVerify" class="btn btn-success"><i class="bi bi-check-circle"></i></button></td>';
+                    echo '<td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
+                    echo '
+                  </button>
+                  <div class="modal fade" id="basicModal1" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Approve Verification</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Are u sure wanna approve the email?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" name="approveVerify" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Basic Modal-->';
                     echo '<td><button type="submit" name="disapproveVerify" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button></td>';
                     echo'</tr>';
-                      echo '</form>';
+                    echo '</form>';
                     }
                     
                     $count++;

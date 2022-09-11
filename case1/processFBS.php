@@ -127,9 +127,13 @@ else if(isSet($_POST['register'])){
         
         header("Location:../LoginSignupPage/Signup.php?error=emptyfields&userId=".$userId."&password=".$password);
         exit();
-    }else if(!filter_var($userId,FILTER_VALIDATE_EMAIL)){
-        header("Location:../LoginSignupPage/Signup.php?error=invalidmail&userId=".$userId."&password=".$password);
+    }else if(strlen($password) >= 13 || strlen($password) <= 7){
+        header("Location:../LoginSignupPage/Signup.php?error=passwordErrors&userId=".$userId."&password=".$password);
         exit();
+    }else if(strlen($phoneNum) > 11 ||  strlen($phoneNum) < 10){
+        header("Location:../LoginSignupPage/Signup.php?error=phoneNumErrors&userId=".$userId."&password=".$password);
+        exit();
+
     }else{
         addRegister();
         //sendConfirmationEmail($userId);
@@ -286,6 +290,8 @@ else if(isSet($_POST['Scase3'])){
     $email = $_POST['email'];
     updateDisapproveVerifyStatus($email);
     //echo 'disapprove';
+    header('Location:../NiceAdmin/verifyAccount.php');
+}else if(isSet($_POST['gobackVerify'])){
     header('Location:../NiceAdmin/verifyAccount.php');
 }
 
