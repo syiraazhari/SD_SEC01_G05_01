@@ -216,9 +216,10 @@ function displayTableHeader()
                                     <a href="contact-us.html"><span class="menu-text">Contact Us</span></a>
                                 </li>
                                 <li class="has-children">
-                                    <a class="active" href="StaffProfile.php"><span class="menu-text">Profile</span></a>
+                                    <a class="active" href=""><span class="menu-text">Profile</span></a>
                                     <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                     <ul class="sub-menu">
+                                        <li><a href="StaffProfile.php"><span class="menu-text">View Profile</span></a></li>
                                         <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                     </ul>
                                 </li>
