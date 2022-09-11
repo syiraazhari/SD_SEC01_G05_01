@@ -37,7 +37,7 @@
 													if($_GET['error'] == "emptyfields"){
 														echo '<h6 class="mb-4 pb-3" style="color:red">Please Fill in all the field!!!!!</h6>';
 													}else if($_GET['error'] == "passwordErrors"){
-														echo '<h6 class="mb-4 pb-3" style="color:red">Your Password number must between 8 - 12 alphabet or number.</h6>';
+														echo '<h6 class="mb-4 pb-3" style="color:red">Your Password must between 8 - 12 alphabet or number.</h6>';
 													}else if($_GET['error'] == "phoneNumErrors"){
 														echo '<h6 class="mb-4 pb-3" style="color:red">Your Phone number must between 10 - 11 digit.</h6>';
 													}
