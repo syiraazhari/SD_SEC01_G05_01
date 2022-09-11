@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 11, 2022 at 09:23 AM
+-- Generation Time: Sep 11, 2022 at 11:02 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -179,11 +179,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `createdate`) VALUES
+('123123@hotmail.com', '12345678', 'Staff', '9d44243f6d4b179327320c9357bff65d', 0, '2022-09-11 10:19:32.424557'),
 ('admin', 'admin', 'Admin', 'fcb352813a49608905deef5404d55109', 1, '2022-09-06 12:12:41.245271'),
-('chee.sen987@gmail.com', 'lol', 'Staff', '3bf5a045a6bf31b3b258b3e8838baefc', 1, '2022-09-09 16:30:56.812795'),
+('chee.sen987@gmail.com', 'lol', 'Staff', '3bf5a045a6bf31b3b258b3e8838baefc', 0, '2022-09-09 16:30:56.812795'),
 ('cheesen987@gmail.com', 'Lone#2002', 'Student', '6fbd07a60045e64687d60ff6771bed1e', 1, '2022-09-04 06:43:10.036086'),
-('lol@hotmail.com', 'admin', 'Staff', '6c89d978e6a9579e9236d9d16bc8d198', 0, '2022-09-06 12:17:39.760777'),
-('lonely1233@hotmail.com', 'lonely1233', 'Staff', '2194d4b41f5ba23cea43762dedf1ef4c', 0, '2022-09-04 03:31:44.190718'),
+('lol@hotmail.com', 'admin', 'Staff', '6c89d978e6a9579e9236d9d16bc8d198', 1, '2022-09-06 12:17:39.760777'),
+('lonely1233@hotmail.com', 'lonely1233', 'Staff', '2194d4b41f5ba23cea43762dedf1ef4c', 1, '2022-09-04 03:31:44.190718'),
 ('tancheesen123@hotmail.com', 'hoho', 'Staff', '11aafa02d8ea66933a5a5c524b6a78e2', 1, '2022-09-05 14:22:40.424895'),
 ('ydk1421@gmail.com', 'staff2', 'Staff', 'c1068d17eebb486a11091ca197066068', 1, '2022-09-10 12:04:28.886888');
 
@@ -211,11 +212,11 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 
 DROP TABLE IF EXISTS `userinfostaff`;
 CREATE TABLE IF NOT EXISTS `userinfostaff` (
-  `MatricNum` varchar(100) NOT NULL,
+  `staffId` varchar(100) NOT NULL,
   `name` varchar(20) NOT NULL,
   `userId` varchar(100) NOT NULL,
   `phoneNum` varchar(30) NOT NULL,
-  PRIMARY KEY (`MatricNum`),
+  PRIMARY KEY (`staffId`),
   KEY `userId` (`userId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -223,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 -- Dumping data for table `userinfostaff`
 --
 
-INSERT INTO `userinfostaff` (`MatricNum`, `name`, `userId`, `phoneNum`) VALUES
+INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`) VALUES
 ('213', '123', '123', '123'),
 ('A20DW114', 'tancheesen', 'tan@gmail.com', '011231231231'),
 ('A20d123123', 'tancheesen', 'tan@gmail.com', '12312'),
@@ -235,7 +236,8 @@ INSERT INTO `userinfostaff` (`MatricNum`, `name`, `userId`, `phoneNum`) VALUES
 ('staff1', 'Yap Deh Kai', 'ydk1421@gmail.com', '01159908615'),
 ('lonely123', 'lonely', 'lol@hotmail.com', '123'),
 ('admin', 'Admin', 'admin123@hotmail.com', '123'),
-('A20DW312331231', 'lol', 'chee.sen987@gmail.com', '0123123123');
+('A20DW312331231', 'lol', 'chee.sen987@gmail.com', '0123123123'),
+('123', '123', '123123@hotmail.com', '123');
 
 --
 -- Constraints for dumped tables

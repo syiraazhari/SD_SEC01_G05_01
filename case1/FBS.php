@@ -506,6 +506,62 @@ function updateStaffProfile(){
 
     //return $qry2;
 }
+
+function updateDisapproveVerifyStatus($email){
+
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+
+    $sql = "update user set verified = 0 WHERE  userId = '$email'";
+
+    echo $sql;
+    $qry = mysqli_query($con, $sql);
+    //$qry2 = mysqli_query($con, $sql2);
+
+    //echo $_SESSION['username'];
+
+    if((!$qry)){
+        echo 'Record adding error';
+
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+
+}
+
+function updateApproveVerifyStatus($email){
+
+    
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+
+    $sql = "update user set verified = 1 WHERE  userId = '$email'";
+
+    echo $sql;
+    $qry = mysqli_query($con, $sql);
+    //$qry2 = mysqli_query($con, $sql2);
+
+    //echo $_SESSION['username'];
+
+    if((!$qry)){
+        echo 'Record adding error';
+
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+
+}
+
 function getUserInformation($userId)
 {
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
