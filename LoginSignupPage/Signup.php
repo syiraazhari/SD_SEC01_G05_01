@@ -70,7 +70,7 @@
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											<div class="form-group mt-2">
-											<input type="password" name="password" class="form-style" placeholder="Your Password" autocomplete="off"><!-- password-->';
+											<input type="password" name="password" class="form-style" placeholder="Your Password" autocomplete="off"><!-- password-->
 											
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
