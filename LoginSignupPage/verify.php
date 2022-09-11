@@ -40,7 +40,7 @@
 													$update = $mysqli->query("UPDATE user SET verified = 1 WHERE vkey = $vkey LIMIT 1");
 													//echo "UPDATE user SET verified  1 WHERE vkey = $vkey LIMIT 1";
 														if($update){
-															echo "<h4 class='mb-4 pb-3'>your account has been verified. You may now login</h4>";
+															echo "<h4 class='mb-4 pb-3'>Your account has been verified. You may now login</h4>";
 														}else{
 															echo   $mysqli->error;
 														}

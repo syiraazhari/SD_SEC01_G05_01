@@ -55,7 +55,7 @@ echo'<div style="background-color: #EBF5FB">';
 echo'<form class="w3-container" action="..\case1\processFBS.php" method="POST">';
 
 echo'<br>';
-echo'Staff Id: <input class="w3-input" type="text" name="MatricNum" value="'.$UserRecord['MatricNum'].'"readonly>';
+echo'Staff Id: <input class="w3-input" type="text" name="MatricNum" value="'.$UserRecord['staffId'].'"readonly>';
 echo'<br>Email address: <input class="w3-input" type="text" name="userId" value="'.$row2['userId'].'" readonly>';
 echo'<br>Password: <input class="w3-input" type="text" name="password" value="'.$row2['password'].'" >';
 echo'<br>Name: <input class="w3-input" type="text" name="name" value="'.$UserRecord['name'].'">';
