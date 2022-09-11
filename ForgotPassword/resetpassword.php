@@ -27,7 +27,7 @@
 									<div class="center-wrap">
 										<div class="section text-center">
 
-											<h4 class="mb-4 pb-3">Reset your password.</h4>
+											<h4 class="mb-4 pb-3">Reset your password</h4>
 											
 											<?php
                                                           //session_start();
@@ -49,7 +49,7 @@
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											
-												<input type="submit" value="RECEIVE NEW PASSWORD BY MAIL" class="btn mt-4" name="forgotpassword">
+												<input type="submit" value="VERIFY YOUR EMAIL TO RESET" class="btn mt-4" name="forgotpassword">
                                             </form>
 											<p class="mb-0 mt-4 text-center"><a href="..\LoginSignupPage\index.php" class="link">Go back to login page?</a></p>
 											<?php
