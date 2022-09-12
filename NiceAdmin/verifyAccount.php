@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tables / General - NiceAdmin Bootstrap Template</title>
+  <title>Verify Account - Admin</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/UTM-LOGO.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -47,8 +47,8 @@ include "..\case1\FBS.php";
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="homepage.php" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <img src="assets/img/UTM-LOGO.png" alt="">
+        <span class="d-none d-lg-block">Admin</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -277,7 +277,7 @@ include "..\case1\FBS.php";
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="homepage.php">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -285,7 +285,7 @@ include "..\case1\FBS.php";
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Facilities</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -463,51 +463,11 @@ include "..\case1\FBS.php";
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link "  href="#">
+        <a class="nav-link "  href="verifyAccount.php">
           <i class="bi bi-layout-text-window-reverse"></i><span>Verify Account</span>
         </a>
-      </li><!-- End Tables Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
+      </li><!-- End Verify Account Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
-        </a>
-      </li><!-- End Error 404 Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
 
     </ul>
 
@@ -516,12 +476,12 @@ include "..\case1\FBS.php";
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>General Tables</h1>
+      <h1>Verify Account</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">General</li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Verify Account</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -539,15 +499,15 @@ include "..\case1\FBS.php";
                   echo '<table class="table table-hover">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">password</th>
-                      <th scope="col">userType</th>
-                      <th scope="col">Verify Key</th>
-                      <th scope="col">Verify Status</th>
-                      <th scope="col">Create Date</th>
-                      <th scope="col">Approve</th>
-                      <th scope="col">Disapprove</th>
+                      <th scope="col" style="text-align: center;">Bil</th>
+                      <th scope="col"style="text-align: center;"> Email</th>
+                      <th scope="col" style="text-align: center;">Password</th>
+                      <th scope="col" style="text-align: center;">User Type</th>
+                      <th scope="col" style="text-align: center;">Verify Key</th>
+                      <th scope="col" style="text-align: center;">Verify Status</th>
+                      <th scope="col" style="text-align: center;">Create Date</th>
+                      <th scope="col" style="text-align: center;">Approve</th>
+                      <th scope="col" style="text-align: center;">Disapprove</th>
                     </tr>
                   </thead>';
                 while($acc = mysqli_fetch_assoc($listOfAccount))
@@ -557,28 +517,28 @@ include "..\case1\FBS.php";
                     
                     if($acc['userType'] == 'Admin'){
                     echo'<tr>';
-                    echo '<th scope ="row">'.$count.'</th>';
-                    echo '<td>'.($acc['userId']).'</td>';
-                    echo '<td>'.($acc['password']).'</td>';
-                    echo '<td>'.($acc['userType']).'</td>';
-                    echo '<td>'.($acc['vkey']).'</td>';
-                    echo '<td>'.$acc['verified'].'</td>';
-                    echo '<td>'.$acc['createdate'].'</td>';
-                    echo '<td></td>';
-                    echo '<td></td>';
-                    echo'</tr>';
+                    echo '<th scope ="row"style="text-align: center;">'.$count.'</th>';
+                    echo '<td style="text-align: center;">'.($acc['userId']).'</td>';
+                    echo '<td style="text-align: center;">'.($acc['password']).'</td>';
+                    echo '<td style="text-align: center;">'.($acc['userType']).'</td>';
+                    echo '<td style="text-align: center;">'.($acc['vkey']).'</td>';
+                    echo '<td style="text-align: center;">'.$acc['verified'].'</td>';
+                    echo '<td style="text-align: center;">'.$acc['createdate'].'</td>';
+                    echo '<td style="text-align: center;"></td>';
+                    echo '<td style="text-align: center;"></td>';
+                    echo'</tr style="text-align: center;">';
 
                     }else{
                       echo '<form action= "..\case1\processFBS.php" method="POST">';
                       echo'<tr>';
-                    echo '<th scope ="row">'.$count.'</th>';
-                    echo '<td><input type="hidden" name="email" value='.($acc['userId']).' placeholder="Your Email" autocomplete="off">'.($acc['userId']).'</td>';
-                    echo '<td name = "password" >'.($acc['password']).'</td>';
-                    echo '<td name = "userType" >'.($acc['userType']).'</td>';
-                    echo '<td name = "vkey" >'.($acc['vkey']).'</td>';
-                    echo '<td name = "verified" >'.$acc['verified'].'</td>';
-                    echo '<td name = "createdate" >'.$acc['createdate'].'</td>';
-                    echo '<td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
+                    echo '<th scope ="row" style="text-align: center;">'.$count.'</th>';
+                    echo '<td style="text-align: center;"><input type="hidden" name="email" value='.($acc['userId']).' placeholder="Your Email" autocomplete="off">'.($acc['userId']).'</td>';
+                    echo '<td style="text-align: center;" name = "password" >'.($acc['password']).'</td>';
+                    echo '<td style="text-align: center;" name = "userType" >'.($acc['userType']).'</td>';
+                    echo '<td style="text-align: center;" name = "vkey" >'.($acc['vkey']).'</td>';
+                    echo '<td style="text-align: center;" name = "verified" >'.$acc['verified'].'</td>';
+                    echo '<td style="text-align: center;" name = "createdate" >'.$acc['createdate'].'</td>';
+                    echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
                     echo '
                   </button>
                   <div class="modal fade" id="basicModal1" tabindex="-1">
@@ -586,7 +546,7 @@ include "..\case1\FBS.php";
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title">Approve Verification</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                           Are u sure wanna <b>Approve</b> this email?
@@ -598,7 +558,7 @@ include "..\case1\FBS.php";
                       </div>
                     </div>
                   </div><!-- End Basic Modal-->';
-                    echo '<td><button type="submit" name="disapproveVerify" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button></td>';
+                    echo '<td><button style="position: relative; left: 28%;"" type="submit" name="disapproveVerify" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
                    
                     echo'</tr>';
                     echo '</form>';
