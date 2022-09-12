@@ -281,15 +281,17 @@ else if(isSet($_POST['Scase3'])){
 
 }else if(isSet($_POST['approveVerify'])){
     $email = $_POST['email'];
+    echo 'email';
     updateApproveVerifyStatus($email);
     header('Location:../NiceAdmin/verifyAccount.php');
 
 
 }else if(isSet($_POST['disapproveVerify'])){
-    //$_POST['username']
     $email = $_POST['email'];
+    echo $email;
+    echo "in disapprove";
     updateDisapproveVerifyStatus($email);
-    //echo 'disapprove';
+    echo 'disapprove';
     header('Location:../NiceAdmin/verifyAccount.php');
 }else if(isSet($_POST['gobackVerify'])){
     header('Location:../NiceAdmin/verifyAccount.php');

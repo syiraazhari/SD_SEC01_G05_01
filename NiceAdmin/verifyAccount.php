@@ -589,7 +589,7 @@ include "..\case1\FBS.php";
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          Are u sure wanna approve the email?
+                          Are u sure wanna <b>Approve</b> this email?
                         </div>
                         <div class="modal-footer">
                           <button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -599,6 +599,7 @@ include "..\case1\FBS.php";
                     </div>
                   </div><!-- End Basic Modal-->';
                     echo '<td><button type="submit" name="disapproveVerify" class="btn btn-danger"><i class="bi bi-exclamation-octagon"></i></button></td>';
+                   
                     echo'</tr>';
                     echo '</form>';
                     }
