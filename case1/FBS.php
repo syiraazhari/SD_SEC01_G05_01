@@ -414,6 +414,46 @@ function deleteUser(){
     return $qry;
 }
 
+function updateStaffProfile(){
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $name = $_POST['name'];
+    $MatricNum = $_POST['matricNum'];
+    $phoneNum =$_POST['phoneNum'];
+    $userId =$_POST['email'];
+    $password = $_POST['password'];
+    $userType = $_POST['userType'];
+    
+    $_SESSION['username']=$userId;  
+    $_SESSION['password']=$password; 
+    
+    $sql = 'update userinfostaff set ';
+    $sql .= 'staffId= "' . $MatricNum . '",name="' . $name . '", userId="' . $userId . '"
+    , phoneNum="' . $phoneNum . '"';
+    $sql .= 'where userId = "' . $userId . '"';
+    
+    $sql2 = 'update user set ';
+    $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
+    $sql2 .= 'where userId = "' . $userId . '"';
+
+    //echo $sql;
+    //echo'<br>'.$sql2;
+    $qry = mysqli_query($con, $sql);
+    $qry2 = mysqli_query($con, $sql2);
+
+    if((!$qry) && (!$qry2)){
+        echo 'Record adding error';
+        
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+}
+
 function updateStudentProfile(){
     session_start();
 
@@ -434,9 +474,11 @@ function updateStudentProfile(){
     $_SESSION['password']=$password; 
     
     $sql = 'update userinfo set ';
-    $sql .= 'MatricNum= "' . $MatricNum . '",name="' . $name . '", userId="' . $userId . '"
+    $sql .= 'staffId= "' . $MatricNum . '",name="' . $name . '", userId="' . $userId . '"
     , phoneNum="' . $phoneNum . '"';
     $sql .= 'where userId = "' . $userId . '"';
+
+    echo $sql;
     
     $sql2 = 'update user set ';
     $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
@@ -495,53 +537,6 @@ function updateUserInformation(){
     if((!$qry) && (!$qry2)){
         echo 'Record adding error';
         
-    }else{
-        echo '<script>';
-        echo 'alert ("Successfully Update Profile")';
-        echo '<script>';
-    }
-
-
-    //return $qry2;
-}
-function updateStaffProfile(){
-
-    session_start();
-
-
-    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        exit;
-    }
-    $name = $_POST['name'];
-    $MatricNum = $_POST['MatricNum'];
-    $phoneNum =$_POST['phoneNum'];
-    $userId =$_POST['userId'];
-    $password = $_POST['password'];
-
-    $_SESSION['username']=$userId;
-    $_SESSION['password']=$password;
-
-    $sql = 'update userinfostaff set ';
-    $sql .= 'MatricNum= "' . $MatricNum . '",name="' . $name . '"
-    , phoneNum="' . $phoneNum . '"';
-    $sql .= 'where MatricNum = "' . $MatricNum . '"';
-
-    $sql2 = 'update user set ';
-    $sql2 .= 'userId= "' . $userId . '",password="' . $password . '"';
-    $sql2 .= 'where userId = "' . $userId . '"';
-
-    //echo $sql;
-    //echo'<br>'.$sql2;
-    $qry = mysqli_query($con, $sql);
-    $qry2 = mysqli_query($con, $sql2);
-
-    echo $_SESSION['username'];
-
-    if((!$qry) && (!$qry2)){
-        echo 'Record adding error';
-
     }else{
         echo '<script>';
         echo 'alert ("Successfully Update Profile")';

@@ -428,7 +428,7 @@
                         </div>
                         <div class="modal-footer">
                           
-                          <button type="submit" name="UpdateProfile" class="btn btn-primary">Confirm</button>
+                          <button type="submit" name="UpdateProfileStaff" class="btn btn-primary">Confirm</button>
                           
                         </div>
                       </div>

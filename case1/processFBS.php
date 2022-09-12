@@ -30,7 +30,11 @@ else if(isSet($_POST['deleteFacilityButton'])) {
 
 }else if(isSet($_POST['UpdateProfile'])){
     updateStudentProfile();
-    header("Refresh:1;url=..\StudentPage\StudentProfile.php");
+    header("Refresh:0;url=..\StudentPage\StudentProfile.php");
+}else if(isSet($_POST['UpdateProfileStaff'])){
+    
+    updateStaffProfile();
+    header("Refresh:0;url=..\StaffPage\StaffProfile.php");
 }
 else if(isSet($_POST['updateFacilityButton'])) {
     updateFacilityInformation();
