@@ -64,15 +64,15 @@
                 
 
                       $userId = $_SESSION['username'];
-                      $listOfStudent = getListOfUserCustomer($userId);
+                      $listOfStaff = getUserInformation($userId);
 
                       //if(mysqli_num_rows($listOfStudent) > 0)
-                      $row = mysqli_fetch_assoc($listOfStudent);
+                      $row = mysqli_fetch_assoc($listOfStaff);
                       $email =  $row['userId'];
                       $listOfPassword = getListOfpassword($email);
                       $row2 = mysqli_fetch_assoc($listOfPassword);
 
-                      $matricNum = $row['MatricNum'];
+                      $matricNum = $row['staffId'];
                       $name = $row['name'];
                       
                       $phoneNum = $row['phoneNum'];                        
