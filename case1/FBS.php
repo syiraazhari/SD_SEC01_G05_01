@@ -352,6 +352,8 @@ function getListOfAccount(){
     return $qry;
 }
 
+
+
 function searchByIcNum(){
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
@@ -607,7 +609,7 @@ function getListOfpassword($userId){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from user where userId = "'.$userId.'"';
+    $sql = 'select password from user where userId = "'.$userId.'"';
     
     $qry = mysqli_query($con, $sql);
     return $qry;

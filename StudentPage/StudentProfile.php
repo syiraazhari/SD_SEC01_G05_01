@@ -57,7 +57,28 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<?php
+                    include "..\case1\FBS.php";
+                      session_start(); 
+                      //$email = $_SESSION['username'];
+                
 
+                      $userId = $_SESSION['username'];
+                      $listOfStudent = getListOfUserCustomer($userId);
+
+                      //if(mysqli_num_rows($listOfStudent) > 0)
+                      $row = mysqli_fetch_assoc($listOfStudent);
+                      $email =  $row['userId'];
+                      $listOfPassword = getListOfpassword($email);
+                      $row2 = mysqli_fetch_assoc($listOfPassword);
+
+                      $matricNum = $row['MatricNum'];
+                      $name = $row['name'];
+                      
+                      $phoneNum = $row['phoneNum'];                        
+                      $password = $row2['password'];
+
+                    ?>
 <body>
   <!-- Header Section Start -->
   <div id="page" class="section">
@@ -84,17 +105,17 @@
                                 <nav class="site-main-menu">
                                     <ul>
                                         <li>
-                                            <a class="active" href="index.html"><span
-                                                    class="menu-text">Homepage</span></a>
+                                            <a href="index.html"><span
+                                                    class="menu-text" style="color:whitesmoke">Homepage</span></a>
                                         </li>
                                         <li>
-                                            <a href="about.html"><span class="menu-text">About Us</span></a>
+                                            <a href="about.html"><span class="menu-text" style="color:whitesmoke">About Us</span></a>
                                         </li>
                                         <li>
-                                            <a href="service.html"><span class="menu-text">Services</span></a>
+                                            <a href="service.html"><span class="menu-text" style="color:whitesmoke">Services</span></a>
                                         </li>
                                         <li class="has-children">
-                                            <a href="work.html"><span class="menu-text">Work</span></a>
+                                            <a href="work.html"><span class="menu-text" style="color:whitesmoke">Work</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
                                                 <li><a href="work.html"><span class="menu-text">Work</span></a></li>
@@ -103,13 +124,13 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="contact-us.html"><span class="menu-text">Contact Us</span></a>
+                                            <a href="contact-us.html"><span class="menu-text" style="color:whitesmoke">Contact Us</span></a>
                                         </li>
                                         <li class="has-children">
-                                            <a href=""><span class="menu-text">Profile</span></a>
+                                            <a  class="active" href="StudentProfile.php"><span class="menu-text" style="color:whitesmoke">Profile</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
-                                                <li><a href="StudentProfile.php"><span class="menu-text">View Profile</span></a></li>
+                                                <li><a href="StudentProfile.php"><span class="menu-text" >View Profile</span></a></li>
                                                 <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
@@ -263,40 +284,54 @@
                   <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
 
                   <h5 class="card-title">Profile Details</h5>
-
+                
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">Sarah Asley</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$name.'</div>'
+
+                    ?>
+                    <!--<div class="col-lg-9 col-md-8">Sarah Asley</div>-->
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Company</div>
-                    <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
+                    <div class="col-lg-3 col-md-4 label">Matric Number</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$matricNum.'</div>'
+
+                    ?>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Job</div>
-                    <div class="col-lg-9 col-md-8">Web Designer</div>
-                  </div>
+                    <div class="col-lg-3 col-md-4 label">Phone Number</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$phoneNum.'</div>'
 
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Country</div>
-                    <div class="col-lg-9 col-md-8">USA</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Address</div>
-                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Phone</div>
-                    <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                    ?>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">sarah@example.com</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$email.'</div>'
+
+                    ?>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">password</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$password.'</div>'
+
+                    ?>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Phone</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$phoneNum.'</div>'
+
+                    ?>
                   </div>
 
                 </div>
