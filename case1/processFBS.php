@@ -35,6 +35,10 @@ else if(isSet($_POST['deleteFacilityButton'])) {
     
     updateStaffProfile();
     header("Refresh:0;url=..\StaffPage\StaffProfile.php");
+}else if(isSet($_POST['UpdateProfileAdmin'])){
+    
+    updateStaffProfile();
+    header("Refresh:0;url=..\NiceAdmin\users-profile.php");
 }
 else if(isSet($_POST['updateFacilityButton'])) {
     updateFacilityInformation();

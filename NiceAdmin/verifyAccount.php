@@ -36,12 +36,34 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<?php
+                    include "..\case1\FBS.php";
+                      session_start(); 
+                      //$email = $_SESSION['username'];
+                
 
+                      $userId = $_SESSION['username'];
+                      $listOfStudent = getListOfUserStaff($userId);
+
+                      //if(mysqli_num_rows($listOfStudent) > 0)
+                      $row = mysqli_fetch_assoc($listOfStudent);
+                      $email =  $row['userId'];
+                      $listOfPassword = getListOfpassword($email);
+                      $row2 = mysqli_fetch_assoc($listOfPassword);
+
+                      $matricNum = $row['staffId'];
+                      $name = $row['name'];
+                      
+                      $phoneNum = $row['phoneNum'];                        
+                      $password = $row2['password'];
+                      $userType = $row2['userType'];
+                      $vkey = $row2['vkey'];
+                      $verified = $row2['verified'];
+                      
+                    ?>
 <body>
 
-<?php
-include "..\case1\FBS.php";
-?>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -214,20 +236,24 @@ include "..\case1\FBS.php";
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <?php
+              echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$email.'</span>';
+            ?>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+            <?php
+              echo '<h6>'.$email.'</h6>';
+              echo '<span>'.$userType.'</span>';
+            ?>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.php">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -237,7 +263,7 @@ include "..\case1\FBS.php";
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.php">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -456,7 +482,7 @@ include "..\case1\FBS.php";
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="users-profile.php">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
