@@ -53,6 +53,8 @@
 																echo '<p class="mb-4 pb-3" style="color:yellow">All field are mantedory</p>';
 															}else if($_GET['statusReset'] == "errorToken"){
 																echo '<p class="mb-4 pb-3" style="color:yellow">Error Token</p>';
+															}else if($_GET['statusReset'] == "notEnoughLength"){
+																echo '<p class="mb-4 pb-3" style="color:yellow">Passsword length must between 8 - 12</p>';
 															}
 														}
                                                         ?>

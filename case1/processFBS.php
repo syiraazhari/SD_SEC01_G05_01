@@ -28,6 +28,9 @@ else if(isSet($_POST['deleteFacilityButton'])) {
     }
     header("Refresh:1;url=..\case1\staffFacilityList.php");
 
+}else if(isSet($_POST['UpdateProfile'])){
+    updateStudentProfile();
+    header("Refresh:1;url=..\StudentPage\StudentProfile.php");
 }
 else if(isSet($_POST['updateFacilityButton'])) {
     updateFacilityInformation();
@@ -171,10 +174,11 @@ else if(isSet($_POST['register'])){
         //addRegisterStaff();
         //sendConfirmationEmail($userId,$vkey);
         //header('Location:..\LoginSignupPage\Thankyoupage.php');
-    }
-    addRegisterStaff();
+        addRegisterStaff();
     //sendConfirmationEmail();
-    header('Location:..\StaffPage');
+        header('Location:..\LoginSignupPage\Thankyoupage.php');
+    }
+
 }else if(isSet($_POST['registerbutton'])){
     
     
@@ -334,19 +338,30 @@ if(isSet($_POST['reset-password-submit'])){
                 
                 if($new_password == $confirm_password){
 
-                    $update_password = "UPDATE user SET password = '$new_password' WHERE vkey = '$token' LIMIT 1";
-                    $update_password_run = mysqli_query($con,$update_password);
-
-                    if($update_password_run){
-                        $_SESSION['status'] = "New Password Successfully Update!";
-                        header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=Success");
-                        exit(0);
-                    }else{
-                        $_SESSION['status'] = "Fail to change the password";
-                        header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=fail");
+                    if(strlen($new_password) >= 13 || strlen($new_password) <= 7){
+                        $_SESSION['status'] = "Password's length must between 8 - 12";
+                        header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=notEnoughLength");
                         exit(0);
                         
+                        
+                    }else{
+                        $update_password = "UPDATE user SET password = '$new_password' WHERE vkey = '$token' LIMIT 1";
+                        $update_password_run = mysqli_query($con,$update_password);
+
+                            if($update_password_run){
+                                $_SESSION['status'] = "New Password Successfully Update!";
+                                header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=Success");
+                                exit(0);
+
+                            }else{
+                                $_SESSION['status'] = "Fail to change the password";
+                                header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=fail");
+                                exit(0);
+                        $_SESSION['status'] = "Password's length must between 8 - 12";
+                        header("Location:..\ForgotPassword\create-new-password.php?vkey=$token&email=$email&statusReset=notEnoughLength");
+                        exit(0);
                     }
+                }
 
                 }else{
                     $_SESSION['status'] = "Password was not same!";

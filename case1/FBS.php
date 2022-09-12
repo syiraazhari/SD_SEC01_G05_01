@@ -414,6 +414,49 @@ function deleteUser(){
     return $qry;
 }
 
+function updateStudentProfile(){
+    session_start();
+
+
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $name = $_POST['name'];
+    $MatricNum = $_POST['matricNum'];
+    $phoneNum =$_POST['phoneNum'];
+    $userId =$_POST['email'];
+    $password = $_POST['password'];
+    $userType = $_POST['userType'];
+    
+    $_SESSION['username']=$userId;  
+    $_SESSION['password']=$password; 
+    
+    $sql = 'update userinfo set ';
+    $sql .= 'MatricNum= "' . $MatricNum . '",name="' . $name . '", userId="' . $userId . '"
+    , phoneNum="' . $phoneNum . '"';
+    $sql .= 'where userId = "' . $userId . '"';
+    
+    $sql2 = 'update user set ';
+    $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
+    $sql2 .= 'where userId = "' . $userId . '"';
+
+    //echo $sql;
+    //echo'<br>'.$sql2;
+    $qry = mysqli_query($con, $sql);
+    $qry2 = mysqli_query($con, $sql2);
+
+    if((!$qry) && (!$qry2)){
+        echo 'Record adding error';
+        
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+}
+
 function updateUserInformation(){
 
     session_start();
@@ -536,6 +579,8 @@ function updateDisapproveVerifyStatus($email){
 
 }
 
+
+
 function updateApproveVerifyStatus($email){
 
     
@@ -609,7 +654,7 @@ function getListOfpassword($userId){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select password from user where userId = "'.$userId.'"';
+    $sql = 'select * from user where userId = "'.$userId.'"';
     
     $qry = mysqli_query($con, $sql);
     return $qry;

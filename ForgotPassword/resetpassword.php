@@ -45,7 +45,10 @@
                                                         ?>
                                             <form action= "..\case1\processFBS.php" method="POST">
 											<div class="form-group">
-												<input type="email" name="userEmail" class="form-style" placeholder="Enter your e-mail address" autocomplete="off">
+												
+												<input type="email" name="userEmail"  class="form-style" placeholder="Enter your e-mail address" autocomplete="off">
+				
+												
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											
