@@ -30,20 +30,21 @@ else if(isSet($_POST['deleteFacilityButton'])) {
 
 }else if(isSet($_POST['UpdateProfile'])){
     updateStudentProfile();
-    header("Refresh:0;url=..\StudentPage\StudentProfile.php");
+    header("Location:..\StudentPage\StudentProfile.php");
 }else if(isSet($_POST['UpdateProfileStaff'])){
+        updateStaffProfile();
+        header("Location:=..\StaffPage\StaffProfile.php");
+
     
-    updateStaffProfile();
-    header("Refresh:0;url=..\StaffPage\StaffProfile.php");
 }else if(isSet($_POST['UpdateProfileAdmin'])){
     
     updateStaffProfile();
 
-    header("Refresh:0;url=..\NiceAdmin\users-profile.php");
+    header("Location:..\NiceAdmin\users-profile.php");
 }
 else if(isSet($_POST['updateFacilityButton'])) {
     updateFacilityInformation();
-    header("Refresh:1;url=..\case1\staffFacilityList.php");
+    header("Location:..\case1\staffFacilityList.php");
 
 }else if(isSet($_POST['deleteUserButton'])) {
 
@@ -448,10 +449,10 @@ if(isset($_FILES["image"]["name"])){
     $imageExtension = strtolower(end($imageExtension));
     echo $userType;
     if (!in_array($imageExtension, $validImageExtension)){
-        header("Location:..\StaffPage\StaffProfile.php?status=success");
+        header("Location:..\StaffPage\StaffProfile.php?status=updateFail1");
       
     }elseif ($imageSize > 1200000){
-        header("Location:..\StaffPage\StaffProfile.php?status=success");
+        header("Location:..\StaffPage\StaffProfile.php?status=updateFail2");
     }else{
         
       $newImageName = $name . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name

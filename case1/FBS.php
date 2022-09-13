@@ -477,7 +477,7 @@ function updateStudentProfile(){
     $_SESSION['password']=$password; 
     
     $sql = 'update userinfo set ';
-    $sql .= 'staffId= "' . $MatricNum . '",name="' . $name . '", userId="' . $userId . '"
+    $sql .= 'MatricNum= "' . $MatricNum . '",name="' . $name . '", userId="' . $userId . '"
     , phoneNum="' . $phoneNum . '"';
     $sql .= 'where userId = "' . $userId . '"';
 
