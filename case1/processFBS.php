@@ -404,6 +404,7 @@ if(isSet($_POST['reset-password-submit'])){
 
 if(isset($_FILES["image"]["name"])){
     session_start(); 
+    
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
   if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -413,24 +414,24 @@ if(isset($_FILES["image"]["name"])){
                       //$email = $_SESSION['username'];
                 
 
-                      $userId = $_SESSION['username'];
-                      $listOfStudent = getListOfUserStaff($userId);
+    $userId = $_SESSION['username'];
+    $listOfStudent = getListOfUserStaff($userId);
 
                       //if(mysqli_num_rows($listOfStudent) > 0)
-                      $row = mysqli_fetch_assoc($listOfStudent);
-                      $email =  $row['userId'];
-                      $listOfPassword = getListOfpassword($email);
-                      $row2 = mysqli_fetch_assoc($listOfPassword);
+    $row = mysqli_fetch_assoc($listOfStudent);
+    $email =  $row['userId'];
+    $listOfPassword = getListOfpassword($email);
+    $row2 = mysqli_fetch_assoc($listOfPassword);
 
-                      $matricNum = $row['staffId'];
-                      $name = $row['name'];
+    $matricNum = $row['staffId'];
+    $name = $row['name'];
                       
-                      $phoneNum = $row['phoneNum'];
-                      $image = $row['Image'];                       
-                      $password = $row2['password'];
-                      $userType = $row2['userType'];
-                      $vkey = $row2['vkey'];
-                      $verified = $row2['verified'];
+    $phoneNum = $row['phoneNum'];
+    $image = $row['Image'];                       
+    $password = $row2['password'];
+    $userType = $row2['userType'];
+    $vkey = $row2['vkey'];
+    $verified = $row2['verified'];
     $userId = $_POST["userId"];
     $name = $_POST["name"];
 
@@ -443,10 +444,19 @@ if(isset($_FILES["image"]["name"])){
     $imageExtension = explode('.', $imageName);
     $imageExtension = strtolower(end($imageExtension));
     if (!in_array($imageExtension, $validImageExtension)){
-      header("Refresh:0;url=..\NiceAdmin\users-profile.php?fail1");
+        if($userId = "Staff"){
+            header("Refresh:0;url=..\StaffPage\StaffProfile.php?fail1");
+        }else if($userId = "Admin"){
+            header("Refresh:0;url=..\NiceAdmin\users-profile.php?fail1");
+        }
+      
     }
     elseif ($imageSize > 1200000){
-      header("Refresh:0;url=..\NiceAdmin\users-profile.php?fail2");
+        if($userId = "Staff"){
+            header("Refresh:0;url=..\StaffPage\StaffProfile.php?fail1");
+        }else if($userId = "Admin"){
+            header("Refresh:0;url=..\NiceAdmin\users-profile.php?fail1");
+        }
     }
     else{
       $newImageName = $name . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
@@ -454,7 +464,7 @@ if(isset($_FILES["image"]["name"])){
       $query = "UPDATE userinfostaff SET Image = '$newImageName' WHERE  userId = '$userId'";
       echo $image;
       $qry=mysqli_query($con, $query);
-      move_uploaded_file($tmpName, '../NiceAdmin/img/' . $newImageName);
+      move_uploaded_file($tmpName, '../img/' . $newImageName);
       if((!$qry)){
         echo 'Record adding error';
 
@@ -463,7 +473,11 @@ if(isset($_FILES["image"]["name"])){
         echo 'alert ("Successfully Update Profile")';
         echo '<script>';
     }
-      header("Refresh:0;url=..\NiceAdmin\users-profile.php?success");
+    if($userId = "Staff"){
+        header("Refresh:0;url=..\StaffPage\StaffProfile.php?status=success");
+    }else if($userId = "Admin"){
+        header("Refresh:0;url=..\NiceAdmin\users-profile.php?status=sucess");
+    }
     }
   }
 function sendBookEmailToCustomer()

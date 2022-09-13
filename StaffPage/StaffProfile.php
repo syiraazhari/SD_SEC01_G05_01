@@ -59,15 +59,15 @@
 </head>
 <?php
                     include "..\case1\FBS.php";
-                      session_start(); 
+                     session_start(); 
                       //$email = $_SESSION['username'];
                 
 
                       $userId = $_SESSION['username'];
-                      $listOfStaff = getUserInformation($userId);
+                      $listOfStudent = getListOfUserStaff($userId);
 
                       //if(mysqli_num_rows($listOfStudent) > 0)
-                      $row = mysqli_fetch_assoc($listOfStaff);
+                      $row = mysqli_fetch_assoc($listOfStudent);
                       $email =  $row['userId'];
                       $listOfPassword = getListOfpassword($email);
                       $row2 = mysqli_fetch_assoc($listOfPassword);
@@ -75,7 +75,8 @@
                       $matricNum = $row['staffId'];
                       $name = $row['name'];
                       
-                      $phoneNum = $row['phoneNum'];                        
+                      $phoneNum = $row['phoneNum'];
+                      $image = $row['Image'];                       
                       $password = $row2['password'];
                       $userType = $row2['userType'];
                       $vkey = $row2['vkey'];
@@ -244,9 +245,11 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/images/author/blog-author.png" alt="Profile" class="rounded-circle">
-              <h2>Sarah Asley </h2>
-              <h4>Web Designer</h4>
+            <img src="../img/<?php echo $image; ?>" width = 200 height = 119 alt="Profile" class="rounded-circle">
+            <?php
+              echo '<h2>'.$email.'</h2>';
+              echo '<h2>'.$userType.'</h2>'
+            ?>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -336,19 +339,26 @@
                 </div>
 
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-
-                  <!-- Profile Edit Form -->
-                  <form action= "..\case1\processFBS.php" method="POST">
-                    <div class="row mb-3">
+                <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="assets/images/author/blog-author.png" alt="Profile">
-                        <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                        </div>
+                        <form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post">                      
+                            <div class="pt-2 ">
+                              <img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class="rounded-circle">
+                              <div class="round">
+                                <input type="hidden" name="userId" value="<?php echo $email; ?>">
+                                <input type="hidden" name="name" value="<?php echo $name; ?>">
+                                <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png">
+                                
+                                <input type="submit" value="Upload" class="btn btn-primary" name="upload">
+                              </div>
+                            </div>
+                      </from>
                       </div>
                     </div>
+                  <!-- Profile Edit Form -->
+                  <form action= "..\case1\processFBS.php" method="POST">
+                    
 
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>

@@ -75,7 +75,8 @@
                       $matricNum = $row['MatricNum'];
                       $name = $row['name'];
                       
-                      $phoneNum = $row['phoneNum'];                        
+                      $phoneNum = $row['phoneNum']; 
+                      $image = $row['Image'];                        
                       $password = $row2['password'];
                       $userType = $row2['userType'];
                       $vkey = $row2['vkey'];

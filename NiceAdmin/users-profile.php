@@ -101,7 +101,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
+            <img src="../img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
             <?php
               echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$email.'</span>';
             ?>
@@ -353,10 +353,10 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="img/<?php echo $image; ?>" width = 200 height = 125 title="<?php echo $image; ?>" class="rounded-circle">
+              <img src="../img/<?php echo $image; ?>" width = 200 height = 119 title="<?php echo $image; ?>" class="rounded-circle">
               <?php
               echo '<h2>'.$email.'</h2>';
-              echo '<h3>'.$userType.'</h3>'
+              echo '<h2>'.$userType.'</h2>'
             ?>
 
               <div class="social-links mt-2">
@@ -443,7 +443,7 @@
                    <div class="col-lg-3 col-md-4 label">User Category</div>
                    <?php
                    echo '<div class="col-lg-9 col-md-8">'.$userType.'</div>'
-
+                  
                    ?>
                  </div>
 
@@ -454,13 +454,14 @@
                         <div class="col-md-8 col-lg-9">
                         <form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post">                      
                             <div class="pt-2 ">
-                              <img src="img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class = >
+                              <img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>"  class="rounded-circle">
                               <div class="round">
                                 <input type="hidden" name="userId" value="<?php echo $email; ?>">
                                 <input type="hidden" name="name" value="<?php echo $name; ?>">
                                 <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png">
                                 
                                 <input type="submit" value="Upload" class="btn btn-info" name="upload">
+                                
                               </div>
                             </div>
                       </from>
