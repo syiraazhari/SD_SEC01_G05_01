@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 11, 2022 at 11:02 AM
+-- Generation Time: Sep 13, 2022 at 12:58 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -55,6 +55,27 @@ INSERT INTO `facility` (`facilityId`, `name`, `category`, `capacity`, `facilityD
 ('R60', 'LANDSKAP/WATER PLAZA', 'RUANG SERBAGUNA', 300, '-', '720.00', 'Available'),
 ('S60', 'GELANGGANG FUTSAL', 'SUKAN', NULL, '-', '70.00', 'Available'),
 ('S61', 'BasketBall', 'Basketball Court', 100, '-', '100.00', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profileimg`
+--
+
+DROP TABLE IF EXISTS `profileimg`;
+CREATE TABLE IF NOT EXISTS `profileimg` (
+  `userId` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`userId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `profileimg`
+--
+
+INSERT INTO `profileimg` (`userId`, `username`, `status`) VALUES
+('chee.sen987@gmail.com', 'MrLonely', 1);
 
 -- --------------------------------------------------------
 
@@ -179,14 +200,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `createdate`) VALUES
-('123123@hotmail.com', '12345678', 'Staff', '9d44243f6d4b179327320c9357bff65d', 0, '2022-09-11 10:19:32.424557'),
-('admin', 'admin', 'Admin', 'fcb352813a49608905deef5404d55109', 1, '2022-09-06 12:12:41.245271'),
-('chee.sen987@gmail.com', 'lol', 'Staff', '3bf5a045a6bf31b3b258b3e8838baefc', 0, '2022-09-09 16:30:56.812795'),
-('cheesen987@gmail.com', 'Lone#2002', 'Student', '6fbd07a60045e64687d60ff6771bed1e', 1, '2022-09-04 06:43:10.036086'),
-('lol@hotmail.com', 'admin', 'Staff', '6c89d978e6a9579e9236d9d16bc8d198', 1, '2022-09-06 12:17:39.760777'),
-('lonely1233@hotmail.com', 'lonely1233', 'Staff', '2194d4b41f5ba23cea43762dedf1ef4c', 1, '2022-09-04 03:31:44.190718'),
-('tancheesen123@hotmail.com', 'hoho', 'Staff', '11aafa02d8ea66933a5a5c524b6a78e2', 1, '2022-09-05 14:22:40.424895'),
-('ydk1421@gmail.com', 'staff2', 'Staff', 'c1068d17eebb486a11091ca197066068', 1, '2022-09-10 12:04:28.886888');
+('chee.sen987@gmail.com', '123456789', 'Admin', '78d5b6ced1f161036ce01872294bc893', 1, '2022-09-13 12:55:35.241720'),
+('cheesen.987@gmail.com', '123456789', 'Student', '13fe3242fcaf7551b6408d3e54a13cef', 1, '2022-09-13 12:39:13.741453'),
+('tancheesen123@hotmail.com', '123456789', 'Staff', '4d1106a87c6f8c4a16886c712e9d9d7c', 1, '2022-09-13 12:37:05.428804');
 
 -- --------------------------------------------------------
 
@@ -200,9 +216,17 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
   `name` varchar(20) NOT NULL,
   `userId` varchar(100) NOT NULL,
   `phoneNum` varchar(30) NOT NULL,
+  `Image` varchar(100) DEFAULT 'noprofil.jpg',
   PRIMARY KEY (`MatricNum`),
   KEY `userId` (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userinfo`
+--
+
+INSERT INTO `userinfo` (`MatricNum`, `name`, `userId`, `phoneNum`, `Image`) VALUES
+('test2', 'test2', 'cheesen.987@gmail.com', '01115386485', 'test2 - 2022.09.13 - 12.51.39pm.jpg');
 
 -- --------------------------------------------------------
 
@@ -216,6 +240,7 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
   `name` varchar(20) NOT NULL,
   `userId` varchar(100) NOT NULL,
   `phoneNum` varchar(30) NOT NULL,
+  `Image` varchar(100) DEFAULT 'noprofil.jpg',
   PRIMARY KEY (`staffId`),
   KEY `userId` (`userId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -224,20 +249,9 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 -- Dumping data for table `userinfostaff`
 --
 
-INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`) VALUES
-('213', '123', '123', '123'),
-('A20DW114', 'tancheesen', 'tan@gmail.com', '011231231231'),
-('A20d123123', 'tancheesen', 'tan@gmail.com', '12312'),
-('A20DW1114', 'lonely123', 'lonely123@hotmail.com', '01115386485'),
-('A20DW11143', 'lonely1233', 'lonely1233@hotmail.com', '011153864853'),
-('TEST01', 'TEST01', 'TEST01@hotmail.com', '01320'),
-('testing', 'testing', 'cheesen987@gmail.com', '12312'),
-('qweqwe', 'qweqwe', 'cheesen987@gmail.com', '132123'),
-('staff1', 'Yap Deh Kai', 'ydk1421@gmail.com', '01159908615'),
-('lonely123', 'lonely', 'lol@hotmail.com', '123'),
-('admin', 'Admin', 'admin123@hotmail.com', '123'),
-('A20DW312331231', 'lol', 'chee.sen987@gmail.com', '0123123123'),
-('123', '123', '123123@hotmail.com', '123');
+INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`, `Image`) VALUES
+('test1', 'test1', 'tancheesen123@hotmail.com', '01115326485', 'test1 - 2022.09.13 - 12.54.19pm.jpg'),
+('test3', 'test3', 'chee.sen987@gmail.com', '01234567891', 'test3 - 2022.09.13 - 12.57.33pm.png');
 
 --
 -- Constraints for dumped tables
