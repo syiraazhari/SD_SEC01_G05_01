@@ -439,6 +439,9 @@ function updateStaffProfile(){
     $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
     $sql2 .= 'where userId = "' . $userId . '"';
 
+
+    
+
     //echo $sql;
     //echo'<br>'.$sql2;
     $qry = mysqli_query($con, $sql);

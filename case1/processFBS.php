@@ -38,6 +38,7 @@ else if(isSet($_POST['deleteFacilityButton'])) {
 }else if(isSet($_POST['UpdateProfileAdmin'])){
     
     updateStaffProfile();
+
     header("Refresh:0;url=..\NiceAdmin\users-profile.php");
 }
 else if(isSet($_POST['updateFacilityButton'])) {
@@ -401,7 +402,70 @@ if(isSet($_POST['reset-password-submit'])){
     }
 }
 
+if(isset($_FILES["image"]["name"])){
+    session_start(); 
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+  if (mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      exit;
+  }
+  
+                      //$email = $_SESSION['username'];
+                
 
+                      $userId = $_SESSION['username'];
+                      $listOfStudent = getListOfUserStaff($userId);
+
+                      //if(mysqli_num_rows($listOfStudent) > 0)
+                      $row = mysqli_fetch_assoc($listOfStudent);
+                      $email =  $row['userId'];
+                      $listOfPassword = getListOfpassword($email);
+                      $row2 = mysqli_fetch_assoc($listOfPassword);
+
+                      $matricNum = $row['staffId'];
+                      $name = $row['name'];
+                      
+                      $phoneNum = $row['phoneNum'];
+                      $image = $row['Image'];                       
+                      $password = $row2['password'];
+                      $userType = $row2['userType'];
+                      $vkey = $row2['vkey'];
+                      $verified = $row2['verified'];
+    $userId = $_POST["userId"];
+    $name = $_POST["name"];
+
+    $imageName = $_FILES["image"]["name"];
+    $imageSize = $_FILES["image"]["size"];
+    $tmpName = $_FILES["image"]["tmp_name"];
+
+    // Image validation
+    $validImageExtension = ['jpg', 'jpeg', 'png'];
+    $imageExtension = explode('.', $imageName);
+    $imageExtension = strtolower(end($imageExtension));
+    if (!in_array($imageExtension, $validImageExtension)){
+      header("Refresh:0;url=..\NiceAdmin\users-profile.php?fail1");
+    }
+    elseif ($imageSize > 1200000){
+      header("Refresh:0;url=..\NiceAdmin\users-profile.php?fail2");
+    }
+    else{
+      $newImageName = $name . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
+      $newImageName .= '.' . $imageExtension;
+      $query = "UPDATE userinfostaff SET Image = '$newImageName' WHERE  userId = '$userId'";
+      echo $image;
+      $qry=mysqli_query($con, $query);
+      move_uploaded_file($tmpName, '../NiceAdmin/img/' . $newImageName);
+      if((!$qry)){
+        echo 'Record adding error';
+
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+      header("Refresh:0;url=..\NiceAdmin\users-profile.php?success");
+    }
+  }
 function sendBookEmailToCustomer()
 {
     //print_r($_POST);

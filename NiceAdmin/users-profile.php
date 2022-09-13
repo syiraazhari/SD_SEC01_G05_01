@@ -35,6 +35,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+
 <?php
                     include "..\case1\FBS.php";
                       session_start(); 
@@ -53,12 +54,14 @@
                       $matricNum = $row['staffId'];
                       $name = $row['name'];
                       
-                      $phoneNum = $row['phoneNum'];                        
+                      $phoneNum = $row['phoneNum'];
+                      $image = $row['Image'];                       
                       $password = $row2['password'];
                       $userType = $row2['userType'];
                       $vkey = $row2['vkey'];
                       $verified = $row2['verified'];
                       
+                   
                     ?>
 <body>
 <body>
@@ -98,7 +101,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
             <?php
               echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$email.'</span>';
             ?>
@@ -350,7 +353,7 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+              <img src="img/<?php echo $image; ?>" width = 200 height = 125 title="<?php echo $image; ?>" class="rounded-circle">
               <?php
               echo '<h2>'.$email.'</h2>';
               echo '<h3>'.$userType.'</h3>'
@@ -445,21 +448,31 @@
                  </div>
 
                </div>
-
-                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-
-                  <!-- Profile Edit Form -->
-                  <form action= "..\case1\processFBS.php" method="POST">
-                    <div class="row mb-3">
-                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                      <div class="col-md-8 col-lg-9">
-                        <img src="assets/img/profile-img.jpg" alt="Profile">
-                        <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+               <div class="tab-pane fade profile-edit pt-3" id="profile-edit">      
+                <div class="row mb-3">
+                <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                        <div class="col-md-8 col-lg-9">
+                        <form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post">                      
+                            <div class="pt-2 ">
+                              <img src="img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class = >
+                              <div class="round">
+                                <input type="hidden" name="userId" value="<?php echo $email; ?>">
+                                <input type="hidden" name="name" value="<?php echo $name; ?>">
+                                <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png">
+                                
+                                <input type="submit" value="Upload" class="btn btn-info" name="upload">
+                              </div>
+                            </div>
+                      </from>
                         </div>
                       </div>
-                    </div>
+              
+
+
+                  
+                  <!-- Profile Edit Form -->
+                  <form action= "..\case1\processFBS.php" method="POST">
+                    
 
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
@@ -547,7 +560,11 @@
                   </div><!-- End Basic Modal-->
                     </div>
                   </form><!-- End Profile Edit Form -->
-
+                  <script type="text/javascript">
+      document.getElementById("image").onchange = function(){
+          document.getElementById("UpdateProfileAdmin").submit();
+      };
+    </script>
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-settings">
