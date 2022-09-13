@@ -54,7 +54,8 @@
                       $matricNum = $row['staffId'];
                       $name = $row['name'];
                       
-                      $phoneNum = $row['phoneNum'];                        
+                      $phoneNum = $row['phoneNum']; 
+                      $image =   $row['Image'];                      
                       $password = $row2['password'];
                       $userType = $row2['userType'];
                       $vkey = $row2['vkey'];
@@ -235,7 +236,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+          <img src="../img/<?php echo $image; ?>" width = 40 height = 40 title="<?php echo $image; ?>" class="rounded-circle">
             <?php
               echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$email.'</span>';
             ?>

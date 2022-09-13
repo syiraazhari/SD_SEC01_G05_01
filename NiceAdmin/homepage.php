@@ -36,8 +36,29 @@
   ======================================================== -->
 </head>
 <?php
-  session_start();
-  $email = $_SESSION['username'];
+  include "..\case1\FBS.php";
+  session_start(); 
+  //$email = $_SESSION['username'];
+
+
+  $userId = $_SESSION['username'];
+  $listOfStudent = getListOfUserStaff($userId);
+
+  //if(mysqli_num_rows($listOfStudent) > 0)
+  $row = mysqli_fetch_assoc($listOfStudent);
+  $email =  $row['userId'];
+  $listOfPassword = getListOfpassword($email);
+  $row2 = mysqli_fetch_assoc($listOfPassword);
+
+  $matricNum = $row['staffId'];
+  $name = $row['name'];
+  
+  $phoneNum = $row['phoneNum'];
+  $image = $row['Image'];                       
+  $password = $row2['password'];
+  $userType = $row2['userType'];
+  $vkey = $row2['vkey'];
+  $verified = $row2['verified'];
 
 
 ?>
@@ -139,7 +160,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+          <img src="../img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
             <?php
               echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$email.'</span>';
             ?>
