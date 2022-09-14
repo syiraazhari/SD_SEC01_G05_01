@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 13, 2022 at 01:09 PM
+-- Generation Time: Sep 14, 2022 at 01:03 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -200,9 +200,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `createdate`) VALUES
-('chee.sen987@gmail.com', '123456789', 'Admin', '78d5b6ced1f161036ce01872294bc893', 1, '2022-09-13 12:55:35.241720'),
-('cheesen.987@gmail.com', '123456789', 'Student', '13fe3242fcaf7551b6408d3e54a13cef', 1, '2022-09-13 12:39:13.741453'),
-('tancheesen123@hotmail.com', '123456789', 'Staff', '4d1106a87c6f8c4a16886c712e9d9d7c', 1, '2022-09-13 12:37:05.428804');
+('chee.sen987@gmail.com', 'cheesen1234', 'Admin', 'b59274db54aba7fd2e2412bad863a47b', 1, '2022-09-13 12:55:35.241720'),
+('cheesen.987@gmail.com', 'tancheesen12', 'Student', 'cd109530ffd5e10e78c9d6f44db77847', 1, '2022-09-13 12:39:13.741453'),
+('FalseEmail@gmail.com', '123456789', 'Staff', 'b8c0155d3d69c217bdc6520a7d2323b2', 0, '2022-09-13 22:26:41.219360'),
+('tancheesen123@hotmail.com', 'tancheesen12', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 0, '2022-09-13 23:39:12.138856');
 
 -- --------------------------------------------------------
 
@@ -226,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 --
 
 INSERT INTO `userinfo` (`MatricNum`, `name`, `userId`, `phoneNum`, `Image`) VALUES
-('test2', 'test2', 'cheesen.987@gmail.com', '01115386485', 'test2 - 2022.09.13 - 12.51.39pm.jpg');
+('test2', 'testing2.2', 'cheesen.987@gmail.com', '123123123', 'test2 - 2022.09.13 - 11.02.36pm.jpg');
 
 -- --------------------------------------------------------
 
@@ -250,8 +251,9 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 --
 
 INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`, `Image`) VALUES
-('test1', 'test1', 'tancheesen123@hotmail.com', '01115326485', 'test1 - 2022.09.13 - 12.54.19pm.jpg'),
-('test3', 'test3', 'chee.sen987@gmail.com', '01234567891', 'test3 - 2022.09.13 - 12.57.33pm.png');
+('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485 ', 'lonely123 - 2022.09.13 - 11.40.47pm.jpg'),
+('test3', 'testing3.3', 'chee.sen987@gmail.com', '0123456789', 'test3 - 2022.09.13 - 11.07.24pm.jpg'),
+('testingFail1', 'testingFail1', 'FalseEmail@gmail.com', '01115386485', 'noprofil.jpg');
 
 --
 -- Constraints for dumped tables
