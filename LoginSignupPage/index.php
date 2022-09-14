@@ -28,8 +28,10 @@
 								<div class="card-front">
 									<div class="center-wrap">
 										<div class="section text-center">
-
-											<h4 class="mb-4 pb-3">Log In</h4>
+										
+											<h4 class="mb-4 pb-3">
+											<img class="dark-logo" src="../StaffPage/assets/images/StudentPagephoto/UTM-LOGO1.png" width = "300" height="90" alt="UTM Logo">
+											<br><br>UTMKL Facility Booking System</h4>
                                             <form action= "..\case1\processFBS.php" method="POST">
 											<div class="form-group">
 												<input type="text" name="username" class="form-style" placeholder="Your Email" autocomplete="off" required>
