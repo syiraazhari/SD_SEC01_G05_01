@@ -30,7 +30,7 @@
 										<div class="section text-center">
 										
 											<h4 class="mb-4 pb-3">
-											<img class="dark-logo" src="../StaffPage/assets/images/StudentPagephoto/UTM-LOGO.png" 	 alt="UTM Logo">
+											<img class="dark-logo" src="../StaffPage/assets/images/StudentPagephoto/UTM-LOGO.png" 	weight="150" height = "150" alt="UTM Logo">
 											<br><br>UTMKL Facility Booking System</h4>
                                             <form action= "..\case1\processFBS.php" method="POST">
 											<div class="form-group">
