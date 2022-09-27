@@ -100,23 +100,12 @@
 
     </style>
 </head>
-<body>
-
 <?php
-include "../case1/FBS.php";
-//include "..\menu\menu.php";
-echo'<br><br><div class="w3-container" style="width:70%;margin:auto">';
-
-if(isSet($_POST['checkAvailable'])) {
-    getUserName();
-    echo "<br><b>".$_SESSION['name']."</b>";
-
-    $_SESSION['startDate'] = $_POST['startDate'];
-    $_SESSION['endDate'] = $_POST['endDate'];
-    displayAvailableList();
-}
-displayHeaderStaff();
+session_start(); 
 ?>
+<body>
+<br><br><div class="w3-container" style="width:70%;margin:auto">'
+
 <br><br>
 <div class="w3-container" style="background-color:#008080; color:white">
     <h1>FACILITY</h1>
@@ -138,7 +127,20 @@ displayHeaderStaff();
 </form>
 
 </div>
+<?php
+include "../case1/FBS.php";
+//include "..\menu\menu.php";
+if(isSet($_POST['checkAvailable'])) {
+    
+    //getUserName();
+    echo "<br><b>".$_SESSION['name']."</b>";
 
+    $_SESSION['startDate'] = $_POST['startDate'];
+    $_SESSION['endDate'] = $_POST['endDate'];
+    displayAvailableList();
+}
+displayHeaderStaff();
+?>
 <?php
 
 function displayAvailableList() {
