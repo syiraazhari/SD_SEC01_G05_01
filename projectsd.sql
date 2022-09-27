@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 14, 2022 at 01:03 AM
+-- Generation Time: Sep 27, 2022 at 11:57 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -44,17 +44,24 @@ CREATE TABLE IF NOT EXISTS `facility` (
 --
 
 INSERT INTO `facility` (`facilityId`, `name`, `category`, `capacity`, `facilityDetail`, `ratePerDay`, `status`) VALUES
-('A30', 'AUDITORIUM IBNU SINA', 'AUDITORIUM', 250, 'Meja & kerusi, rostrum, Sistem PA, LCD Projektor, Penghawa Dingin Berpusat', '1150.00', 'Available'),
-('A40', 'AUDITORIUM QUANTUM', 'AUDITORIUM', 80, 'Meja & kerusi, rostrum, Sistem PA, LCD Projektor, Penghawa Dingin Berpusat', '600.00', 'Available'),
-('D10', 'ATRIUM', 'DEWAN SERBAGUNA', 500, 'Pentas & Penghawa Dingin Berpusat', '650.00', 'Available'),
-('D20', 'ANNEX', 'DEWAN SERBAGUNA', 150, 'Penghawa Dingin Berpusat', '500.00', 'Available'),
-('M70', 'MAKMAL SPARK STATION', 'MAKMAL', 40, 'Meja & kerusi, Penghawa Dingin \r\nBerpusat', '720.00', 'Available'),
-('M80', 'MAKMAL CREATIVE SPOT', 'MAKMAL', 40, 'Meja & kerusi, Penghawa Dingin \r\nBerpusat', '720.00', 'Available'),
-('M90', 'MAKMAL WONDERS HUB', 'MAKMAL', 40, 'Meja & kerusi, Penghawa Dingin \r\nBerpusat', '720.00', 'Available'),
-('R50', 'RUANG SERBAGUNA (MPH)', 'RUANG SERBAGUNA', 150, 'Meja & kerusi, Penghawa Dingin \r\nBerpusat', '600.00', 'Available'),
-('R60', 'LANDSKAP/WATER PLAZA', 'RUANG SERBAGUNA', 300, '-', '720.00', 'Available'),
-('S60', 'GELANGGANG FUTSAL', 'SUKAN', NULL, '-', '70.00', 'Available'),
-('S61', 'BasketBall', 'Basketball Court', 100, '-', '100.00', 'Available');
+('B111', 'FOYER DEWAN BANQUET', 'FOYER DEWAN BANQUET', 40, 'Suitable for sit-down meal area', '250.00', 'AVAILABLE'),
+('B122', 'BILIK GERAKAN', 'BILIK GERAKAN', 18, 'Suitable for medium size meeting group', '250.00', 'AVAILABLE'),
+('B133', 'BILIK LPU (AL-GHAZALI)', 'BILIK LPU (AL-GHAZALI)', 20, 'Suitable for meeting, and presentation', '300.00', 'AVAILABLE'),
+('C111', 'FOYER A BANGUNAN PSZ', 'FOYER A BANGUNAN PSZ', 60, 'Suitable for sit-down meal', '300.00', 'AVAILABLE'),
+('C122', 'FOYER B BANGUNAN PSZ', 'FOYER B BANGUNAN PSZ', 30, 'Suitable for sit-down meal', '200.00', 'AVAILABLE'),
+('C133', 'DATARAN ILMU', 'DATARAN ILMU', 300, 'Suitable for outdoor event', '250.00', 'AVAILABLE'),
+('D111', 'Dewan Banquet', 'Dewan Banquet', 70, 'Suitable for big group discussion, workshop, and seminar', '620.00', 'AVAILABLE'),
+('D122', 'DEWAN TAN SRI AINUDDIN WAHID', 'DEWAN TAN SRI AINUDDIN WAHID', 500, 'Suitable for big gathering including dinner, wedding, conference, and exam', '4000.00', 'AVAILABLE'),
+('D133', 'DEWAN JUMAAH', 'DEWAN JUMAAH', 150, 'Suitable for big group meeting, workshop, and seminar', '1700.00', 'AVAILABLE'),
+('D144', 'DEWAN AZMAN HASHIM', 'DEWAN AZMAN HASHIM', 500, 'Suitable for conference, seminar, and public lecture', '4000.00', 'AVAILABLE'),
+('D155', 'DEWAN BANQUET II', 'DEWAN BANQUET II', 80, 'Suitable for workshop, group discussion, and sit-down meal', '700.00', 'AVAILABLE'),
+('D166', 'DEWAN SEMINAR', 'DEWAN SEMINAR', 140, 'Suitable for medium size seminar and public lecture.', '1700.00', 'AVAILABLE'),
+('E111', 'BILIK ILMUAN 1', 'BILIK ILMUAN 1', 100, 'Suitable for workshop and seminar', '1700.00', 'AVAILABLE'),
+('E133', 'BILIK ILMUAN 3', 'BILIK ILMUAN 3', 100, 'Suitable for workshop and sit-down meal', '1200.00', 'AVAILABLE'),
+('E222', 'BILIK ILMUAN 2', 'BILIK ILMUAN 2', 100, 'Suitable for workshop and seminar', '1700.00', 'AVAILABLE'),
+('F111', 'BILIK KULIAH MENARA RAZAK 6', 'BILIK KULIAH MENARA RAZAK 6', 50, 'Suitable for classroom and workshop', '500.00', 'AVAILABLE'),
+('F122', 'BILIK KULIAH MENARA RAZAK 1-5', 'BILIK KULIAH MENARA RAZAK 1-5', 30, 'Suitable for classroom and workshop', '300.00', 'AVAILABLE'),
+('F133', 'BILIK KULIAH MENARA RAZAK 7-13', 'BILIK KULIAH MENARA RAZAK 7-13', 30, 'Suitable for classroom and workshop', '300.00', 'AVAILABLE');
 
 -- --------------------------------------------------------
 
@@ -114,24 +121,6 @@ CREATE TABLE IF NOT EXISTS `rent` (
   KEY `facilityId` (`facilityId`),
   KEY `facilityId_2` (`facilityId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `rent`
---
-
-INSERT INTO `rent` (`rent_reference`, `userId`, `date_reserved`, `reserved_by`, `date_rent_start`, `date_rent_end`, `facilityId`, `total_price`) VALUES
-(85, 'tancheesen123@hotmail.com', '2022-04-13', 'TANCHEESEN', '2022-04-14', '2022-04-15', 'A30', 1150),
-(86, '9@gmail.com', '2022-04-13', 'Mohamad Azafri', '2022-04-14', '2022-04-15', 'A40', 600),
-(87, '9@gmail.com', '2022-04-13', 'Mohamad Azafri', '2022-04-16', '2022-04-17', 'D20', 500),
-(88, '9@gmail.com', '2022-04-13', 'Mohamad Azafri', '2022-04-18', '2022-04-28', 'D10', 6500),
-(89, 'shazanur0@gmail.com', '2022-04-13', 'testing 123123', '2022-04-18', '2022-04-20', 'A30', 2300),
-(90, 'shazanur0@gmail.com', '2022-04-13', 'testing 123123', '2022-04-21', '2022-04-22', 'M80', 720),
-(91, 'shazanur0@gmail.com', '2022-04-13', 'testing 123123', '2022-04-21', '2022-04-22', 'M80', 720),
-(92, 'shazanur0@gmail.com', '2022-04-13', 'testing 123123', '2022-04-18', '2022-05-01', 'R50', 7800),
-(93, 'tancheesen123@hotmail.com', '2022-04-13', 'TANCHEESEN', '2022-04-18', '2022-04-23', 'M70', 3600),
-(94, 'tancheesen123@hotmail.com', '2022-04-13', 'TANCHEESEN', '2022-04-18', '2022-04-23', 'M70', 3600),
-(95, 'tancheesen123@hotmail.com', '2022-04-13', 'TANCHEESEN', '2022-04-25', '2022-04-27', 'M70', 1440),
-(96, 'tancheesen123@hotmail.com', '2022-04-13', 'TANCHEESEN', '2022-05-03', '2022-05-06', 'M90', 2160);
 
 -- --------------------------------------------------------
 
@@ -203,7 +192,7 @@ INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `creat
 ('chee.sen987@gmail.com', 'cheesen1234', 'Admin', 'b59274db54aba7fd2e2412bad863a47b', 1, '2022-09-13 12:55:35.241720'),
 ('cheesen.987@gmail.com', 'tancheesen12', 'Student', 'cd109530ffd5e10e78c9d6f44db77847', 1, '2022-09-13 12:39:13.741453'),
 ('FalseEmail@gmail.com', '123456789', 'Staff', 'b8c0155d3d69c217bdc6520a7d2323b2', 0, '2022-09-13 22:26:41.219360'),
-('tancheesen123@hotmail.com', 'tancheesen12', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 0, '2022-09-13 23:39:12.138856');
+('tancheesen123@hotmail.com', 'tancheesen12', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856');
 
 -- --------------------------------------------------------
 
@@ -251,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 --
 
 INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`, `Image`) VALUES
-('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485 ', 'lonely123 - 2022.09.13 - 11.40.47pm.jpg'),
+('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485 ', 'lonely123 - 2022.09.14 - 01.08.44am.jpg'),
 ('test3', 'testing3.3', 'chee.sen987@gmail.com', '0123456789', 'test3 - 2022.09.13 - 11.07.24pm.jpg'),
 ('testingFail1', 'testingFail1', 'FalseEmail@gmail.com', '01115386485', 'noprofil.jpg');
 
