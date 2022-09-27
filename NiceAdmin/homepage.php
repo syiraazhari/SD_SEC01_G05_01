@@ -230,6 +230,11 @@
            <i class="bi bi-menu-button-wide"></i><span>Facilities</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+            <a href="AdminFacilityList.php">
+              <i class="bi bi-circle"></i><span>View Facility</span>
+            </a>
+          </li>
           <li>
             <a href="components-alerts.html">
               <i class="bi bi-circle"></i><span>Dewan Jumaah</span>

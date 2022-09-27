@@ -5,13 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Verify Account - Admin</title>
+  <title>Dashboard - Admin </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/UTM-LOGO.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -37,33 +36,33 @@
   ======================================================== -->
 </head>
 <?php
-                    include "..\case1\FBS.php";
-                      session_start(); 
-                      //$email = $_SESSION['username'];
-                
+  include "..\case1\FBS.php";
+  session_start(); 
+  //$email = $_SESSION['username'];
 
-                      $userId = $_SESSION['username'];
-                      $listOfStudent = getListOfUserStaff($userId);
 
-                      //if(mysqli_num_rows($listOfStudent) > 0)
-                      $row = mysqli_fetch_assoc($listOfStudent);
-                      $email =  $row['userId'];
-                      $listOfPassword = getListOfpassword($email);
-                      $row2 = mysqli_fetch_assoc($listOfPassword);
+  $userId = $_SESSION['username'];
+  $listOfStudent = getListOfUserStaff($userId);
 
-                      $matricNum = $row['staffId'];
-                      $name = $row['name'];
-                      
-                      $phoneNum = $row['phoneNum']; 
-                      $image =   $row['Image'];                      
-                      $password = $row2['password'];
-                      $userType = $row2['userType'];
-                      $vkey = $row2['vkey'];
-                      $verified = $row2['verified'];
-                      
-                    ?>
+  //if(mysqli_num_rows($listOfStudent) > 0)
+  $row = mysqli_fetch_assoc($listOfStudent);
+  $email =  $row['userId'];
+  $listOfPassword = getListOfpassword($email);
+  $row2 = mysqli_fetch_assoc($listOfPassword);
+
+  $matricNum = $row['staffId'];
+  $name = $row['name'];
+  
+  $phoneNum = $row['phoneNum'];
+  $image = $row['Image'];                       
+  $password = $row2['password'];
+  $userType = $row2['userType'];
+  $vkey = $row2['vkey'];
+  $verified = $row2['verified'];
+
+
+?>
 <body>
-
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -91,81 +90,6 @@
             <i class="bi bi-search"></i>
           </a>
         </li><!-- End Search Icon-->
-
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-            <li class="dropdown-header">
-              You have 4 new notifications
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-exclamation-circle text-warning"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-check-circle text-success"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-info-circle text-primary"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="dropdown-footer">
-              <a href="#">Show all notifications</a>
-            </li>
-
-          </ul><!-- End Notification Dropdown Items -->
-
-        </li><!-- End Notification Nav -->
 
         <li class="nav-item dropdown">
 
@@ -236,17 +160,17 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="../img/<?php echo $image; ?>" width = 40 height = 40 title="<?php echo $image; ?>" class="rounded-circle">
+          <img src="../img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
             <?php
               echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$email.'</span>';
             ?>
+            
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
             <?php
               echo '<h6>'.$email.'</h6>';
-              echo '<span>'.$userType.'</span>';
             ?>
             </li>
             <li>
@@ -269,16 +193,7 @@
                 <span>Account Settings</span>
               </a>
             </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -304,7 +219,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="homepage.php">
+        <a class="nav-link " href="homepage.php">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -312,7 +227,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Facilities</span><i class="bi bi-chevron-down ms-auto"></i>
+           <i class="bi bi-menu-button-wide"></i><span>Facilities</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
@@ -320,78 +235,54 @@
               <i class="bi bi-circle"></i><span>View Facility</span>
             </a>
           </li>
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
+
           <li>
             <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
+              <i class="bi bi-circle"></i><span>Dewan Seminar</span>
             </a>
           </li>
           <li>
             <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
+              <i class="bi bi-circle"></i><span>Dewan Azham Hashim</span>
             </a>
           </li>
           <li>
             <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
             </a>
           </li>
           <li>
             <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
             </a>
           </li>
           <li>
             <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
             </a>
           </li>
           <li>
             <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
+              <i class="bi bi-circle"></i><span>Bilik Bankuet</span>
             </a>
           </li>
           <li>
             <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
+              <i class="bi bi-circle"></i><span>Football Field</span>
             </a>
           </li>
           <li>
             <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
+              <i class="bi bi-circle"></i><span>Tennis Court</span>
             </a>
           </li>
           <li>
             <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
+              <i class="bi bi-circle"></i><span>Basketball Court</span>
             </a>
           </li>
         </ul>
-      </li><!-- End Components Nav -->
+      </li><!-- End Facilities Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -427,8 +318,8 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html" class="active">
-              <i class="bi bi-circle"></i><span>Verify Account</span>
+            <a href="tables-general.html">
+              <i class="bi bi-circle"></i><span>General Tables</span>
             </a>
           </li>
           <li>
@@ -493,14 +384,12 @@
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
-
       <li class="nav-item">
-        <a class="nav-link "  href="verifyAccount.php">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Verify Account</span>
+        <a class="nav-link collapsed" href="verifyAccount.php">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Verify Account</span>
         </a>
-      </li><!-- End Verify Account Nav -->
-
-
+      </li>
     </ul>
 
   </aside><!-- End Sidebar-->
@@ -508,12 +397,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Verify Account</h1>
+      <h1>Facilities</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Pages</li>
-          <li class="breadcrumb-item active">Verify Account</li>
+          <li class="breadcrumb-item active">Facilities</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -522,79 +410,43 @@
       <div class="row">
       <div class="card">
             <div class="card-body">
-              <h5 class="card-title">User Account</h5>
+              <h5 class="card-title">Facilities</h5>
               <?php
-                $listOfAccount = getListOfAccount();
-                if(mysqli_num_rows($listOfAccount) > 0){
+                $listOfFacility = getListOfFacility();
+                if(mysqli_num_rows($listOfFacility) > 0){
                   //displayTableHeader();
                 $count=1;
                   echo '<table class="table table-hover">
                   <thead>
                     <tr>
-                      <th scope="col" style="text-align: center;">Bil</th>
-                      <th scope="col"style="text-align: center;"> Email</th>
-                      <th scope="col" style="text-align: center;">Password</th>
-                      <th scope="col" style="text-align: center;">User Type</th>
-                      <th scope="col" style="text-align: center;">Verify Key</th>
-                      <th scope="col" style="text-align: center;">Verify Status</th>
-                      <th scope="col" style="text-align: center;">Create Date</th>
-                      <th scope="col" style="text-align: center;">Approve</th>
-                      <th scope="col" style="text-align: center;">Disapprove</th>
+                      <th scope="col" style="text-align: center;">Facility ID</th>
+                      <th scope="col"style="text-align: center;">Name</th>
+                      <th scope="col" style="text-align: center;">Category</th>
+                      <th scope="col" style="text-align: center;">Capacity</th>
+                      <th scope="col" style="text-align: center;">FacilityDetail</th>
+                      <th scope="col" style="text-align: center;">ratePerDay</th>
+                      <th scope="col" style="text-align: center;">Status</th>
                     </tr>
                   </thead>';
-                while($acc = mysqli_fetch_assoc($listOfAccount))
+                while($facility = mysqli_fetch_assoc($listOfFacility))
                 {
                     //$listOfPassword = getListOfpassword($row['userId']);
                    // $row2 = mysqli_fetch_assoc($listOfPassword);
                     
-                    if($acc['userType'] == 'Admin'){
+                    
                     echo'<tr>';
-                    echo '<th scope ="row"style="text-align: center;">'.$count.'</th>';
-                    echo '<td style="text-align: center;">'.($acc['userId']).'</td>';
-                    echo '<td style="text-align: center;">'.($acc['password']).'</td>';
-                    echo '<td style="text-align: center;">'.($acc['userType']).'</td>';
-                    echo '<td style="text-align: center;">'.($acc['vkey']).'</td>';
-                    echo '<td style="text-align: center;">'.$acc['verified'].'</td>';
-                    echo '<td style="text-align: center;">'.$acc['createdate'].'</td>';
+                    echo '<th scope ="row"style="text-align: center;">'.($facility['facilityId']).'</th>';
+                    echo '<td style="text-align: center;">'.($facility['name']).'</td>';
+                    echo '<td style="text-align: center;">'.($facility['category']).'</td>';
+                    echo '<td style="text-align: center;">'.($facility['capacity']).'</td>';
+                    echo '<td style="text-align: center;">'.($facility['facilityDetail']).'</td>';
+                    echo '<td style="text-align: center;">'.($facility['ratePerDay']).'</td>';
+                    echo '<td style="text-align: center;">'.($facility['status']).'</td>';
                     echo '<td style="text-align: center;"></td>';
                     echo '<td style="text-align: center;"></td>';
                     echo'</tr style="text-align: center;">';
 
-                    }else{
-                      echo '<form action= "..\case1\processFBS.php" method="POST">';
-                      echo'<tr>';
-                    echo '<th scope ="row" style="text-align: center;">'.$count.'</th>';
-                    echo '<td style="text-align: center;"><input type="hidden" name="email" value='.($acc['userId']).' placeholder="Your Email" autocomplete="off">'.($acc['userId']).'</td>';
-                    echo '<td style="text-align: center;" name = "password" >'.($acc['password']).'</td>';
-                    echo '<td style="text-align: center;" name = "userType" >'.($acc['userType']).'</td>';
-                    echo '<td style="text-align: center;" name = "vkey" >'.($acc['vkey']).'</td>';
-                    echo '<td style="text-align: center;" name = "verified" >'.$acc['verified'].'</td>';
-                    echo '<td style="text-align: center;" name = "createdate" >'.$acc['createdate'].'</td>';
-                    echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
-                    echo '
-                  </button>
-                  <div class="modal fade" id="basicModal1" tabindex="-1">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Approve Verification</h5>
-                          <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          Are u sure wanna <b>Approve</b> this email?
-                        </div>
-                        <div class="modal-footer">
-                          <button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" name="approveVerify" class="btn btn-primary">Save changes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- End Basic Modal-->';
-                    echo '<td><button style="position: relative; left: 28%;"" type="submit" name="disapproveVerify" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
-                   
-                    echo'</tr>';
-                    echo '</form>';
-                    }
+                    
                     
                     $count++;
                 }
