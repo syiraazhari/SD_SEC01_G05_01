@@ -247,25 +247,25 @@
                 </a>
             </li>
             <li>
-                <a href="components-badges.html">
+                <a href="DewanAzhamHashim.php">
                 <i class="bi bi-circle"></i><span>Dewan Azham Hashim</span>
                 </a>
             </li>
             <li>
-                <a href="components-breadcrumbs.html">
-                <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
-                </a>
-            </li>
-            <li>
-                <a href="components-buttons.html">
-                <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
-                </a>
-            </li>
-            <li>
-                <a href="components-cards.html">
-                <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
-                </a>
-            </li>
+            <a href="BilikIlmuan1.php">
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
+            </a>
+          </li>
+          <li>
+            <a href="BilikIlmuan2.php">
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
+            </a>
+          </li>
+          <li>
+            <a href="BilikIlmuan3.php">
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
+            </a>
+          </li>
             <li>
                 <a href="components-carousel.html">
                 <i class="bi bi-circle"></i><span>Bilik Bankuet</span>

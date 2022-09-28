@@ -252,17 +252,17 @@
             </a>
           </li>
           <li>
-            <a href="components-breadcrumbs.html">
+            <a href="BilikIlmuan1.php">
               <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
             </a>
           </li>
           <li>
-            <a href="components-buttons.html">
+            <a href="BilikIlmuan2.php">
               <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
             </a>
           </li>
           <li>
-            <a href="components-cards.html">
+            <a href="BilikIlmuan3.php">
               <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
             </a>
           </li>
