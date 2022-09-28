@@ -266,26 +266,26 @@
               <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
             </a>
           </li>
-            <li>
-                <a href="components-carousel.html">
-                <i class="bi bi-circle"></i><span>Bilik Bankuet</span>
-                </a>
-            </li>
-            <li>
-                <a href="components-list-group.html">
-                <i class="bi bi-circle"></i><span>Football Field</span>
-                </a>
-            </li>
-            <li>
-                <a href="components-modal.html">
-                <i class="bi bi-circle"></i><span>Tennis Court</span>
-                </a>
-            </li>
-            <li>
-                <a href="components-tabs.html">
-                <i class="bi bi-circle"></i><span>Basketball Court</span>
-                </a>
-            </li>
+          <li>
+            <a href="BilikBankuet.php">
+              <i class="bi bi-circle"></i><span>Bilik Bankuet</span>
+            </a>
+          </li>
+          <li>
+            <a href="FootballField.php">
+              <i class="bi bi-circle"></i><span>Football Field</span>
+            </a>
+          </li>
+          <li>
+            <a href="TennisCourt.php">
+              <i class="bi bi-circle"></i><span>Tennis Court</span>
+            </a>
+          </li>
+          <li>
+            <a href="BasketballCourt.php">
+              <i class="bi bi-circle"></i><span>Basketball Court</span>
+            </a>
+          </li>
             </ul>
         </li><!-- End Facilities Nav -->
 
