@@ -241,7 +241,7 @@
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="DewanSeminar.php">
               <i class="bi bi-circle"></i><span>Dewan Seminar</span>
             </a>
           </li>
