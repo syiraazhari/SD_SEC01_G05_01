@@ -353,7 +353,8 @@ function displayHeaderCustomer(){
                                             <a class="" href="StaffProfile.php"><span class="menu-text">Profile</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
-                                                <li><a href="StaffProfile.php"><span class="menu-text">View Profile</span></a></li>
+                                                <li><a href="StudentProfile.php"><span class="menu-text">View Profile</span></a></li>
+                                                <li><a href="StudentBookingHistory.php"><span class="menu-text">Booking History</span></a></li>
                                                 <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
