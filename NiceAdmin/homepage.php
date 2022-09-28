@@ -237,12 +237,12 @@
           </li>
           
           <li>
-            <a href="components-alerts.html">
+            <a href="DewanJumaah.php">
               <i class="bi bi-circle"></i><span>Dewan Jumaah</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="DewanSeminar.php">
               <i class="bi bi-circle"></i><span>Dewan Seminar</span>
             </a>
           </li>
