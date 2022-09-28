@@ -247,7 +247,7 @@
                 </a>
             </li>
             <li>
-                <a href="components-badges.html">
+                <a href="DewanAzhamHashim.php">
                 <i class="bi bi-circle"></i><span>Dewan Azham Hashim</span>
                 </a>
             </li>
