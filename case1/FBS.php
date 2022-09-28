@@ -303,20 +303,8 @@ function displayLogoutHeader(){
 
 function displayHeaderCustomer(){
 
-    
-    echo '
-    <h2 style="text-align: center"> HOME PAGE Customer </h2>
-            <form action= "..\case1\processFBS.php" method="POST">
-                <input type="submit" value="Home" name="home">
-                <input type="submit" value="Booking Facility Form" name="booking">
-                <input type="submit" value="Search Facility" name="case1">
-                <input type="submit" value="Update Profile " name="case2">  
-            </form>';
-}
 
-function displayHeaderStaff(){
-
-    echo '
+    echo'
     <!-- Header Section Start -->
         <div class="header-section header-transparent sticky-header section">
             <div class="header-inner">
@@ -327,7 +315,7 @@ function displayHeaderStaff(){
                         <div class="col-xl-2 col-auto order-0">
                             <div class="header-logo">
                                 <a href="index.html">
-                                    <img class="dark-logo" src="StaffPagePicture/UTM-LOGO1.png" width = "100" height="90" alt="UTM Logo">
+                                    <img class="dark-logo" src="../StudentPage/assets/images/StudentPagephoto/UTM-LOGO1.png" width = "100" height="90" alt="UTM Logo">
                                 </a>
                             </div>
                         </div>
@@ -366,6 +354,101 @@ function displayHeaderStaff(){
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
                                                 <li><a href="StaffProfile.php"><span class="menu-text">View Profile</span></a></li>
+                                                <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- Header Search Start -->
+                            <div class="header-search-area ml-xl-7 ml-0">
+
+                                <!-- Header Login Start -->
+                                <div class="header-search">
+                                    <a href="javascript:void(0)" class="header-search-toggle"><i
+                                            class="pe-7s-search pe-2x pe-va"></i></a>
+                                </div>
+                                <!-- Header Login End -->
+                            </div>
+                            <!-- Header Search End -->
+
+                            <!-- Header Mobile Menu Toggle Start -->
+                            <div class="header-mobile-menu-toggle d-xl-none ml-sm-2">
+                                <button class="toggle">
+                                    <i class="icon-top"></i>
+                                    <i class="icon-middle"></i>
+                                    <i class="icon-bottom"></i>
+                                </button>
+                            </div>
+                            <!-- Header Mobile Menu Toggle End -->
+                        </div>
+                        <!-- Header Main Menu End -->
+
+                        <!-- Header Right Start -->
+                        <div class="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
+                            <a href="contact-us.html" class="btn btn-light btn-hover-primary">Contact Us</a>
+                        </div>
+                        <!-- Header Right End -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Section End -->';
+}
+
+function displayHeaderStaff(){
+
+    echo '
+    <!-- Header Section Start -->
+        <div class="header-section header-transparent sticky-header section">
+            <div class="header-inner">
+                <div class="container position-relative">
+                    <div class="row justify-content-between align-items-center">
+
+                        <!-- Header Logo Start -->
+                        <div class="col-xl-2 col-auto order-0">
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img class="dark-logo" src="assets/images/StudentPagephoto/UTM-LOGO1.png" width = "120" height="90" alt="UTM Logo">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Header Logo End -->
+
+                        <!-- Header Main Menu Start -->
+                        <div
+                            class="col-auto col-xl d-flex align-items-center justify-content-xl-center justify-content-end order-2 order-xl-1">
+                            <div class="menu-column-area d-none d-xl-block position-static">
+                                <nav class="site-main-menu">
+                                    <ul>
+                                        <li>
+                                            <a class="active" href="index.html"><span
+                                                    class="menu-text">Homepage</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="about.html"><span class="menu-text">About Us</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="service.html"><span class="menu-text">Services</span></a>
+                                        </li>
+                                        <li class="has-children">
+                                            <a href="work.html"><span class="menu-text">Work</span></a>
+                                            <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                            <ul class="sub-menu">
+                                                <li><a href="work.html"><span class="menu-text">Work</span></a></li>
+                                                <li><a href="work-details.html"><span class="menu-text">Work
+                                                            Details</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="contact-us.html"><span class="menu-text">Contact Us</span></a>
+                                        </li>
+                                        <li class="has-children">
+                                            <a href="StudentProfile.php"><span class="menu-text">Profile</span></a>
+                                            <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                            <ul class="sub-menu">
+                                                <li><a href="StudentProfile.php"><span class="menu-text" >View Profile</span></a></li>
                                                 <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
