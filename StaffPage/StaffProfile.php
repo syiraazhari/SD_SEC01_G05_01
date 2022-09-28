@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Profile - Student Page</title>
+  <title>Profile - Staff Page</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <meta name="robots" content="index, follow" />
@@ -131,10 +131,11 @@
                                             <a href="contact-us.html"><span class="menu-text" style="color:whitesmoke">Contact Us</span></a>
                                         </li>
                                         <li class="has-children">
-                                            <a  class="active" href="StudentProfile.php"><span class="menu-text" style="color:whitesmoke">Profile</span></a>
+                                            <a  class="active" href="#"><span class="menu-text" style="color:whitesmoke">Profile</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
-                                                <li><a href="StudentProfile.php"><span class="menu-text" >View Profile</span></a></li>
+                                                <li><a href="StaffProfile.php"><span class="menu-text" >View Profile</span></a></li>
+                                                <li><a href="StaffBookingHistory.php"><span class="menu-text">Booking History</span></a></li>
                                                 <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
