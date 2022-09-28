@@ -426,14 +426,16 @@
                       <th scope="col" style="text-align: center;">FacilityDetail</th>
                       <th scope="col" style="text-align: center;">ratePerDay</th>
                       <th scope="col" style="text-align: center;">Status</th>
+                      <th scope="col" style="text-align: center;">Delete</th>
+                      <th scope="col" style="text-align: center;">Update</th>
                     </tr>
                   </thead>';
                 while($facility = mysqli_fetch_assoc($listOfFacility))
                 {
                     //$listOfPassword = getListOfpassword($row['userId']);
                    // $row2 = mysqli_fetch_assoc($listOfPassword);
-                    
-                    
+                  
+                   echo '<form action= "..\case1\processFBS.php" method="POST">';
                     echo'<tr>';
                     echo '<th scope ="row"style="text-align: center;">'.($facility['facilityId']).'</th>';
                     echo '<td style="text-align: center;">'.($facility['name']).'</td>';
@@ -442,9 +444,30 @@
                     echo '<td style="text-align: center;">'.($facility['facilityDetail']).'</td>';
                     echo '<td style="text-align: center;">'.($facility['ratePerDay']).'</td>';
                     echo '<td style="text-align: center;">'.($facility['status']).'</td>';
-                    echo '<td style="text-align: center;"></td>';
-                    echo '<td style="text-align: center;"></td>';
-                    echo'</tr style="text-align: center;">';
+                    echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
+                    echo '
+                  </button>
+                  <div class="modal fade" id="basicModal1" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Approve Verification</h5>
+                          <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Are u sure wanna <b>Delete</b> this facility record?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" name="deleteFacility" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Basic Modal-->';
+                    echo '<td><button style="position: relative; left: 28%;"" type="submit" name="updateFacility" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
+                   
+                    echo'</tr>';
+                    echo '</form>';
 
                     
                     

@@ -259,6 +259,14 @@ else if(isSet($_POST['register'])){
 
     header('Location:..\Rent\bookingFacility.php');
 
+}else if(isSet($_POST['deleteFacility'])){
+
+    header('Location:../NiceAdmin/forms-elements.php');
+    
+}else if(isSet($_POST['updateFacility'])){
+
+    header('Location:../NiceAdmin/forms-elements.php');
+    
 }else if(isSet($_POST['case1'])){
 
     header('Location:..\case1\customerFacilityList.php');
