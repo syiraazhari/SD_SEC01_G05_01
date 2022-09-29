@@ -8,7 +8,7 @@ include "FBS.php";
 if(isSet($_POST['addFacilityButton']))
 {
     $success = addFacility();
-    header('Location:..\case1\staffFacilityList.php');
+    header("Location:..\NiceAdmin\AdminFacilityList.php");
 
 }
 else if(isSet($_POST['deleteFacilityButton'])) {

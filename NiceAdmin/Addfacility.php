@@ -236,11 +236,6 @@
             </a>
           </li>
           <li>
-            <a href="Addfacility.php">
-              <i class="bi bi-circle"></i><span>Add Facility</span>
-            </a>
-          </li>
-          <li>
             <a href="DewanJumaah.php">
               <i class="bi bi-circle"></i><span>Dewan Jumaah</span>
             </a>
@@ -411,91 +406,105 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Facilities</li>
+          <li class="breadcrumb-item active">Update Facility</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
     <section class="section">
       <div class="row">
-      <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Facilities</h5>
-              <?php
-                $listOfFacility = getListOfFacility();
-                if(mysqli_num_rows($listOfFacility) > 0){
-                  //displayTableHeader();
-                $count=1;
-                  echo '<table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col" style="text-align: center;">Facility ID</th>
-                      <th scope="col"style="text-align: center;">Name</th>
-                      <th scope="col" style="text-align: center;">Category</th>
-                      <th scope="col" style="text-align: center;">Capacity</th>
-                      <th scope="col" style="text-align: center;">FacilityDetail</th>
-                      <th scope="col" style="text-align: center;">ratePerDay(RM)</th>
-                      <th scope="col" style="text-align: center;">Status</th>
-                      <th scope="col" style="text-align: center;">Delete</th>
-                      <th scope="col" style="text-align: center;">Update</th>
-                    </tr>
-                  </thead>';
-                while($facility = mysqli_fetch_assoc($listOfFacility))
-                {
-                    //$listOfPassword = getListOfpassword($row['userId']);
-                   // $row2 = mysqli_fetch_assoc($listOfPassword);
-                  
-                   echo '<form action= "..\NiceAdmin\UpdateFacility.php" method="POST">';
-                    echo'<tr>';
-                    echo '<th scope ="row"style="text-align: center;">'.($facility['facilityId']).'</th>';
-                    echo '<input type="hidden" name="facilityId" value='.($facility['facilityId']).'>';
-                    echo '<td style="text-align: center;">'.($facility['name']).'</td>';
-                    echo '<td style="text-align: center;">'.($facility['category']).'</td>';
-                    echo '<td style="text-align: center;">'.($facility['capacity']).'</td>';
-                    echo '<td style="text-align: center;">'.($facility['facilityDetail']).'</td>';
-                    echo '<td style="text-align: center;">'.($facility['ratePerDay']).'</td>';
-                    echo '<td style="text-align: center;">'.($facility['status']).'</td>';
-                    echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
-                    echo '
-                  </button>
-                  <div class="modal fade" id="basicModal1" tabindex="-1">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Approve Verification</h5>
-                          <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          Are u sure wanna <b>Delete</b> this facility record?
-                        </div>
-                        <div class="modal-footer">
-                          <button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" name="deleteFacility" class="btn btn-primary">Save changes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- End Basic Modal-->';
-                    echo '<td><a href="..\NiceAdmin\UpdateFacility.php"><button style="position: relative; left: 28%;"" type="submit" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
-                   
-                    echo'</tr>';
-                    echo '</form>';
+        
 
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">General Form Elements</h5>
+
+              <!-- General Form Elements -->
+              <form action= "..\case1\processFBS.php" method="POST">
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label" >Facility ID</label>
+                  <div class="col-sm-10">
+                    <?php
+                      echo '<input type="text" name="facilityId" class="form-control" s >';
+                    ?>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputEmail" class="col-sm-2 col-form-label">Name</label>
+                  <div class="col-sm-10">
                     
+                    <?php
+                      echo '<input type="text" name="name" class="form-control" >';
+                    ?>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputPassword"  class="col-sm-2 col-form-label">Category</label>
+                  <div class="col-sm-10">
+                  <?php
+                      echo '<input type="text" name="category" class="form-control" >';
+                    ?>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">capacity</label>
+                  <div class="col-sm-10">
+                  <?php
+                      echo '<input type="number" name="capacity" class="form-control" >';
+                    ?>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Facility Details</label>
+                  <div class="col-sm-10">
                     
-                    $count++;
-                }
-                }else{
-                  echo "Error table";
-                }
-              ?>
-              <!-- Table with hoverable rows -->
-              </table>
-              <!-- End Table with hoverable rows -->
+                    <?php
+                      echo '<input type="text" style="height: 100px" name="facilityDetail" class="form-control" >';
+                    ?>
+                  </div>
+                
+                </div>
+                <div class="row mb-3">
+                  <label for="inputDate" class="col-sm-2 col-form-label">ratePerDay(RM)</label>
+                  <div class="col-sm-10">
+                  <?php
+                      echo '<input type="number" name="ratePerDay" class="form-control" >';
+                    ?>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">Status</label>
+                  <div class="col-sm-10">
+                    <select class="form-select" name="status" aria-label="Default select example">
+                      
+                      <?php
+                      echo '<option selected>Click here to select menu</option>'
+                    ?>
+                      <option value="AVAILABLE">AVAILABLE</option>
+                      <option value="NOT AVAILABLE">NOT AVAILABLE</option>
+                      <option value="UNDER MAINTENANCE">UNDER MAINTENANCE</option>
+                    </select>
+                  </div>
+                </div>
+                
+
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">Submit Button</label>
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary"  name="addFacilityButton">Add Facility</button>
+                  </div>
+                </div>
+
+              </form><!-- End General Form Elements -->
 
             </div>
           </div>
-          
-        </div>
+
+        
+
+        
+      </div>
     </section>
 
   </main><!-- End #main -->
