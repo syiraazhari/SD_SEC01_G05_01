@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>UTMKL Staff Facility Booking</title>
+    <title>Student Booking Hiistory</title>
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Agench is an elegant design, 100% responsive Bootstrap 5 template. It is best for agency websites and marketing companies.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="StaffPagePicture/UTM-LOGO.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../StudentPage/assets/images/StudentPagephoto/UTM-LOGO.png">
 
     <!-- CSS
 	============================================ -->
