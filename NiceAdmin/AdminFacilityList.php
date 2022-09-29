@@ -429,7 +429,7 @@
                       <th scope="col" style="text-align: center;">Category</th>
                       <th scope="col" style="text-align: center;">Capacity</th>
                       <th scope="col" style="text-align: center;">FacilityDetail</th>
-                      <th scope="col" style="text-align: center;">ratePerDay</th>
+                      <th scope="col" style="text-align: center;">ratePerDay(RM)</th>
                       <th scope="col" style="text-align: center;">Status</th>
                       <th scope="col" style="text-align: center;">Delete</th>
                       <th scope="col" style="text-align: center;">Update</th>
@@ -440,9 +440,10 @@
                     //$listOfPassword = getListOfpassword($row['userId']);
                    // $row2 = mysqli_fetch_assoc($listOfPassword);
                   
-                   echo '<form action= "..\case1\processFBS.php" method="POST">';
+                   echo '<form action= "..\NiceAdmin\UpdateFacility.php" method="POST">';
                     echo'<tr>';
                     echo '<th scope ="row"style="text-align: center;">'.($facility['facilityId']).'</th>';
+                    echo '<input type="hidden" name="facilityId" value='.($facility['facilityId']).'>';
                     echo '<td style="text-align: center;">'.($facility['name']).'</td>';
                     echo '<td style="text-align: center;">'.($facility['category']).'</td>';
                     echo '<td style="text-align: center;">'.($facility['capacity']).'</td>';
@@ -469,7 +470,7 @@
                       </div>
                     </div>
                   </div><!-- End Basic Modal-->';
-                    echo '<td><button style="position: relative; left: 28%;"" type="submit" name="updateFacility" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
+                    echo '<td><a href="..\NiceAdmin\UpdateFacility.php"><button style="position: relative; left: 28%;"" type="submit" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
                    
                     echo'</tr>';
                     echo '</form>';

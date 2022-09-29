@@ -68,7 +68,18 @@ function updateFacilityInformation()
     $sql .= 'name= "' . $name . '",category="' . $category . '", capacity="' . $capacity . '"
     , facilityDetail="' . $facilityDetail . '", ratePerDay="' . $ratePerDay . '", status="' . $status . '"';
     $sql .= 'where facilityId = "' . $facilityId . '"';
+
+    echo $sql;
     $qry = mysqli_query($con, $sql);
+    //return $qry;
+
+    if(!$qry){
+        echo 'Record adding error 1';
+        
+    }else{
+        echo 'Record added';
+        
+    }
     return $qry;
 
 }
