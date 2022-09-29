@@ -8,7 +8,7 @@ include "FBS.php";
 if(isSet($_POST['addFacilityButton']))
 {
     $success = addFacility();
-    header('Location:..\case1\staffFacilityList.php');
+    header("Location:..\NiceAdmin\AdminFacilityList.php");
 
 }
 else if(isSet($_POST['deleteFacilityButton'])) {
@@ -44,7 +44,8 @@ else if(isSet($_POST['deleteFacilityButton'])) {
 }
 else if(isSet($_POST['updateFacilityButton'])) {
     updateFacilityInformation();
-    header("Location:..\case1\staffFacilityList.php");
+    
+    header("Location:..\NiceAdmin\AdminFacilityList.php");
 
 }else if(isSet($_POST['deleteUserButton'])) {
 
@@ -261,11 +262,11 @@ else if(isSet($_POST['register'])){
 
 }else if(isSet($_POST['deleteFacility'])){
 
-    header('Location:../NiceAdmin/forms-elements.php');
+    header('Location:../NiceAdmin/UpdateFacility.php');
     
 }else if(isSet($_POST['updateFacility'])){
 
-    header('Location:../NiceAdmin/forms-elements.php');
+    header('Location:../NiceAdmin/UpdateFacility.php');
     
 }else if(isSet($_POST['case1'])){
 

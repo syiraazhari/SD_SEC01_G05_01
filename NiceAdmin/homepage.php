@@ -235,7 +235,11 @@
               <i class="bi bi-circle"></i><span>View Facility</span>
             </a>
           </li>
-          
+          <li>
+            <a href="Addfacility.php">
+              <i class="bi bi-circle"></i><span>Add Facility</span>
+            </a>
+          </li>
           <li>
             <a href="DewanJumaah.php">
               <i class="bi bi-circle"></i><span>Dewan Jumaah</span>
