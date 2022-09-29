@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>UTMKL Staff Facility Booking</title>
+    <title>Student Booking History</title>
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Agench is an elegant design, 100% responsive Bootstrap 5 template. It is best for agency websites and marketing companies.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -123,31 +123,7 @@
 <?php
 session_start();
 ?>
-<script>
-    function searchCustomer(){
-        var facilityToSearch = document.getElementById("facility").value;
-        if (facilityToSearch == "") {
-            document.getElementById("CustomerList").innerHTML = "Please Enter facility name to search";
-            return;
 
-        } else {
-            if(window.XMLHttpRequest){
-                xmlhttp = new XMLHttpRequest();
-            }else{
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("CustomerList").innerHTML = this.responseText;
-                }
-            };
-            xmlhttp.open("GET","searchByFacility.php?facilityToSearch="+facilityToSearch,true);
-            xmlhttp.send();
-        }
-
-    }
-
-</script>
 <?php
 include "../case1/FBS.php";
 if(isSet($_POST['case3']) || isSet($_POST['bookFacilityButton'])){
@@ -163,46 +139,10 @@ displayHeaderCustomer();
 ?>
 
 <br><br><br><br><b><h1 style="text-align: center">History Booking</h1></b>
-
 <?php
-if(isSet($_POST['case3'])){
-    displayBookingHistoryCustomer();
-}
-else if(isSet($_POST['bookFacilityButton'])) {
-    //sendBookEmailToCustomer();
-    bookFacility();
-    displayBookingHistoryCustomer();
-}
-else if(isSet($_POST['Scase3'])){
-    $listOfFacility = bookingHistoryStaff();
-
-    displayBookingHistoryStaff($listOfFacility);
-}
-else if (isSet($_POST['searchKey'])){
-
-
-    if (isSet($_POST['searchByFacilityId'])) {
-        $listOfFacility =  bookingHistoryByFacilityId($_POST['searchKey']);
-    }
-    else if(isSet($_POST['searchByFacilityName'])){
-        $listOfFacility =  bookingHistoryByFacilityName($_POST['searchKey']);
-    }
-    else if(isSet($_POST['searchByUserId'])){
-        $listOfFacility =  bookingHistoryByUserId($_POST['searchKey']);
-    }
-    else if(isSet($_POST['searchByUserName'])){
-        $listOfFacility =  bookingHistoryByUserName($_POST['searchKey']);
-    }
-
-    else if (isSet($_POST['showAll'])){
-        $listOfFacility = bookingHistoryStaff();
-    }
-
-    displayBookingHistoryStaff($listOfFacility);
-
-}
-
+displayBookingHistoryCustomer();
 ?>
+
 
 <?php
 
@@ -322,7 +262,3 @@ function displaySearchPanel()
 
 </body>
 </html>
-
-
-
-

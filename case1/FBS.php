@@ -887,7 +887,6 @@ function bookFacility() {
         echo 'Error adding record <br>';
         return false;
     }else{
-        echo 'Record added<br>';
         return true;
     }
 }

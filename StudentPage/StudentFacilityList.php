@@ -240,7 +240,7 @@ function displayAvailableList() {
         $facilityId = $row['facilityId'];
 
         echo '<td>';//booking option
-        echo'<form action="historyBooking.php" method="POST">';
+        echo'<form action="StudentBookingHistory.php" method="POST">';
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
         echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
         echo'</form>';
