@@ -152,7 +152,7 @@ session_start();
 include "../case1/FBS.php";
 if(isSet($_POST['case3']) || isSet($_POST['bookFacilityButton'])){
     //    displayHeaderCustomer();
-    include "..\menu\menu.php";
+    //include "..\menu\menu.php";
 }
 else if(isSet($_POST['Scase3']) || isSet($_POST['searchKey'])){
     // displayHeaderStaff();
@@ -169,7 +169,7 @@ if(isSet($_POST['case3'])){
     displayBookingHistoryCustomer();
 }
 else if(isSet($_POST['bookFacilityButton'])) {
-    sendBookEmailToCustomer();
+    //sendBookEmailToCustomer();
     bookFacility();
     displayBookingHistoryCustomer();
 }
