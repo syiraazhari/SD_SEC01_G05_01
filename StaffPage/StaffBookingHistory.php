@@ -163,6 +163,9 @@ displayHeaderStaff();
 ?>
 
 <br><br><br><br><b><h1 style="text-align: center">History Booking</h1></b>
+<?php
+displayBookingHistoryCustomer();
+?>
 
 <?php
 if(isSet($_POST['case3'])){
