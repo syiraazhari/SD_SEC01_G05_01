@@ -41,30 +41,51 @@
             background-color: pink;
         }
         body{
-            background: url(StaffPagePicture/CampusUTMKL.png);
+            background: url(StaffPagePicture/building.jpg);
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            animation: backwards;
         }
 
-        .button {
-            background-color: #2F4F4F; /* Green */
-            border: none;
-            color: white;
-            padding: 5px 40px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
+        .chkbutton {
+        border-radius: 100px;
+        background-color: #154360;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 14px;
+        padding: 15px;
+        width: 170px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 4px 360px;
         }
 
-        .button1 {
-            color: white;
-            border: 2px solid #2F4F4F;
+        .chkbutton span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        }
+
+        .chkbutton span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+        }
+
+        .chkbutton:hover span {
+        padding-right: 25px;
+        }
+
+        .button:hover span:after {
+        opacity: 1;
+        right: 0;
         }
 
         .button1:hover {
@@ -79,10 +100,12 @@
             padding: 10px;
             text-align: center;
             text-decoration: none;
+            align-items: center;
             display: inline-block;
             font-size: 15px;
             margin: 4px 2px;
             cursor: pointer;
+            
         }
 
         .button5 {border-radius: 50%;}
@@ -104,27 +127,34 @@
 session_start(); 
 ?>
 <body>
-<br><br><div class="w3-container" style="width:70%;margin:auto">'
+<br><br><div class="w3-container" style="width:75%;margin:auto">'
 
 <br><br>
-<div class="w3-container" style="background-color:#008080; color:white">
-    <h1>FACILITY</h1>
-</div>
+
 <form action=" " method ="POST">
-    <div class="w3-container w3-white w3-padding-16">
-        <div class="w3-row-padding" style="margin:0 -16px;">
+    <div class="w3-container" style="background-color:#265887; color:red; border-radius:100px">
+    <h2>CHECK FACILITY</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16" style=" border-radius:100px">
+        <div class="w3-row-padding" style="margin:20px; justify-content:center">
             <div class="w3-half w3-margin-bottom">
                 <label for="startDate">Start Date</label>
                 <input type="date" name = "startDate">
             </div>
-            <div class="w3-half">
+            <div class="w3-half w3-margin-bottom">
                 <label for="endDate">End Date</label>
                 <input type="date" name = "endDate">
             </div>
         </div>
-        <input  style="float: left" class="button button1" type="submit" name = "checkAvailable" value = "Check" >
+        <button class="chkbutton" type="submit" name = "checkAvailable" value = "Check"><span></span>Check</button>
+
+</form><br><br>
+
+<form>
+
 
 </form>
+
 
 </div>
 <?php
@@ -204,7 +234,7 @@ function displaySearchPanel()
 function displayTableHeader()
 {
     echo'<table class="w3-table w3-striped w3-border">';
-    echo'<br><tr style="background-color: #008080; color:white;">
+    echo'<br><tr style="background-color: #265887; color:white; justify-content:centre; align-itms:centre">
                 <th>Bil</th>
                 <th>Category</th>
                 <th>Capacity</th>
