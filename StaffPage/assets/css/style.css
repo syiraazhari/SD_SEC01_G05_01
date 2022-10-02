@@ -28865,8 +28865,9 @@ textarea {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 62px 30px; }
+  grid-template-columns:repeat(2, 1fr);
+  grid-gap:62px 30px;
+  }
   .work-details-list .details-list label {
     color: #030f27;
     text-transform: capitalize;
@@ -29147,11 +29148,12 @@ textarea {
     font-weight: 400;
     margin-bottom: 40px; }
   .blog-nav-links .nav-list {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px; }
+    display: -ms-grid
+    display: grid
+    -ms-grid-columns: (1fr)[2]
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 30px;
+   }
     @media only screen and (max-width: 767px) {
       .blog-nav-links .nav-list {
         -ms-grid-columns: auto;
