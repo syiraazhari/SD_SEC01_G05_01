@@ -11,12 +11,34 @@
 </head>
 <body>
   <div class="container">
-    <h2 class="my-4 text-center">Intro To React Course [$50]</h2>
+    <?php
+      include "..\case1\FBS.php";
+      session_start(); 
+
+      $email = $_SESSION['username'];
+      $bookingfacilityId = $_POST["FacilityId"];
+
+      $FacilityInformation = getFacilityInformation($bookingfacilityId);
+      $row = mysqli_fetch_assoc($FacilityInformation);
+
+      echo $row['facilityId'];
+      echo $row['name'];
+      echo $row['category'];
+      echo $row['capacity'];
+      echo $row['facilityDetail'];
+      echo $row['ratePerDay'];
+      echo $row['status'];
+      echo $bookingfacilityId ;
+      echo '<h2 class="my-4 text-center">'.$row['name'].'</h2>';
+    ?>
     <form action="./charge.php" method="post" id="payment-form">
       <div class="form-row">
        <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
        <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">
-       <input type="email" name="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address">
+       <?php
+        echo '<input type="email" name="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address" value = "'.$email.'" readonly>';
+       ?>
+       
         <div id="card-element" class="form-control">
           <!-- a Stripe Element will be inserted here. -->
         </div>

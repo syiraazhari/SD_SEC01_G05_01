@@ -202,9 +202,9 @@ function displayAvailableList() {
         echo'</form>';
 
 
-        echo '<form action= "..\case1\processFBS.php" method="POST">';
-        echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
-        echo'<input class="button2 button5" type="submit" name="goToPayment" value="Payment">';
+        echo '<form action= "..\Test_stripe\index.php" method="POST">';
+        echo'<input type="hidden" name="FacilityId" value = "'.$row["facilityId"].'">';
+        echo'<input class="button2 button5" type="submit" name="" value="Payment">';
         echo '</form>';
 
 
