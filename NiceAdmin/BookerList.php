@@ -529,7 +529,7 @@ $verified = $row2['verified'];
                 <div class="card-body">
                     <h5 class="card-title">Student</h5>
                     <?php
-                    $listOfAccount = getListOfUserCustomer($userId);
+                    $listOfAccount = getListOfUser();
                     if(mysqli_num_rows($listOfAccount) > 0) {
                         $count = 1;
                         echo '<table class="table table-hover">
@@ -540,13 +540,9 @@ $verified = $row2['verified'];
                       <th scope="col" style="text-align: center;">Name</th>
                       <th scope="col" style="text-align: center;">Matric Number</th>
                       <th scope="col" style="text-align: center;">Phone Number</th>
-                      <th scope="col" style="text-align: center;">Update</th>
-                      <th scope="col" style="text-align: center;">Delete</th>
                     </tr>
                   </thead>';
                         while ($acc = mysqli_fetch_assoc($listOfAccount)) {
-
-
                                 echo '<tr>';
                                 echo '<th scope ="row" style="text-align: center;">' . $count . '</th>';
                                 echo '<td style="text-align: center;"><input type="hidden" name="email" value=' . ($acc['userId']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['userId']) . '</td>';
@@ -555,10 +551,56 @@ $verified = $row2['verified'];
                                 echo '<td style="text-align: center;" name = "phoneNum" >' . ($acc['phoneNum']) . '</td>';
                                 echo '</tr>';
                                 echo '</form>';
-                            }
                             $count++;
+                            }
+
                     }
 
+
+
+                    ?>
+                    <!-- Table with hoverable rows -->
+                    </table>
+                    <!-- End Table with hoverable rows -->
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Staff</h5>
+                    <?php
+                    $listOfAccount2 = getListOfStaff();
+                    if(mysqli_num_rows($listOfAccount2) > 0) {
+                        $count = 1;
+                        echo '<table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" style="text-align: center;">Bil</th>
+                      <th scope="col"style="text-align: center;"> Email</th>
+                      <th scope="col" style="text-align: center;">Name</th>
+                      <th scope="col" style="text-align: center;">Staff Id</th>
+                      <th scope="col" style="text-align: center;">Phone Number</th>
+                    </tr>
+                  </thead>';
+                        while ($acc = mysqli_fetch_assoc($listOfAccount2)) {
+                            echo '<tr>';
+                            echo '<th scope ="row" style="text-align: center;">' . $count . '</th>';
+                            echo '<td style="text-align: center;"><input type="hidden" name="email" value=' . ($acc['userId']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['userId']) . '</td>';
+                            echo '<td style="text-align: center;" name = "name" >' . ($acc['name']) . '</td>';
+                            echo '<td style="text-align: center;" name = "matricNum" >' . ($acc['staffId']) . '</td>';
+                            echo '<td style="text-align: center;" name = "phoneNum" >' . ($acc['phoneNum']) . '</td>';
+                            echo '</tr>';
+                            echo '</form>';
+                            $count++;
+                        }
+
+                    }
                     ?>
                     <!-- Table with hoverable rows -->
                     </table>

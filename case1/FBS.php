@@ -516,6 +516,16 @@ function getListOfUser(){
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
+function getListOfStaff(){
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from userinfostaff order by userId';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
 
 function getListOfAccount(){
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
