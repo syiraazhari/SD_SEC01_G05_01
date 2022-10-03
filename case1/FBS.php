@@ -91,7 +91,7 @@ function searchByFacilityId()
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from facility ';
+    $sql = 'select * from userinfo ';
     $sql .= 'where facilityId = "'.$_POST['searchKey'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
@@ -104,7 +104,7 @@ function searchByName()
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from facility ';
+    $sql = 'select * from userinfo ';
     $sql .= 'where name = "'.$_POST['searchKey'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
@@ -166,11 +166,15 @@ function addRegisterStaff(){
     values('$userId','$password','Staff','$vkey')";
     $sql2 ="insert into userinfoStaff(staffId,name, userId,phoneNum) 
     values('$MatricNum','$name','$userId','$phoneNum')";
+    $sql3 ="insert into bookerlist(MatricNum,name, userId,phoneNum,userType) 
+    values('$MatricNum','$name','$userId','$phoneNum','Staff')";
 
     echo $sql;
     echo $sql2;
+    echo $sql3;
     $qry =mysqli_query($con,$sql);//execute query
     $qry2 =mysqli_query($con,$sql2);
+    $qry3 =mysqli_query($con,$sql3);
       if(!$qry){
           echo 'Record adding error 1';
           
@@ -186,6 +190,13 @@ function addRegisterStaff(){
     }else{
         echo 'Record added';
         
+    }
+    if(!$qry3){
+        echo 'Record adding error';
+
+    }else{
+        echo 'Record added';
+
     }
     echo "we in email";
     $email = $userId;
@@ -240,10 +251,14 @@ function addRegister(){
     values('$userId','$password','Student','$vkey')";
     $sql2 ="insert into userinfo(MatricNum,name, userId,phoneNum) 
     values('$MatricNum','$name','$userId','$phoneNum')";
+    $sql3 ="insert into bookerlist(MatricNum,name, userId,phoneNum,userType) 
+    values('$MatricNum','$name','$userId','$phoneNum','Student')";
     echo $sql;
     echo $sql2;
+    echo $sql3;
     $qry =mysqli_query($con,$sql);//execute query
     $qry2 =mysqli_query($con,$sql2);
+    $qry3 =mysqli_query($con,$sql3);
       if(!$qry){
           echo 'Record adding error 1';
           
@@ -259,6 +274,13 @@ function addRegister(){
     }else{
         echo 'Record added';
         
+    }
+    if(!$qry3){
+        echo 'Record adding error';
+
+    }else{
+        echo 'Record added';
+
     }
     echo "we in email";
     $email = $userId;
@@ -516,13 +538,13 @@ function getListOfUser(){
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
-function getListOfStaff(){
+function getListOfBooker(){
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfostaff order by userId';
+    $sql = 'select * from bookerlist order by userId';
     $qry = mysqli_query($con, $sql);
     return $qry;
 }

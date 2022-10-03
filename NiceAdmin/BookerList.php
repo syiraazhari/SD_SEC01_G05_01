@@ -522,14 +522,56 @@ $verified = $row2['verified'];
             </ol>
         </nav>
     </div><!-- End Page Title -->
+    <?php
 
+    displaySearchPanel();
+
+    $listOfUser = getListOfUser();
+
+    if(isSet($_POST['searchByIcNum']))
+    {
+        $listOfUser = searchByIcNum();
+    }
+    else if (isSet($_POST['searchByNameUser']))
+    {
+        $listOfUser = searchByNameUser();
+    }
+    else if (isSet($_POST['searchByEmail']))
+    {
+        $listOfUser = searchByEmail();
+    }
+    else if (isSet($_POST['searchByState']))
+    {
+        $listOfUser = searchByState();
+    }
+    else
+    {
+        $listOfUser = getListOfUser();
+    }
+    function displaySearchPanel()
+    {
+        echo'<div>';
+        echo'<form action="" method="POST">';
+        echo'<fieldset style="text-align: center; font-size: 20px;"><legend><b>Search booker:</b></legend>';
+        echo'<b>Search Key: </b>';
+        echo'<br><input type="text" name="searchKey">';
+        echo'<br><br><input class="button button3" type="submit" name="searchByEmail" value="By Email">';
+        echo'<input class="button button3" type="submit" name="searchByName" value="By Name">';
+        echo'<input class="button button3" type="submit" name="searchByCategory" value="By Category">';
+        echo'<input class="button button3" type="submit" name="displayAll" value="Display All">';
+        echo'</fieldset>';
+        echo'</form>';
+        echo'</div>';
+
+    }
+    ?>
     <section class="section">
         <div class="row">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Student</h5>
+                    <h5 class="card-title">Booker List</h5>
                     <?php
-                    $listOfAccount = getListOfUser();
+                    $listOfAccount = getListOfBooker();
                     if(mysqli_num_rows($listOfAccount) > 0) {
                         $count = 1;
                         echo '<table class="table table-hover">
@@ -538,8 +580,9 @@ $verified = $row2['verified'];
                       <th scope="col" style="text-align: center;">Bil</th>
                       <th scope="col"style="text-align: center;"> Email</th>
                       <th scope="col" style="text-align: center;">Name</th>
-                      <th scope="col" style="text-align: center;">Matric Number</th>
+                      <th scope="col" style="text-align: center;">Matric Number/Staff Id</th>
                       <th scope="col" style="text-align: center;">Phone Number</th>
+                      <th scope="col" style="text-align: center;">User Type</th>
                     </tr>
                   </thead>';
                         while ($acc = mysqli_fetch_assoc($listOfAccount)) {
@@ -549,6 +592,7 @@ $verified = $row2['verified'];
                                 echo '<td style="text-align: center;" name = "name" >' . ($acc['name']) . '</td>';
                                 echo '<td style="text-align: center;" name = "matricNum" >' . ($acc['MatricNum']) . '</td>';
                                 echo '<td style="text-align: center;" name = "phoneNum" >' . ($acc['phoneNum']) . '</td>';
+                                echo '<td style="text-align: center;" name = "userType" >' . ($acc['UserType']) . '</td>';
                                 echo '</tr>';
                                 echo '</form>';
                             $count++;
@@ -569,48 +613,6 @@ $verified = $row2['verified'];
         </div>
     </section>
 
-    <section class="section">
-        <div class="row">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Staff</h5>
-                    <?php
-                    $listOfAccount2 = getListOfStaff();
-                    if(mysqli_num_rows($listOfAccount2) > 0) {
-                        $count = 1;
-                        echo '<table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col" style="text-align: center;">Bil</th>
-                      <th scope="col"style="text-align: center;"> Email</th>
-                      <th scope="col" style="text-align: center;">Name</th>
-                      <th scope="col" style="text-align: center;">Staff Id</th>
-                      <th scope="col" style="text-align: center;">Phone Number</th>
-                    </tr>
-                  </thead>';
-                        while ($acc = mysqli_fetch_assoc($listOfAccount2)) {
-                            echo '<tr>';
-                            echo '<th scope ="row" style="text-align: center;">' . $count . '</th>';
-                            echo '<td style="text-align: center;"><input type="hidden" name="email" value=' . ($acc['userId']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['userId']) . '</td>';
-                            echo '<td style="text-align: center;" name = "name" >' . ($acc['name']) . '</td>';
-                            echo '<td style="text-align: center;" name = "matricNum" >' . ($acc['staffId']) . '</td>';
-                            echo '<td style="text-align: center;" name = "phoneNum" >' . ($acc['phoneNum']) . '</td>';
-                            echo '</tr>';
-                            echo '</form>';
-                            $count++;
-                        }
-
-                    }
-                    ?>
-                    <!-- Table with hoverable rows -->
-                    </table>
-                    <!-- End Table with hoverable rows -->
-
-                </div>
-            </div>
-
-        </div>
-    </section>
 
 </main><!-- End #main -->
 
