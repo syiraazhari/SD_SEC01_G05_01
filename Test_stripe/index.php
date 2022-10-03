@@ -36,6 +36,13 @@
        <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
        <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">
        <?php
+       echo'<input type="hidden" name="FacilityId" value = "'.$row["facilityId"].'">';
+       echo'<input type="hidden" name="name" value = "'.$row["name"].'">';
+       echo'<input type="hidden" name="category" value = "'.$row["category"].'">';
+       echo'<input type="hidden" name="capacity" value = "'.$row["capacity"].'">';
+       echo'<input type="hidden" name="facilityDetail" value = "'.$row["facilityDetail"].'">';
+       echo'<input type="hidden" name="ratePerDay" value = "'.$row["ratePerDay"].'">';
+       echo'<input type="hidden" name="status" value = "'.$row["status"].'">';
         echo '<input type="email" name="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address" value = "'.$email.'" readonly>';
        ?>
        
