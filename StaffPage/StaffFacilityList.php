@@ -200,10 +200,18 @@ function displayAvailableList() {
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
         echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
         echo'</form>';
+
+
+        echo '<form action= "..\case1\processFBS.php" method="POST">';
+        echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
+        echo'<input class="button2 button5" type="submit" name="goToPayment" value="Payment">';
+        echo '</form>';
+
+
         echo'</td>';
         echo'</tr>';
         $count++;
-
+        
 
     }
     echo'</table>';

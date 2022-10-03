@@ -10,6 +10,9 @@ if(isSet($_POST['addFacilityButton']))
     $success = addFacility();
     header("Location:..\NiceAdmin\AdminFacilityList.php");
 
+}else if(isSet($_POST['goToPayment'])){
+    
+    header("Location:..\StaffPage\Test_stripe");
 }
 else if(isSet($_POST['deleteFacilityButton'])) {
 

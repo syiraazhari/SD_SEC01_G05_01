@@ -170,8 +170,10 @@ if(isSet($_POST['case3'])){
 }
 else if(isSet($_POST['bookFacilityButton'])) {
     //sendBookEmailToCustomer();
+
     bookFacility();
     displayBookingHistoryCustomer();
+    
 }
 else if(isSet($_POST['Scase3'])){
     $listOfFacility = bookingHistoryStaff();
