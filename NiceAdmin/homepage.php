@@ -399,6 +399,12 @@
           <span>Verify Account</span>
         </a>
       </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="BookerList.php">
+                <i class="bi bi-layout-text-window-reverse"></i>
+                <span>Booker List</span>
+            </a>
+        </li>
     </ul>
 
   </aside><!-- End Sidebar-->

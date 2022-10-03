@@ -284,6 +284,7 @@ function addRegister(){
 
 }
 
+
 function userLogin($userId){
     $userName =$_POST['username'];
     $password =$_POST['password'];
