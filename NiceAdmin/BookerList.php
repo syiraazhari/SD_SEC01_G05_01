@@ -593,9 +593,11 @@ $verified = $row2['verified'];
                       <th scope="col" style="text-align: center;">Matric Number/Staff Id</th>
                       <th scope="col" style="text-align: center;">Phone Number</th>
                       <th scope="col" style="text-align: center;">User Type</th>
+                      <th scope="col" style="text-align: center;">Info</th>
                     </tr>
                   </thead>';
                         while ($acc = mysqli_fetch_assoc($listOfUser)) {
+                            echo '<form action= "..\case1\processFBS.php" method="POST">';
                                 echo '<tr>';
                                 echo '<th scope ="row" style="text-align: center;">' . $count . '</th>';
                                 echo '<td style="text-align: center;"><input type="hidden" name="email" value=' . ($acc['userId']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['userId']) . '</td>';
@@ -603,7 +605,27 @@ $verified = $row2['verified'];
                                 echo '<td style="text-align: center;" name = "matricNum" >' . ($acc['MatricNum']) . '</td>';
                                 echo '<td style="text-align: center;" name = "phoneNum" >' . ($acc['phoneNum']) . '</td>';
                                 echo '<td style="text-align: center;" name = "userType" >' . ($acc['UserType']) . '</td>';
-                                echo '</tr>';
+                            echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-info-circle"></i></button></td>';
+                            echo '
+                  </button>
+                  <div class="modal fade" id="basicModal1" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Booker Info</h5>
+                          <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Are u sure wanna <b>Approve</b> this email?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" name="approveVerify" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Basic Modal-->';
+                            echo '</tr>';
                                 echo '</form>';
                             $count++;
                             }
