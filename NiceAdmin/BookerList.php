@@ -578,8 +578,8 @@ $verified = $row2['verified'];
                 <div class="card-body">
                     <h5 class="card-title">Booker List</h5>
                     <?php
-                    $listOfAccount = getListOfBooker();
-                    if(mysqli_num_rows($listOfAccount) > 0) {
+                    
+                    if(mysqli_num_rows($listOfUser) > 0) {
                         $count = 1;
                         echo '<table class="table table-hover">
                   <thead>
@@ -592,7 +592,7 @@ $verified = $row2['verified'];
                       <th scope="col" style="text-align: center;">User Type</th>
                     </tr>
                   </thead>';
-                        while ($acc = mysqli_fetch_assoc($listOfAccount)) {
+                        while ($acc = mysqli_fetch_assoc($listOfUser)) {
                                 echo '<tr>';
                                 echo '<th scope ="row" style="text-align: center;">' . $count . '</th>';
                                 echo '<td style="text-align: center;"><input type="hidden" name="email" value=' . ($acc['userId']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['userId']) . '</td>';
