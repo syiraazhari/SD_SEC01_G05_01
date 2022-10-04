@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 04, 2022 at 08:04 AM
+-- Generation Time: Oct 04, 2022 at 09:09 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -54,6 +54,22 @@ INSERT INTO `bookerlist` (`MatricNum`, `name`, `userId`, `phoneNum`, `UserType`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customers`
+--
+
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE IF NOT EXISTS `customers` (
+  `id` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `facility`
 --
 
@@ -64,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `facility` (
   `category` varchar(30) NOT NULL,
   `capacity` int(4) DEFAULT NULL,
   `facilityDetail` varchar(200) NOT NULL,
-  `ratePerDay` decimal(6,2) NOT NULL,
+  `ratePerDay` decimal(20,0) NOT NULL,
   `status` varchar(30) NOT NULL,
   PRIMARY KEY (`facilityId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -74,61 +90,24 @@ CREATE TABLE IF NOT EXISTS `facility` (
 --
 
 INSERT INTO `facility` (`facilityId`, `name`, `category`, `capacity`, `facilityDetail`, `ratePerDay`, `status`) VALUES
-('B111', 'FOYER DEWAN BANQUET', 'FOYER DEWAN BANQUET', 40, 'Suitable for sit-down meal area', '250.00', 'AVAILABLE'),
-('B122', 'BILIK GERAKAN', 'BILIK GERAKAN', 18, 'Suitable for medium size meeting group', '250.00', 'AVAILABLE'),
-('B133', 'BILIK LPU (AL-GHAZALI)', 'BILIK LPU (AL-GHAZALI)', 20, 'Suitable for meeting, and presentation', '300.00', 'AVAILABLE'),
-('C111', 'FOYER A BANGUNAN PSZ', 'FOYER A BANGUNAN PSZ', 60, 'Suitable for sit-down meal', '300.00', 'AVAILABLE'),
-('C122', 'FOYER B BANGUNAN PSZ', 'FOYER B BANGUNAN PSZ', 30, 'Suitable for sit-down meal', '200.00', 'AVAILABLE'),
-('C133', 'DATARAN ILMU', 'DATARAN ILMU', 300, 'Suitable for outdoor event', '250.00', 'AVAILABLE'),
-('D111', 'Dewan Banquet', 'Dewan Banquet', 70, 'Suitable for big group discussion, workshop, and seminar', '620.00', 'AVAILABLE'),
-('D122', 'DEWAN TAN SRI AINUDDIN WAHID', 'DEWAN TAN SRI AINUDDIN WAHID', 500, 'Suitable for big gathering including dinner, wedding, conference, and exam', '4000.00', 'AVAILABLE'),
-('D133', 'DEWAN JUMAAH', 'DEWAN JUMAAH', 150, 'Suitable for big group meeting, workshop, and seminar', '1700.00', 'AVAILABLE'),
-('D144', 'DEWAN AZMAN HASHIM', 'DEWAN AZMAN HASHIM', 500, 'Suitable for conference, seminar, and public lecture', '4000.00', 'AVAILABLE'),
-('D155', 'DEWAN BANQUET II', 'DEWAN BANQUET II', 80, 'Suitable for workshop, group discussion, and sit-down meal', '700.00', 'AVAILABLE'),
-('D166', 'DEWAN SEMINAR', 'DEWAN SEMINAR', 140, 'Suitable for medium size seminar and public lecture.', '1700.00', 'AVAILABLE'),
-('E111', 'BILIK ILMUAN 1', 'BILIK ILMUAN 1', 100, 'Suitable for workshop and seminar', '1700.00', 'AVAILABLE'),
-('E133', 'BILIK ILMUAN 3', 'BILIK ILMUAN 3', 100, 'Suitable for workshop and sit-down meal', '1200.00', 'AVAILABLE'),
-('E222', 'BILIK ILMUAN 2', 'BILIK ILMUAN 2', 100, 'Suitable for workshop and seminar', '1700.00', 'AVAILABLE'),
-('F111', 'BILIK KULIAH MENARA RAZAK 6', 'BILIK KULIAH MENARA RAZAK 6', 50, 'Suitable for classroom and workshop', '500.00', 'AVAILABLE'),
-('F122', 'BILIK KULIAH MENARA RAZAK 1-5', 'BILIK KULIAH MENARA RAZAK 1-5', 30, 'Suitable for classroom and workshop', '300.00', 'AVAILABLE'),
-('F133', 'BILIK KULIAH MENARA RAZAK 7-13', 'BILIK KULIAH MENARA RAZAK 7-13', 30, 'Suitable for classroom and workshop', '300.00', 'AVAILABLE');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `profileimg`
---
-
-DROP TABLE IF EXISTS `profileimg`;
-CREATE TABLE IF NOT EXISTS `profileimg` (
-  `userId` varchar(100) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`userId`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `profileimg`
---
-
-INSERT INTO `profileimg` (`userId`, `username`, `status`) VALUES
-('chee.sen987@gmail.com', 'MrLonely', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pwdreset`
---
-
-DROP TABLE IF EXISTS `pwdreset`;
-CREATE TABLE IF NOT EXISTS `pwdreset` (
-  `pwdResetId` int(11) NOT NULL,
-  `pwdResetEmail` text NOT NULL,
-  `pwdResetSelector` text NOT NULL,
-  `pwdResetToken` longtext NOT NULL,
-  `pwdResetExpires` text NOT NULL,
-  PRIMARY KEY (`pwdResetId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+('B111', 'FOYER DEWAN BANQUET', 'FOYER DEWAN BANQUET', 41, 'Suitable for sit-down meal area', '40000', 'AVAILABLE'),
+('B122', 'BILIK GERAKAN', 'BILIK GERAKAN', 18, 'Suitable for medium size meeting group', '250', 'AVAILABLE'),
+('B133', 'BILIK LPU (AL-GHAZALI)', 'BILIK LPU (AL-GHAZALI)', 20, 'Suitable for meeting, and presentation', '300', 'AVAILABLE'),
+('C111', 'FOYER A BANGUNAN PSZ', 'FOYER A BANGUNAN PSZ', 60, 'Suitable for sit-down meal', '300', 'AVAILABLE'),
+('C122', 'FOYER B BANGUNAN PSZ', 'FOYER B BANGUNAN PSZ', 30, 'Suitable for sit-down meal', '200', 'AVAILABLE'),
+('C133', 'DATARAN ILMU', 'DATARAN ILMU', 300, 'Suitable for outdoor event', '250', 'AVAILABLE'),
+('D111', 'Dewan Banquet', 'Dewan Banquet', 70, 'Suitable for big group discussion, workshop, and seminar', '620', 'AVAILABLE'),
+('D122', 'DEWAN TAN SRI AINUDDIN WAHID', 'DEWAN TAN SRI AINUDDIN WAHID', 500, 'Suitable for big gathering including dinner, wedding, conference, and exam', '4000', 'AVAILABLE'),
+('D133', 'DEWAN JUMAAH', 'DEWAN JUMAAH', 150, 'Suitable for big group meeting, workshop, and seminar', '1700', 'AVAILABLE'),
+('D144', 'DEWAN AZMAN HASHIM', 'DEWAN AZMAN HASHIM', 500, 'Suitable for conference, seminar, and public lecture', '4000', 'AVAILABLE'),
+('D155', 'DEWAN BANQUET II', 'DEWAN BANQUET II', 80, 'Suitable for workshop, group discussion, and sit-down meal', '700', 'AVAILABLE'),
+('D166', 'DEWAN SEMINAR', 'DEWAN SEMINAR', 140, 'Suitable for medium size seminar and public lecture.', '1700', 'AVAILABLE'),
+('E111', 'BILIK ILMUAN 1', 'BILIK ILMUAN 1', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE'),
+('E133', 'BILIK ILMUAN 3', 'BILIK ILMUAN 3', 100, 'Suitable for workshop and sit-down meal', '1200', 'AVAILABLE'),
+('E222', 'BILIK ILMUAN 2', 'BILIK ILMUAN 2', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE'),
+('F111', 'BILIK KULIAH MENARA RAZAK 6', 'BILIK KULIAH MENARA RAZAK 6', 50, 'Suitable for classroom and workshop', '500', 'AVAILABLE'),
+('F122', 'BILIK KULIAH MENARA RAZAK 1-5', 'BILIK KULIAH MENARA RAZAK 1-5', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE'),
+('F133', 'BILIK KULIAH MENARA RAZAK 7-13', 'BILIK KULIAH MENARA RAZAK 7-13', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE');
 
 -- --------------------------------------------------------
 
@@ -150,7 +129,14 @@ CREATE TABLE IF NOT EXISTS `rent` (
   KEY `userId` (`userId`),
   KEY `facilityId` (`facilityId`),
   KEY `facilityId_2` (`facilityId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rent`
+--
+
+INSERT INTO `rent` (`rent_reference`, `userId`, `date_reserved`, `reserved_by`, `date_rent_start`, `date_rent_end`, `facilityId`, `total_price`) VALUES
+(97, 'shaoyuan0228@gmail.com', '2022-10-04', 'Tan Chee Sen', '2022-10-05', '2022-10-06', 'F133', 300);
 
 -- --------------------------------------------------------
 
@@ -200,6 +186,24 @@ INSERT INTO `state_district` (`state`, `district`, `postcode`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transactions`
+--
+
+DROP TABLE IF EXISTS `transactions`;
+CREATE TABLE IF NOT EXISTS `transactions` (
+  `id` varchar(255) NOT NULL,
+  `customer_id` varchar(255) NOT NULL,
+  `product` varchar(255) NOT NULL,
+  `amount` varchar(255) NOT NULL,
+  `currency` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -222,7 +226,7 @@ INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `creat
 ('chee.sen987@gmail.com', 'cheesen1234', 'Admin', 'b59274db54aba7fd2e2412bad863a47b', 1, '2022-09-13 12:55:35.241720'),
 ('cheesen.987@gmail.com', 'tancheesen12', 'Student', 'cd109530ffd5e10e78c9d6f44db77847', 1, '2022-09-13 12:39:13.741453'),
 ('FalseEmail@gmail.com', '123456789', 'Staff', 'b8c0155d3d69c217bdc6520a7d2323b2', 0, '2022-09-13 22:26:41.219360'),
-('shaoyuan0228@gmail.com', 'tan12345', 'Staff', '0aeece83f379a472d9456fdba72e2341', 1, '2022-10-03 13:44:52.171066'),
+('shaoyuan0228@gmail.com', 's', 'Staff', '0aeece83f379a472d9456fdba72e2341', 1, '2022-10-03 13:44:52.171066'),
 ('tancheesen123@hotmail.com', 'tancheesen12', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856');
 
 -- --------------------------------------------------------
@@ -279,12 +283,6 @@ INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`, `Image`) V
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `rent`
---
-ALTER TABLE `rent`
-  ADD CONSTRAINT `rent_ibfk_1` FOREIGN KEY (`facilityId`) REFERENCES `facility` (`facilityId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `userinfo`
