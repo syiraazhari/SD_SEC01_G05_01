@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+<<<<<<< HEAD
+-- Generation Time: Oct 04, 2022 at 04:11 AM
+=======
 -- Generation Time: Oct 04, 2022 at 01:28 AM
+>>>>>>> 5bd76251883f7507848ad846d73b5b9b01b0f78d
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -24,6 +28,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+-- Table structure for table `bookerlist`
+--
+
+DROP TABLE IF EXISTS `bookerlist`;
+CREATE TABLE IF NOT EXISTS `bookerlist` (
+  `MatricNum` varchar(100) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `userId` varchar(100) NOT NULL,
+  `phoneNum` varchar(30) NOT NULL,
+  `UserType` varchar(100) NOT NULL,
+  PRIMARY KEY (`MatricNum`),
+  KEY `userId` (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookerlist`
+--
+
+INSERT INTO `bookerlist` (`MatricNum`, `name`, `userId`, `phoneNum`, `UserType`) VALUES
+('A20DW0196', 'Yap Deh Kai', 'ydk1421@gmail.com', '01159908615', 'Student'),
+('A20DW0976', 'Ahmad bin Ali', 'yapdehkai@gmail.com', '0197784597', 'Student'),
+('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485', 'Staff'),
+('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'Staff'),
+('test2', 'testing2.2', 'cheesen.987@gmail.com', '123123123', 'Student'),
+('test3', 'testing3.3', 'chee.sen987@gmail.com', '0123456789', 'Staff'),
+('testingFail1', 'testingFail1', 'FalseEmail@gmail.com', '01115386485', 'Staff');
+=======
 -- Table structure for table `customers`
 --
 
@@ -45,6 +77,7 @@ INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `created_at`)
 ('cus_MXwDPr4TN3AanP', 'tan', 'asd', 'cheesen987@gmail.com', '2022-10-03 23:14:13'),
 ('cus_MXwikGbwqltB2m', 'test1', 'test1', 'tancheesen123@hotmail.com', '2022-10-03 23:45:12'),
 ('cus_MY5x1nZyldNEU6', '213', '321', 's@gmail.com', '2022-10-04 09:17:59');
+>>>>>>> 5bd76251883f7507848ad846d73b5b9b01b0f78d
 
 -- --------------------------------------------------------
 
@@ -110,6 +143,9 @@ CREATE TABLE IF NOT EXISTS `rent` (
   KEY `userId` (`userId`),
   KEY `facilityId` (`facilityId`),
   KEY `facilityId_2` (`facilityId`)
+<<<<<<< HEAD
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
@@ -127,6 +163,7 @@ INSERT INTO `rent` (`rent_reference`, `userId`, `date_reserved`, `reserved_by`, 
 (8, 'tancheesen123@hotmail.com', '2022-10-03', 'lonely123', '2022-10-05', '2022-10-07', 'B133', 600),
 (9, 'tancheesen123@hotmail.com', '2022-10-03', 'lonely123', '2022-10-05', '2022-10-07', 'C111', 600),
 (10, 'tancheesen123@hotmail.com', '2022-10-03', 'lonely123', '2022-10-26', '2022-10-27', 'C111', 300);
+>>>>>>> 5bd76251883f7507848ad846d73b5b9b01b0f78d
 
 -- --------------------------------------------------------
 
@@ -225,7 +262,12 @@ INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `creat
 ('chee.sen987@gmail.com', 'cheesen1234', 'Admin', 'b59274db54aba7fd2e2412bad863a47b', 1, '2022-09-13 12:55:35.241720'),
 ('cheesen.987@gmail.com', 'tancheesen12', 'Student', 'cd109530ffd5e10e78c9d6f44db77847', 1, '2022-09-13 12:39:13.741453'),
 ('FalseEmail@gmail.com', '123456789', 'Staff', 'b8c0155d3d69c217bdc6520a7d2323b2', 0, '2022-09-13 22:26:41.219360'),
+<<<<<<< HEAD
+('shaoyuan0228@gmail.com', 'tan12345', 'Staff', '0aeece83f379a472d9456fdba72e2341', 1, '2022-10-03 13:44:52.171066'),
+('tancheesen123@hotmail.com', 'tancheesen12', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856');
+=======
 ('s@gmail.com', 's', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856');
+>>>>>>> 5bd76251883f7507848ad846d73b5b9b01b0f78d
 
 -- --------------------------------------------------------
 
@@ -273,9 +315,16 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 --
 
 INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`, `Image`) VALUES
+<<<<<<< HEAD
+('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485 ', 'lonely123 - 2022.09.14 - 01.08.44am.jpg'),
+('test3', 'testing3.3', 'chee.sen987@gmail.com', '0123456789', 'test3 - 2022.09.13 - 11.07.24pm.jpg'),
+('testingFail1', 'testingFail1', 'FalseEmail@gmail.com', '01115386485', 'noprofil.jpg'),
+('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'noprofil.jpg');
+=======
 ('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485 ', 'lonely123 - 2022.09.27 - 12.28.48pm.jpeg'),
 ('test3', 'testing3.3', 'chee.sen987@gmail.com', '0123456789', 'testing3.3 - 2022.09.28 - 06.23.14am.jpeg'),
 ('testingFail1', 'testingFail1', 'FalseEmail@gmail.com', '01115386485', 'noprofil.jpg');
+>>>>>>> 5bd76251883f7507848ad846d73b5b9b01b0f78d
 
 --
 -- Constraints for dumped tables
