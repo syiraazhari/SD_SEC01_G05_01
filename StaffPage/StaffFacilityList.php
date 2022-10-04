@@ -60,7 +60,7 @@
         width: 170px;
         transition: all 0.5s;
         cursor: pointer;
-        margin: 4px 360px;
+        margin: 4px 330px;
         }
 
         .chkbutton span {
@@ -127,15 +127,15 @@
 session_start(); 
 ?>
 <body>
-<br><br><div class="w3-container" style="width:75%;margin:auto">'
+<br><br><div class="w3-container" style="width:70%;margin:auto">'
 
 <br><br>
 
 <form action=" " method ="POST">
-    <div class="w3-container" style="background-color:#265887; color:red; border-radius:100px">
+    <div class="w3-container" style="background-color:#265887; color:red; border-radius:20px">
     <h2>CHECK FACILITY</h2>
     </div>
-    <div class="w3-container w3-white w3-padding-16" style=" border-radius:100px">
+    <div class="w3-container w3-white w3-padding-16" style=" border-radius:20px">
         <div class="w3-row-padding" style="margin:20px; justify-content:center">
             <div class="w3-half w3-margin-bottom">
                 <label for="startDate">Start Date</label>
