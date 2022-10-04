@@ -98,15 +98,23 @@
             color:black;
         }
 
+        .calcontainer{
+            float: left;
+            margin-left: 50px;
+            margin-right: -30px;
+            width: 50%;
+        }
+
     </style>
 </head>
 <?php
 session_start();
 ?>
+
 <body>
 
 <section class="ftco-section">
-		<div class="container">
+		<div class="calcontainer">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="content w-100">
@@ -151,7 +159,7 @@ session_start();
 			              </tbody> 
 				          </table>
 				        </div> 
-				        <button class="button" id="add-button">Add Event</button>
+				        <!--<br><br><button class="button" id="add-button">Add Event</button>-->
 				      </div>
 				    </div>
 				    <div class="events-container">
@@ -159,7 +167,7 @@ session_start();
 				    <div class="dialog" id="dialog">
 				        <h2 class="dialog-header"> Add New Event </h2>
 				        <form class="form" id="form">
-				          <div class="form-container" align="center">
+				          <div class="form-container" textalign="center">
 				            <label class="form-label" id="valueFromMyButton" for="name">Event name</label>
 				            <input class="input" type="text" id="name" maxlength="36">
 				            <label class="form-label" id="valueFromMyButton" for="count">Number of people to invite</label>
@@ -179,7 +187,8 @@ session_start();
   <script src="calendar/js/popper.js"></script>
   <script src="calendar/js/bootstrap.min.js"></script>
   <script src="calendar/js/main.js"></script>
-<br><br><div class="w3-container" style="width:70%;margin:auto">
+
+    <div class="w3-container" style="width:30%; float: right; margin-top: -4%; margin-right: 15%">
 
     <div class="w3-container" style="background-color:#008080; color:white">
         <h1>FACILITY</h1>
@@ -187,15 +196,19 @@ session_start();
     <form action=" " method ="POST">
         <div class="w3-container w3-white w3-padding-16">
             <div class="w3-row-padding" style="margin:0 -16px;">
+                <br>    
                 <div class="w3-half w3-margin-bottom">
-                    <label for="startDate">Start Date</label>
-                    <input type="date" name = "startDate">
-                </div>
+                        <label for="startDate">Start Date</label>
+                        <input type="date" name = "startDate">
+                    </div>
+                <br><br><br><br>
                 <div class="w3-half">
                     <label for="endDate">End Date</label>
                     <input type="date" name = "endDate">
                 </div>
             </div>
+            
+            <br>
             <input  style="float: left" class="button button1" type="submit" name = "checkAvailable" value = "Check" >
 
     </form>
@@ -278,7 +291,7 @@ function displaySearchPanel()
 function displayTableHeader()
 {
     echo'<table class="w3-table w3-striped w3-border">';
-    echo'<br><tr style="background-color: #008080; color:white;">
+    echo'<br><br><tr style="background-color: #008080; color:white; ">
                 <th>Bil</th>
                 <th>Category</th>
                 <th>Capacity</th>
