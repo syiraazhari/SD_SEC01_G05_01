@@ -562,14 +562,14 @@ function getListOfAccount(){
 
 
 
-function searchByIcNum(){
+function searchByPhoneNum(){
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo ';
-    $sql .= 'where icNum = "'.$_POST['searchKeyUser'].'"';
+    $sql = 'select * from bookerlist ';
+    $sql .= 'where phoneNum = "'.$_POST['searchKeyUser'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
@@ -580,7 +580,7 @@ function searchByNameUser(){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo ';
+    $sql = 'select * from bookerlist ';
     $sql .= 'where name = "'.$_POST['searchKeyUser'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
@@ -592,24 +592,34 @@ function searchByEmail(){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo ';
+    $sql = 'select * from bookerlist ';
     $sql .= 'where userId = "'.$_POST['searchKeyUser'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
 
-function searchByState(){
+function searchByUserType(){
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo ';
-    $sql .= 'where state = "'.$_POST['searchKeyUser'].'"';
+    $sql = 'select * from bookerlist ';
+    $sql .= 'where UserType = "'.$_POST['searchKeyUser'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
-
+function searchByMatricNum(){
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from bookerlist ';
+    $sql .= 'where MatricNum = "'.$_POST['searchKeyUser'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
 function deleteUser(){
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {

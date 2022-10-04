@@ -328,7 +328,11 @@
           <i class="bi bi-layout-text-window-reverse"></i><span>Verify Account</span>
         </a>
       </li><!-- End Verify Account Nav -->
-
+        <li class="nav-item">
+            <a class="nav-link collapsed"  href="BookerList.php">
+                <i class="bi bi-layout-text-window-reverse"></i><span>Booker List</span>
+            </a>
+        </li><!-- End Verify Account Nav -->
     </ul>
 
   </aside><!-- End Sidebar-->

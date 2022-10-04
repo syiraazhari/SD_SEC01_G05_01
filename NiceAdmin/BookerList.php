@@ -526,38 +526,45 @@ $verified = $row2['verified'];
 
     displaySearchPanel();
 
-    $listOfUser = getListOfUser();
+    $listOfUser = getListOfBooker();
 
-    if(isSet($_POST['searchByIcNum']))
+    if(isSet($_POST['searchByPhoneNum']))
     {
-        $listOfUser = searchByIcNum();
+        $listOfUser = searchByPhoneNum();
     }
-    else if (isSet($_POST['searchByNameUser']))
+    else if (isSet($_POST['searchByName']))
     {
         $listOfUser = searchByNameUser();
+    }
+    else if (isSet($_POST['searchByMatricNum']))
+    {
+        $listOfUser = searchByMatricNum();
+    }
+    else if (isSet($_POST['searchByUserType']))
+    {
+        $listOfUser = searchByUserType();
     }
     else if (isSet($_POST['searchByEmail']))
     {
         $listOfUser = searchByEmail();
     }
-    else if (isSet($_POST['searchByState']))
-    {
-        $listOfUser = searchByState();
-    }
     else
     {
-        $listOfUser = getListOfUser();
+        $listOfUser = getListOfBooker();
     }
+    echo "<br><b>There are ". mysqli_num_rows($listOfUser). ' record</b>';
     function displaySearchPanel()
     {
         echo'<div>';
         echo'<form action="" method="POST">';
         echo'<fieldset style="text-align: center; font-size: 20px;"><legend><b>Search booker:</b></legend>';
         echo'<b>Search Key: </b>';
-        echo'<br><input type="text" name="searchKey">';
+        echo'<br><input type="text" name="searchKeyUser">';
         echo'<br><br><input class="button button3" type="submit" name="searchByEmail" value="By Email">';
         echo'<input class="button button3" type="submit" name="searchByName" value="By Name">';
-        echo'<input class="button button3" type="submit" name="searchByCategory" value="By Category">';
+        echo'<input class="button button3" type="submit" name="searchByPhoneNum" value="By Phone Number">';
+        echo'<input class="button button3" type="submit" name="searchByMatricNum" value="By Matric Number">';
+        echo'<input class="button button3" type="submit" name="searchByUserType" value="By User Type">';
         echo'<input class="button button3" type="submit" name="displayAll" value="Display All">';
         echo'</fieldset>';
         echo'</form>';
