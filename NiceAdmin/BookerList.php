@@ -560,15 +560,18 @@ $verified = $row2['verified'];
         echo'<fieldset style="text-align: center; font-size: 20px;"><legend><b>Search booker:</b></legend>';
         echo'<b>Search Key: </b>';
         echo'<br><input type="text" name="searchKeyUser">';
-        echo'<br><br><input class="button button3" type="submit" name="searchByEmail" value="By Email">';
-        echo'<input class="button button3" type="submit" name="searchByName" value="By Name">';
-        echo'<input class="button button3" type="submit" name="searchByPhoneNum" value="By Phone Number">';
-        echo'<input class="button button3" type="submit" name="searchByMatricNum" value="By Matric Number">';
-        echo'<input class="button button3" type="submit" name="searchByUserType" value="By User Type">';
-        echo'<input class="button button3" type="submit" name="displayAll" value="Display All">';
+        echo'<br><br><div class="btn-group" role="group" aria-label="Basic outlined example"><input class="btn btn-outline-secondary" type="submit" name="searchByEmail" value="By Email">';
+        echo'<input class="btn btn-outline-secondary" type="submit" name="searchByName" value="By Name">';
+        echo'<input class="btn btn-outline-secondary" type="submit" name="searchByMatricNum" value="By Matric Number">';
+        echo'<input class="btn btn-outline-secondary" type="submit" name="searchByPhoneNum" value="By Phone Number">';
+        echo'<input class="btn btn-outline-secondary" type="submit" name="searchByUserType" value="By User Type">';
+        echo'<input class="btn btn-outline-secondary" type="submit" name="displayAll" value="Display All">';
+        echo'</div>';
         echo'</fieldset>';
         echo'</form>';
         echo'</div>';
+
+
 
     }
     ?>
