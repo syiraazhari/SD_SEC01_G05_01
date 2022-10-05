@@ -607,6 +607,7 @@ $verified = $row2['verified'];
                                 echo '<td style="text-align: center;" name = "userType" >' . ($acc['UserType']) . '</td>';
                             echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-info-circle"></i></button></td>';
                             echo '
+
                   </button>
                   <div class="modal fade" id="basicModal1" tabindex="-1">
                     <div class="modal-dialog">
@@ -615,8 +616,296 @@ $verified = $row2['verified'];
                           <h5 class="modal-title">Booker Info</h5>
                           <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                          Are u sure wanna <b>Approve</b> this email?
+                        <div class="modal-body">';
+
+                         echo' <section class="section profile">
+      <div class="row">
+        <div class="col-xl-4">
+
+          <div class="card">
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+              <img src="../img/<?php echo $image; ?>" width = 200 height = 119 title="<?php echo $image; ?>" class="rounded-circle">';
+
+              echo '<h2>'.$email.'</h2>';
+              echo '<h2>'.$userType.'</h2>'
+
+
+                  echo '  <div class="social-links mt-2">
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xl-8">
+
+            <div class="card">
+                <div class="card-body pt-3">
+                    <!-- Bordered Tabs -->
+                    <ul class="nav nav-tabs nav-tabs-bordered">
+
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                        </li>
+
+
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content pt-2">
+
+                        <div class="tab-pane fade show active profile-overview" id="profile-overview">
+
+                            <h5 class="card-title">Profile Details</h5>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label ">Full Name</div>';
+
+                                echo '<div class="col-lg-9 col-md-8">'.$name.'</div>'
+
+
+                       echo'         <!--<div class="col-lg-9 col-md-8">Sarah Asley</div>-->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Matric Number</div>';
+
+                                echo '<div class="col-lg-9 col-md-8">'.$matricNum.'</div>
+
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Phone Number</div>';
+
+                                echo '<div class="col-lg-9 col-md-8">'.$phoneNum.'</div>';
+
+
+                           echo' </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Email</div>';
+
+                                echo '<div class="col-lg-9 col-md-8">'.$email.'</div>
+
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">password</div>
+                                
+                                echo '<div class="col-lg-9 col-md-8">'.$password.'</div>'
+
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">User Category</div>
+                                <?php
+                                echo '<div class="col-lg-9 col-md-8">'.$userType.'</div>'
+
+                                
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                            <div class="row mb-3">
+                                <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post">
+                                        <div class="pt-2 ">
+                                            <img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>"  class="rounded-circle">
+                                            <div class="round">
+                                                <input type="hidden" name="userId" value="<?php echo $email; ?>">
+                                                <input type="hidden" name="name" value="<?php echo $name; ?>">
+                                                <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png">
+
+                                                <input type="submit" value="Upload" class="btn btn-info" name="upload">
+
+                                            </div>
+                                        </div>
+                                        </from>
+                                </div>
+                            </div>
+
+
+
+
+                            <!-- Profile Edit Form -->
+                            <form action= "..\case1\processFBS.php" method="POST">
+
+
+                                <div class="row mb-3">
+                                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        
+                                        echo '<input name="name" type="text" class="form-control" id="fullName" value="'.$name.'">';
+                                        
+
+                                    </div>
+                                </div>
+
+
+                                <div class="row mb-3">
+                                    <label for="company" class="col-md-4 col-lg-3 col-form-label">Matric Number</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        
+                                        echo '<div class="col-lg-9 col-md-8">'.$matricNum.'</div>';
+                                        echo '<input name="matricNum" type="hidden" class="form-control" id="fullName" value="'.$matricNum.'">';
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="Job" class="col-md-4 col-lg-3 col-form-label">Phone Number</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        
+                                        echo '<input name="phoneNum" type="text" class="form-control" id="fullName" value="'.$phoneNum.' ">';
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="Country" class="col-md-4 col-lg-3 col-form-label">E-mail Address</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        
+                                        echo '<div class="col-lg-9 col-md-8">'.$email.'</div>';
+                                        echo '<input name="email" type="hidden" class="form-control" id="fullName" value="'.$email.'"readonly>';
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="Address" class="col-md-4 col-lg-3 col-form-label">Password</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        
+                                        echo '<div class="col-lg-9 col-md-8">'.$password.'</div>';
+                                        echo '<input name="password" type="hidden" class="form-control" id="fullName"  style="color:red"value="'.$password.'"readonly>';
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="Phone" class="col-md-4 col-lg-3 col-form-label">User Category</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        
+                                        echo '<div class="col-lg-9 col-md-8">'.$userType.'</div>';
+                                        echo '<input name="userType" type="hidden" class="form-control" id="fullName" value="'.$userType.'">';
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal1">Save Change</button>
+
+                                    </button>
+                                    <div class="modal fade" id="basicModal1" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Update Profile</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Are u confirm to save changes?
+
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                    <button type="submit" name="UpdateProfileAdmin" class="btn btn-primary">Confirm</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End Basic Modal-->
+                                </div>
+                            </form><!-- End Profile Edit Form -->
+                            <script type="text/javascript">
+                                document.getElementById("image").onchange = function(){
+                                    document.getElementById("UpdateProfileAdmin").submit();
+                                };
+                            </script>
+                        </div>
+
+                        <div class="tab-pane fade pt-3" id="profile-settings">
+
+                            <!-- Settings Form -->
+                            <form>
+
+                                <div class="row mb-3">
+                                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
+                                    <div class="col-md-8 col-lg-9">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="changesMade" checked>
+                                            <label class="form-check-label" for="changesMade">
+                                                Changes made to your account
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="newProducts" checked>
+                                            <label class="form-check-label" for="newProducts">
+                                                Information on new products and services
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="proOffers">
+                                            <label class="form-check-label" for="proOffers">
+                                                Marketing and promo offers
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
+                                            <label class="form-check-label" for="securityNotify">
+                                                Security alerts
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form><!-- End settings Form -->
+
+                        </div>
+
+                        <div class="tab-pane fade pt-3" id="profile-change-password">
+                            <!-- Change Password Form -->
+                            <form>
+
+                                <div class="text-center">
+                                    
+                                    echo '<a href="..\ForgotPassword\resetpassword.php?email='.$email.'" class="btn btn-primary">Click Me to Change Password</a>';
+                                    
+                                </div>
+                            </form><!-- End Change Password Form -->
+
+                        </div>
+
+                    </div><!-- End Bordered Tabs -->
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+
+                    echo '
                         </div>
                         <div class="modal-footer">
                           <button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
