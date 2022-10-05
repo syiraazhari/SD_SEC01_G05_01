@@ -548,6 +548,7 @@ $verified = $row2['verified'];
     {
         $listOfUser = searchByEmail();
     }
+    
     else
     {
         $listOfUser = getListOfBooker();
@@ -566,9 +567,9 @@ $verified = $row2['verified'];
         echo'<input class="btn btn-outline-secondary" type="submit" name="searchByPhoneNum" value="By Phone Number">';
         echo'<input class="btn btn-outline-secondary" type="submit" name="searchByUserType" value="By User Type">';
         echo'<input class="btn btn-outline-secondary" type="submit" name="displayAll" value="Display All">';
+        echo '</form>';
         echo'</div>';
         echo'</fieldset>';
-        echo'</form>';
         echo'</div>';
 
 
@@ -597,15 +598,17 @@ $verified = $row2['verified'];
                     </tr>
                   </thead>';
                         while ($acc = mysqli_fetch_assoc($listOfUser)) {
-                            echo '<form action= "..\case1\processFBS.php" method="POST">';
+                            
                                 echo '<tr>';
+                                echo'<form action="..\NiceAdmin\ViewStudentAccount.php" method="POST">';
                                 echo '<th scope ="row" style="text-align: center;">' . $count . '</th>';
                                 echo '<td style="text-align: center;"><input type="hidden" name="email" value=' . ($acc['userId']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['userId']) . '</td>';
                                 echo '<td style="text-align: center;" name = "name" >' . ($acc['name']) . '</td>';
                                 echo '<td style="text-align: center;" name = "matricNum" >' . ($acc['MatricNum']) . '</td>';
                                 echo '<td style="text-align: center;" name = "phoneNum" >' . ($acc['phoneNum']) . '</td>';
-                                echo '<td style="text-align: center;" name = "userType" >' . ($acc['UserType']) . '</td>';
-                            echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-info-circle"></i></button></td>';
+                                echo '<td style="text-align: center;"><input type="hidden" name="userType" value=' . ($acc['UserType']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['UserType']) . '</td>';;
+                            echo '<td style="text-align: center;"><button style="text-align: center;" type="submit" name ="info" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-info-circle"></i></button></td>';
+                            echo'</form>';
                             echo '
 
                   </button>
@@ -615,7 +618,9 @@ $verified = $row2['verified'];
                   <div class="modal-content">
                     <div class="modal-header">
                           <h5 class="modal-title">Booker Info</h5>
+                          
                           <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          
                         </div>
                         <div class="modal-body">';
                         ?>
@@ -628,6 +633,7 @@ $verified = $row2['verified'];
 
               <img src="../img/<?php echo $image; ?>" width = 200 height = 119 title="<?php echo $image; ?>" class="rounded-circle">
               <?php
+              
               echo '<h2>'.$email.'</h2>';
               echo '<h2>'.$userType.'</h2>'
             ?>
@@ -669,6 +675,10 @@ $verified = $row2['verified'];
                  <div class="row">
                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
                    <?php
+                   if(isSet($_POST['info']))
+              {
+                echo '<h2>this is Info</h2>';
+              }
                    echo '<div class="col-lg-9 col-md-8">'.$name.'</div>'
 
                    ?>
@@ -766,8 +776,8 @@ $verified = $row2['verified'];
                       <label for="Address" class="col-md-4 col-lg-3 col-form-label">Password</label>
                       <div class="col-md-8 col-lg-9">
                       <?php
-                          echo '<div class="col-lg-9 col-md-8">'.$password.'</div>';
-                          echo '<input name="password" type="hidden" class="form-control" id="fullName"  style="color:red"value="'.$password.'"readonly>';
+                          
+                          echo '<input name="password" type="text" class="form-control" id="fullName"  value="'.$password.'">';
                         ?>
                       </div>
                     </div>

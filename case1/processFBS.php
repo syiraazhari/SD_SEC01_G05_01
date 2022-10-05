@@ -28,11 +28,14 @@ else if(isSet($_POST['deleteFacilityButton'])) {
     }
     header("Refresh:1;url=..\case1\staffFacilityList.php");
 
-}else if(isSet($_POST['test'])){
-    echo 'test';
+}else if(isSet($_POST['return'])){
+    header("Location:..\NiceAdmin\Bookerlist.php");
 }else if(isSet($_POST['UpdateProfile'])){
     updateStudentProfile();
     header("Location:..\StudentPage\StudentProfile.php");
+}else if(isSet($_POST['info'])){
+    
+    header("Location:..\NiceAdmin\ViewStudentAccount.php");
 }else if(isSet($_POST['UpdateProfileStaff'])){
         updateStaffProfile();
         header("Location:..\NiceAdmin\BookerList.php");
@@ -41,8 +44,26 @@ else if(isSet($_POST['deleteFacilityButton'])) {
 }else if(isSet($_POST['UpdateProfileAdmin'])){
     
     updateStaffProfile();
-
     header("Location:..\NiceAdmin\users-profile.php");
+    
+}
+else if(isSet($_POST['returnBookerList'])){
+   
+
+    header("Location:..\NiceAdmin\BookerList.php");
+
+
+}else if(isSet($_POST['test'])){
+    //updateStaffProfile();/////////////////////////////////////////////////////////////////////////////////////////////
+    if($_POST["userType"] == "Student"){
+        echo "Student";
+    }else if($_POST["userType"] == "Staff"){
+        echo "staff";
+    }
+
+    //header("Location:..\NiceAdmin\BookerList.php");
+
+
 }
 else if(isSet($_POST['updateFacilityButton'])) {
     updateFacilityInformation();

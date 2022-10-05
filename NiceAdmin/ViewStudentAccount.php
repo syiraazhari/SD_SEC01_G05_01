@@ -41,29 +41,31 @@
                       session_start(); 
                       //$email = $_SESSION['username'];
                 
-
                       $userId = $_SESSION['username'];
                       $listOfStudent = getListOfUserStaff($userId);
-
+                      
                       //if(mysqli_num_rows($listOfStudent) > 0)
                       $row = mysqli_fetch_assoc($listOfStudent);
                       $email =  $row['userId'];
                       $listOfPassword = getListOfpassword($email);
                       $row2 = mysqli_fetch_assoc($listOfPassword);
-
+                      
                       $matricNum = $row['staffId'];
                       $name = $row['name'];
                       
                       $phoneNum = $row['phoneNum'];
-                      $image = $row['Image'];                       
+                      $image =   $row['Image'];
                       $password = $row2['password'];
                       $userType = $row2['userType'];
                       $vkey = $row2['vkey'];
                       $verified = $row2['verified'];
+
+                      
+                      
                       
                    
                     ?>
-<body>
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -94,9 +96,6 @@
         </li><!-- End Search Icon-->
 
        
-
-         
-
 
         <li class="nav-item dropdown pe-3">
 
@@ -349,7 +348,53 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <?php
+            $userId = $_POST['email'];
+            $ConfirmUserType = $_POST['userType'];
+            if ($ConfirmUserType == "Student"){
 
+              //echo $userId;
+              $listOfStudent = getListOfUserCustomer($userId);
+
+              if(mysqli_num_rows($listOfStudent) > 0)
+              $row = mysqli_fetch_assoc($listOfStudent);
+              $email =  $row['userId'];
+              $listOfPassword = getListOfpassword($email);
+              $row2 = mysqli_fetch_assoc($listOfPassword);
+
+              $matricNum = $row['MatricNum'];
+              $name = $row['name'];
+              
+              $phoneNum = $row['phoneNum'];
+              $image = $row['Image'];                       
+              $password = $row2['password'];
+              $userType = $row2['userType'];
+              $vkey = $row2['vkey'];
+              $verified = $row2['verified'];
+
+
+            }else if ($ConfirmUserType == "Staff"){
+              echo $userId;
+              $listOfStudent = getListOfUserStaff($userId);
+
+              if(mysqli_num_rows($listOfStudent) > 0)
+              $row = mysqli_fetch_assoc($listOfStudent);
+              $email =  $row['userId'];
+              $listOfPassword = getListOfpassword($email);
+              $row2 = mysqli_fetch_assoc($listOfPassword);
+
+              $matricNum = $row['staffId'];
+              $name = $row['name'];
+              
+              $phoneNum = $row['phoneNum'];
+              $image = $row['Image'];                       
+              $password = $row2['password'];
+              $userType = $row2['userType'];
+              $vkey = $row2['vkey'];
+              $verified = $row2['verified'];
+            }
+
+?>
     <section class="section profile">
       <div class="row">
         <div class="col-xl-4">
@@ -357,12 +402,12 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="../img/<?php echo $image; ?>" width = 200 height = 119 title="<?php echo $image; ?>" class="rounded-circle">
-              <?php
+            <img src="../img/<?php echo $image; ?>" width = 200 height = 119 alt="Profile" class="rounded-circle">
+            <?php
+            
               echo '<h2>'.$email.'</h2>';
               echo '<h2>'.$userType.'</h2>'
             ?>
-
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -389,92 +434,80 @@
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
-            
+               
 
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
-                </li>
-
               </ul>
               <div class="tab-content pt-2">
 
-              <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
                  
-                 <h5 class="card-title">Profile Details</h5>
-               
-                 <div class="row">
-                   <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                   <?php
-                   echo '<div class="col-lg-9 col-md-8">'.$name.'</div>'
+                  <h5 class="card-title">Profile Details</h5>
+                
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$name.'</div>'
 
-                   ?>
-                   <!--<div class="col-lg-9 col-md-8">Sarah Asley</div>-->
-                 </div>
+                    ?>
+                    <!--<div class="col-lg-9 col-md-8">Sarah Asley</div>-->
+                  </div>
 
-                 <div class="row">
-                   <div class="col-lg-3 col-md-4 label">Matric Number</div>
-                   <?php
-                   echo '<div class="col-lg-9 col-md-8">'.$matricNum.'</div>'
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Matric Number</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$matricNum.'</div>'
 
-                   ?>
-                 </div>
+                    ?>
+                  </div>
 
-                 <div class="row">
-                   <div class="col-lg-3 col-md-4 label">Phone Number</div>
-                   <?php
-                   echo '<div class="col-lg-9 col-md-8">'.$phoneNum.'</div>'
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Phone Number</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$phoneNum.'</div>'
 
-                   ?>
-                 </div>
+                    ?>
+                  </div>
 
-                 <div class="row">
-                   <div class="col-lg-3 col-md-4 label">Email</div>
-                   <?php
-                   echo '<div class="col-lg-9 col-md-8">'.$email.'</div>'
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Email</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$email.'</div>'
 
-                   ?>
-                 </div>
+                    ?>
+                  </div>
 
-                 <div class="row">
-                   <div class="col-lg-3 col-md-4 label">password</div>
-                   <?php
-                   echo '<div class="col-lg-9 col-md-8">'.$password.'</div>'
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">password</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$password.'</div>'
 
-                   ?>
-                 </div>
+                    ?>
+                  </div>
 
-                 <div class="row">
-                   <div class="col-lg-3 col-md-4 label">User Category</div>
-                   <?php
-                   echo '<div class="col-lg-9 col-md-8">'.$userType.'</div>'
-                  
-                   ?>
-                 </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">User Category</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$userType.'</div>'
 
-               </div>
-               <div class="tab-pane fade profile-edit pt-3" id="profile-edit">      
+                    ?>
+                  </div>
+
+                </div>
+
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
                 <div class="row mb-3">
-                <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                        <div class="col-md-8 col-lg-9">
-                        <form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post">                      
+                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                      <div class="col-md-8 col-lg-9">
+                        <!--<form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post"> -->                     
                             <div class="pt-2 ">
-                              <img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>"  class="rounded-circle">
-                              <div class="round">
-                                <input type="hidden" name="userId" value="<?php echo $email; ?>">
-                                <input type="hidden" name="name" value="<?php echo $name; ?>">
-                                <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png">
-                                
-                                <input type="submit" value="Upload" class="btn btn-info" name="upload">
-                                
-                              </div>
+                              <img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class="rounded-circle">
+                              
                             </div>
-                      </from>
-                        </div>
+                      <!--</from>-->
                       </div>
-              
-
-
-                  
+                    </div>
                   <!-- Profile Edit Form -->
                   <form action= "..\case1\processFBS.php" method="POST">
                     
@@ -523,8 +556,8 @@
                       <label for="Address" class="col-md-4 col-lg-3 col-form-label">Password</label>
                       <div class="col-md-8 col-lg-9">
                       <?php
-                          echo '<div class="col-lg-9 col-md-8">'.$password.'</div>';
-                          echo '<input name="password" type="hidden" class="form-control" id="fullName"  style="color:red"value="'.$password.'"readonly>';
+                          
+                          echo '<input name="password" type="text" class="form-control" id="fullName"  value="'.$password.'">';
                         ?>
                       </div>
                     </div>
@@ -557,38 +590,28 @@
                         </div>
                         <div class="modal-footer">
                           
-                          <button type="submit" name="UpdateProfileAdmin" class="btn btn-primary">Confirm</button>
+                          <button type="submit" name="test" class="btn btn-primary">Confirm</button>
                           
                         </div>
                       </div>
                     </div>
                   </div><!-- End Basic Modal-->
                     </div>
-                  </form><!-- End Profile Edit Form -->
-                  <script type="text/javascript">
-      document.getElementById("image").onchange = function(){
-          document.getElementById("UpdateProfileAdmin").submit();
-      };
-    </script>
-                </div>
-
-                <div class="tab-pane fade pt-3" id="profile-settings">
-
-                  <!-- Settings Form -->
-                  
+                  </form> 
 
                 </div>
+
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  
                   
                     <div class="text-center">
                       <?php
                       echo '<a href="..\ForgotPassword\resetpassword.php?email='.$email.'" class="btn btn-primary">Click Me to Change Password</a>';
                       ?>
                     </div>
-                  </form><!-- End Change Password Form -->
+                  <!-- End Change Password Form -->
 
                 </div>
 
@@ -600,7 +623,11 @@
         </div>
       </div>
     </section>
-
+    <form action= "..\case1\processFBS.php" method="POST">
+    <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-primary" name ="returnBookerList" type="submit">Return to Booker List</button>
+              </div>
+</form>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
