@@ -28,12 +28,14 @@ else if(isSet($_POST['deleteFacilityButton'])) {
     }
     header("Refresh:1;url=..\case1\staffFacilityList.php");
 
+}else if(isSet($_POST['test'])){
+    echo 'test';
 }else if(isSet($_POST['UpdateProfile'])){
     updateStudentProfile();
     header("Location:..\StudentPage\StudentProfile.php");
 }else if(isSet($_POST['UpdateProfileStaff'])){
         updateStaffProfile();
-        header("Location:=..\StaffPage\StaffProfile.php");
+        header("Location:..\NiceAdmin\BookerList.php");
 
     
 }else if(isSet($_POST['UpdateProfileAdmin'])){
