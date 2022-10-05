@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 04, 2022 at 09:09 AM
+-- Generation Time: Oct 05, 2022 at 01:30 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -43,8 +43,6 @@ CREATE TABLE IF NOT EXISTS `bookerlist` (
 --
 
 INSERT INTO `bookerlist` (`MatricNum`, `name`, `userId`, `phoneNum`, `UserType`) VALUES
-('A20DW0196', 'Yap Deh Kai', 'ydk1421@gmail.com', '01159908615', 'Student'),
-('A20DW0976', 'Ahmad bin Ali', 'yapdehkai@gmail.com', '0197784597', 'Student'),
 ('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485', 'Staff'),
 ('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'Staff'),
 ('test2', 'testing2.2', 'cheesen.987@gmail.com', '123123123', 'Student'),
@@ -268,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
   `Image` varchar(100) DEFAULT 'noprofil.jpg',
   PRIMARY KEY (`staffId`),
   KEY `userId` (`userId`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userinfostaff`
@@ -276,19 +274,31 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 
 INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`, `Image`) VALUES
 ('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485 ', 'lonely123 - 2022.09.14 - 01.08.44am.jpg'),
+('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'noprofil.jpg'),
 ('test3', 'testing3.3', 'chee.sen987@gmail.com', '0123456789', 'test3 - 2022.09.13 - 11.07.24pm.jpg'),
-('testingFail1', 'testingFail1', 'FalseEmail@gmail.com', '01115386485', 'noprofil.jpg'),
-('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'noprofil.jpg');
+('testingFail1', 'testingFail1', 'FalseEmail@gmail.com', '01115386485', 'noprofil.jpg');
 
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Constraints for table `bookerlist`
+--
+ALTER TABLE `bookerlist`
+  ADD CONSTRAINT `bookerlist_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `userinfo`
 --
 ALTER TABLE `userinfo`
   ADD CONSTRAINT `userinfo_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `userinfostaff`
+--
+ALTER TABLE `userinfostaff`
+  ADD CONSTRAINT `userinfostaff_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
