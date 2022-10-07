@@ -456,7 +456,7 @@
                 <div class="row mb-3">
                 <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                         <div class="col-md-8 col-lg-9">
-                        <form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post">                      
+                        <form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post">
                             <div class="pt-2 ">
                               <img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>"  class="rounded-circle">
                               <div class="round">
@@ -468,7 +468,7 @@
                                 
                               </div>
                             </div>
-                      </from>
+                      </form>
                         </div>
                       </div>
               
@@ -603,19 +603,6 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
