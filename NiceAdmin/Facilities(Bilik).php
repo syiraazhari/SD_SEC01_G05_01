@@ -385,7 +385,7 @@
       <h1>Facilities</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">Dewan</li>
+          <li class="breadcrumb-item">Bilik</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -399,21 +399,21 @@
                 <div justify-content = center class="col-24">
 
                             <div class="card">
-                                <h5 class="card-title">Dewan Jumaah</h5>
-                                <img src="assets/img/Dewan-Jumaah.PNG" alt="" class="rounded-circle">
+                                <h5 class="card-title">Bilik Ilmuan 1</h5>
+                                <img src="assets/img/Bilik-Ilmuan-1.PNG" alt="" class="rounded-circle">
                             </div>
                             <div>
                             <div class="card">
-                                <h5 class="card-title">Dewan Seminar</h5>
-                                <img src="assets/img/Dewan-Seminar.PNG" alt="" class="rounded-circle">
+                                <h5 class="card-title">Bilik Ilmuan 2</h5>
+                                <img src="assets/img/Bilik-Ilmuan-2.PNG" alt="" class="rounded-circle">
                             </div>
                             <div class="card">
-                                <h5 class="card-title">Dewan Azman Hashim</h5>
-                                <img src="assets/img/Dewan-Azman-Hashim.PNG" alt="" class="rounded-circle">
+                                <h5 class="card-title">Bilik Ilmuan 3</h5>
+                                <img src="assets/img/Bilik-Ilmuan-1.PNG" alt="" class="rounded-circle">
                             </div>
                             <div class="card">
-                                <h5 class="card-title">Dewan Tan Sri Ainuddin</h5>
-                                <img src="assets/img/Dewan-Tan-Sri-Ainuddin.PNG" alt="" class="rounded-circle">
+                                <h5 class="card-title">Bilik Bankuet</h5>
+                                <img src="assets/img/Bilik-Bankuet.PNG" alt="" class="rounded-circle">
                             </div>
                 </div>
             </div><!-- End Left side columns -->

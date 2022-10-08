@@ -236,39 +236,18 @@
             </a>
           </li>
           <li>
-            <a href="DewanJumaah.php">
-              <i class="bi bi-circle"></i><span>Dewan Jumaah</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="DewanSeminar.php">
-              <i class="bi bi-circle"></i><span>Dewan Seminar</span>
+            <a href="Addfacility.php">
+              <i class="bi bi-circle"></i><span>Add Facility</span>
             </a>
           </li>
           <li>
-            <a href="DewanAzhamHashim.php">
-              <i class="bi bi-circle"></i><span>Dewan Azham Hashim</span>
+            <a href="Facilities(Dewan).php">
+              <i class="bi bi-circle"></i><span>Dewan</span>
             </a>
           </li>
           <li>
-            <a href="BilikIlmuan1.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikIlmuan2.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikIlmuan3.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikBankuet.php">
-              <i class="bi bi-circle"></i><span>Bilik Bankuet</span>
+            <a href="Facilities(Bilik).php">
+              <i class="bi bi-circle"></i><span>Bilik</span>
             </a>
           </li>
           <li>

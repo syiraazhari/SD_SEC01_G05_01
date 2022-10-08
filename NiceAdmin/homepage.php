@@ -246,23 +246,8 @@
             </a>
           </li>
           <li>
-            <a href="BilikIlmuan1.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikIlmuan2.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikIlmuan3.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikBankuet.php">
-              <i class="bi bi-circle"></i><span>Bilik Bankuet</span>
+            <a href="Facilities(Bilik).php">
+              <i class="bi bi-circle"></i><span>Bilik</span>
             </a>
           </li>
           <li>
