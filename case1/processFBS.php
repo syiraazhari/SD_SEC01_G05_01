@@ -57,8 +57,13 @@ else if(isSet($_POST['returnBookerList'])){
     //updateStaffProfile();/////////////////////////////////////////////////////////////////////////////////////////////
     if($_POST["userType"] == "Student"){
         echo "Student";
+        updateStudentProfile();
+        header("Location:..\NiceAdmin\BookerList.php");
+
     }else if($_POST["userType"] == "Staff"){
         echo "staff";
+        updateStaffProfile();
+        header("Location:..\NiceAdmin\BookerList.php");
     }
 
     //header("Location:..\NiceAdmin\BookerList.php");

@@ -657,16 +657,28 @@ function updateStaffProfile(){
     $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
     $sql2 .= 'where userId = "' . $userId . '"';
 
-
+    $sql3 = 'update bookerlist set ';
+    $sql3 .= 'userId= "' . $userId . '",MatricNum="' . $MatricNum . '",UserType="' . $userType . '",phoneNum="' . $phoneNum . '",name="' . $name . '"';
+    $sql3 .= 'where userId = "' . $userId . '"';
     
 
     //echo $sql;
     //echo'<br>'.$sql2;
     $qry = mysqli_query($con, $sql);
     $qry2 = mysqli_query($con, $sql2);
-
+    $qry3 = mysqli_query($con, $sql3);
+    echo $qry3;
     if((!$qry) && (!$qry2)){
         echo 'Record adding error';
+        
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+
+    if((!$qry3)){
+        echo 'Record adding error at qry3';
         
     }else{
         echo '<script>';
@@ -699,19 +711,32 @@ function updateStudentProfile(){
     , phoneNum="' . $phoneNum . '"';
     $sql .= 'where userId = "' . $userId . '"';
 
-    echo $sql;
-    
     $sql2 = 'update user set ';
     $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
     $sql2 .= 'where userId = "' . $userId . '"';
 
+    $sql3 = 'update bookerlist set ';
+    $sql3 .= 'userId= "' . $userId . '",MatricNum="' . $MatricNum . '",UserType="' . $userType . '",phoneNum="' . $phoneNum . '",name="' . $name . '"';
+    $sql3 .= 'where userId = "' . $userId . '"';
+    echo $sql3;
     //echo $sql;
     //echo'<br>'.$sql2;
     $qry = mysqli_query($con, $sql);
     $qry2 = mysqli_query($con, $sql2);
+    $qry3 = mysqli_query($con, $sql3);
 
+    
     if((!$qry) && (!$qry2)){
         echo 'Record adding error';
+        
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+
+    if((!$qry3)){
+        echo 'Record adding error at qry3';
         
     }else{
         echo '<script>';
