@@ -206,7 +206,7 @@ function displayAvailableList() {
         echo '<td>'.$row['ratePerDay'].'</td>';
         echo '<td>'.strtoupper($row['status']).'</td>';
         $facilityId = $row['facilityId'];
-
+        echo 'Test';
         echo '<td>';//booking option
         echo'<form action="StaffBookingHistory.php" method="POST">';
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
