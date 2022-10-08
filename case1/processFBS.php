@@ -57,8 +57,13 @@ else if(isSet($_POST['returnBookerList'])){
     //updateStaffProfile();/////////////////////////////////////////////////////////////////////////////////////////////
     if($_POST["userType"] == "Student"){
         echo "Student";
+        updateStudentProfile();
+        header("Location:..\NiceAdmin\BookerList.php");
+
     }else if($_POST["userType"] == "Staff"){
         echo "staff";
+        updateStaffProfile();
+        header("Location:..\NiceAdmin\BookerList.php");
     }
 
     //header("Location:..\NiceAdmin\BookerList.php");
@@ -284,8 +289,8 @@ else if(isSet($_POST['register'])){
     header('Location:..\Rent\bookingFacility.php');
 
 }else if(isSet($_POST['deleteFacility'])){
-
-    header('Location:../NiceAdmin/UpdateFacility.php');
+    deleteFacility();
+    header('Location:../NiceAdmin/AdminFacilityList.php');
     
 }else if(isSet($_POST['updateFacility'])){
 

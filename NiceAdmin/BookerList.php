@@ -29,7 +29,6 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
     <!-- =======================================================
     * Template Name: NiceAdmin - v2.3.1
@@ -105,8 +104,6 @@
 include "..\case1\FBS.php";
 session_start();
 //$email = $_SESSION['username'];
-
-
 $userId = $_SESSION['username'];
 $listOfStudent = getListOfUserStaff($userId);
 
@@ -114,8 +111,7 @@ $listOfStudent = getListOfUserStaff($userId);
 $row = mysqli_fetch_assoc($listOfStudent);
 $email =  $row['userId'];
 $listOfPassword = getListOfpassword($email);
-$row2 = mysqli_fetch_assoc($listOfPassword);
-
+while($row2 = mysqli_fetch_assoc($listOfPassword)){
 $matricNum = $row['staffId'];
 $name = $row['name'];
 
@@ -125,6 +121,7 @@ $password = $row2['password'];
 $userType = $row2['userType'];
 $vkey = $row2['vkey'];
 $verified = $row2['verified'];
+};
 
 ?>
 <body>

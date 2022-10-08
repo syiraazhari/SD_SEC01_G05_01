@@ -29,7 +29,7 @@
 
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="calendar/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
@@ -98,13 +98,6 @@
             color:black;
         }
 
-        .calcontainer{
-            float: left;
-            margin-left: 50px;
-            margin-right: -30px;
-            width: 50%;
-        }
-
     </style>
 </head>
 <?php
@@ -113,82 +106,7 @@ session_start();
 
 <body>
 
-<section class="ftco-section">
-		<div class="calcontainer">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="content w-100">
-				    <div class="calendar-container">
-				      <div class="calendar"> 
-				        <div class="year-header"> 
-				          <span class="left-button fa fa-chevron-left" id="prev"> </span> 
-				          <span class="year" id="label"></span> 
-				          <span class="right-button fa fa-chevron-right" id="next"> </span>
-				        </div> 
-				        <table class="months-table w-100"> 
-				          <tbody>
-				            <tr class="months-row">
-				              <td class="month">Jan</td> 
-				              <td class="month">Feb</td> 
-				              <td class="month">Mar</td> 
-				              <td class="month">Apr</td> 
-				              <td class="month">May</td> 
-				              <td class="month">Jun</td> 
-				              <td class="month">Jul</td>
-				              <td class="month">Aug</td> 
-				              <td class="month">Sep</td> 
-				              <td class="month">Oct</td>          
-				              <td class="month">Nov</td>
-				              <td class="month">Dec</td>
-				            </tr>
-				          </tbody>
-				        </table> 
-				        
-				        <table class="days-table w-100"> 
-				          <td class="day">Sun</td> 
-				          <td class="day">Mon</td> 
-				          <td class="day">Tue</td> 
-				          <td class="day">Wed</td> 
-				          <td class="day">Thu</td> 
-				          <td class="day">Fri</td> 
-				          <td class="day">Sat</td>
-				        </table> 
-				        <div class="frame"> 
-				          <table class="dates-table w-100"> 
-			              <tbody class="tbody">             
-			              </tbody> 
-				          </table>
-				        </div> 
-				        <!--<br><br><button class="button" id="add-button">Add Event</button>-->
-				      </div>
-				    </div>
-				    <div class="events-container">
-				    </div>
-				    <div class="dialog" id="dialog">
-				        <h2 class="dialog-header"> Add New Event </h2>
-				        <form class="form" id="form">
-				          <div class="form-container" textalign="center">
-				            <label class="form-label" id="valueFromMyButton" for="name">Event name</label>
-				            <input class="input" type="text" id="name" maxlength="36">
-				            <label class="form-label" id="valueFromMyButton" for="count">Number of people to invite</label>
-				            <input class="input" type="number" id="count" min="0" max="1000000" maxlength="7">
-				            <input type="button" value="Cancel" class="button" id="cancel-button">
-				            <input type="button" value="OK" class="button button-white" id="ok-button">
-				          </div>
-				        </form>
-				      </div>
-				  </div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<script src="calendar/js/jquery.min.js"></script>
-  <script src="calendar/js/popper.js"></script>
-  <script src="calendar/js/bootstrap.min.js"></script>
-  <script src="calendar/js/main.js"></script>
-
-    <div class="w3-container" style="width:30%; float: right; margin-top: -4%; margin-right: 15%">
+    <div class="w3-container" style="width:50%; margin-left: auto; margin-right:auto; margin-top : 10%">
 
     <div class="w3-container" style="background-color:#008080; color:white">
         <h1>FACILITY</h1>

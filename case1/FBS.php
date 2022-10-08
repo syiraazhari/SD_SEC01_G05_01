@@ -42,8 +42,9 @@ function deleteFacility()
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $facilityIdToDelete = $_POST['facilityIdToDelete'];
+    $facilityIdToDelete = $_POST['facilityId2'];
     $sql = "delete from facility where facilityId ='".$facilityIdToDelete."'";
+    echo $sql;
     $qry = mysqli_query($con, $sql);
     return $qry;
 
@@ -91,20 +92,19 @@ function searchByFacilityId()
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo ';
+    $sql = 'select * from facility ';
     $sql .= 'where facilityId = "'.$_POST['searchKey'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
-
-function searchByName()
+function searchByFacilityName()
 {
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo ';
+    $sql = 'select * from facility ';
     $sql .= 'where name = "'.$_POST['searchKey'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
@@ -121,6 +121,55 @@ function searchByCategory()
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
+function searchByCapacity()
+{
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from facility ';
+    $sql .= 'where capacity = "'.$_POST['searchKey'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+function searchByRatePerDay()
+{
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from facility ';
+    $sql .= 'where ratePerDay = "'.$_POST['searchKey'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+function searchByStatus()
+{
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from facility ';
+    $sql .= 'where status = "'.$_POST['searchKey'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+function searchByName()
+{
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from userinfo ';
+    $sql .= 'where name = "'.$_POST['searchKey'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+
 function getFacilityInformation($facilityId)
 {
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
@@ -657,16 +706,28 @@ function updateStaffProfile(){
     $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
     $sql2 .= 'where userId = "' . $userId . '"';
 
-
+    $sql3 = 'update bookerlist set ';
+    $sql3 .= 'userId= "' . $userId . '",MatricNum="' . $MatricNum . '",UserType="' . $userType . '",phoneNum="' . $phoneNum . '",name="' . $name . '"';
+    $sql3 .= 'where userId = "' . $userId . '"';
     
 
     //echo $sql;
     //echo'<br>'.$sql2;
     $qry = mysqli_query($con, $sql);
     $qry2 = mysqli_query($con, $sql2);
-
+    $qry3 = mysqli_query($con, $sql3);
+    echo $qry3;
     if((!$qry) && (!$qry2)){
         echo 'Record adding error';
+        
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+
+    if((!$qry3)){
+        echo 'Record adding error at qry3';
         
     }else{
         echo '<script>';
@@ -699,19 +760,32 @@ function updateStudentProfile(){
     , phoneNum="' . $phoneNum . '"';
     $sql .= 'where userId = "' . $userId . '"';
 
-    echo $sql;
-    
     $sql2 = 'update user set ';
     $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
     $sql2 .= 'where userId = "' . $userId . '"';
 
+    $sql3 = 'update bookerlist set ';
+    $sql3 .= 'userId= "' . $userId . '",MatricNum="' . $MatricNum . '",UserType="' . $userType . '",phoneNum="' . $phoneNum . '",name="' . $name . '"';
+    $sql3 .= 'where userId = "' . $userId . '"';
+    echo $sql3;
     //echo $sql;
     //echo'<br>'.$sql2;
     $qry = mysqli_query($con, $sql);
     $qry2 = mysqli_query($con, $sql2);
+    $qry3 = mysqli_query($con, $sql3);
 
+    
     if((!$qry) && (!$qry2)){
         echo 'Record adding error';
+        
+    }else{
+        echo '<script>';
+        echo 'alert ("Successfully Update Profile")';
+        echo '<script>';
+    }
+
+    if((!$qry3)){
+        echo 'Record adding error at qry3';
         
     }else{
         echo '<script>';
