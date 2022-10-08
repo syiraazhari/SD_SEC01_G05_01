@@ -241,18 +241,8 @@
             </a>
           </li>
           <li>
-            <a href="DewanJumaah.php">
-              <i class="bi bi-circle"></i><span>Dewan Jumaah</span>
-            </a>
-          </li>
-          <li>
-            <a href="DewanSeminar.php">
-              <i class="bi bi-circle"></i><span>Dewan Seminar</span>
-            </a>
-          </li>
-          <li>
-            <a href="DewanAzhamHashim.php">
-              <i class="bi bi-circle"></i><span>Dewan Azham Hashim</span>
+            <a href="Facilities(Dewan).php">
+              <i class="bi bi-circle"></i><span>Dewan</span>
             </a>
           </li>
           <li>

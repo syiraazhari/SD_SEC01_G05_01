@@ -252,21 +252,21 @@
                 </a>
             </li>
             <li>
-                <a href="BilikIlmuan1.php">
-                <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
-                </a>
+            <a href="BilikIlmuan1.php">
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
+            </a>
             </li>
-            <li>
-                <a href="BilikIlmuan2.php">
-                <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
-                </a>
-            </li>
-            <li>
-                <a href="BilikIlmuan3.php">
-                <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
-                </a>
-            </li>
-            <li>
+          <li>
+            <a href="BilikIlmuan2.php">
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
+            </a>
+          </li>
+          <li>
+            <a href="BilikIlmuan3.php">
+              <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
+            </a>
+          </li>
+          <li>
             <a href="BilikBankuet.php">
               <i class="bi bi-circle"></i><span>Bilik Bankuet</span>
             </a>
@@ -398,6 +398,54 @@
         </ul>
 
     </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Facilities</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Dewan</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="col-lg-8">
+            <div class="row">
+                <div justify-content = center class="col-24">
+
+                            <div class="card">
+                                <h5 class="card-title">Dewan Jumaah</h5>
+                                <img src="assets/img/Dewan-Jumaah.PNG" alt="" class="rounded-circle">
+                            </div>
+                            <div>
+                            <div class="card">
+                                <h5 class="card-title">Dewan Seminar</h5>
+                                <img src="assets/img/Dewan-Seminar.PNG" alt="" class="rounded-circle">
+                            </div>
+                            <div class="card">
+                                <h5 class="card-title">Dewan Azman Hashim</h5>
+                                <img src="assets/img/Dewan-Azman-Hashim.PNG" alt="" class="rounded-circle">
+                            </div>
+                            <div class="card">
+                                <h5 class="card-title">Dewan Tan Sri Ainuddin</h5>
+                                <img src="assets/img/Dewan-Tan-Sri-Ainuddin.PNG" alt="" class="rounded-circle">
+                            </div>
+                </div>
+            </div><!-- End Left side columns -->
+        </div> 
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+
+
 
     <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
