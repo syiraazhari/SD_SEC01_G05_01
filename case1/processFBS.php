@@ -288,6 +288,10 @@ else if(isSet($_POST['register'])){
 
     header('Location:..\Rent\bookingFacility.php');
 
+}else if(isSet($_POST['cancelPayment'])){
+
+    header('Location:..\StaffPage\StaffFacilityList.php');
+
 }else if(isSet($_POST['deleteFacility'])){
     deleteFacility();
     header('Location:../NiceAdmin/AdminFacilityList.php');

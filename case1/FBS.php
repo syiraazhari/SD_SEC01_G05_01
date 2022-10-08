@@ -991,7 +991,7 @@ function getTotalPrice($startDate, $endDate, $facilityId) {
 
 function bookFacility() {
 
-    // session_start();
+    session_start();
 
     $userId = $_SESSION['username'];
     $dateReserved = date("Y-m-d");

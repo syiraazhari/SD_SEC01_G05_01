@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<?php
+session_start(); 
+?>
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta charset="utf-8">
@@ -14,11 +16,23 @@
 
     <!-- CSS
 	============================================ -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/font-awesome-pro.min.css">
     <link rel="stylesheet" href="assets/css/vendor/pe-icon-7-stroke.css">
     <link rel="stylesheet" href="assets/css/vendor/muli-font.css">
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
 
     <!-- Plugins CSS (All Plugins Files) -->
 
@@ -123,9 +137,7 @@
 
     </style>
 </head>
-<?php
-session_start(); 
-?>
+
 <body>
 <br><br><div class="w3-container" style="width:70%;margin:auto">'
 
@@ -146,8 +158,8 @@ session_start();
                 <input type="date" name = "endDate">
             </div>
         </div>
-        <button class="chkbutton" type="submit" name = "checkAvailable" value = "Check"><span></span>Check</button>
-
+        <button class="btn btn-primary" type="submit" name = "checkAvailable" value = "Check"><span></span>Check</button>
+        
 </form><br><br>
 
 <form>
@@ -198,17 +210,33 @@ function displayAvailableList() {
         echo '<td>';//booking option
         echo'<form action="StaffBookingHistory.php" method="POST">';
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
-        echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
+        //echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
         echo'</form>';
-
-
         echo '<form action= "..\Test_stripe\index.php" method="POST">';
         echo'<input type="hidden" name="FacilityId" value = "'.$row["facilityId"].'">';
         echo'<input class="button2 button5" type="submit" name="" value="Payment">';
         echo '</form>';
-
-
         echo'</td>';
+        echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
+                    echo '
+                  </button>
+                  <div class="modal fade" id="basicModal1" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Approve Verification</h5>
+                          <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Are u sure wanna <b>Delete</b> this facility record?
+                        </div>
+                        <div class="modal-footer">';
+                          //<button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          //<button type="submit" name="deleteFacility" class="btn btn-primary">Save changes</button>
+                        echo '</div>
+                      </div>
+                    </div>
+                  </div><!-- End Basic Modal-->';
         echo'</tr>';
         $count++;
         
@@ -249,7 +277,8 @@ function displayTableHeader()
                 <th>Facility Detail</th>
                 <th>Price Per Day</th>
                 <th>Status</th>
-                <th>Book</th>
+                <th>Payment</th>
+                <th>Picture</th>
 				</div>
                 </tr>';
 
@@ -261,6 +290,19 @@ echo '<br>';
 ?>
 
 
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+    
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
