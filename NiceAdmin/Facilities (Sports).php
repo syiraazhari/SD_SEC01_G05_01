@@ -232,58 +232,28 @@
             </a>
             <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
             <li>
-                <a href="AdminFacilityList.php">
-                <i class="bi bi-circle"></i><span>View Facility</span>
-                </a>
-            </li>
-            <li>
-                <a href="DewanJumaah.php">
-                <i class="bi bi-circle"></i><span>Dewan Jumaah</span>
-                </a>
-            </li>
-            <li>
-                <a href="DewanSeminar.php">
-                <i class="bi bi-circle"></i><span>Dewan Seminar</span>
-                </a>
-            </li>
-            <li>
-                <a href="DewanAzhamHashim.php">
-                <i class="bi bi-circle"></i><span>Dewan Azham Hashim</span>
-                </a>
-            </li>
-            <li>
-            <a href="BilikIlmuan1.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
-            </a>
-            </li>
-          <li>
-            <a href="BilikIlmuan2.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
+            <a href="AdminFacilityList.php">
+              <i class="bi bi-circle"></i><span>View Facility</span>
             </a>
           </li>
           <li>
-            <a href="BilikIlmuan3.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
+            <a href="Addfacility.php">
+              <i class="bi bi-circle"></i><span>Add Facility</span>
             </a>
           </li>
           <li>
-            <a href="BilikBankuet.php">
-              <i class="bi bi-circle"></i><span>Bilik Bankuet</span>
+            <a href="Facilities(Dewan).php">
+              <i class="bi bi-circle"></i><span>Dewan</span>
             </a>
           </li>
           <li>
-            <a href="FootballField.php">
-              <i class="bi bi-circle"></i><span>Football Field</span>
+            <a href="Facilities(Bilik).php">
+              <i class="bi bi-circle"></i><span>Bilik</span>
             </a>
           </li>
           <li>
-            <a href="TennisCourt.php">
-              <i class="bi bi-circle"></i><span>Tennis Court</span>
-            </a>
-          </li>
-          <li>
-            <a href="BasketballCourt.php">
-              <i class="bi bi-circle"></i><span>Basketball Court</span>
+          <a href="Facilities (Sports).php">
+              <i class="bi bi-circle"></i><span>Sports</span>
             </a>
           </li>
             </ul>
@@ -398,6 +368,50 @@
         </ul>
 
     </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Facilities</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Sports</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="col-lg-8">
+            <div class="row">
+                <div justify-content = center class="col-24">
+
+                            <div class="card">
+                                <h5 class="card-title">Football Field</h5>
+                                <img src="assets/img/FootballField.PNG" alt="" class="rounded-circle">
+                            </div>
+                            <div>
+                            <div class="card">
+                                <h5 class="card-title">Basketball Court</h5>
+                                <img src="assets/img/BasketballCourt.PNG" alt="" class="rounded-circle">
+                            </div>
+                            <div class="card">
+                                <h5 class="card-title">Tennis Court</h5>
+                                <img src="assets/img/TennisCourt.PNG" alt="" class="rounded-circle">
+                            </div>
+                </div>
+            </div><!-- End Left side columns -->
+        </div> 
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+
+
 
     <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>

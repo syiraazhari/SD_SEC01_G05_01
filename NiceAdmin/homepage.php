@@ -251,18 +251,8 @@
             </a>
           </li>
           <li>
-            <a href="FootballField.php">
-              <i class="bi bi-circle"></i><span>Football Field</span>
-            </a>
-          </li>
-          <li>
-            <a href="TennisCourt.php">
-              <i class="bi bi-circle"></i><span>Tennis Court</span>
-            </a>
-          </li>
-          <li>
-            <a href="BasketballCourt.php">
-              <i class="bi bi-circle"></i><span>Basketball Court</span>
+            <a href="Facilities (Sports).php">
+              <i class="bi bi-circle"></i><span>Sports</span>
             </a>
           </li>
         </ul>
