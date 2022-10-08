@@ -289,8 +289,8 @@ else if(isSet($_POST['register'])){
     header('Location:..\Rent\bookingFacility.php');
 
 }else if(isSet($_POST['deleteFacility'])){
-
-    header('Location:../NiceAdmin/UpdateFacility.php');
+    deleteFacility();
+    header('Location:../NiceAdmin/AdminFacilityList.php');
     
 }else if(isSet($_POST['updateFacility'])){
 

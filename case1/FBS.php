@@ -42,8 +42,9 @@ function deleteFacility()
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $facilityIdToDelete = $_POST['facilityIdToDelete'];
+    $facilityIdToDelete = $_POST['facilityId2'];
     $sql = "delete from facility where facilityId ='".$facilityIdToDelete."'";
+    echo $sql;
     $qry = mysqli_query($con, $sql);
     return $qry;
 

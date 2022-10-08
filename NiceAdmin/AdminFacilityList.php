@@ -436,8 +436,8 @@
                       <th scope="col" style="text-align: center;">FacilityDetail</th>
                       <th scope="col" style="text-align: center;">ratePerDay(RM)</th>
                       <th scope="col" style="text-align: center;">Status</th>
-                      <th scope="col" style="text-align: center;">Delete</th>
                       <th scope="col" style="text-align: center;">Update</th>
+                      <th scope="col" style="text-align: center;">Delete</th>
                     </tr>
                   </thead>';
                 while($facility = mysqli_fetch_assoc($listOfFacility))
@@ -455,6 +455,11 @@
                     echo '<td style="text-align: center;">'.($facility['facilityDetail']).'</td>';
                     echo '<td style="text-align: center;">'.($facility['ratePerDay']).'</td>';
                     echo '<td style="text-align: center;">'.($facility['status']).'</td>';
+                    
+                    echo '<td><a href="..\NiceAdmin\UpdateFacility.php"><button style="position: relative; left: 28%;"" type="submit" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
+                    echo '</form>';
+                    echo '<form action= "..\case1\processFBS.php" method="POST">';
+                    echo '<input type="hidden" name="facilityId2" value='.($facility['facilityId']).'>';
                     echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
                     echo '
                   </button>
@@ -475,8 +480,6 @@
                       </div>
                     </div>
                   </div><!-- End Basic Modal-->';
-                    echo '<td><a href="..\NiceAdmin\UpdateFacility.php"><button style="position: relative; left: 28%;"" type="submit" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
-                   
                     echo'</tr>';
                     echo '</form>';
 
