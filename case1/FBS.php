@@ -92,20 +92,19 @@ function searchByFacilityId()
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo ';
+    $sql = 'select * from facility ';
     $sql .= 'where facilityId = "'.$_POST['searchKey'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
-
-function searchByName()
+function searchByFacilityName()
 {
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $sql = 'select * from userinfo ';
+    $sql = 'select * from facility ';
     $sql .= 'where name = "'.$_POST['searchKey'].'"';
     $qry = mysqli_query($con, $sql);
     return $qry;
@@ -122,6 +121,55 @@ function searchByCategory()
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
+function searchByCapacity()
+{
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from facility ';
+    $sql .= 'where capacity = "'.$_POST['searchKey'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+function searchByRatePerDay()
+{
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from facility ';
+    $sql .= 'where ratePerDay = "'.$_POST['searchKey'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+function searchByStatus()
+{
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from facility ';
+    $sql .= 'where status = "'.$_POST['searchKey'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+function searchByName()
+{
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+    $sql = 'select * from userinfo ';
+    $sql .= 'where name = "'.$_POST['searchKey'].'"';
+    $qry = mysqli_query($con, $sql);
+    return $qry;
+}
+
 function getFacilityInformation($facilityId)
 {
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");

@@ -35,6 +35,69 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<style>
+    .search-box {
+        border: solid 5px black;
+        display: inline-block;
+        position: relative;
+        border-radius: 50px;
+    }
+    .search-box input[type="text"] {
+        font-family: Raleway, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        width: 50px;
+        height: 50px;
+        padding: 5px 40px 5px 10px;
+        border: none;
+        box-sizing: border-box;
+        border-radius: 50px;
+        transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 0.5) 600ms;
+    }
+    .search-box input[type="text"]:focus {
+        outline: none;
+    }
+    .search-box input[type="text"]:focus, .search-box input[type="text"]:not(:placeholder-shown) {
+        width: 300px;
+        transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+    }
+    .search-box input[type="text"]:focus + span, .search-box input[type="text"]:not(:placeholder-shown) + span {
+        bottom: 13px;
+        right: 10px;
+        transition: bottom 300ms ease-out 800ms, right 300ms ease-out 800ms;
+    }
+    .search-box input[type="text"]:focus + span:after, .search-box input[type="text"]:not(:placeholder-shown) + span:after {
+        top: 0;
+        right: 10px;
+        opacity: 1;
+        transition: top 300ms ease-out 1100ms, right 300ms ease-out 1100ms, opacity 300ms ease 1100ms;
+    }
+    .search-box span {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -13px;
+        right: -15px;
+        transition: bottom 300ms ease-out 300ms, right 300ms ease-out 300ms;
+    }
+    .search-box span:before, .search-box span:after {
+        content: '';
+        height: 25px;
+        border-left: solid 5px black;
+        position: absolute;
+        transform: rotate(-45deg);
+    }
+    .search-box span:after {
+        transform: rotate(45deg);
+        opacity: 0;
+        top: -20px;
+        right: -10px;
+        transition: top 300ms ease-out, right 300ms ease-out, opacity 300ms ease-out;
+    }
+</style>
 <?php
   include "..\case1\FBS.php";
   session_start(); 
@@ -421,13 +484,74 @@
       </nav>
     </div><!-- End Page Title -->
 
+      <?php
+
+      displaySearchPanel();
+
+      $listOfFacility = getListOfFacility();
+
+      if(isSet($_POST['searchByFacilityId']))
+      {
+          $listOfFacility = searchByFacilityId();
+      }
+      else if (isSet($_POST['searchByFacilityName']))
+      {
+          $listOfFacility = searchByFacilityName();
+      }
+      else if (isSet($_POST['searchByCategory']))
+      {
+          $listOfFacility = searchByCategory();
+      }
+      else if (isSet($_POST['searchByRatePerDay']))
+      {
+          $listOfFacility = searchByRatePerDay();
+      }
+      else if (isSet($_POST['searchByCapacity']))
+      {
+          $listOfFacility = searchByCapacity();
+      }
+      else if (isSet($_POST['searchByStatus']))
+      {
+          $listOfFacility = searchByStatus();
+      }
+
+      else
+      {
+          $listOfFacility = getListOfFacility();
+      }
+      echo "<br><b>There are ". mysqli_num_rows($listOfFacility). ' record</b>';
+      function displaySearchPanel()
+      {
+          echo'<div>';
+          echo'<form action="" method="POST">';
+          echo'<fieldset style="text-align: center; font-size: 20px;"><legend><b>Search facilities:</b></legend>';
+          //echo'<b>Search Key: </b><br>';
+          echo'<div class="search-box">
+             <input type="text" placeholder="Search" name="searchKey"/><span></span>
+               </div>';
+          //echo'<br><input type="text" name="searchKeyUser">';
+          echo'<br><br><div class="btn-group" role="group" aria-label="Basic outlined example"><input class="btn btn-outline-secondary" type="submit" name="searchByFacilityId" value="By Facility Id">';
+          echo'<input class="btn btn-outline-secondary" type="submit" name="searchByFacilityName" value="By Name">';
+          echo'<input class="btn btn-outline-secondary" type="submit" name="searchByCategory" value="By Category">';
+          echo'<input class="btn btn-outline-secondary" type="submit" name="searchByCapacity" value="By Capacity">';
+          echo'<input class="btn btn-outline-secondary" type="submit" name="searchByRatePerDay" value="By Rate Per Day">';
+          echo'<input class="btn btn-outline-secondary" type="submit" name="searchByStatus" value="By Status">';
+          echo'<input class="btn btn-outline-secondary" type="submit" name="displayAll" value="Display All">';
+          echo '</form>';
+          echo'</div>';
+          echo'</fieldset>';
+          echo'</div>';
+
+
+
+      }
+      ?>
     <section class="section">
       <div class="row">
       <div class="card">
             <div class="card-body">
               <h5 class="card-title">Facilities</h5>
               <?php
-                $listOfFacility = getListOfFacility();
                 if(mysqli_num_rows($listOfFacility) > 0){
                   //displayTableHeader();
                 $count=1;
@@ -507,7 +631,7 @@
     </section>
 
   </main><!-- End #main -->
-  
+
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
