@@ -232,25 +232,20 @@
             </a>
             <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
             <li>
-                <a href="AdminFacilityList.php">
-                <i class="bi bi-circle"></i><span>View Facility</span>
-                </a>
-            </li>
-            <li>
-                <a href="DewanJumaah.php">
-                <i class="bi bi-circle"></i><span>Dewan Jumaah</span>
-                </a>
-            </li>
-            <li>
-                <a href="DewanSeminar.php">
-                <i class="bi bi-circle"></i><span>Dewan Seminar</span>
-                </a>
-            </li>
-            <li>
-                <a href="DewanAzhamHashim.php">
-                <i class="bi bi-circle"></i><span>Dewan Azham Hashim</span>
-                </a>
-            </li>
+            <a href="AdminFacilityList.php">
+              <i class="bi bi-circle"></i><span>View Facility</span>
+            </a>
+          </li>
+          <li>
+            <a href="Addfacility.php">
+              <i class="bi bi-circle"></i><span>Add Facility</span>
+            </a>
+          </li>
+          <li>
+            <a href="Facilities(Dewan).php">
+              <i class="bi bi-circle"></i><span>Dewan</span>
+            </a>
+          </li>
             <li>
             <a href="BilikIlmuan1.php">
               <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
