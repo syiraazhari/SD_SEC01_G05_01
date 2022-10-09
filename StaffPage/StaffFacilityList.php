@@ -200,13 +200,14 @@ function displayAvailableList() {
         
         echo'<tr>';
         echo '<td>'.$count.'</td>';
+        echo '<td>'.strtoupper($row['name']).'</td>';
         echo '<td>'.strtoupper($row['category']).'</td>';
         echo '<td>'.$row['capacity'].'</td>';
         echo '<td>'.strtoupper($row['facilityDetail']).'</td>';
         echo '<td>'.$row['ratePerDay'].'</td>';
         echo '<td>'.strtoupper($row['status']).'</td>';
         $facilityId = $row['facilityId'];
-        echo 'Test';
+        
         echo '<td>';//booking option
         echo'<form action="StaffBookingHistory.php" method="POST">';
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
@@ -217,26 +218,22 @@ function displayAvailableList() {
         echo'<input class="button2 button5" type="submit" name="" value="Payment">';
         echo '</form>';
         echo'</td>';
-        echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
+        echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal"  data-bs-target="#ExtralargeModal"><i class="bi bi-check-circle"></i></button></td>';
                     echo '
                   </button>
-                  <div class="modal fade" id="basicModal1" tabindex="-1">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Approve Verification</h5>
-                          <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          Are u sure wanna <b>Delete</b> this facility record?
-                        </div>
-                        <div class="modal-footer">';
-                          //<button type="submit" name= "gobackVerify" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          //<button type="submit" name="deleteFacility" class="btn btn-primary">Save changes</button>
-                        echo '</div>
-                      </div>
+                  <div class="modal fade" id="ExtralargeModal" tabindex="-1">
+                  <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Picture</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                  </div><!-- End Basic Modal-->';
+                    <div class="modal-body">
+                    <img class="img-fluid" style="width:900px; height:650px;" src="StaffPagePicture/Dewan-Azman-Hashim.png" alt="Dewan-Azman-Hashim">
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Extra Large Modal-->';
         echo'</tr>';
         $count++;
         
@@ -244,7 +241,7 @@ function displayAvailableList() {
     }
     echo'</table>';
 
-
+    
 }
 
 ?>
@@ -272,6 +269,7 @@ function displayTableHeader()
     echo'<table class="w3-table w3-striped w3-border">';
     echo'<br><tr style="background-color: #265887; color:white; justify-content:centre; align-itms:centre">
                 <th>Bil</th>
+                <th>Name</th>
                 <th>Category</th>
                 <th>Capacity</th>
                 <th>Facility Detail</th>

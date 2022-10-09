@@ -1031,7 +1031,7 @@ function checkAvailable() {
         exit;
     }
 
-    $sql = 'SELECT facilityId, category, capacity,facilityDetail,ratePerDay,status FROM facility ';
+    $sql = 'SELECT facilityId, name, category, capacity,facilityDetail,ratePerDay,status FROM facility ';
 
     // $sql .= 'WHERE status = "Available" AND facilityId NOT IN((SELECT DISTINCT facilityId FROM rent WHERE date_rent_start BETWEEN "'.$dateRentStart.'" AND "'.$dateRentEnd.'" OR date_rent_end BETWEEN "'.$dateRentStart.'" AND "'.$dateRentEnd.'")) AND status = "Available"';
 

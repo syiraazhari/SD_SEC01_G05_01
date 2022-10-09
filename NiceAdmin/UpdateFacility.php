@@ -60,7 +60,6 @@
   $vkey = $row2['vkey'];
   $verified = $row2['verified'];
 
-
 ?>
 <body>
 
@@ -429,6 +428,8 @@
               <h5 class="card-title">General Form Elements</h5>
 
               <!-- General Form Elements -->
+            
+            
               <form action= "..\case1\processFBS.php" method="POST">
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label" >Facility ID</label>
@@ -507,6 +508,25 @@
 
               </form><!-- End General Form Elements -->
 
+              <div class="row mb-3">
+                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Facility Image</label>
+                      <div class="col-md-8 col-lg-9">
+                      <form class="form" id = "form" action="..\Facility\processFacility.php" enctype="multipart/form-data" method="post">                      
+                            <div class="pt-2 ">
+                              <img src="..\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 400 height = 300 title="<?php echo $detailfacility['Image']; ?>" >
+                              
+                              <!--<img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class="rounded-circle">-->
+                              <div class="round">
+                                <input type="hidden" name="facilityId" value="<?php echo $detailfacility['facilityId']; ?>">
+                                <input type="hidden" name="facilityName" value="<?php echo $detailfacility['name']; ?>">
+                                <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png">
+                                
+                                <input type="submit" value="Upload" class="btn btn-primary" >
+                              </div>
+                            </div>
+                      </from>
+                      </div>
+                    </div>
             </div>
           </div>
 

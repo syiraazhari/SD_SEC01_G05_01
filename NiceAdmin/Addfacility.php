@@ -60,7 +60,9 @@
   $vkey = $row2['vkey'];
   $verified = $row2['verified'];
 
-
+  $listOfFacility = getListOfFacility();
+  $row3 = mysqli_fetch_assoc($listOfFacility);
+  $imageFacility = $row3['Image']; 
 ?>
 <body>
 
@@ -394,7 +396,29 @@
               <h5 class="card-title">General Form Elements</h5>
 
               <!-- General Form Elements -->
-              <form action= "..\case1\processFBS.php" method="POST">
+              <div class="row mb-3">
+                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Facility Image</label>
+                      <div class="col-md-8 col-lg-9">
+                      <form class="form" id = "form" action="..\Facility\processFacility.php" enctype="multipart/form-data" method="post">                      
+                            <div class="pt-2 ">
+                              <img src="..\Facility\imgFacility\<?php echo $imageFacility; ?>" width = 125 height = 125 title="<?php echo $imageFacility; ?>" class="rounded-circle">
+                              
+                              <!--<img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class="rounded-circle">-->
+                              <div class="round">
+                                <input type="hidden" name="userId" value="">
+                                <input type="hidden" name="name" value="">
+                                <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png">
+                                
+                                <input type="submit" value="Upload" class="btn btn-primary" name="upload">
+                              </div>
+                            </div>
+                      </from>
+                      </div>
+                    </div>
+
+
+                    
+                    <form action= "..\case1\processFBS.php" method="POST">
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label" >Facility ID</label>
                   <div class="col-sm-10">
