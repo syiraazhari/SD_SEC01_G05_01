@@ -105,38 +105,35 @@ session_start();
 ?>
 
 <body>
+<br><br><div class="w3-container" style="width:70%;margin:auto">'
 
-    <div class="w3-container" style="width:50%; margin-left: auto; margin-right:auto; margin-top : 10%">
+<br><br>
 
-    <div class="w3-container" style="background-color:#008080; color:white">
-        <h1>FACILITY</h1>
+<form action=" " method ="POST">
+    <div class="w3-container" style="background-color:#265887; color:red; border-radius:20px">
+    <h2>CHECK FACILITY</h2>
     </div>
-    <form action=" " method ="POST">
-        <div class="w3-container w3-white w3-padding-16">
-            <div class="w3-row-padding" style="margin:0 -16px;">
-                <br>    
-                <div class="w3-half w3-margin-bottom">
-                        <label for="startDate">Start Date</label>
-                        <input type="date" name = "startDate">
-                    </div>
-                <br><br><br><br>
-                <div class="w3-half">
-                    <label for="endDate">End Date</label>
-                    <input type="date" name = "endDate">
-                </div>
+    <div class="w3-container w3-white w3-padding-16" style=" border-radius:20px">
+        <div class="w3-row-padding" style="margin:20px; justify-content:center">
+            <div class="w3-half w3-margin-bottom">
+                <label for="startDate">Start Date</label>
+                <input type="date" name = "startDate">
             </div>
-            
-            <br>
-            <input  style="float: left" class="button button1" type="submit" name = "checkAvailable" value = "Check" >
-
-    </form>
+            <div class="w3-half w3-margin-bottom">
+                <label for="endDate">End Date</label>
+                <input type="date" name = "endDate">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" name = "checkAvailable" value = "Check"><span></span>Check</button>
+        
+</form><br><br>
 
 </div>
 <?php
 include "../case1/FBS.php";
 //include "..\menu\menu.php";
 if(isSet($_POST['checkAvailable'])) {
-
+    
     //getUserName();
     echo "<br><b>".$_SESSION['name']."</b>";
 
@@ -144,46 +141,65 @@ if(isSet($_POST['checkAvailable'])) {
     $_SESSION['endDate'] = $_POST['endDate'];
     displayAvailableList();
 }
-displayHeaderCustomer();
+displayHeaderStaff();
 ?>
+
 <?php
 
 function displayAvailableList() {
     $listOfFacility = checkAvailable();
 
     echo "<b>, There are ". mysqli_num_rows($listOfFacility). ' record : </b><br>';
-
+    
 
     if(mysqli_num_rows($listOfFacility) > 0)
         displayTableHeader();
 
     $count=1;
+    
     while($row = mysqli_fetch_assoc($listOfFacility))
     {
-
+        
         echo'<tr>';
         echo '<td>'.$count.'</td>';
+        echo '<td>'.strtoupper($row['name']).'</td>';
         echo '<td>'.strtoupper($row['category']).'</td>';
         echo '<td>'.$row['capacity'].'</td>';
         echo '<td>'.strtoupper($row['facilityDetail']).'</td>';
         echo '<td>'.$row['ratePerDay'].'</td>';
         echo '<td>'.strtoupper($row['status']).'</td>';
         $facilityId = $row['facilityId'];
-
-        echo '<td>';//booking option
-        echo'<form action="StudentBookingHistory.php" method="POST">';
+        
+        $recordfacilityId=getFacilityInformation($facilityId);
+        $detailfacility = mysqli_fetch_assoc($recordfacilityId);
+          
+          echo '<td>';//booking option
+        echo'<form action="StaffBookingHistory.php" method="POST">';
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
-        echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
+        //echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
         echo'</form>';
+        echo '<form action= "..\Test_stripe\index.php" method="POST">';
+        echo'<input type="hidden" name="FacilityId" value = "'.$row["facilityId"].'">';
+        echo'<input type="hidden" name="pictureCode" id= "pCode" value = "'.$detailfacility['Image'].'">';
+        echo'<input class="button2 button5" type="submit" name="" value="View">';
+        echo '</form>';
         echo'</td>';
+        
+        //echo '<td>'.$detailfacility['Image'].'</td>';
+        //echo '<img class="img-fluid" src="../Facility/imgFacility/'.$detailfacility['Image'].'" title = "'.$detailfacility['Image'].'">';
+        //echo '<img class="img-fluid" style="width:900px; height:650px;" src="..\Facility\imgFacility\"'.$detailfacility['Image'].'"" title = "'.$detailfacility['Image'].'">';
+        
         echo'</tr>';
         $count++;
-
+        
+        //C:\wamp64\www\WebProgramming\www\MASTER PROJECT - UBS FACILITY BOOKING\StaffPage\StaffFacilityList.php
+        //C:\wamp64\www\WebProgramming\www\MASTER PROJECT - UBS FACILITY BOOKING\Facility\imgFacility
+        //style="width:900px; height:650px;"
 
     }
     echo'</table>';
 
-
+    
 }
 
 ?>
@@ -209,14 +225,15 @@ function displaySearchPanel()
 function displayTableHeader()
 {
     echo'<table class="w3-table w3-striped w3-border">';
-    echo'<br><br><tr style="background-color: #008080; color:white; ">
+    echo'<br><tr style="background-color: #265887; color:white; justify-content:centre; align-itms:centre">
                 <th>Bil</th>
+                <th>Name</th>
                 <th>Category</th>
                 <th>Capacity</th>
                 <th>Facility Detail</th>
                 <th>Price Per Day</th>
                 <th>Status</th>
-                <th>Book</th>
+                <th>View</th>
 				</div>
                 </tr>';
 
@@ -228,6 +245,23 @@ echo '<br>';
 ?>
 
 
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

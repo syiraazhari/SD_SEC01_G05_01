@@ -39,12 +39,45 @@
       $FacilityInformation = getFacilityInformation($bookingfacilityId);
       $row = mysqli_fetch_assoc($FacilityInformation);
 
+      
+        $recordfacilityId=getFacilityInformation($bookingfacilityId);
+        $detailfacility = mysqli_fetch_assoc($recordfacilityId);
+
       echo '<h2 class="my-4 text-center">'.$row['name'].'</h2>';
     ?>
     <form action="./charge.php" method="post" id="payment-form">
       <div class="form-row">
+      <div class="row mb-3">
+         
+            <div class="card-body">
 
-                    <div class="row mb-3">
+              <!-- Slides only carousel -->
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                  <img style="text-align: center;" src="..\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 1400 height = 700 title="<?php echo $detailfacility['Image']; ?>" >
+                  </div>
+                  
+                </div>
+              </div><!-- End Slides only carousel-->
+                      
+                      </div>
+                    </div>  
+
+                    
+                   
+                    
+       
+  </div>
+  <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Default Table</h5>
+              
+              <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">FacilityId</label>
                       <div class="col-md-8 col-lg-9">
                         <?php
@@ -52,7 +85,7 @@
                         ?>
                       </div>
                     </div>
-                    <div class="row mb-3">
+              <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Name</label>
                       <div class="col-md-8 col-lg-9">
                         <?php
@@ -100,7 +133,8 @@
                         ?>
                       </div>
                     </div>
-                    <div class="row mb-3">
+
+              <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
                         <?php
@@ -108,39 +142,116 @@
                         ?>
                       </div>
                     </div>
-                    
-       <?php
-     
-       //echo'<input type="text" name="name" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["name"].'">';
-       //echo'<input type="text" name="category" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["category"].'">';
-       //echo'<input type="text" name="capacity" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["capacity"].'">';
-       //echo'<input type="text" name="facilityDetail" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["facilityDetail"].'">';
-       //echo'<input type="text" name="ratePerDay" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["ratePerDay"].'">';
-       //echo'<input type="text" name="status" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["status"].'">';
-       echo '<input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
-       <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">';
-       ?>
-       
-        <div id="card-element" class="form-control">
-          <!-- a Stripe Element will be inserted here. -->
+              
+            </div>
+          </div>
+
         </div>
-        
-        <!-- Used to display form errors -->
-        <div id="card-errors" role="alert"></div>
+      <?php
+      $dateRentStart = $_SESSION['startDate'];
+      $dateRentEnd = $_SESSION['endDate'];
+      
+      $totalPrice = getTotalPrice($dateRentStart, $dateRentEnd, $bookingfacilityId);
+      ?>
+        <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Visa / Debit Card</h5>
+              <div class="row mb-3">
+                
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Date Rent Start</label>
+                      <div class="col-md-8 col-lg-9">
+                        <?php
+                           echo '<input type="text" name="startDate" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$dateRentStart.'" readonly>';
+                        ?>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Date Rent End</label>
+                      <div class="col-md-8 col-lg-9">
+                        <?php
+                           echo '<input type="text" name="endDate" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$dateRentEnd.'" readonly>';
+                        ?>
+                      </div>
+                    </div>
+              <div class="row mb-3">
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Total</label>
+                      <div class="col-md-8 col-lg-9">
+                        <?php
+                           echo '<input type="text" name="totalPrice" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$totalPrice.'" readonly>';
+                        ?>
+                      </div>
+                    </div>
+              <!-- Bordered Table -->
+              
+              <!-- End Primary Color Bordered Table -->
+
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Small tables</h5>
+              
+              <!-- Small tables -->
+              <div class="col-md-8 col-lg-9">
+              <?php
+     
+     //echo'<input type="text" name="name" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["name"].'">';
+     //echo'<input type="text" name="category" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["category"].'">';
+     //echo'<input type="text" name="capacity" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["capacity"].'">';
+     //echo'<input type="text" name="facilityDetail" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["facilityDetail"].'">';
+     //echo'<input type="text" name="ratePerDay" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["ratePerDay"].'">';
+     //echo'<input type="text" name="status" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["status"].'">';
+     echo '<input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
+     <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">';
+     ?>
+     
+      <div id="card-element" class="form-control">
+        <!-- a Stripe Element will be inserted here. -->
       </div>
       
-      <?php
-        echo '<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
-      ?>
-      <button type="submit" name="completePayment" class="btn btn-primary">Completed Payment</button>
-    </form>
+      <!-- Used to display form errors -->
+      <div id="card-errors" role="alert"></div>
+    </div>
+    
+    <?php
+      echo '<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
+    ?>
+    <button type="submit" name="completePayment" class="btn btn-primary">Completed Payment</button>
+  </form>
 
-    <form action= "..\case1\processFBS.php" method="POST">
-    <br>
-    <br>
-    <button type="submit" name="cancelPayment" class="btn btn-primary">Cancel Payment</button>
-    </form>
-  </div>
+  <form action= "..\case1\processFBS.php" method="POST">
+  <br>
+  <button type="submit" name="cancelPayment" class="btn btn-primary">Cancel Payment</button>
+  </form>
+                      </div>
+              
+            </div>
+          </div>
+            
+        </div>
+      </div>
+              <!-- End small tables -->
+
+            </div>
+          </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <footer id="footer" class="footer">
     <div class="copyright">
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved

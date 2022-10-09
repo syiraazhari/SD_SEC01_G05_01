@@ -30,6 +30,17 @@ else if(isSet($_POST['deleteFacilityButton'])) {
 
 }else if(isSet($_POST['return'])){
     header("Location:..\NiceAdmin\Bookerlist.php");
+}else if(isSet($_POST['returnToFacilityList'])){
+    if($_POST['userType'] == "Student"){
+
+        header("Location:..\StudentPage\StudentFacilityList.php");
+        
+    }else if($_POST['userType'] == "Staff"){
+
+        header("Location:..\StaffPage\StaffFacilityList.php");
+        
+    }
+    
 }else if(isSet($_POST['UpdateProfile'])){
     updateStudentProfile();
     header("Location:..\StudentPage\StudentProfile.php");

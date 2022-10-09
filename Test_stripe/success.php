@@ -36,11 +36,19 @@
 </head>
 <body>
   <div class="container mt-4">
-    <h2>Thank you for purchasing <?php echo $product; ?></h2>
+    <h2>Thank you for Booking <?php echo $product; ?></h2>
     <hr>
     <p>Your transaction ID is <?php echo $tid; ?></p>
     <p>Check your email for more info</p>
-    <p><a href="..\StaffPage\StaffFacilityList.php" class="btn btn-light mt-2">Go Back</a></p>
+
+    <form class="form" action="..\case1\processFBS.php"  method="post">
+      <?php
+        echo '<input type="hidden" name = "userType" value ="'.$_GET['userType'].'">';
+      ?>
+      
+    
+    <button type="submit" name="returnToFacilityList" class="btn btn-primary">Go Back</button>
+</form>
   </div>
   <footer id="footer" class="footer">
     <div class="copyright">

@@ -162,12 +162,6 @@ session_start();
         
 </form><br><br>
 
-<form>
-
-
-</form>
-
-
 </div>
 <?php
 include "../case1/FBS.php";
@@ -183,18 +177,20 @@ if(isSet($_POST['checkAvailable'])) {
 }
 displayHeaderStaff();
 ?>
+
 <?php
 
 function displayAvailableList() {
     $listOfFacility = checkAvailable();
 
     echo "<b>, There are ". mysqli_num_rows($listOfFacility). ' record : </b><br>';
-
+    
 
     if(mysqli_num_rows($listOfFacility) > 0)
         displayTableHeader();
 
     $count=1;
+    
     while($row = mysqli_fetch_assoc($listOfFacility))
     {
         
@@ -208,35 +204,31 @@ function displayAvailableList() {
         echo '<td>'.strtoupper($row['status']).'</td>';
         $facilityId = $row['facilityId'];
         
-        echo '<td>';//booking option
+        $recordfacilityId=getFacilityInformation($facilityId);
+        $detailfacility = mysqli_fetch_assoc($recordfacilityId);
+          
+          echo '<td>';//booking option
         echo'<form action="StaffBookingHistory.php" method="POST">';
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
         //echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
         echo'</form>';
         echo '<form action= "..\Test_stripe\index.php" method="POST">';
         echo'<input type="hidden" name="FacilityId" value = "'.$row["facilityId"].'">';
-        echo'<input class="button2 button5" type="submit" name="" value="Payment">';
+        echo'<input type="hidden" name="pictureCode" id= "pCode" value = "'.$detailfacility['Image'].'">';
+        echo'<input class="button2 button5" type="submit" name="" value="View">';
         echo '</form>';
         echo'</td>';
-        echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal"  data-bs-target="#ExtralargeModal"><i class="bi bi-check-circle"></i></button></td>';
-                    echo '
-                  </button>
-                  <div class="modal fade" id="ExtralargeModal" tabindex="-1">
-                  <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Picture</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <img class="img-fluid" style="width:900px; height:650px;" src="StaffPagePicture/Dewan-Azman-Hashim.png" alt="Dewan-Azman-Hashim">
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End Extra Large Modal-->';
+        
+        //echo '<td>'.$detailfacility['Image'].'</td>';
+        //echo '<img class="img-fluid" src="../Facility/imgFacility/'.$detailfacility['Image'].'" title = "'.$detailfacility['Image'].'">';
+        //echo '<img class="img-fluid" style="width:900px; height:650px;" src="..\Facility\imgFacility\"'.$detailfacility['Image'].'"" title = "'.$detailfacility['Image'].'">';
+        
         echo'</tr>';
         $count++;
         
+        //C:\wamp64\www\WebProgramming\www\MASTER PROJECT - UBS FACILITY BOOKING\StaffPage\StaffFacilityList.php
+        //C:\wamp64\www\WebProgramming\www\MASTER PROJECT - UBS FACILITY BOOKING\Facility\imgFacility
+        //style="width:900px; height:650px;"
 
     }
     echo'</table>';
@@ -275,8 +267,7 @@ function displayTableHeader()
                 <th>Facility Detail</th>
                 <th>Price Per Day</th>
                 <th>Status</th>
-                <th>Payment</th>
-                <th>Picture</th>
+                <th>View</th>
 				</div>
                 </tr>';
 
@@ -299,8 +290,12 @@ echo '<br>';
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 </body>
 </html>

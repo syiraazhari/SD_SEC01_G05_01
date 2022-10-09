@@ -15,6 +15,19 @@ session_start();
 // Sanitize POST Array
 $POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
 
+session_start(); 
+//$email = $_SESSION['username'];
+
+
+$userId = $_SESSION['username'];
+$listOfAccount = getListOfpassword($userId);
+//if(mysqli_num_rows($listOfStudent) > 0)
+$row = mysqli_fetch_assoc($listOfAccount);
+$userType = $row['userType'];
+
+
+
+
 $first_name = $POST['first_name'];
 $last_name = $POST['last_name'];
 $FacilityId = $POST['FacilityId'];
@@ -27,7 +40,9 @@ $status = $POST['status'];
 $email = $POST['email'];
 $token = $POST['stripeToken'];
 
+
 echo $token;
+echo $email;
     $dateRentStart = $_SESSION['startDate'];
     $dateRentEnd = $_SESSION['endDate'];
     
@@ -80,7 +95,7 @@ $charge = \Stripe\Charge::create(array(
 
   bookFacility();
   // Redirect to success
-header('Location: success.php?tid='.$charge->id.'&product='.$charge->description);
+header('Location: success.php?tid='.$charge->id.'&product='.$charge->description.'&userType='.$userType);
 
 
 ?>
