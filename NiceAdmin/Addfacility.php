@@ -382,7 +382,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Update Facility</li>
+          <li class="breadcrumb-item active">Add Facility</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -393,7 +393,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">General Form Elements</h5>
+              <h5 class="card-title">Add Facility</h5>
 
               <!-- General Form Elements -->
               <div class="row mb-3">
@@ -445,7 +445,7 @@
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">capacity</label>
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Capacity</label>
                   <div class="col-sm-10">
                   <?php
                       echo '<input type="number" name="capacity" class="form-control" >';
@@ -464,7 +464,7 @@
                 
                 </div>
                 <div class="row mb-3">
-                  <label for="inputDate" class="col-sm-2 col-form-label">ratePerDay(RM)</label>
+                  <label for="inputDate" class="col-sm-2 col-form-label">Rate Per Day(RM)</label>
                   <div class="col-sm-10">
                   <?php
                       echo '<input type="number" name="ratePerDay" class="form-control" >';
@@ -477,7 +477,7 @@
                     <select class="form-select" name="status" aria-label="Default select example">
                       
                       <?php
-                      echo '<option selected>Click here to select menu</option>'
+                      echo '<option selected>Click here to select the status</option>'
                     ?>
                       <option value="AVAILABLE">AVAILABLE</option>
                       <option value="NOT AVAILABLE">NOT AVAILABLE</option>
@@ -488,7 +488,7 @@
                 
 
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Submit Button</label>
+                  <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary"  name="addFacilityButton">Add Facility</button>
                   </div>
