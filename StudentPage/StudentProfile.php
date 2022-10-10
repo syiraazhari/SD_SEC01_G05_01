@@ -106,37 +106,37 @@
                         <div
                             class="col-auto col-xl d-flex align-items-center justify-content-xl-center justify-content-end order-2 order-xl-1">
                             <div class="menu-column-area d-none d-xl-block position-static">
-                                <nav class="site-main-menu">
+                                <nav class="site-main-menu" style="margin-bottom: 0%;">
                                     <ul>
                                         <li>
                                             <a href="index.html"><span
-                                                    class="menu-text" style="color:whitesmoke">Homepage</span></a>
+                                                    class="menu-text" style="color:whitesmoke;display: inline">Homepage</span></a>
                                         </li>
                                         <li>
-                                            <a href="about.html"><span class="menu-text" style="color:whitesmoke">About Us</span></a>
+                                            <a href="about.html"><span class="menu-text" style="color:whitesmoke;display: inline">About Us</span></a>
                                         </li>
                                         <li>
-                                            <a href="service.html"><span class="menu-text" style="color:whitesmoke">Services</span></a>
+                                            <a href="service.html"><span class="menu-text" style="color:whitesmoke;display: inline">Services</span></a>
                                         </li>
                                         <li class="has-children">
-                                            <a href="work.html"><span class="menu-text" style="color:whitesmoke">Work</span></a>
+                                            <a href="work.html"><span class="menu-text" style="color:whitesmoke;display: inline">Work</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
-                                                <li><a href="work.html"><span class="menu-text">Work</span></a></li>
-                                                <li><a href="work-details.html"><span class="menu-text">Work
+                                                <li><a href="work.html"><span class="menu-text" style="display: inline">Work</span></a></li>
+                                                <li><a href="work-details.html"><span class="menu-text" style="display: inline">Work
                                                             Details</span></a></li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="contact-us.html"><span class="menu-text" style="color:whitesmoke">Contact Us</span></a>
+                                            <a href="contact-us.html"><span class="menu-text" style="color:whitesmoke;display: inline">Contact Us</span></a>
                                         </li>
                                         <li class="has-children">
-                                            <a  class="active" href="StudentProfile.php"><span class="menu-text" style="color:whitesmoke">Profile</span></a>
+                                            <a  class="active" href="StudentProfile.php"><span class="menu-text" style="color:whitesmoke;display: inline">Profile</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
-                                                <li><a href="StudentProfile.php"><span class="menu-text" >View Profile</span></a></li>
-                                                <li><a href="ViewStudentBookingHistory.php"><span class="menu-text">Booking History</span></a></li>
-                                                <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
+                                                <li><a href="StudentProfile.php"><span class="menu-text" style="display: inline" >View Profile</span></a></li>
+                                                <li><a href="ViewStudentBookingHistory.php"><span class="menu-text" style="display: inline">Booking History</span></a></li>
+                                                <li><a href="..\LoginSignupPage\index.php"><span class="menu-text" style="display: inline">Logout</span></a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -178,60 +178,11 @@
         </div>
         <!-- Header Section End -->
 
-    <div id="site-main-mobile-menu" class="site-main-mobile-menu">
-        <div class="site-main-mobile-menu-inner">
-            <div class="mobile-menu-header">
-                <div class="mobile-menu-logo">
-                    <a href="index.html"><img src="assets/images/logo/light-logo.png" alt=""></a>
-                </div>
-                <div class="mobile-menu-close">
-                    <button class="toggle">
-                        <i class="icon-top"></i>
-                        <i class="icon-bottom"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="mobile-menu-content">
-                <nav class="site-mobile-menu">
-                    <ul>
-                        <li>
-                            <a href="index.html"><span class="menu-text">Homepage</span></a>
-                        </li>
-                        <li>
-                            <a href="about.html"><span class="menu-text">About Us</span></a>
-                        </li>
-                        <li>
-                            <a href="service.html"><span class="menu-text">Services</span></a>
-                        </li>
-                        <li class="has-children">
-                            <a href="work.html"><span class="menu-text">Work</span></a>
-                            <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
-                            <ul class="sub-menu">
-                                <li><a href="work.html"><span class="menu-text">Work</span></a></li>
-                                <li><a href="work-details.html"><span class="menu-text">Work Details</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="has-children">
-                            <a href="#"><span class="menu-text">Blog</span></a>
-                            <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
-                            <ul class="sub-menu">
-                                <li><a href="blog-classic.html"><span class="menu-text">Blog Classic</span></a></li>
-                                <li><a href="blog-details.html"><span class="menu-text">Blog Details</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="contact-us.html"><span class="menu-text">Contact Us</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
   <main id="main" class="main">
 
     <div class="pagetitle">
       <nav>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" style="margin: 0% ; display:flex">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Users</li>
           <li class="breadcrumb-item active">Profile</li>
