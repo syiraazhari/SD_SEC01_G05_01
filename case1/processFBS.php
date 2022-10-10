@@ -300,8 +300,19 @@ else if(isSet($_POST['register'])){
     header('Location:..\Rent\bookingFacility.php');
 
 }else if(isSet($_POST['cancelPayment'])){
+    session_start();
+    $userId = $_SESSION['username'];
+    $listOfAccount = getListOfpassword($userId);
+    //if(mysqli_num_rows($listOfStudent) > 0)
+    $row = mysqli_fetch_assoc($listOfAccount);
+    $userType = $row['userType'];
 
-    header('Location:..\StaffPage\StaffFacilityList.php');
+    if($userType == "Staff"){
+        header('Location:..\StaffPage\StaffFacilityList.php');
+    }else if($userType == "Student"){
+        header('Location:..\StudentPage\StudentFacilityList.php');
+    }
+    
 
 }else if(isSet($_POST['deleteFacility'])){
     deleteFacility();
