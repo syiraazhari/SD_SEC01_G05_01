@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 10, 2022 at 08:20 AM
+-- Generation Time: Oct 10, 2022 at 08:36 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -46,7 +46,6 @@ INSERT INTO `bookerlist` (`MatricNum`, `name`, `userId`, `phoneNum`, `UserType`)
 ('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485', 'Staff'),
 ('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'Staff'),
 ('test2', 'testing243', 'cheesen.987@gmail.com', '321321321', 'Student'),
-('test3', 'testing3.3', 'chee.sen987@gmail.com', '0123456789', 'Staff'),
 ('testingFail1', 'testingFail2', 'FalseEmail@gmail.com', '543534', 'Staff');
 
 -- --------------------------------------------------------
