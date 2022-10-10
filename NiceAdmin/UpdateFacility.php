@@ -218,7 +218,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="homepage.php">
+        <a class="nav-link collapsed" href="homepage.php">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -420,7 +420,7 @@
         $detailfacility = mysqli_fetch_assoc($recordfacilityId);
         ?>
 
-              <h5 class="card-title">General Form Elements</h5>
+              <h5 class="card-title">Update Facility</h5>
 
               <!-- General Form Elements -->
             
@@ -432,7 +432,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Default Table</h5>
+              <h5 class="card-title">Facility Details</h5>
 
               <form action= "..\case1\processFBS.php" method="POST">
                 <div class="row mb-3">
@@ -461,7 +461,7 @@
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">capacity</label>
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Capacity</label>
                   <div class="col-sm-10">
                   <?php
                       echo '<input type="number" name="capacity" class="form-control" value ="'.$detailfacility['capacity'].'">';
@@ -480,7 +480,7 @@
                 
                 </div>
                 <div class="row mb-3">
-                  <label for="inputDate" class="col-sm-2 col-form-label">ratePerDay(RM)</label>
+                  <label for="inputDate" class="col-sm-2 col-form-label">Rate Per Day(RM)</label>
                   <div class="col-sm-10">
                   <?php
                       echo '<input type="number" name="ratePerDay" class="form-control" value ="'.$detailfacility['ratePerDay'].'">';
@@ -504,7 +504,7 @@
                 
 
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Submit Button</label>
+                  <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary"  name="updateFacilityButton">Update</button>
                   </div>
@@ -520,7 +520,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Table with stripped rows</h5>
+              <h5 class="card-title"> Facility Picture</h5>
               <div class="col-md-8 col-lg-9">
                       <form class="form" id = "form" action="..\Facility\processFacility.php" enctype="multipart/form-data" method="post">                      
                             <div class="pt-2 ">
@@ -536,7 +536,7 @@
                                 <input type="submit" value="Upload" class="btn btn-primary" >
                               </div>
                             </div>
-                      </from>
+                      </form>
                       </div>
               
             </div>

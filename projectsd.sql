@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 09, 2022 at 04:55 PM
+-- Generation Time: Oct 10, 2022 at 08:36 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -46,7 +46,6 @@ INSERT INTO `bookerlist` (`MatricNum`, `name`, `userId`, `phoneNum`, `UserType`)
 ('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485', 'Staff'),
 ('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'Staff'),
 ('test2', 'testing243', 'cheesen.987@gmail.com', '321321321', 'Student'),
-('test3', 'testing3.3', 'chee.sen987@gmail.com', '0123456789', 'Staff'),
 ('testingFail1', 'testingFail2', 'FalseEmail@gmail.com', '543534', 'Staff');
 
 -- --------------------------------------------------------
@@ -70,6 +69,8 @@ CREATE TABLE IF NOT EXISTS `customers` (
 --
 
 INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `created_at`) VALUES
+('cus_MaQ1GcsKEktDab', 'Yap', 'Kai', '', '2022-10-10 14:09:56'),
+('cus_MaQAtOHzZwGuT7', 'Yap', 'Kai', 'cheesen.987@gmail.com', '2022-10-10 14:18:59'),
 ('cus_MZikg5kdJXU8EF', 'tas', 'satsat', 'tancheesen123@hotmail.com', '2022-10-08 17:26:39'),
 ('cus_MZiMod9IpFT3zQ', '123', '123', 'tancheesen123@hotmail.com', '2022-10-08 17:02:44'),
 ('cus_MZiQvHGlNztDlI', '123', '123', 'tancheesen123@hotmail.com', '2022-10-08 17:07:07'),
@@ -107,24 +108,24 @@ CREATE TABLE IF NOT EXISTS `facility` (
 --
 
 INSERT INTO `facility` (`facilityId`, `name`, `category`, `capacity`, `facilityDetail`, `ratePerDay`, `status`, `Image`) VALUES
-('B111', 'FOYER DEWAN BANQUET', 'FOYER DEWAN BANQUET', 45, 'Suitable for sit-down meal area', '40000', 'AVAILABLE', 'FOYER DEWAN BANQUET - 2022.10.09 - 04.41.59pm.png'),
-('B122', 'BILIK GERAKAN', 'BILIK GERAKAN', 19, 'Suitable for medium size meeting group', '250', 'AVAILABLE', 'BILIK GERAKAN - 2022.10.09 - 04.01.09pm.png'),
-('B133', 'BILIK LPU (AL-GHAZALI)', 'BILIK LPU (AL-GHAZALI)', 20, 'Suitable for meeting, and presentation', '300', 'AVAILABLE', ' - 2022.10.09 - 04.33.28pm.jpg'),
-('C111', 'FOYER A BANGUNAN PSZ', 'FOYER A BANGUNAN PSZ', 60, 'Suitable for sit-down meal', '300', 'AVAILABLE', ' - 2022.10.09 - 04.35.27pm.png'),
-('C122', 'FOYER B BANGUNAN PSZ', 'FOYER B BANGUNAN PSZ', 30, 'Suitable for sit-down meal', '200', 'AVAILABLE', ' - 2022.10.09 - 04.35.54pm.png'),
-('C133', 'DATARAN ILMU', 'DATARAN ILMU', 300, 'Suitable for outdoor event', '250', 'AVAILABLE', ' - 2022.10.09 - 04.41.09pm.png'),
-('D111', 'Dewan Banquet', 'Dewan Banquet', 70, 'Suitable for big group discussion, workshop, and seminar', '620', 'AVAILABLE', ' - 2022.10.09 - 04.36.25pm.png'),
-('D122', 'DEWAN TAN SRI AINUDDIN WAHID', 'DEWAN TAN SRI AINUDDIN WAHID', 500, 'Suitable for big gathering including dinner, wedding, conference, and exam', '4000', 'AVAILABLE', ' - 2022.10.09 - 04.36.37pm.png'),
-('D133', 'DEWAN JUMAAH', 'DEWAN JUMAAH', 150, 'Suitable for big group meeting, workshop, and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.41.18pm.jpg'),
-('D144', 'DEWAN AZMAN HASHIM', 'DEWAN AZMAN HASHIM', 500, 'Suitable for conference, seminar, and public lecture', '4000', 'AVAILABLE', ' - 2022.10.09 - 04.36.47pm.png'),
-('D155', 'DEWAN BANQUET II', 'DEWAN BANQUET II', 80, 'Suitable for workshop, group discussion, and sit-down meal', '700', 'AVAILABLE', ' - 2022.10.09 - 04.37.00pm.png'),
-('D166', 'DEWAN SEMINAR', 'DEWAN SEMINAR', 140, 'Suitable for medium size seminar and public lecture.', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.09pm.png'),
-('E111', 'BILIK ILMUAN 1', 'BILIK ILMUAN 1', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.17pm.png'),
-('E133', 'BILIK ILMUAN 3', 'BILIK ILMUAN 3', 100, 'Suitable for workshop and sit-down meal', '1200', 'AVAILABLE', ' - 2022.10.09 - 04.37.28pm.png'),
-('E222', 'BILIK ILMUAN 2', 'BILIK ILMUAN 2', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.41pm.png'),
-('F111', 'BILIK KULIAH MENARA RAZAK 6', 'BILIK KULIAH MENARA RAZAK 6', 50, 'Suitable for classroom and workshop', '500', 'AVAILABLE', ' - 2022.10.09 - 04.38.05pm.png'),
-('F122', 'BILIK KULIAH MENARA RAZAK 1-5', 'BILIK KULIAH MENARA RAZAK 1-5', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE', ' - 2022.10.09 - 04.38.16pm.png'),
-('F133', 'BILIK KULIAH MENARA RAZAK 7-13', 'BILIK KULIAH MENARA RAZAK 7-13', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE', ' - 2022.10.09 - 04.38.26pm.png');
+('B111', 'FOYER DEWAN BANQUET', 'FOYER', 45, 'Suitable for sit-down meal area', '40000', 'AVAILABLE', 'FOYER DEWAN BANQUET - 2022.10.09 - 04.41.59pm.png'),
+('B122', 'BILIK GERAKAN', 'ROOM', 19, 'Suitable for medium size meeting group', '250', 'AVAILABLE', 'BILIK GERAKAN - 2022.10.09 - 04.01.09pm.png'),
+('B133', 'BILIK LPU (AL-GHAZALI)', 'ROOM', 20, 'Suitable for meeting, and presentation', '300', 'AVAILABLE', ' - 2022.10.09 - 04.33.28pm.jpg'),
+('C111', 'FOYER A BANGUNAN PSZ', 'FOYER', 60, 'Suitable for sit-down meal', '300', 'AVAILABLE', ' - 2022.10.09 - 04.35.27pm.png'),
+('C122', 'FOYER B BANGUNAN PSZ', 'FOYER', 30, 'Suitable for sit-down meal', '200', 'AVAILABLE', ' - 2022.10.09 - 04.35.54pm.png'),
+('C133', 'DATARAN ILMU', 'OPEN AREA', 300, 'Suitable for outdoor event', '250', 'AVAILABLE', ' - 2022.10.09 - 04.41.09pm.png'),
+('D111', 'DEWAN BANQUET', 'HALL', 70, 'Suitable for big group discussion, workshop, and seminar', '620', 'AVAILABLE', ' - 2022.10.09 - 04.36.25pm.png'),
+('D122', 'DEWAN TAN SRI AINUDDIN WAHID', 'HALL', 500, 'Suitable for big gathering including dinner, wedding, conference, and exam', '4000', 'AVAILABLE', ' - 2022.10.09 - 04.36.37pm.png'),
+('D133', 'DEWAN JUMAAH', 'HALL', 150, 'Suitable for big group meeting, workshop, and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.41.18pm.jpg'),
+('D144', 'DEWAN AZMAN HASHIM', 'HALL', 500, 'Suitable for conference, seminar, and public lecture', '4000', 'AVAILABLE', ' - 2022.10.09 - 04.36.47pm.png'),
+('D155', 'DEWAN BANQUET II', 'HALL', 80, 'Suitable for workshop, group discussion, and sit-down meal', '700', 'AVAILABLE', ' - 2022.10.09 - 04.37.00pm.png'),
+('D166', 'DEWAN SEMINAR', 'HALL', 140, 'Suitable for medium size seminar and public lecture.', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.09pm.png'),
+('E111', 'BILIK ILMUAN 1', 'ROOM', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.17pm.png'),
+('E133', 'BILIK ILMUAN 3', 'ROOM', 100, 'Suitable for workshop and sit-down meal', '1200', 'AVAILABLE', ' - 2022.10.09 - 04.37.28pm.png'),
+('E222', 'BILIK ILMUAN 2', 'ROOM', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.41pm.png'),
+('F111', 'BILIK KULIAH MENARA RAZAK 6', 'ROOM', 50, 'Suitable for classroom and workshop', '500', 'AVAILABLE', ' - 2022.10.09 - 04.38.05pm.png'),
+('F122', 'BILIK KULIAH MENARA RAZAK 1-5', 'ROOM', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE', ' - 2022.10.09 - 04.38.16pm.png'),
+('F133', 'BILIK KULIAH MENARA RAZAK 7-13', 'ROOM', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE', ' - 2022.10.09 - 04.38.26pm.png');
 
 -- --------------------------------------------------------
 
@@ -146,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `rent` (
   KEY `userId` (`userId`),
   KEY `facilityId` (`facilityId`),
   KEY `facilityId_2` (`facilityId`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rent`
@@ -160,7 +161,9 @@ INSERT INTO `rent` (`rent_reference`, `userId`, `date_reserved`, `reserved_by`, 
 (101, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-15', '2022-10-20', 'C111', 1500),
 (102, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-09', '2022-10-13', 'D144', 16000),
 (103, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-14', '2022-10-15', 'B111', 40000),
-(104, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-15', '2022-10-23', 'B122', 2000);
+(104, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-15', '2022-10-23', 'B122', 2000),
+(105, '', '2022-10-10', 'testing243', '2022-10-13', '2022-10-14', 'F133', 300),
+(106, 'cheesen.987@gmail.com', '2022-10-10', 'testing243', '2022-10-11', '2022-10-13', 'D133', 3400);
 
 -- --------------------------------------------------------
 
@@ -241,7 +244,9 @@ INSERT INTO `transactions` (`id`, `customer_id`, `product`, `amount`, `currency`
 ('ch_3LqYvfIXxPbvwpsW0Ozbiznm', 'cus_MZiMod9IpFT3zQ', 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:02:44'),
 ('ch_3LqYzuIXxPbvwpsW1SfZuS2c', 'cus_MZiQvHGlNztDlI', 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:07:07'),
 ('ch_3LqZ1cIXxPbvwpsW08wM7Ox8', 'cus_MZiSzXOPkriFyF', 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:08:53'),
-('ch_3LqZIoIXxPbvwpsW2F2sn5P7', 'cus_MZikg5kdJXU8EF', 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:26:39');
+('ch_3LqZIoIXxPbvwpsW2F2sn5P7', 'cus_MZikg5kdJXU8EF', 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:26:39'),
+('ch_3LrFBXIXxPbvwpsW0SHrypzS', 'cus_MaQ1GcsKEktDab', 'BILIK KULIAH MENARA RAZAK 7-13', '300', 'myr', 'succeeded', '2022-10-10 14:09:56'),
+('ch_3LrFKIIXxPbvwpsW0WGY1Jzf', 'cus_MaQAtOHzZwGuT7', 'DEWAN JUMAAH', '3400', 'myr', 'succeeded', '2022-10-10 14:18:59');
 
 -- --------------------------------------------------------
 

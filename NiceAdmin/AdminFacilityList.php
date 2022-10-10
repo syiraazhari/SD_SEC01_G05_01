@@ -282,14 +282,14 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="homepage.php">
+        <a class="nav-link collapsed" href="homepage.php">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
            <i class="bi bi-menu-button-wide"></i><span>Facilities</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -526,8 +526,8 @@
                       <th scope="col"style="text-align: center;">Name</th>
                       <th scope="col" style="text-align: center;">Category</th>
                       <th scope="col" style="text-align: center;">Capacity</th>
-                      <th scope="col" style="text-align: center;">FacilityDetail</th>
-                      <th scope="col" style="text-align: center;">ratePerDay(RM)</th>
+                      <th scope="col" style="text-align: center;">Facility Detail</th>
+                      <th scope="col" style="text-align: center;">Rate Per Day(RM)</th>
                       <th scope="col" style="text-align: center;">Status</th>
                       <th scope="col" style="text-align: center;">Update</th>
                       <th scope="col" style="text-align: center;">Delete</th>
@@ -549,11 +549,11 @@
                     echo '<td style="text-align: center;">'.($facility['ratePerDay']).'</td>';
                     echo '<td style="text-align: center;">'.($facility['status']).'</td>';
                     
-                    echo '<td><a href="..\NiceAdmin\UpdateFacility.php"><button style="position: relative; left: 28%;"" type="submit" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
+                    echo '<td><a href="..\NiceAdmin\UpdateFacility.php"><button style="position: relative; left: 28%;"" type="submit" class="btn btn-success"><i class="bi bi-check-circle"></i></button></td>';
                     echo '</form>';
                     echo '<form action= "..\case1\processFBS.php" method="POST">';
                     echo '<input type="hidden" name="facilityId2" value='.($facility['facilityId']).'>';
-                    echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
+                    echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-x-circle"></i></button></td>';
                     echo '
                   </button>
                   <div class="modal fade" id="basicModal1" tabindex="-1">

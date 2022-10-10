@@ -307,12 +307,16 @@ else if(isSet($_POST['register'])){
     $row = mysqli_fetch_assoc($listOfAccount);
     $userType = $row['userType'];
 
+
+
+    header('Location:..\StaffPage\StaffFacilityList.php');
+
     if($userType == "Staff"){
         header('Location:..\StaffPage\StaffFacilityList.php');
     }else if($userType == "Student"){
         header('Location:..\StudentPage\StudentFacilityList.php');
     }
-    
+
 
 }else if(isSet($_POST['deleteFacility'])){
     deleteFacility();
