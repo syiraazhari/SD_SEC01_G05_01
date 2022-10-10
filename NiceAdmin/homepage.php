@@ -242,12 +242,12 @@
           </li>
           <li>
             <a href="Facilities(Dewan).php">
-              <i class="bi bi-circle"></i><span>Dewan</span>
+              <i class="bi bi-circle"></i><span>Hall</span>
             </a>
           </li>
           <li>
             <a href="Facilities(Bilik).php">
-              <i class="bi bi-circle"></i><span>Bilik</span>
+              <i class="bi bi-circle"></i><span>Room</span>
             </a>
           </li>
           <li>
