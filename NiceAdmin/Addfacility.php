@@ -412,7 +412,7 @@
                                 <input type="submit" value="Upload" class="btn btn-primary" name="upload">
                               </div>
                             </div>
-                      </from>
+                      </form>
                       </div>
                     </div>
 
