@@ -301,6 +301,7 @@ else if(isSet($_POST['register'])){
 
 }else if(isSet($_POST['cancelPayment'])){
 
+
     header('Location:..\StaffPage\StaffFacilityList.php');
 
 }else if(isSet($_POST['deleteFacility'])){

@@ -75,10 +75,10 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Default Table</h5>
+              <h5 class="card-title">Facility Details</h5>
               
               <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">FacilityId</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Facility Id</label>
                       <div class="col-md-8 col-lg-9">
                         <?php
                           echo'<input type="text" name="FacilityId" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["facilityId"].'" readonly>';
@@ -102,7 +102,7 @@
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">capacity</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Capacity</label>
                       <div class="col-md-8 col-lg-9">
                         <?php
                           echo'<input type="text" name="capacity" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["capacity"].'"readonly>';
@@ -110,7 +110,7 @@
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Facility Detail</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Detail</label>
                       <div class="col-md-8 col-lg-9">
                         <?php
                           echo'<input type="text" name="facilityDetail" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["facilityDetail"].'"readonly>';
@@ -118,7 +118,7 @@
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">ratePerDay</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Rate Per Day</label>
                       <div class="col-md-8 col-lg-9">
                         <?php
                           echo'<input type="text" name="ratePerDay" class="form-control mb-3 StripeElement StripeElement--empty" value = "'.$row["ratePerDay"].'"readonly>';
@@ -156,7 +156,7 @@
         <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Visa / Debit Card</h5>
+              <h5 class="card-title">Booking Details</h5>
               <div class="row mb-3">
                 
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Date Rent Start</label>
@@ -191,7 +191,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Small tables</h5>
+              <h5 class="card-title">Payment</h5>
               
               <!-- Small tables -->
               <div class="col-md-8 col-lg-9">
@@ -218,12 +218,12 @@
     <?php
       echo '<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
     ?>
-    <button type="submit" name="completePayment" class="btn btn-primary">Completed Payment</button>
+    <button style="height:40px;width:600px" type="submit" name="completePayment" class="btn btn-primary">Pay</button>
   </form>
 
   <form action= "..\case1\processFBS.php" method="POST">
   <br>
-  <button type="submit" name="cancelPayment" class="btn btn-primary">Cancel Payment</button>
+  <button style="height:40px;width:600px" type="submit" name="cancelPayment" class="btn btn-primary">Cancel Payment</button>
   </form>
                       </div>
               
@@ -252,18 +252,7 @@
 
 
 
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </footer><!-- End Footer -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
   <script src="./js/charge.js"></script>
