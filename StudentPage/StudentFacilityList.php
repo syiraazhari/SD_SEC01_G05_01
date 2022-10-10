@@ -141,7 +141,7 @@ if(isSet($_POST['checkAvailable'])) {
     $_SESSION['endDate'] = $_POST['endDate'];
     displayAvailableList();
 }
-displayHeaderStaff();
+displayHeaderCustomer();
 ?>
 
 <?php
@@ -174,7 +174,7 @@ function displayAvailableList() {
         $detailfacility = mysqli_fetch_assoc($recordfacilityId);
           
           echo '<td>';//booking option
-        echo'<form action="StaffBookingHistory.php" method="POST">';
+        echo'<form action="StudentBookingHistory.php" method="POST">';
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
         //echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
         echo'</form>';

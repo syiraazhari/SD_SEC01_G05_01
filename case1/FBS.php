@@ -433,7 +433,7 @@ function displayHeaderCustomer(){
                                             <a href="contact-us.html"><span class="menu-text">Contact Us</span></a>
                                         </li>
                                         <li class="has-children">
-                                            <a class="" href="StaffProfile.php"><span class="menu-text">Profile</span></a>
+                                            <a class="" href="#"><span class="menu-text">Profile</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
                                                 <li><a href="StudentProfile.php"><span class="menu-text">View Profile</span></a></li>
