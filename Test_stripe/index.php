@@ -25,7 +25,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
 
-  <title>Pay Page</title>
+  <title>Payment</title>
 </head>
 <body>
   <div class="container">
