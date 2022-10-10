@@ -15,7 +15,7 @@ session_start();
 // Sanitize POST Array
 $POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
 
-session_start(); 
+//session_start();
 //$email = $_SESSION['username'];
 
 

@@ -316,7 +316,7 @@ else if(isSet($_POST['register'])){
     }else if($userType == "Student"){
         header('Location:..\StudentPage\StudentFacilityList.php');
     }
-    
+
 
 }else if(isSet($_POST['deleteFacility'])){
     deleteFacility();
