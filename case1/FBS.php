@@ -1043,7 +1043,23 @@ function checkAvailable() {
 
 }
 
+function PaymentHistory() {
+    // session_start();
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
 
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit;
+    }
+
+    $sql = 'SELECT * FROM `transactions` WHERE email = "'.$_SESSION['username'].'" ORDER BY created_at';
+    
+
+    $qry = mysqli_query($con, $sql);
+    
+    return $qry;
+    
+}
 
 function bookingHistory() {
     // session_start();

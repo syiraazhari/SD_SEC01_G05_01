@@ -14,8 +14,6 @@ session_start();
 
 // Sanitize POST Array
 $POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
-
-session_start(); 
 //$email = $_SESSION['username'];
 
 
@@ -81,6 +79,7 @@ $charge = \Stripe\Charge::create(array(
   $transactionData = [
     'id' => $charge->id,
     'customer_id' => $charge->customer,
+    'email' => $email,
     'product' => $charge->description,
     'amount' => $charge->amount,
     'currency' => $charge->currency,
