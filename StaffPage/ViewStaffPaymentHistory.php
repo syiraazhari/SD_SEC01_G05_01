@@ -135,7 +135,7 @@ else if(isSet($_POST['Scase3']) || isSet($_POST['searchKey'])){
     include "..\menu\menuStaff.php";
     displaySearchPanel();
 }
-displayHeaderCustomer();
+displayHeaderStaff();
 ?>
 
 <br><br><br><br><b><h1 style="text-align: center">Payment Booking</h1></b>

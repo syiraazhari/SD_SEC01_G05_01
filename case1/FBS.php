@@ -438,6 +438,7 @@ function displayHeaderCustomer(){
                                             <ul class="sub-menu">
                                                 <li><a href="StudentProfile.php"><span class="menu-text">View Profile</span></a></li>
                                                 <li><a href="ViewStudentBookingHistory.php"><span class="menu-text">Booking History</span></a></li>
+                                                <li><a href="ViewStudentPaymentHistory.php"><span class="menu-text">Payment History</span></a></li>
                                                 <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
@@ -534,6 +535,7 @@ function displayHeaderStaff(){
                                             <ul class="sub-menu">
                                                 <li><a href="StaffProfile.php"><span class="menu-text" >View Profile</span></a></li>
                                                 <li><a href="ViewStaffBookingHistory.php"><span class="menu-text">Booking History</span></a></li>
+                                                <li><a href="ViewStaffPaymentHistory.php"><span class="menu-text">Payment History</span></a></li>
                                                 <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
