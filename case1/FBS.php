@@ -411,7 +411,7 @@ function displayHeaderCustomer(){
                                 <nav class="site-main-menu">
                                     <ul>
                                         <li>
-                                            <a class="active" href="index.html"><span
+                                            <a href="index.html"><span
                                                     class="menu-text">Homepage</span></a>
                                         </li>
                                         <li>
@@ -508,7 +508,7 @@ function displayHeaderStaff(){
                                 <nav class="site-main-menu">
                                     <ul>
                                         <li>
-                                            <a class="active" href="index.html"><span
+                                            <a href="index.html"><span
                                                     class="menu-text">Homepage</span></a>
                                         </li>
                                         <li>
