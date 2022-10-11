@@ -230,7 +230,7 @@
             <a class="nav-link" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-menu-button-wide"></i><span>Facilities</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+            <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
             <li>
             <a href="AdminFacilityList.php">
               <i class="bi bi-circle"></i><span>View Facility</span>
@@ -242,7 +242,7 @@
             </a>
           </li>
           <li>
-            <a href="Facilities(Dewan).php">
+            <a href="Facilities(Dewan).php" class="active">
               <i class="bi bi-circle"></i><span>Hall</span>
             </a>
           </li>
@@ -380,7 +380,7 @@
       <h1>Facilities</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">Dewan</li>
+          <li class="breadcrumb-item">Hall</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
