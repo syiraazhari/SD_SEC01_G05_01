@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 10, 2022 at 11:19 AM
+-- Generation Time: Oct 11, 2022 at 12:06 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -118,24 +118,24 @@ CREATE TABLE IF NOT EXISTS `facility` (
 --
 
 INSERT INTO `facility` (`facilityId`, `name`, `category`, `capacity`, `facilityDetail`, `ratePerDay`, `status`, `Image`) VALUES
-('B111', 'FOYER DEWAN BANQUET', 'FOYER', 48, 'Suitable for sit-down meal area', '40000', 'AVAILABLE', 'FOYER DEWAN BANQUET - 2022.10.09 - 07.18.40pm.png'),
-('B122', 'BILIK GERAKAN', 'ROOM', 19, 'Suitable for medium size meeting group', '250', 'AVAILABLE', 'BILIK GERAKAN - 2022.10.09 - 04.01.09pm.png'),
-('B133', 'BILIK LPU (AL-GHAZALI)', 'ROOM', 20, 'Suitable for meeting, and presentation', '300', 'AVAILABLE', ' - 2022.10.09 - 04.33.28pm.jpg'),
-('C111', 'FOYER A BANGUNAN PSZ', 'FOYER', 60, 'Suitable for sit-down meal', '300', 'AVAILABLE', ' - 2022.10.09 - 04.35.27pm.png'),
-('C122', 'FOYER B BANGUNAN PSZ', 'FOYER', 30, 'Suitable for sit-down meal', '200', 'AVAILABLE', ' - 2022.10.09 - 04.35.54pm.png'),
-('C133', 'DATARAN ILMU', 'OPEN AREA', 300, 'Suitable for outdoor event', '250', 'AVAILABLE', ' - 2022.10.09 - 04.41.09pm.png'),
-('D111', 'DEWAN BANQUET', 'HALL', 70, 'Suitable for big group discussion, workshop, and seminar', '620', 'AVAILABLE', ' - 2022.10.09 - 04.36.25pm.png'),
-('D122', 'DEWAN TAN SRI AINUDDIN WAHID', 'HALL', 500, 'Suitable for big gathering including dinner, wedding, conference, and exam', '4000', 'AVAILABLE', ' - 2022.10.09 - 04.36.37pm.png'),
-('D133', 'DEWAN JUMAAH', 'HALL', 150, 'Suitable for big group meeting, workshop, and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.41.18pm.jpg'),
-('D144', 'DEWAN AZMAN HASHIM', 'HALL', 500, 'Suitable for conference, seminar, and public lecture', '4000', 'AVAILABLE', ' - 2022.10.09 - 04.36.47pm.png'),
-('D155', 'DEWAN BANQUET II', 'HALL', 80, 'Suitable for workshop, group discussion, and sit-down meal', '700', 'AVAILABLE', ' - 2022.10.09 - 04.37.00pm.png'),
-('D166', 'DEWAN SEMINAR', 'HALL', 140, 'Suitable for medium size seminar and public lecture.', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.09pm.png'),
-('E111', 'BILIK ILMUAN 1', 'ROOM', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.17pm.png'),
-('E133', 'BILIK ILMUAN 3', 'ROOM', 100, 'Suitable for workshop and sit-down meal', '1200', 'AVAILABLE', ' - 2022.10.09 - 04.37.28pm.png'),
-('E222', 'BILIK ILMUAN 2', 'ROOM', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE', ' - 2022.10.09 - 04.37.41pm.png'),
-('F111', 'BILIK KULIAH MENARA RAZAK 6', 'ROOM', 50, 'Suitable for classroom and workshop', '500', 'AVAILABLE', ' - 2022.10.09 - 04.38.05pm.png'),
-('F122', 'BILIK KULIAH MENARA RAZAK 1-5', 'ROOM', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE', ' - 2022.10.09 - 04.38.16pm.png'),
-('F133', 'BILIK KULIAH MENARA RAZAK 7-13', 'ROOM', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE', ' - 2022.10.09 - 04.38.26pm.png'),
+('B111', 'FOYER DEWAN BANQUET', 'FOYER', 48, 'Suitable for sit-down meal area', '40000', 'AVAILABLE', 'FOYER DEWAN BANQUET - 2022.10.11 - 11.41.24am.png'),
+('B122', 'BILIK GERAKAN', 'ROOM', 19, 'Suitable for medium size meeting group', '250', 'AVAILABLE', 'BILIK GERAKAN - 2022.10.11 - 11.43.15am.png'),
+('B133', 'BILIK LPU (AL-GHAZALI)', 'ROOM', 20, 'Suitable for meeting, and presentation', '300', 'AVAILABLE', 'BILIK LPU (AL-GHAZALI) - 2022.10.11 - 11.44.42am.png'),
+('C111', 'FOYER A BANGUNAN PSZ', 'FOYER', 60, 'Suitable for sit-down meal', '300', 'AVAILABLE', 'FOYER A BANGUNAN PSZ - 2022.10.11 - 11.53.24am.png'),
+('C122', 'FOYER B BANGUNAN PSZ', 'FOYER', 30, 'Suitable for sit-down meal', '200', 'AVAILABLE', 'FOYER B BANGUNAN PSZ - 2022.10.11 - 11.53.33am.png'),
+('C133', 'DATARAN ILMU', 'OPEN AREA', 300, 'Suitable for outdoor event', '250', 'AVAILABLE', 'DATARAN ILMU - 2022.10.11 - 11.55.53am.png'),
+('D111', 'DEWAN BANQUET', 'HALL', 70, 'Suitable for big group discussion, workshop, and seminar', '620', 'AVAILABLE', 'DEWAN BANQUET - 2022.10.11 - 11.56.49am.png'),
+('D122', 'DEWAN TAN SRI AINUDDIN WAHID', 'HALL', 500, 'Suitable for big gathering including dinner, wedding, conference, and exam', '4000', 'AVAILABLE', 'DEWAN TAN SRI AINUDDIN WAHID - 2022.10.11 - 11.57.03am.png'),
+('D133', 'DEWAN JUMAAH', 'HALL', 150, 'Suitable for big group meeting, workshop, and seminar', '1700', 'AVAILABLE', 'DEWAN JUMAAH - 2022.10.11 - 11.57.12am.png'),
+('D144', 'DEWAN AZMAN HASHIM', 'HALL', 500, 'Suitable for conference, seminar, and public lecture', '4000', 'AVAILABLE', 'DEWAN AZMAN HASHIM - 2022.10.11 - 11.57.23am.png'),
+('D155', 'DEWAN BANQUET II', 'HALL', 80, 'Suitable for workshop, group discussion, and sit-down meal', '700', 'AVAILABLE', 'DEWAN BANQUET II - 2022.10.11 - 11.58.05am.png'),
+('D166', 'DEWAN SEMINAR', 'HALL', 140, 'Suitable for medium size seminar and public lecture.', '1700', 'AVAILABLE', 'DEWAN SEMINAR - 2022.10.11 - 11.58.31am.png'),
+('E111', 'BILIK ILMUAN 1', 'ROOM', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE', 'BILIK ILMUAN 1 - 2022.10.11 - 11.58.39am.png'),
+('E133', 'BILIK ILMUAN 3', 'ROOM', 100, 'Suitable for workshop and sit-down meal', '1200', 'AVAILABLE', 'BILIK ILMUAN 3 - 2022.10.11 - 11.58.59am.png'),
+('E222', 'BILIK ILMUAN 2', 'ROOM', 100, 'Suitable for workshop and seminar', '1700', 'AVAILABLE', 'BILIK ILMUAN 2 - 2022.10.11 - 11.58.49am.png'),
+('F111', 'BILIK KULIAH MENARA RAZAK 6', 'ROOM', 50, 'Suitable for classroom and workshop', '500', 'AVAILABLE', 'BILIK KULIAH MENARA RAZAK 6 - 2022.10.11 - 12.04.51pm.png'),
+('F122', 'BILIK KULIAH MENARA RAZAK 1-5', 'ROOM', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE', 'BILIK KULIAH MENARA RAZAK 1-5 - 2022.10.11 - 12.04.58pm.png'),
+('F133', 'BILIK KULIAH MENARA RAZAK 7-13', 'ROOM', 30, 'Suitable for classroom and workshop', '300', 'AVAILABLE', 'BILIK KULIAH MENARA RAZAK 7-13 - 2022.10.11 - 12.05.06pm.png'),
 ('S111', 'BASKETBALL COURT', 'SPORT', 100, 'Suitable for basketball competition and outdoor event', '300', 'AVAILABLE', 'BASKETBALL COURT - 2022.10.10 - 11.11.19am.png'),
 ('S222', 'FOOTBALL FIELD', 'SPORT', 500, 'Suitable for football competition and outdoor event', '600', 'AVAILABLE', 'FOOTBALL FIELD - 2022.10.10 - 11.10.40am.png'),
 ('S333', 'TENNIS COURT', 'SPORT', 100, 'Suitable for tennis competition and outdoor event', '300', 'AVAILABLE', 'TENNIS COURT - 2022.10.10 - 11.15.40am.png');
