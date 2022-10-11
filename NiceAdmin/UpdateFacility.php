@@ -455,9 +455,17 @@
                 <div class="row mb-3">
                   <label for="inputPassword"  class="col-sm-2 col-form-label">Category</label>
                   <div class="col-sm-10">
-                  <?php
-                      echo '<input type="text" name="category" class="form-control" value ="'.$detailfacility['category'].'">';
+                    <select class="form-select" name="category" aria-label="Default select example">
+                      
+                      <?php
+                      echo '<option selected>'.$detailfacility['category'].'</option>'
                     ?>
+                      <option value="FOYER">FOYER</option>
+                      <option value="ROOM">ROOM</option>
+                      <option value="OPEN AREA">OPEN AREA</option>
+                      <option value="HALL">HALL</option>
+                      <option value="SPORT">SPORT</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row mb-3">
