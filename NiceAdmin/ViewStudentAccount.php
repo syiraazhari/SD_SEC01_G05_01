@@ -374,7 +374,7 @@
 
 
             }else if ($ConfirmUserType == "Staff"){
-              echo $userId;
+              //echo $userId;
               $listOfStudent = getListOfUserStaff($userId);
 
               if(mysqli_num_rows($listOfStudent) > 0)

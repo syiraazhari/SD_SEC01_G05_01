@@ -44,7 +44,10 @@ echo $email;
     $dateRentStart = $_SESSION['startDate'];
     $dateRentEnd = $_SESSION['endDate'];
     
+
     $totalPrice = getTotalPrice($dateRentStart, $dateRentEnd, $FacilityId);
+    $newPrice = $totalPrice * 100;
+
 
 // Create Customer In Stripe
 $customer = \Stripe\Customer::create(array(
@@ -54,7 +57,7 @@ $customer = \Stripe\Customer::create(array(
 
 // Charge Customer
 $charge = \Stripe\Charge::create(array(
-    "amount" => $totalPrice,
+    "amount" => $newPrice,
     "currency" => "myr",
     "description" => $name,
     "customer" => $customer->id
@@ -81,7 +84,7 @@ $charge = \Stripe\Charge::create(array(
     'customer_id' => $charge->customer,
     'email' => $email,
     'product' => $charge->description,
-    'amount' => $charge->amount,
+    'amount' => $totalPrice,
     'currency' => $charge->currency,
     'status' => $charge->status,
   ];

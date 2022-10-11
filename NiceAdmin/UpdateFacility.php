@@ -524,7 +524,7 @@
               <div class="col-md-8 col-lg-9">
                       <form class="form" id = "form" action="..\Facility\processFacility.php" enctype="multipart/form-data" method="post">                      
                             <div class="pt-2 ">
-                              <img style="text-align: center;"src="..\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 400 height = 300 title="<?php echo $detailfacility['Image']; ?>" >
+                              <img style="text-align: center;"src="..\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 700 height = 450 title="<?php echo $detailfacility['Image']; ?>" >
                               
                               <!--<img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class="rounded-circle">-->
                               <div class="round"style="text-align: center;">
