@@ -224,74 +224,38 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-           <i class="bi bi-menu-button-wide"></i><span>Facilities</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-            <a href="AdminFacilityList.php">
-              <i class="bi bi-circle"></i><span>View Facility</span>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Facilities</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-          <li>
-            <a href="Addfacility.php">
-              <i class="bi bi-circle"></i><span>Add Facility</span>
-            </a>
-          </li>
-          <li>
-            <a href="DewanJumaah.php">
-              <i class="bi bi-circle"></i><span>Dewan Jumaah</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="DewanSeminar.php">
-              <i class="bi bi-circle"></i><span>Dewan Seminar</span>
-            </a>
-          </li>
-          <li>
-            <a href="DewanAzhamHashim.php">
-              <i class="bi bi-circle"></i><span>Dewan Azham Hashim</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikIlmuan1.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 1</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikIlmuan2.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 2</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikIlmuan3.php">
-              <i class="bi bi-circle"></i><span>Bilik Ilmuan 3</span>
-            </a>
-          </li>
-          <li>
-            <a href="BilikBankuet.php">
-              <i class="bi bi-circle"></i><span>Bilik Bankuet</span>
-            </a>
-          </li>
-          <li>
-            <a href="FootballField.php">
-              <i class="bi bi-circle"></i><span>Football Field</span>
-            </a>
-          </li>
-          <li>
-            <a href="TennisCourt.php">
-              <i class="bi bi-circle"></i><span>Tennis Court</span>
-            </a>
-          </li>
-          <li>
-            <a href="BasketballCourt.php">
-              <i class="bi bi-circle"></i><span>Basketball Court</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Facilities Nav -->
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="AdminFacilityList.php">
+                        <i class="bi bi-circle"></i><span>View Facility</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Addfacility.php">
+                        <i class="bi bi-circle"></i><span>Add Facility</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Facilities(Dewan).php">
+                        <i class="bi bi-circle"></i><span>Hall</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Facilities(Bilik).php">
+                        <i class="bi bi-circle"></i><span>Room</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Facilities (Sports).php">
+                        <i class="bi bi-circle"></i><span>Sports</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Facilities Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -399,6 +363,13 @@
           <span>Verify Account</span>
         </a>
       </li>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="BookerList.php">
+                <i class="bi bi-layout-text-window-reverse"></i>
+                <span>Booker List</span>
+            </a>
+        </li>
     </ul>
 
   </aside><!-- End Sidebar-->
