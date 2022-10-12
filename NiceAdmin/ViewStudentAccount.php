@@ -317,7 +317,7 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link" href="users-profile.php">
+        <a class="nav-link collapsed" href="users-profile.php">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
@@ -328,7 +328,7 @@
         </a>
       </li><!-- End Verify Account Nav -->
         <li class="nav-item">
-            <a class="nav-link collapsed"  href="BookerList.php">
+            <a class="nav-link"  href="BookerList.php">
                 <i class="bi bi-layout-text-window-reverse"></i><span>Booker List</span>
             </a>
         </li><!-- End Verify Account Nav -->

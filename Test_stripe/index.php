@@ -55,7 +55,7 @@
               <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                  <img style="text-align: center;" src="..\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 1400 height = 700 title="<?php echo $detailfacility['Image']; ?>" >
+                  <img style="text-align: center;" src="..\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 1300 height = 700 title="<?php echo $detailfacility['Image']; ?>" >
                   </div>
                   
                 </div>
@@ -183,9 +183,6 @@
                       </div>
                     </div>
               <!-- Bordered Table -->
-              
-              <!-- End Primary Color Bordered Table -->
-
             </div>
           </div>
 
