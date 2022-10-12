@@ -70,7 +70,12 @@ $charge = \Stripe\Charge::create(array(
     'last_name' => $last_name,
     'email' => $email
   ];
-  
+  //$receipt =\Stripe\PaymentIntent::create([
+   // 'amount' => $newPrice,
+  //  'currency' => 'myr',
+  //  'payment_method_types' => ['card'],
+  //  'receipt_email' => $email,
+  //]);
   // Instantiate Customer
   $customer = new Customer();
   
@@ -92,11 +97,13 @@ $charge = \Stripe\Charge::create(array(
   // Instantiate Transaction
   $transaction = new Transaction();
   
+  $id = $charge->id;
   // Add Transaction To DB
   $transaction->addTransaction($transactionData);
-
+  
   bookFacility();
   // Redirect to success
+  
 header('Location: success.php?tid='.$charge->id.'&product='.$charge->description.'&userType='.$userType);
 
 
