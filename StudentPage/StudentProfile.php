@@ -149,6 +149,7 @@
                                             <ul class="sub-menu">
                                                 <li><a href="StudentProfile.php"><span class="menu-text" style="display: inline" >View Profile</span></a></li>
                                                 <li><a href="ViewStudentBookingHistory.php"><span class="menu-text" style="display: inline">Booking History</span></a></li>
+                                                <li><a href="ViewStaffPaymentHistory.php"><span class="menu-text">Payment History</span></a></li>
                                                 <li><a href="..\LoginSignupPage\index.php"><span class="menu-text" style="display: inline">Logout</span></a></li>
                                             </ul>
                                         </li>
