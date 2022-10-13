@@ -119,10 +119,14 @@
     </style>
 
 </head>
-<body>
 <?php
 session_start();
 ?>
+
+
+<body>
+
+
 
 <?php
 include "../case1/FBS.php";
