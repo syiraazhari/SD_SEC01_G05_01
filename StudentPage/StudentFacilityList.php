@@ -35,6 +35,10 @@
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
+    
+<?php
+session_start();
+?>
 
     <style>
         .checkAvailableBox {
@@ -46,50 +50,182 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(../StudentPage/assets/images/StudentPagephoto/CampusUTMKL.png);
         }
 
-        .button {
-            background-color: #2F4F4F; /* Green */
-            border: none;
-            color: white;
-            padding: 5px 40px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
+        .background body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #222;
+            margin-top: 5%;
+        }
+        
+        .background-border {
+             --border-width: 3px;
+             padding: 10%;
+             position: relative;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             width: 300px;
+             height: 200px;
+             font-family: Lato, sans-serif;
+             font-size: 2.5rem;
+             text-transform: uppercase;
+             color: white;
+             background: #222;
+             border-radius: var(--border-width);
+        }
+        .background-border::after{
+            position: absolute;
+            content: "";
+            top: calc(-1 * var(--border-width));
+            left: calc(-1 * var(--border-width));
+            z-index: -1;
+            width: calc(100% + var(--border-width) * 2);
+            height: calc(100% + var(--border-width) * 2);
+            background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+            background-size: 300% 300%;
+            background-position: 0 50%;
+            border-radius: calc(2 * var(--border-width));
+            animation: moveGradient 3s alternate infinite;
+        }
+        
+        @keyframes moveGradient {
+         50% {
+           background-position: 100% 50%;
+         }
         }
 
-        .button1 {
-            color: white;
-            border: 2px solid #2F4F4F;
+
+        .content body {
+        	display: flex;
+        	background: #000;
+        	min-height: 100vh;
+        	align-items: center;
+        	justify-content: center;
         }
 
-        .button1:hover {
-            background-color: #008080;
-            color: white;
+        .content {
+        	position: relative;
         }
 
-        .button2 {
-            background-color: #154360; /* Green */
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 15px;
-            margin: 4px 2px;
-            cursor: pointer;
+        .content h2 {
+        	color: #fff;
+        	font-size: 4em;
+        	position: absolute;
+        	transform: translate(-50%, -50%);
+            margin-left: 38%;
         }
 
-        .button5 {border-radius: 50%;}
+        .content h2:nth-child(1) {
+        	color: transparent;
+        	-webkit-text-stroke: 2px #03a9f4;
+        }
 
-        .button5:hover {
-            background-color: #008080;
-            color: white;
+        .content h2:nth-child(2) {
+        	color: #03a9f4;
+        	animation: animate 4s ease-in-out infinite;
+        }
+
+        @keyframes animate {
+        	0%,
+        	100% {
+        		clip-path: polygon(
+        			0% 45%,
+        			16% 44%,
+        			33% 50%,
+        			54% 60%,
+        			70% 61%,
+        			84% 59%,
+        			100% 52%,
+        			100% 100%,
+        			0% 100%
+        		);
+        	}
+        
+        	50% {
+        		clip-path: polygon(
+        			0% 60%,
+        			15% 65%,
+        			34% 66%,
+        			51% 62%,
+        			67% 50%,
+        			84% 45%,
+        			100% 46%,
+        			100% 100%,
+        			0% 100%
+        		);
+        	}
+        }
+        .btn1 body {
+          height: 100vh;
+          background: #eee;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .btn1 {
+          width: 150px;
+          height: 50px;
+          border: 5px solid purple;
+          font-family: 'Cinzel', serif;
+          font-weight: 700;
+          font-size: 20px;
+          color: purple;
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          z-index: 0;
+          transition: 1s;
+          margin: auto;
+        }
+
+        .btn1::before, .btn::after {
+          position: absolute;
+          background: #eee;
+          z-index: -1;
+          transition: 1s;
+          content: '';
+        }
+
+        .btn1::before {
+          height: 50px;
+          width: 130px;
+        }
+
+        .btn1::after {
+          width: 150px;
+          height: 30px;
+        }
+
+        .noselect {
+          -webkit-touch-callout: none;
+            -webkit-user-select: none;
+             -khtml-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+        }
+
+        .btn1:hover::before {
+          width: 0px;
+          background: #fff;
+        }
+
+        .btn1:hover::after {
+          height: 0px;
+          background: #fff;
+        }
+
+        .btn1:hover {
+          background: #fff;
         }
 
         tr:nth-child(odd)
@@ -97,6 +233,22 @@
             background-color: #D4E6F1;
             color:black;
         }
+
+        tr:nth-child(even)
+        {
+            background-color: #D4E6F1;
+            color:black;
+        }
+
+        tr:hover :nth-child(even) {background-color: darkcyan;}
+
+        tr:hover :nth-child(odd) {background-color: darkgoldenrod;}
+
+        th {
+             background-color: #03a9f4;
+             color: white;
+             pointer-events: none;
+        }           
 
     </style>
 </head>
@@ -113,35 +265,33 @@
     })();
 </script>
 <!--End of Tawk.to Script-->
-<?php
-session_start();
-?>
 
+<br><br><br>
 <body>
-<br><br><div class="w3-container" style="width:70%;margin:auto">'
-
-<br><br>
-
-<form action=" " method ="POST">
-    <div class="w3-container" style="background-color:#265887; color:red; border-radius:20px">
-    <h2>CHECK FACILITY</h2>
-    </div>
-    <div class="w3-container w3-white w3-padding-16" style=" border-radius:20px">
-        <div class="w3-row-padding" style="margin:20px; justify-content:center">
-            <div class="w3-half w3-margin-bottom">
-                <label for="startDate">Start Date</label>
-                <input type="date" name = "startDate">
-            </div>
-            <div class="w3-half w3-margin-bottom">
-                <label for="endDate">End Date</label>
-                <input type="date" name = "endDate">
-            </div>
-        </div>
-        <button class="btn btn-primary" type="submit" name = "checkAvailable" value = "Check"><span></span>Check</button>
-        
-</form><br><br>
-
+<br><br><br>
+<div class="content" style="margin-left: 20%;">
+    <h2>SEARCH FACILITY</h2>
+    <h2>SEARCH FACILITY</h2>
 </div>
+<br><br><br>
+<div class="background-border" style="width:70%;margin:auto">
+<form action=" " method ="POST">
+            <div class="w3-half w3-margin-bottom">
+                <label style="color:white; font-size:medium" for="startDate">Start Date</label>
+                <br><input type="date" style="margin: auto;" name = "startDate">
+            </div>
+            <div class="w3-half w3-margin-bottom">
+                <label style="color:white; font-size:medium" for="endDate">End Date</label>
+                <br><input type="date" style="margin: auto;" name = "endDate">
+            </div >
+            <button class="btn1" type="submit" name = "checkAvailable" value = "Check">
+                <br><br>
+                <span class="noselect">SEARCH</span>
+            </button>
+</form><br><br>
+</div>
+</body>
+
 <?php
 include "../case1/FBS.php";
 //include "..\menu\menu.php";
