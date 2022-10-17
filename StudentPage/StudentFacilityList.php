@@ -64,13 +64,12 @@ session_start();
         
         .background-border {
              --border-width: 3px;
-             padding: 10%;
              position: relative;
              display: flex;
              justify-content: center;
              align-items: center;
-             width: 300px;
-             height: 200px;
+             width: 100px;
+             height: 250px;
              font-family: Lato, sans-serif;
              font-size: 2.5rem;
              text-transform: uppercase;
@@ -78,6 +77,7 @@ session_start();
              background: #222;
              border-radius: var(--border-width);
         }
+
         .background-border::after{
             position: absolute;
             content: "";
@@ -117,7 +117,7 @@ session_start();
         	font-size: 4em;
         	position: absolute;
         	transform: translate(-50%, -50%);
-            margin-left: 38%;
+          margin-left: 38%;
         }
 
         .content h2:nth-child(1) {
@@ -185,6 +185,10 @@ session_start();
           z-index: 0;
           transition: 1s;
           margin: auto;
+          margin-bottom: 2%;
+          margin-top: 2%;
+          font-size:medium; 
+          font-weight:900;
         }
 
         .btn1::before, .btn::after {
@@ -274,15 +278,15 @@ session_start();
     <h2>SEARCH FACILITY</h2>
 </div>
 <br><br><br>
-<div class="background-border" style="width:70%;margin:auto">
+<div class="background-border" style="width:50%;margin:auto; border-radius:20px">
 <form action=" " method ="POST">
             <div class="w3-half w3-margin-bottom">
-                <label style="color:white; font-size:medium" for="startDate">Start Date</label>
-                <br><input type="date" style="margin: auto;" name = "startDate">
+                <label style="color:white; font-size:medium; font-weight:900" for="startDate">Start Date</label>
+                <br><input type="date" style="margin-left: 5%;font-size:25px;text-transform:uppercase; text-align:center" name = "startDate">
             </div>
             <div class="w3-half w3-margin-bottom">
-                <label style="color:white; font-size:medium" for="endDate">End Date</label>
-                <br><input type="date" style="margin: auto;" name = "endDate">
+                <label style="margin-left: 5%;color:white; font-size:medium; font-weight:900" for="endDate">End Date</label>
+                <br><input type="date" style="margin-left: 15%;font-size: 25px;text-transform:uppercase; text-align:center" name = "endDate">
             </div >
             <button class="btn1" type="submit" name = "checkAvailable" value = "Check">
                 <br><br>
