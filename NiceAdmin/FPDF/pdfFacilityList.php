@@ -6,8 +6,26 @@
 
     if(isset($_POST['FacilityListPDF']))
     {
+        class PDF extends FPDF
+        {
+// Page header
+            function Header()
+            {
 
-        $pdf = new FPDF('l','mm','a4');
+                $this->Image('UTM-LOGO.png',8,6,20);
+                // Arial bold 15
+                $this->SetFont('Arial','B',25);
+                // Move to the right
+                $this->Cell(30);
+                // Title
+                $this->Cell(30,10,'Facility List',0,0,'C');
+                // Line break
+                $this->Ln(20);
+            }
+
+        }
+
+        $pdf = new PDF('l','mm','a4');
     $pdf->SetFont('arial','b','8');
     $pdf->AddPage();
     $pdf->cell('20','10','Facility Id','1','0','C');

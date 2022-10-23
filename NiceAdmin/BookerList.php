@@ -850,6 +850,9 @@ $verified = $row2['verified'];
 
         </div>
     </section>
+    <form action="..\NiceAdmin\FPDF\pdfBookerList.php" method="POST">
+        <button type="submit" class="btn btn-success" name="BookerListPDF">Generate PDF</button>
+    </form>
 
 
 </main><!-- End #main -->
