@@ -1203,12 +1203,12 @@ function send_password_reset($get_email,$token){
     // To send HTML mail, the Content-type header must be set
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From: cheesen987@gmail.com';
+    $headers .= 'From: tansen@graduate.utm.my';
 
 
     $message = '<p>We received a password reset request. The link to reset your password</p>';
     $message .= '<p>Here is your password reset link: </br>';
-    $message .= "<a href=../ForgotPassword/create-new-password.php?vkey=$token&email=$get_email&statusReset=normal>Reset<a/>";
+    $message .= "<a href=http://52.77.215.21/SD_SEC01_G05_01/ForgotPassword/create-new-password.php?vkey=$token&email=$get_email&statusReset=normal>Reset<a/>";
     //$message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //C:\wamp64\www\masterprofile\SD_SEC01_G05_01\ForgotPassword\create-new-password.php
 
