@@ -263,7 +263,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/LoginSignupPage/index.php">
+            <a class="dropdown-item d-flex align-items-center" href="../LoginSignupPage/index.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>

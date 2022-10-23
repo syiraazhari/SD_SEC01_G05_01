@@ -120,7 +120,7 @@ else if(isSet($_POST['updateFacilityButton'])) {
 }else if(isSet($_POST['forgotpassword'])){
     echo 'in forgotpassword';////////////////////////////////////////////////////////////////////////////////////
     session_start();
-
+    //sendMail();
     $userEmail = $_POST["userEmail"];
     echo $userEmail;
 
@@ -149,6 +149,7 @@ else if(isSet($_POST['updateFacilityButton'])) {
                 $update_token_run = mysqli_query($con, $update_token);
 
                 if($update_token_run){
+
                     send_password_reset($get_email,$token);
                     //$_SESSION['statusEmail'] = "We emailed you a password reset link";
                     header("Location:../ForgotPassword/resetpassword.php?statusEmail=emailed");
@@ -405,7 +406,7 @@ if(isSet($_POST['reset-password-submit'])){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-
+    
     $email = mysqli_real_escape_string($con,$_POST['email']);
     $new_password = mysqli_real_escape_string($con,$_POST['password']);
     $confirm_password = mysqli_real_escape_string($con,$_POST['re-password']);
