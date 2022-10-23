@@ -258,7 +258,7 @@ function addRegisterStaff(){
     $headers .= 'From: cheesen987@gmail.com';
 
     $message = ' ';
-    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
+    $message .= "<a href=http://52.77.215.21/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
 
     //if (mail($email,$subject,$message)) {
@@ -342,7 +342,7 @@ function addRegister(){
     $headers .= 'From: cheesen987@gmail.com';
 
     $message = ' ';
-    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/LoginSignupPage/verify.php?vkey='$vkey'>Register Account<a/>";
+    $message .= "<a href=http://52.77.215.21/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
 
     //if (mail($email,$subject,$message)) {
