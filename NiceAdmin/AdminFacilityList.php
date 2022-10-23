@@ -104,6 +104,7 @@
   //$email = $_SESSION['username'];
 
 
+
   $userId = $_SESSION['username'];
   $listOfStudent = getListOfUserStaff($userId);
 
@@ -593,6 +594,9 @@
           
         </div>
     </section>
+      <form action="..\NiceAdmin\FPDF\pdfFacilityList.php" method="POST">
+      <button type="submit" class="btn btn-success" name="FacilityListPDF">Generate PDF</button>
+      </form>
 
   </main><!-- End #main -->
 
