@@ -405,7 +405,7 @@ if(isSet($_POST['reset-password-submit'])){
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-
+    sendMail();
     $email = mysqli_real_escape_string($con,$_POST['email']);
     $new_password = mysqli_real_escape_string($con,$_POST['password']);
     $confirm_password = mysqli_real_escape_string($con,$_POST['re-password']);
