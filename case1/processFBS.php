@@ -120,7 +120,7 @@ else if(isSet($_POST['updateFacilityButton'])) {
 }else if(isSet($_POST['forgotpassword'])){
     echo 'in forgotpassword';////////////////////////////////////////////////////////////////////////////////////
     session_start();
-    sendMail();
+    //sendMail();
     $userEmail = $_POST["userEmail"];
     echo $userEmail;
 
