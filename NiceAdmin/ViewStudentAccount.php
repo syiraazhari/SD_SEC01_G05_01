@@ -329,9 +329,15 @@
       </li><!-- End Verify Account Nav -->
         <li class="nav-item">
             <a class="nav-link"  href="BookerList.php">
-                <i class="bi bi-layout-text-window-reverse"></i><span>Booker List</span>
+                <i class="bi bi-list-ol"></i><span>Booker List</span>
             </a>
         </li><!-- End Verify Account Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="https://dashboard.tawk.to/#/inbox/63479eb437898912e96e5bc6/chats">
+                <i class="bi bi-chat-dots"></i>
+                <span>Chat with Users</span>
+            </a>
+        </li>
     </ul>
 
   </aside><!-- End Sidebar-->
