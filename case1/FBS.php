@@ -500,46 +500,30 @@ function displayHeaderStaff(){
                                         </li>
                                         <li>
                                             <a href="about.html"><span class="menu-text">About Us</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="service.html"><span class="menu-text">Services</span></a>
-                                        </li>
-                                        <li class="has-children">
-                                            <a href="work.html"><span class="menu-text">Work</span></a>
-                                            <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
-                                            <ul class="sub-menu">
-                                                <li><a href="work.html"><span class="menu-text">Work</span></a></li>
-                                                <li><a href="work-details.html"><span class="menu-text">Work
-                                                            Details</span></a></li>
-                                            </ul>
+
                                         </li>
                                         <li>
                                             <a href="contact-us.html"><span class="menu-text">Contact Us</span></a>
+
+                                        </li>
+                                        <li>
+                                            <a href="ViewStaffBookingHistory.php"><span class="menu-text">Booking History</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="ViewStaffPaymentHistory.php"><span class="menu-text">Payment History</span></a></li>
                                         </li>
                                         <li class="has-children">
                                             <a href="#"><span class="menu-text">Profile</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
                                                 <li><a href="StaffProfile.php"><span class="menu-text" >View Profile</span></a></li>
-                                                <li><a href="ViewStaffBookingHistory.php"><span class="menu-text">Booking History</span></a></li>
-                                                <li><a href="ViewStaffPaymentHistory.php"><span class="menu-text">Payment History</span></a></li>
                                                 <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
-                            <!-- Header Search Start -->
-                            <div class="header-search-area ml-xl-7 ml-0">
-
-                                <!-- Header Login Start -->
-                                <div class="header-search">
-                                    <a href="javascript:void(0)" class="header-search-toggle"><i
-                                            class="pe-7s-search pe-2x pe-va"></i></a>
-                                </div>
-                                <!-- Header Login End -->
-                            </div>
-                            <!-- Header Search End -->
+                          
 
                             <!-- Header Mobile Menu Toggle Start -->
                             <div class="header-mobile-menu-toggle d-xl-none ml-sm-2">

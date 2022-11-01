@@ -122,24 +122,24 @@
                                     <ul>
                                         <li>
                                             <a href="index.html"><span
-                                                        class="menu-text">Homepage</span></a>
+                                                        class="menu-text" style="color:whitesmoke">Homepage</span></a>
                                         </li>
                                         <li>
-                                            <a href="about.html"><span class="menu-text">About Us</span></a>
+                                            <a href="about.html"><span class="menu-text" style="color:whitesmoke">About Us</span></a>
 
                                         </li>
                                         <li>
-                                            <a href="contact-us.html"><span class="menu-text">Contact Us</span></a>
+                                            <a href="contact-us.html"><span class="menu-text" style="color:whitesmoke">Contact Us</span></a>
 
                                         </li>
                                         <li>
-                                            <a href="ViewStudentBookingHistory.php"><span class="menu-text">Booking History</span></a>
+                                            <a href="ViewStudentBookingHistory.php"><span class="menu-text" style="color:whitesmoke">Booking History</span></a>
                                         </li>
                                         <li>
-                                            <a href="ViewStudentPaymentHistory.php"><span class="menu-text">Payment History</span></a></li>
+                                            <a href="ViewStudentPaymentHistory.php"><span class="menu-text" style="color:whitesmoke">Payment History</span></a></li>
                                         </li>
                                         <li class="has-children">
-                                            <a class="active" href="#"><span class="menu-text">Profile</span></a>
+                                            <a class="active" href="#"><span class="menu-text" style="color:whitesmoke">Profile</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
                                                 <li><a href="StudentProfile.php"><span class="menu-text" >View Profile</span></a></li>
