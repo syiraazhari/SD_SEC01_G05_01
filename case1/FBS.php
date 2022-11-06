@@ -271,6 +271,42 @@ function addRegisterStaff(){
 
 }
 
+function addAdminAccount()
+{
+
+    $name = $_POST['name'];
+    $staffId= $_POST['staffId'];
+    $userId =$_POST['email'];
+    $password =$_POST['password'];
+    $phoneNum = $_POST['phoneNum'];
+    $userType = $_POST['userType'];
+
+    $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
+    $mysqli = new MySQLi("localhost", "projectsd", "projectsd", "projectsd");
+
+    if(mysqli_connect_errno()){
+        echo 'fail to connect to mysql'.mysqli_connect_error();
+        exit;
+    }else{
+        echo 'connected to mysql';
+    }
+    $name = $mysqli->real_escape_string($name);
+    $vkey = md5(time().$name);
+
+
+    $sql = "insert into user(userId, password, userType,vkey, verified)
+    values('$userId','$password','$userType','$vkey','1')";
+    $sql2 ="insert into userinfoStaff(staffId,name, userId,phoneNum) 
+    values('$staffId','$name','$userId','$phoneNum')";
+    $sql3 ="insert into bookerlist(MatricNum,name, userId,phoneNum,userType) 
+    values('$staffId','$name','$userId','$phoneNum','$userType')";
+    echo $sql;
+    echo $sql2;
+    echo $sql3;
+    $qry =mysqli_query($con,$sql);//execute query
+    $qry2 =mysqli_query($con,$sql2);
+    $qry3 =mysqli_query($con,$sql3);
+}
 function addRegister(){
     session_start(); 
     $_SESSION['username']=$_POST['name']; 

@@ -198,6 +198,17 @@ else if(isSet($_POST['register'])){
     //addRegister();
     //sendConfirmationEmail();
     //header('Location:..\StudentPage');
+}else if(isSet($_POST['addAdminAccount'])){
+    $name = $_POST['name'];
+    $staffId= $_POST['staffId'];
+    $userId =$_POST['email'];
+    $password =$_POST['password'];
+    $phoneNum = $_POST['phoneNum'];
+    $userType = $_POST['userType'];
+    addAdminAccount();
+    header('Location:..\NiceAdmin\BookerList.php');
+
+
 }else if(isSet($_POST['DeleteAccount'])){
     $email = $_POST['userId'];
     $userType = $_POST['userType'];

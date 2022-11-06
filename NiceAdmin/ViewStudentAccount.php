@@ -398,6 +398,25 @@
               $userType = $row2['userType'];
               $vkey = $row2['vkey'];
               $verified = $row2['verified'];
+            }else if ($ConfirmUserType == "Admin"){
+              //echo $userId;
+              $listOfStudent = getListOfUserStaff($userId);
+
+              if(mysqli_num_rows($listOfStudent) > 0)
+              $row = mysqli_fetch_assoc($listOfStudent);
+              $email =  $row['userId'];
+              $listOfPassword = getListOfpassword($email);
+              $row2 = mysqli_fetch_assoc($listOfPassword);
+
+              $matricNum = $row['staffId'];
+              $name = $row['name'];
+              
+              $phoneNum = $row['phoneNum'];
+              $image = $row['Image'];                       
+              $password = $row2['password'];
+              $userType = $row2['userType'];
+              $vkey = $row2['vkey'];
+              $verified = $row2['verified'];
             }
 
 ?>
