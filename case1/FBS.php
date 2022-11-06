@@ -642,14 +642,14 @@ function searchByMatricNum(){
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
-function deleteUser(){
+function deleteUser($email){
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit;
     }
-    $userIdToDelete = $_POST['userIdToDelete'];
-    $sql = "delete from user where userId ='".$userIdToDelete."'";
+    $userIdToDelete = $email;
+    $sql = "delete from bookerlist where userId ='".$userIdToDelete."'";
     $qry = mysqli_query($con, $sql);
     return $qry;
 }

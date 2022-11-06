@@ -616,6 +616,7 @@ $verified = $row2['verified'];
                       <th scope="col" style="text-align: center;">Phone Number</th>
                       <th scope="col" style="text-align: center;">User Type</th>
                       <th scope="col" style="text-align: center;">Info</th>
+                      <th scope="col" style="text-align: center;">Delete</th>
                     </tr>
                   </thead>';
                         while ($acc = mysqli_fetch_assoc($listOfUser)) {
@@ -628,7 +629,8 @@ $verified = $row2['verified'];
                                 echo '<td style="text-align: center;" name = "matricNum" >' . ($acc['MatricNum']) . '</td>';
                                 echo '<td style="text-align: center;" name = "phoneNum" >' . ($acc['phoneNum']) . '</td>';
                                 echo '<td style="text-align: center;"><input type="hidden" name="userType" value=' . ($acc['UserType']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['UserType']) . '</td>';;
-                            echo '<td style="text-align: center;"><button style="text-align: center;" type="submit" name ="info" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-info-circle"></i></button></td>';
+                               
+                                echo '<td style="text-align: center;"><button style="text-align: center;" type="submit" name ="info" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-info-circle"></i></button></td>';
                             echo'</form>';
                             echo '
 
@@ -644,6 +646,7 @@ $verified = $row2['verified'];
                           
                         </div>
                         <div class="modal-body">';
+                        
                         ?>
                                     <section class="section profile">
       <div class="row">
@@ -837,6 +840,10 @@ $verified = $row2['verified'];
                       </div>
                     </div>
                   </div><!-- End Basic Modal-->';
+                  echo '<form action= "..\case1\processFBS.php" method="POST">';
+                  echo '<input type="hidden" name="userId" value='.($acc['userId']).'>';
+                  echo '<td><button style="position: relative; left: 28%;"" type="submit" name="DeleteAccount" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
+                  echo '</form>';
                             echo '</tr>';
                                
                             $count++;

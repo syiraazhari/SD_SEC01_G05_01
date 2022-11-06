@@ -198,6 +198,12 @@ else if(isSet($_POST['register'])){
     //addRegister();
     //sendConfirmationEmail();
     //header('Location:..\StudentPage');
+}else if(isSet($_POST['DeleteAccount'])){
+    $email = $_POST['userId'];
+    deleteUser($email);
+    header('Location:..\NiceAdmin\BookerList.php');
+
+
 }else if(isSet($_POST['gobackLogin'])){
     header('Location:..\LoginSignupPage\index.php');
 

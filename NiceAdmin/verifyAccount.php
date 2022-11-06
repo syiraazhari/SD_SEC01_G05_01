@@ -550,8 +550,9 @@
                       </div>
                     </div>
                   </div><!-- End Basic Modal-->';
+                    //echo '<td><input type="hidden" name="userId" value='.($acc['userId']).' placeholder="Your Email" autocomplete="off">'.($acc['userId']).'</td>';
+                    
                     echo '<td><button style="position: relative; left: 28%;"" type="submit" name="disapproveVerify" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
-                   
                     echo'</tr>';
                     echo '</form>';
                     }
