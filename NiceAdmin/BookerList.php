@@ -842,6 +842,7 @@ $verified = $row2['verified'];
                   </div><!-- End Basic Modal-->';
                   echo '<form action= "..\case1\processFBS.php" method="POST">';
                   echo '<input type="hidden" name="userId" value='.($acc['userId']).'>';
+                  echo '<input type="hidden" name="userType" value='.($acc['UserType']).'>';
                   echo '<td><button style="position: relative; left: 28%;"" type="submit" name="DeleteAccount" class="btn btn-danger"><i class="bi bi-x-circle"></i></button></td>';
                   echo '</form>';
                             echo '</tr>';

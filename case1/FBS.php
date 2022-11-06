@@ -642,7 +642,7 @@ function searchByMatricNum(){
     $qry = mysqli_query($con, $sql);
     return $qry;
 }
-function deleteUser($email){
+function deleteUser($email,$userType){
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -651,6 +651,25 @@ function deleteUser($email){
     $userIdToDelete = $email;
     $sql = "delete from bookerlist where userId ='".$userIdToDelete."'";
     $qry = mysqli_query($con, $sql);
+
+     
+    if($userType == "Student"){
+
+        $sql2 = "delete from user where userId ='".$userIdToDelete."'";
+        $qry2 = mysqli_query($con, $sql2);
+        $sql3 = "delete from userinfo where userId ='".$userIdToDelete."'";
+        $qry3 = mysqli_query($con, $sql3);
+
+    }else if($userType == "Staff"){
+        $sql4 = "delete from user where userId ='".$userIdToDelete."'";
+        $qry4 = mysqli_query($con, $sql4);
+        $sql5 = "delete from userinfo where userId ='".$userIdToDelete."'";
+        $qry5 = mysqli_query($con, $sql5);
+
+
+    }
+
+
     return $qry;
 }
 

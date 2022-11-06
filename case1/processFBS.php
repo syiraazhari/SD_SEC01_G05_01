@@ -200,7 +200,8 @@ else if(isSet($_POST['register'])){
     //header('Location:..\StudentPage');
 }else if(isSet($_POST['DeleteAccount'])){
     $email = $_POST['userId'];
-    deleteUser($email);
+    $userType = $_POST['userType'];
+    deleteUser($email,$userType);
     header('Location:..\NiceAdmin\BookerList.php');
 
 
