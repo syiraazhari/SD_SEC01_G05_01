@@ -379,7 +379,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="AddAdminAccount.php">
-                <i class="bi bi-chat-dots"></i>
+                <i class="bi bi-person-plus"></i>
                 <span>Add Admin Account</span>
             </a>
         </li>
@@ -435,7 +435,7 @@
                   <label for="inputPassword"  class="col-sm-2 col-form-label">Your Contact Number</label>
                   <div class="col-sm-10">
                     <?php
-                            echo '<input type="text" name="phoneNum" class="form-control" >';
+                            echo '<input type="number" name="phoneNum" class="form-control" >';
                     ?>
                      
                   </div>
@@ -444,7 +444,7 @@
                   <label for="inputNumber" class="col-sm-2 col-form-label">Email</label>
                   <div class="col-sm-10">
                   <?php
-                      echo '<input type="number" name="email" class="form-control" >';
+                      echo '<input type="email" name="email" class="form-control" >';
                     ?>
                   </div>
                 </div>
@@ -454,7 +454,7 @@
                   <div class="col-sm-10">
                     
                     <?php
-                      echo '<input type="text" style="height: 100px" name="password" class="form-control" >';
+                      echo '<input type="password" name="password" class="form-control" >';
                     ?>
                   </div>
                 
@@ -470,7 +470,7 @@
                       
                   </div>
                 </div>
-                
+
 
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label"></label>
@@ -480,6 +480,8 @@
                 </div>
 
               </form><!-- End General Form Elements -->
+
+
 
             </div>
           </div>

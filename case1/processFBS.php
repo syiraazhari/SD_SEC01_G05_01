@@ -206,8 +206,7 @@ else if(isSet($_POST['register'])){
     $phoneNum = $_POST['phoneNum'];
     $userType = $_POST['userType'];
     addAdminAccount();
-    header('Location:..\NiceAdmin\BookerList.php');
-
+    header('Location:..\NiceAdmin\AddAdminAccount.php');
 
 }else if(isSet($_POST['DeleteAccount'])){
     $email = $_POST['userId'];

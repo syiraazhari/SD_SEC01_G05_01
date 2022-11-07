@@ -377,6 +377,12 @@
                 <span>Chat with Users</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="AddAdminAccount.php">
+                <i class="bi bi-person-plus"></i>
+                <span>Add Admin Account</span>
+            </a>
+        </li>
     </ul>
 
   </aside><!-- End Sidebar-->
