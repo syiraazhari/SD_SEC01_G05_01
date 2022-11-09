@@ -7,11 +7,6 @@
   <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Profile - Student Page</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <meta name="robots" content="index, follow" />
-    <meta name="description" content="Agench is an elegant design, 100% responsive Bootstrap 5 template. It is best for agency websites and marketing companies.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Favicons -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/StudentPagephoto/UTM-LOGO.png">
 
@@ -97,6 +92,7 @@
                       
                     ?>
 <body>
+  <div class="bg"></div>
   <!-- Header Section Start -->
   <div id="page" class="section">
         <!-- Header Section Start -->

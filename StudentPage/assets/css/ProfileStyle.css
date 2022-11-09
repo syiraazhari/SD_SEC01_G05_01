@@ -13,25 +13,12 @@
 }
 
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 50s ease infinite;
-  height: 5vh;
+  background-image: url("");
   font-family: "Open Sans", sans-serif;
-}
-
-@keyframes gradient {
-  0% {
-      background-position: 0% 50%;
-  }
-
-  50% {
-      background-position: 100% 50%;
-  }
-
-  100% {
-      background-position: 0% 50%;
-  }
+  background-image: url('assets\images\StudentPagephoto\CampusUTMKL.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
 a {

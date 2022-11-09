@@ -28031,9 +28031,13 @@
      .static-testimonial {
        padding: 30px 25px 35px; } }
    .static-testimonial .testimonial-image {
-     margin-bottom: 25px; }
+     margin-bottom: 0px; }
      .static-testimonial .testimonial-image img {
-       border-radius: 50%; }
+      border-radius: 30%;
+      margin-left: auto;
+      margin-right: auto;
+      width: 300px;
+      }
    .static-testimonial .testimonial-content {
      margin-bottom: 25px; }
      .static-testimonial .testimonial-content p {
