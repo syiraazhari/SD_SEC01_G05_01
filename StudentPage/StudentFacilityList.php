@@ -244,9 +244,9 @@ session_start();
             color:black;
         }
 
-        tr:hover :nth-child(even) {background-color: darkcyan;}
+        tr:hover :nth-child(even) {background-color: #A0E4CB;}
 
-        tr:hover :nth-child(odd) {background-color: darkgoldenrod;}
+        tr:hover :nth-child(odd) {background-color: #A0E4CB;}
 
         th {
              background-color: #03a9f4;
@@ -348,7 +348,7 @@ function displayAvailableList() {
         echo '<form action= "..\Test_stripe\index.php" method="POST">';
         echo'<input type="hidden" name="FacilityId" value = "'.$row["facilityId"].'">';
         echo'<input type="hidden" name="pictureCode" id= "pCode" value = "'.$detailfacility['Image'].'">';
-        echo'<input class="button2 button5" type="submit" name="" value="View">';
+        echo'<input class="btn btn-primary rounded-pill" type="submit" name="" value="Book Now">';
         echo '</form>';
         echo'</td>';
         
