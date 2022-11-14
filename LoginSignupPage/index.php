@@ -57,7 +57,12 @@
 														echo '<div class="form-group mt-2">';
 														echo '<h5 class="mb-4 pb-3" >Invalid Email</h5>';
 														echo '</div>';
+													}else if($_GET['error'] == "passwordwrong"){
+														echo '<div class="form-group mt-2">';
+														echo '<h5 class="mb-4 pb-3" >Password Wrong</h5>';
+														echo '</div>';
 													}
+													
 												}
 											?>
                             				<p class="mb-0 mt-4 text-center"><a href="..\ForgotPassword\resetpassword.php?statusEmail=success" class="link">Forgot your password?</a></p>

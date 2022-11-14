@@ -277,22 +277,22 @@ else if(isSet($_POST['register'])){
     if(($userRecord) > 0){
         print_r($_POST);
         if (password_verify($_POST['password'], $userRecord['password'])){
-            if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')&& ($userRecord['verified'] == 1)){
+            if(($_POST['username'] == $userRecord['userId'])  && ($userRecord['userType'] == 'Student')&& ($userRecord['verified'] == 1)){
                 $userInfoQry = getListOfUserCustomer($userEmail);
                 $userInfoRecord =mysqli_fetch_assoc($userInfoQry);
                 $_SESSION['name'] =  $userInfoRecord['name']; 
                 header('Location:..\StudentPage');
-            }else if (($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Admin')&& ($userRecord['verified'] == 1)){
+            }else if (($_POST['username'] == $userRecord['userId'])  && ($userRecord['userType'] == 'Admin')&& ($userRecord['verified'] == 1)){
     
                 header('Location:..\NiceAdmin\homepage.php');
                 
-            }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')&& ($userRecord['verified'] == 1)){
+            }else if(($_POST['username'] == $userRecord['userId']) && ($userRecord['userType'] == 'Staff')&& ($userRecord['verified'] == 1)){
                 $staffInfoQry = getListOfUserStaff($userEmail);
                 $staffInfoRecord =mysqli_fetch_assoc($staffInfoQry);
                 $_SESSION['name'] =  $staffInfoRecord['name']; 
                 echo $_SESSION['name'];
                 header('Location:..\StaffPage');
-            }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] != $userRecord['password'])){
+            }else if(($_POST['username'] == $userRecord['userId'])){
                 
                 header('Location:..\LoginSignupPage\index.php?error=falseemailorpassword');
             }else if($userRecord['verified'] == 0){
@@ -303,6 +303,8 @@ else if(isSet($_POST['register'])){
                 header('Location:..\LoginSignupPage\index.php');
                 
             }
+        }else{
+            header('Location:..\LoginSignupPage\index.php?error=passwordwrong');
         }
         
 
@@ -449,7 +451,8 @@ if(isSet($_POST['reset-password-submit'])){
                         
                         
                     }else{
-                        $update_password = "UPDATE user SET password = '$new_password' WHERE vkey = '$token' LIMIT 1";
+                        $passworencrypted = password_hash("$new_password", PASSWORD_DEFAULT);
+                        $update_password = "UPDATE user SET password = '$passworencrypted' WHERE vkey = '$token' LIMIT 1";
                         $update_password_run = mysqli_query($con,$update_password);
 
                             if($update_password_run){
