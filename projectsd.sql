@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 11, 2022 at 12:06 PM
+-- Generation Time: Nov 14, 2022 at 08:08 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -43,7 +43,6 @@ CREATE TABLE IF NOT EXISTS `bookerlist` (
 --
 
 INSERT INTO `bookerlist` (`MatricNum`, `name`, `userId`, `phoneNum`, `UserType`) VALUES
-('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485', 'Staff'),
 ('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'Staff'),
 ('test2', 'testing243', 'cheesen.987@gmail.com', '321321321', 'Student'),
 ('testingFail1', 'testingFail2', 'FalseEmail@gmail.com', '543534', 'Staff');
@@ -69,30 +68,25 @@ CREATE TABLE IF NOT EXISTS `customers` (
 --
 
 INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `created_at`) VALUES
-('cus_MaFyhakeRzsapt', 'tan', 'asd', 'chee.sen987@gmail.com', '2022-10-10 03:46:34'),
-('cus_MaGfCmxIbunSkN', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-10 04:30:08'),
-('cus_MaGj5h9W8I93Y9', '213', 'asdsa', 'tancheesen123@hotmail.com', '2022-10-10 04:34:04'),
-('cus_MaGox0WNOQ9tLy', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-10 04:38:31'),
-('cus_MaH2ZBpqsfg6oZ', '42424242', '42424', 'cheesen.987@gmail.com', '2022-10-10 04:52:25'),
-('cus_MaHO5FSUNiXNmZ', 'tan', 'tan', 'cheesen.987@gmail.com', '2022-10-10 05:15:05'),
-('cus_MaHWsJ4PA72fVr', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-10 05:23:11'),
-('cus_MaPxUAlsfc9o2m', '123', '123', 'cheesen.987@gmail.com', '2022-10-10 14:06:11'),
-('cus_MaRm8VdG7E5YaA', '42424242', '21', 'cheesen.987@gmail.com', '2022-10-10 15:59:08'),
-('cus_MaRnSKmFQfZ0by', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-10 15:59:57'),
-('cus_MaRq6Ico3GQnmu', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-10 16:02:40'),
-('cus_MaTI7qofGdxrkX', '123', '123', 'tancheesen123@hotmail.com', '2022-10-10 17:33:12'),
-('cus_MZikg5kdJXU8EF', 'tas', 'satsat', 'tancheesen123@hotmail.com', '2022-10-08 17:26:39'),
-('cus_MZiMod9IpFT3zQ', '123', '123', 'tancheesen123@hotmail.com', '2022-10-08 17:02:44'),
-('cus_MZiQvHGlNztDlI', '123', '123', 'tancheesen123@hotmail.com', '2022-10-08 17:07:07'),
-('cus_MZiSzXOPkriFyF', 'test1', '21', 'tancheesen123@hotmail.com', '2022-10-08 17:08:53'),
-('cus_MZkDfIUpM4wIP7', 'tan', 'Cheesen', 'tancheesen123@hotmail.com', '2022-10-08 18:57:39'),
-('cus_MZkIlHTt8OGPS3', '', '', 'tancheesen123@hotmail.com', '2022-10-08 19:02:29'),
-('cus_MZlXqrniCbGIgU', 'asd', 'asdas', 'tancheesen123@hotmail.com', '2022-10-08 20:20:01'),
-('cus_MZmfmiexQoNqbF', '123', '123', 'tancheesen123@hotmail.com', '2022-10-08 21:29:47'),
-('cus_MZmg6zVJE16cpH', 'lonely', 'licess', 'tancheesen123@hotmail.com', '2022-10-08 21:30:55'),
-('cus_MZnDFjTbWLEr32', '321', '321', 'tancheesen123@hotmail.com', '2022-10-08 22:03:38'),
-('cus_MZnihxCx5ctche', '312', '321', 'tancheesen123@hotmail.com', '2022-10-08 22:35:11'),
-('cus_MZnRHa4Xl4SfQb', '123', '321', 'tancheesen123@hotmail.com', '2022-10-08 22:17:22');
+('cus_Mb5npkWtyEFo7W', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-12 09:20:01'),
+('cus_Mb5rEh8nE8aBps', '442', '321', 'tancheesen123@hotmail.com', '2022-10-12 09:23:26'),
+('cus_Mb6bU8drK4YKbt', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 10:09:23'),
+('cus_Mb6dsbifZoVbif', 'tan', '123', 'tancheesen123@hotmail.com', '2022-10-12 10:11:33'),
+('cus_Mb6hlSBRvHFXWn', 'tan', '21', 'tancheesen123@hotmail.com', '2022-10-12 10:15:35'),
+('cus_Mb6ic5VDRGw1YD', 'tan', '42', 'tancheesen123@hotmail.com', '2022-10-12 10:16:40'),
+('cus_Mb6k4dWEHfjolI', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 10:18:56'),
+('cus_Mb6mUmVKnRbDG5', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 10:20:44'),
+('cus_Mb6rj8CM1tCsJc', 'tan', 'asd', 'shaoyuan0228@gmail.com', '2022-10-12 10:25:27'),
+('cus_Mb6tA4S1kWm36z', 'tan', '21', 'cheesen.987@gmail.com', '2022-10-12 10:27:43'),
+('cus_Mb6Uyj9AbUJRDw', '4242424242', '4242', 'tancheesen123@hotmail.com', '2022-10-12 10:02:37'),
+('cus_Mb6XzY7R6Hrimj', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 10:05:22'),
+('cus_Mb6YL2By1A3Ukp', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 10:06:43'),
+('cus_Mb6ZXFWOwvUMsZ', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 10:08:20'),
+('cus_MbBqE1nZi8tgqQ', 'tan', '123', 'cheesen.987@gmail.com', '2022-10-12 15:35:17'),
+('cus_MbBsyJWruVPNEE', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-12 15:36:33'),
+('cus_MbDEX1g9p09FOK', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-12 17:00:28'),
+('cus_MbDG56Bk0lWPUV', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-12 17:03:14'),
+('cus_MbDYkYHCiVuZ8w', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 17:20:35');
 
 -- --------------------------------------------------------
 
@@ -118,9 +112,6 @@ CREATE TABLE IF NOT EXISTS `facility` (
 --
 
 INSERT INTO `facility` (`facilityId`, `name`, `category`, `capacity`, `facilityDetail`, `ratePerDay`, `status`, `Image`) VALUES
-('B111', 'FOYER DEWAN BANQUET', 'FOYER', 48, 'Suitable for sit-down meal area', '40000', 'AVAILABLE', 'FOYER DEWAN BANQUET - 2022.10.11 - 11.41.24am.png'),
-('B122', 'BILIK GERAKAN', 'ROOM', 19, 'Suitable for medium size meeting group', '250', 'AVAILABLE', 'BILIK GERAKAN - 2022.10.11 - 11.43.15am.png'),
-('B133', 'BILIK LPU (AL-GHAZALI)', 'ROOM', 20, 'Suitable for meeting, and presentation', '300', 'AVAILABLE', 'BILIK LPU (AL-GHAZALI) - 2022.10.11 - 11.44.42am.png'),
 ('C111', 'FOYER A BANGUNAN PSZ', 'FOYER', 60, 'Suitable for sit-down meal', '300', 'AVAILABLE', 'FOYER A BANGUNAN PSZ - 2022.10.11 - 11.53.24am.png'),
 ('C122', 'FOYER B BANGUNAN PSZ', 'FOYER', 30, 'Suitable for sit-down meal', '200', 'AVAILABLE', 'FOYER B BANGUNAN PSZ - 2022.10.11 - 11.53.33am.png'),
 ('C133', 'DATARAN ILMU', 'OPEN AREA', 300, 'Suitable for outdoor event', '250', 'AVAILABLE', 'DATARAN ILMU - 2022.10.11 - 11.55.53am.png'),
@@ -160,33 +151,26 @@ CREATE TABLE IF NOT EXISTS `rent` (
   KEY `userId` (`userId`),
   KEY `facilityId` (`facilityId`),
   KEY `facilityId_2` (`facilityId`)
-) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rent`
 --
 
 INSERT INTO `rent` (`rent_reference`, `userId`, `date_reserved`, `reserved_by`, `date_rent_start`, `date_rent_end`, `facilityId`, `total_price`) VALUES
-(97, 'shaoyuan0228@gmail.com', '2022-10-04', 'Tan Chee Sen', '2022-10-05', '2022-10-06', 'F133', 300),
-(98, 'cheesen.987@gmail.com', '2022-10-08', 'testing243', '2022-10-08', '2022-10-09', 'B111', 40000),
-(99, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-08', '2022-10-09', 'B122', 250),
-(100, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-08', '2022-10-10', 'B133', 600),
-(101, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-15', '2022-10-20', 'C111', 1500),
-(102, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-09', '2022-10-13', 'D144', 16000),
-(103, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-14', '2022-10-15', 'B111', 40000),
-(104, 'tancheesen123@hotmail.com', '2022-10-08', 'lonely123', '2022-10-15', '2022-10-23', 'B122', 2000),
-(105, 'chee.sen987@gmail.com', '2022-10-09', 'lonely123', '2022-10-12', '2022-10-14', 'B122', 500),
-(106, 'tancheesen123@hotmail.com', '2022-10-09', 'lonely123', '2022-10-10', '2022-10-19', 'B111', 360000),
-(107, 'tancheesen123@hotmail.com', '2022-10-09', 'lonely123', '2022-10-19', '2022-10-20', 'B133', 300),
-(108, 'cheesen.987@gmail.com', '2022-10-09', 'testing243', '2022-10-10', '2022-10-12', 'C111', 600),
-(109, 'cheesen.987@gmail.com', '2022-10-09', 'testing243', '2022-10-11', '2022-10-13', 'B133', 600),
-(110, 'cheesen.987@gmail.com', '2022-10-09', 'testing243', '2022-10-11', '2022-10-14', 'D122', 12000),
-(111, 'tancheesen123@hotmail.com', '2022-10-09', 'lonely123', '2022-10-11', '2022-10-14', 'D133', 5100),
-(112, 'cheesen.987@gmail.com', '2022-10-10', 'testing243', '2022-10-10', '2022-10-14', 'E111', 6800),
-(113, 'cheesen.987@gmail.com', '2022-10-10', 'testing243', '2022-10-10', '2022-10-15', 'D122', 20000),
-(114, 'cheesen.987@gmail.com', '2022-10-10', 'testing243', '2022-10-10', '2022-10-15', 'D122', 20000),
-(115, 'cheesen.987@gmail.com', '2022-10-10', 'testing243', '2022-10-10', '2022-10-19', 'E133', 10800),
-(116, 'tancheesen123@hotmail.com', '2022-10-10', 'lonely123', '2022-10-11', '2022-10-14', 'D155', 2100);
+(117, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-12', '2022-10-15', 'D122', 12000),
+(118, 'tancheesen123@hotmail.com', '2022-10-12', 'lonely1234', '2022-10-12', '2022-10-13', 'D133', 1700),
+(119, 'tancheesen123@hotmail.com', '2022-10-12', 'lonely1234', '2022-10-13', '2022-10-16', 'B133', 900),
+(120, 'tancheesen123@hotmail.com', '2022-10-12', 'lonely1234', '2022-10-13', '2022-10-16', 'B133', 900),
+(121, 'tancheesen123@hotmail.com', '2022-10-12', 'lonely1234', '2022-10-12', '2022-10-16', 'D144', 16000),
+(122, 'tancheesen123@hotmail.com', '2022-10-12', 'lonely1234', '2022-10-13', '2022-10-16', 'D166', 5100),
+(123, 'shaoyuan0228@gmail.com', '2022-10-12', 'Tan Chee Sen', '2022-10-12', '2022-10-15', 'C122', 600),
+(124, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-13', '2022-10-26', 'B122', 3250),
+(125, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-12', '2022-10-16', 'C111', 1200),
+(126, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-13', '2022-10-15', 'C133', 500),
+(127, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-13', '2022-10-15', 'D111', 1240),
+(128, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-20', '2022-10-22', 'D122', 8000),
+(129, 'tancheesen123@hotmail.com', '2022-10-12', 'lonely1234', '2022-10-13', '2022-10-14', 'D155', 700);
 
 -- --------------------------------------------------------
 
@@ -257,30 +241,25 @@ CREATE TABLE IF NOT EXISTS `transactions` (
 --
 
 INSERT INTO `transactions` (`id`, `customer_id`, `email`, `product`, `amount`, `currency`, `status`, `created_at`) VALUES
-('ch_3LqaisIXxPbvwpsW1BYRPBHt', 'cus_MZkDfIUpM4wIP7', NULL, 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 18:57:39'),
-('ch_3LqanZIXxPbvwpsW0qlWuwDH', 'cus_MZkIlHTt8OGPS3', NULL, 'BILIK GERAKAN', '250', 'myr', 'succeeded', '2022-10-08 19:02:29'),
-('ch_3Lqc0aIXxPbvwpsW1xcrvnH5', 'cus_MZlXqrniCbGIgU', NULL, 'FOYER B BANGUNAN PSZ', '200', 'myr', 'succeeded', '2022-10-08 20:20:01'),
-('ch_3Lqd66IXxPbvwpsW2XlcRpVn', 'cus_MZmfmiexQoNqbF', NULL, 'FOYER A BANGUNAN PSZ', '300', 'myr', 'succeeded', '2022-10-08 21:29:47'),
-('ch_3Lqd7CIXxPbvwpsW2JOeXSTn', 'cus_MZmg6zVJE16cpH', NULL, 'FOYER A BANGUNAN PSZ', '300', 'myr', 'succeeded', '2022-10-08 21:30:55'),
-('ch_3LqdcrIXxPbvwpsW2Klkvrk1', 'cus_MZnDFjTbWLEr32', NULL, 'DEWAN AZMAN HASHIM', '16000', 'myr', 'succeeded', '2022-10-08 22:03:38'),
-('ch_3Lqdq9IXxPbvwpsW0Y2gAOeZ', 'cus_MZnRHa4Xl4SfQb', NULL, 'FOYER DEWAN BANQUET', '40000', 'myr', 'succeeded', '2022-10-08 22:17:22'),
-('ch_3Lqe7OIXxPbvwpsW2NniBiIK', 'cus_MZnihxCx5ctche', NULL, 'BILIK GERAKAN', '2000', 'myr', 'succeeded', '2022-10-08 22:35:11'),
-('ch_3LqYvfIXxPbvwpsW0Ozbiznm', 'cus_MZiMod9IpFT3zQ', NULL, 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:02:44'),
-('ch_3LqYzuIXxPbvwpsW1SfZuS2c', 'cus_MZiQvHGlNztDlI', NULL, 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:07:07'),
-('ch_3LqZ1cIXxPbvwpsW08wM7Ox8', 'cus_MZiSzXOPkriFyF', NULL, 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:08:53'),
-('ch_3LqZIoIXxPbvwpsW2F2sn5P7', 'cus_MZikg5kdJXU8EF', NULL, 'Intro To React Course', '500', 'myr', 'succeeded', '2022-10-08 17:26:39'),
-('ch_3Lr5SHIXxPbvwpsW2BDygrhC', 'cus_MaFyhakeRzsapt', NULL, 'BILIK GERAKAN', '500', 'myr', 'succeeded', '2022-10-10 03:46:34'),
-('ch_3Lr68RIXxPbvwpsW0ahA4x4V', 'cus_MaGfCmxIbunSkN', NULL, 'FOYER DEWAN BANQUET', '360000', 'myr', 'succeeded', '2022-10-10 04:30:08'),
-('ch_3Lr6CFIXxPbvwpsW2vZQppzc', 'cus_MaGj5h9W8I93Y9', NULL, 'BILIK LPU (AL-GHAZALI)', '300', 'myr', 'succeeded', '2022-10-10 04:34:04'),
-('ch_3Lr6GYIXxPbvwpsW2WVzafVo', 'cus_MaGox0WNOQ9tLy', NULL, 'FOYER A BANGUNAN PSZ', '600', 'myr', 'succeeded', '2022-10-10 04:38:31'),
-('ch_3Lr6pwIXxPbvwpsW1suzSwS7', 'cus_MaHO5FSUNiXNmZ', NULL, 'DEWAN TAN SRI AINUDDIN WAHID', '12000', 'myr', 'succeeded', '2022-10-10 05:15:05'),
-('ch_3Lr6U0IXxPbvwpsW19WpWoTc', 'cus_MaH2ZBpqsfg6oZ', NULL, 'BILIK LPU (AL-GHAZALI)', '600', 'myr', 'succeeded', '2022-10-10 04:52:25'),
-('ch_3Lr6xmIXxPbvwpsW28nohmnk', 'cus_MaHWsJ4PA72fVr', NULL, 'DEWAN JUMAAH', '5100', 'myr', 'succeeded', '2022-10-10 05:23:11'),
-('ch_3LrF7wIXxPbvwpsW2w7h1IhD', 'cus_MaPxUAlsfc9o2m', NULL, 'BILIK ILMUAN 1', '6800', 'myr', 'succeeded', '2022-10-10 14:06:11'),
-('ch_3LrGtEIXxPbvwpsW0GHHtFpM', 'cus_MaRm8VdG7E5YaA', NULL, 'DEWAN TAN SRI AINUDDIN WAHID', '20000', 'myr', 'succeeded', '2022-10-10 15:59:08'),
-('ch_3LrGu1IXxPbvwpsW1tNmAVTL', 'cus_MaRnSKmFQfZ0by', NULL, 'DEWAN TAN SRI AINUDDIN WAHID', '20000', 'myr', 'succeeded', '2022-10-10 15:59:57'),
-('ch_3LrGweIXxPbvwpsW0LYRrXew', 'cus_MaRq6Ico3GQnmu', 'cheesen.987@gmail.com', 'BILIK ILMUAN 3', '10800', 'myr', 'succeeded', '2022-10-10 16:02:40'),
-('ch_3LrIMGIXxPbvwpsW2NuS51PO', 'cus_MaTI7qofGdxrkX', 'tancheesen123@hotmail.com', 'DEWAN BANQUET II', '2100', 'myr', 'succeeded', '2022-10-10 17:33:12');
+('ch_3Lrtc6IXxPbvwpsW1cQqhF8S', 'cus_Mb5npkWtyEFo7W', 'cheesen.987@gmail.com', 'DEWAN TAN SRI AINUDDIN WAHID', '12000', 'myr', 'succeeded', '2022-10-12 09:20:01'),
+('ch_3LrtfPIXxPbvwpsW0IKKBOhU', 'cus_Mb5rEh8nE8aBps', 'tancheesen123@hotmail.com', 'DEWAN JUMAAH', '1700', 'myr', 'succeeded', '2022-10-12 09:23:26'),
+('ch_3LrudPIXxPbvwpsW0t2GAkfb', 'cus_Mb6rj8CM1tCsJc', 'shaoyuan0228@gmail.com', 'FOYER B BANGUNAN PSZ', '600', 'myr', 'succeeded', '2022-10-12 10:25:27'),
+('ch_3LrufcIXxPbvwpsW2xaqIPF6', 'cus_Mb6tA4S1kWm36z', 'cheesen.987@gmail.com', 'BILIK GERAKAN', '3250', 'myr', 'succeeded', '2022-10-12 10:27:43'),
+('ch_3LruHJIXxPbvwpsW0MweZQIh', 'cus_Mb6Uyj9AbUJRDw', 'tancheesen123@hotmail.com', 'BILIK LPU (AL-GHAZALI)', '900', 'myr', 'succeeded', '2022-10-12 10:02:37'),
+('ch_3LruJzIXxPbvwpsW0s65sN0Y', 'cus_Mb6XzY7R6Hrimj', 'tancheesen123@hotmail.com', 'BILIK LPU (AL-GHAZALI)', '900', 'myr', 'succeeded', '2022-10-12 10:05:22'),
+('ch_3LruLHIXxPbvwpsW2Qzpqhkc', 'cus_Mb6YL2By1A3Ukp', 'tancheesen123@hotmail.com', 'BILIK LPU (AL-GHAZALI)', '900', 'myr', 'succeeded', '2022-10-12 10:06:43'),
+('ch_3LruMqIXxPbvwpsW1FOlI1AA', 'cus_Mb6ZXFWOwvUMsZ', 'tancheesen123@hotmail.com', 'BILIK LPU (AL-GHAZALI)', '900', 'myr', 'succeeded', '2022-10-12 10:08:20'),
+('ch_3LruNsIXxPbvwpsW1dGgqgRP', 'cus_Mb6bU8drK4YKbt', 'tancheesen123@hotmail.com', 'BILIK LPU (AL-GHAZALI)', '900', 'myr', 'succeeded', '2022-10-12 10:09:23'),
+('ch_3LruPyIXxPbvwpsW1y0jrnA6', 'cus_Mb6dsbifZoVbif', 'tancheesen123@hotmail.com', 'BILIK GERAKAN', '500', 'myr', 'succeeded', '2022-10-12 10:11:33'),
+('ch_3LruTrIXxPbvwpsW1yl7GYTU', 'cus_Mb6hlSBRvHFXWn', 'tancheesen123@hotmail.com', 'DEWAN AZMAN HASHIM', '16000', 'myr', 'succeeded', '2022-10-12 10:15:35'),
+('ch_3LruUvIXxPbvwpsW1pYprTEy', 'cus_Mb6ic5VDRGw1YD', 'tancheesen123@hotmail.com', 'DEWAN SEMINAR', '5100', 'myr', 'succeeded', '2022-10-12 10:16:40'),
+('ch_3LruX6IXxPbvwpsW2gBPVXwz', 'cus_Mb6k4dWEHfjolI', 'tancheesen123@hotmail.com', 'DEWAN SEMINAR', '5100', 'myr', 'succeeded', '2022-10-12 10:18:56'),
+('ch_3LruYqIXxPbvwpsW0Hhiwqxs', 'cus_Mb6mUmVKnRbDG5', 'tancheesen123@hotmail.com', 'DEWAN SEMINAR', '5100', 'myr', 'succeeded', '2022-10-12 10:20:44'),
+('ch_3LrzTGIXxPbvwpsW2CPdBtJK', 'cus_MbBqE1nZi8tgqQ', 'cheesen.987@gmail.com', 'FOYER A BANGUNAN PSZ', '1200', 'myr', 'succeeded', '2022-10-12 15:35:17'),
+('ch_3LrzUUIXxPbvwpsW0v4Yijpu', 'cus_MbBsyJWruVPNEE', 'cheesen.987@gmail.com', 'DATARAN ILMU', '500', 'myr', 'succeeded', '2022-10-12 15:36:33'),
+('ch_3Ls0nhIXxPbvwpsW1b3eqHYI', 'cus_MbDEX1g9p09FOK', 'cheesen.987@gmail.com', 'DEWAN BANQUET', '1240', 'myr', 'succeeded', '2022-10-12 17:00:28'),
+('ch_3Ls0qNIXxPbvwpsW2fHOSFQd', 'cus_MbDG56Bk0lWPUV', 'cheesen.987@gmail.com', 'DEWAN TAN SRI AINUDDIN WAHID', '8000', 'myr', 'succeeded', '2022-10-12 17:03:14'),
+('ch_3Ls17AIXxPbvwpsW2KaeHYRg', 'cus_MbDYkYHCiVuZ8w', 'tancheesen123@hotmail.com', 'DEWAN BANQUET II', '700', 'myr', 'succeeded', '2022-10-12 17:20:35');
 
 -- --------------------------------------------------------
 
@@ -308,7 +287,7 @@ INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `creat
 ('cheesen.987@gmail.com', 'tancheesen43', 'Student', 'cd109530ffd5e10e78c9d6f44db77847', 1, '2022-09-13 12:39:13.741453'),
 ('FalseEmail@gmail.com', '543543', 'Staff', 'b8c0155d3d69c217bdc6520a7d2323b2', 0, '2022-09-13 22:26:41.219360'),
 ('shaoyuan0228@gmail.com', 's', 'Staff', '0aeece83f379a472d9456fdba72e2341', 1, '2022-10-03 13:44:52.171066'),
-('tancheesen123@hotmail.com', 'tancheesen12', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856');
+('tancheesen123@hotmail.com', 'tancheesen1254', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856');
 
 -- --------------------------------------------------------
 
@@ -356,9 +335,9 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 --
 
 INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`, `Image`) VALUES
-('A20DW1114', 'lonely123', 'tancheesen123@hotmail.com', '01115386485 ', 'lonely123 - 2022.10.08 - 09.54.19am.jpg'),
+('A20DW1114', 'lonely1234', 'tancheesen123@hotmail.com', '01115386485  ', 'lonely123 - 2022.10.08 - 09.54.19am.jpg'),
 ('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987  ', 'noprofil.jpg'),
-('test3', 'testing3.3.133', 'chee.sen987@gmail.com', '0123456789               ', 'testing3.3.133 - 2022.10.05 - 04.36.09pm.png'),
+('test3', 'testing3.3.133', 'chee.sen987@gmail.com', '0123456789               ', 'testing3.3.133 - 2022.10.12 - 01.06.11am.png'),
 ('testingFail1', 'testingFail2', 'FalseEmail@gmail.com', '543534', 'noprofil.jpg');
 
 --
