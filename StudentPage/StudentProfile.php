@@ -69,7 +69,6 @@
                     include "..\case1\FBS.php";
                       session_start(); 
                       //$email = $_SESSION['username'];
-                
 
                       $userId = $_SESSION['username'];
                       $listOfStudent = getListOfUserCustomer($userId);
@@ -91,6 +90,18 @@
                       $verified = $row2['verified'];
                       
                     ?>
+                    <Style>
+                      body{
+                        background: url(../StudentPage/assets/images/StudentPagephoto/CampusUTMKL.png);
+                        height: 100%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        display: flex;
+                        background-size: 100%;
+                        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(../StudentPage/assets/images/StudentPagephoto/CampusUTMKL.png);
+                      }
+                
+                    </Style>
 <body>
   <!-- Header Section Start -->
   <div id="page" class="section">
