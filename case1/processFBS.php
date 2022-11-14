@@ -273,35 +273,38 @@ else if(isSet($_POST['register'])){
     $userEmail = $_POST['username'];
     echo $userEmail;
 
-
+    
     if(($userRecord) > 0){
         print_r($_POST);
-        if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')&& ($userRecord['verified'] == 1)){
-            $userInfoQry = getListOfUserCustomer($userEmail);
-            $userInfoRecord =mysqli_fetch_assoc($userInfoQry);
-            $_SESSION['name'] =  $userInfoRecord['name']; 
-            header('Location:..\StudentPage');
-        }else if (($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Admin')&& ($userRecord['verified'] == 1)){
-
-            header('Location:..\NiceAdmin\homepage.php');
-            
-        }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')&& ($userRecord['verified'] == 1)){
-            $staffInfoQry = getListOfUserStaff($userEmail);
-            $staffInfoRecord =mysqli_fetch_assoc($staffInfoQry);
-            $_SESSION['name'] =  $staffInfoRecord['name']; 
-            echo $_SESSION['name'];
-            header('Location:..\StaffPage');
-        }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] != $userRecord['password'])){
-            
-            header('Location:..\LoginSignupPage\index.php?error=falseemailorpassword');
-        }else if($userRecord['verified'] == 0){
-            
-            header('Location:..\LoginSignupPage\index.php?error=noverify');
-        }else{
-
-            header('Location:..\LoginSignupPage\index.php');
-            
+        if (password_verify($_POST['password'], $userRecord['password'])){
+            if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Student')&& ($userRecord['verified'] == 1)){
+                $userInfoQry = getListOfUserCustomer($userEmail);
+                $userInfoRecord =mysqli_fetch_assoc($userInfoQry);
+                $_SESSION['name'] =  $userInfoRecord['name']; 
+                header('Location:..\StudentPage');
+            }else if (($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Admin')&& ($userRecord['verified'] == 1)){
+    
+                header('Location:..\NiceAdmin\homepage.php');
+                
+            }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] == $userRecord['password']) && ($userRecord['userType'] == 'Staff')&& ($userRecord['verified'] == 1)){
+                $staffInfoQry = getListOfUserStaff($userEmail);
+                $staffInfoRecord =mysqli_fetch_assoc($staffInfoQry);
+                $_SESSION['name'] =  $staffInfoRecord['name']; 
+                echo $_SESSION['name'];
+                header('Location:..\StaffPage');
+            }else if(($_POST['username'] == $userRecord['userId']) && ($_POST['password'] != $userRecord['password'])){
+                
+                header('Location:..\LoginSignupPage\index.php?error=falseemailorpassword');
+            }else if($userRecord['verified'] == 0){
+                
+                header('Location:..\LoginSignupPage\index.php?error=noverify');
+            }else{
+    
+                header('Location:..\LoginSignupPage\index.php');
+                
+            }
         }
+        
 
     }else {
 

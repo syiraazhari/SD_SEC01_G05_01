@@ -193,7 +193,7 @@ function addRegisterStaff(){
     $name = $_POST['name'];
     $MatricNum = $_POST['MatricNum'];
     $userId =$_POST['userId'];
-    $password =$_POST['password'];
+    $passwordEncry =$_POST['password'];
     $phoneNum = $_POST['phoneNum'];
     
 
@@ -210,6 +210,7 @@ function addRegisterStaff(){
     $name = $mysqli->real_escape_string($name);
     $vkey = md5(time().$name);
     //$password = md5($password);
+    $password = password_hash($passwordEncry, PASSWORD_DEFAULT);
 
     $sql = "insert into user(userId, password, userType,vkey)
     values('$userId','$password','Staff','$vkey')";
@@ -258,7 +259,7 @@ function addRegisterStaff(){
     $headers .= 'From: cheesen987@gmail.com';
 
     $message = ' ';
-    $message .= "<a href=http://52.77.215.21/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
+    $message .= "<a href=http://utmfacilitybooking.com/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
 
     //if (mail($email,$subject,$message)) {
@@ -277,7 +278,7 @@ function addAdminAccount()
     $name = $_POST['name'];
     $staffId= $_POST['staffId'];
     $userId =$_POST['email'];
-    $password =$_POST['password'];
+    $passwordEncry =$_POST['password'];
     $phoneNum = $_POST['phoneNum'];
     $userType = $_POST['userType'];
 
@@ -293,6 +294,7 @@ function addAdminAccount()
     $name = $mysqli->real_escape_string($name);
     $vkey = md5(time().$name);
 
+    $password = password_hash($passwordEncry, PASSWORD_DEFAULT);
 
     $sql = "insert into user(userId, password, userType,vkey, verified)
     values('$userId','$password','$userType','$vkey','1')";
@@ -316,7 +318,7 @@ function addRegister(){
     $name = $_POST['name'];
     $MatricNum = $_POST['MatricNum'];
     $userId =$_POST['userId'];
-    $password =$_POST['password'];
+    $passwordEncry =$_POST['password'];
     $phoneNum = $_POST['phoneNum'];
 
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
@@ -331,6 +333,7 @@ function addRegister(){
     $name = $mysqli->real_escape_string($name);
     $vkey = md5(time().$name);
 
+    $password = password_hash($passwordEncry, PASSWORD_DEFAULT);
 
     $sql = "insert into user(userId, password, userType,vkey)
     values('$userId','$password','Student','$vkey')";
@@ -376,9 +379,9 @@ function addRegister(){
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $headers .= 'From: cheesen987@gmail.com';
-
+    C:\wamp64\www\WebProgramming\www\MASTER PROJECT - UBS FACILITY BOOKING\LoginSignupPage\verify.php
     $message = ' ';
-    $message .= "<a href=http://52.77.215.21/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
+    $message .= "<a href=http://utmfacilitybooking.com/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
 
     //if (mail($email,$subject,$message)) {
