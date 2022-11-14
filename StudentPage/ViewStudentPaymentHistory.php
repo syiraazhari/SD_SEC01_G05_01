@@ -44,6 +44,8 @@
         }
         body{
             background: url(../StudentPage/assets/images/StudentPagephoto/CampusUTMKL.png);
+            background-color: grey;
+            background-blend-mode: multiply;
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;

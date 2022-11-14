@@ -391,6 +391,7 @@ function displaySearchPanel()
 }
 function displayTableHeader()
 {
+    echo'<div class="w3-container">';
     echo'<table class="w3-table w3-striped w3-border">';
     echo'<br><tr style="background-color: #265887; color:white; justify-content:centre; align-itms:centre">
                 <th>Bil</th>
@@ -408,6 +409,7 @@ function displayTableHeader()
 
 echo '</div>';
 echo '<br>';
+echo '</table>';
 
 ?>
 
