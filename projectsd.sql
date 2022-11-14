@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 14, 2022 at 08:08 AM
+-- Generation Time: Nov 14, 2022 at 04:33 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `bookerlist` (
 --
 
 INSERT INTO `bookerlist` (`MatricNum`, `name`, `userId`, `phoneNum`, `UserType`) VALUES
+('123332', 'ads2313', 'tansen@graduate.utm.my', '01115386485', 'Student'),
 ('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'Staff'),
 ('test2', 'testing243', 'cheesen.987@gmail.com', '321321321', 'Student'),
 ('testingFail1', 'testingFail2', 'FalseEmail@gmail.com', '543534', 'Staff');
@@ -270,7 +271,7 @@ INSERT INTO `transactions` (`id`, `customer_id`, `email`, `product`, `amount`, `
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `userId` varchar(100) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `userType` varchar(30) NOT NULL DEFAULT 'Student',
   `vkey` varchar(45) NOT NULL,
   `verified` tinyint(1) DEFAULT '0',
@@ -283,11 +284,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `createdate`) VALUES
-('chee.sen987@gmail.com', 'cheesen321', 'Admin', 'b59274db54aba7fd2e2412bad863a47b', 1, '2022-09-13 12:55:35.241720'),
-('cheesen.987@gmail.com', 'tancheesen43', 'Student', 'cd109530ffd5e10e78c9d6f44db77847', 1, '2022-09-13 12:39:13.741453'),
-('FalseEmail@gmail.com', '543543', 'Staff', 'b8c0155d3d69c217bdc6520a7d2323b2', 0, '2022-09-13 22:26:41.219360'),
-('shaoyuan0228@gmail.com', 's', 'Staff', '0aeece83f379a472d9456fdba72e2341', 1, '2022-10-03 13:44:52.171066'),
-('tancheesen123@hotmail.com', 'tancheesen1254', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856');
+('chee.sen987@gmail.com', '$2y$10$WYe.5lbAAz3SFL7k9HFTUe5vIB0n4z7.T.tLzGb8VXjdudg8SrhuG', 'Admin', 'b59274db54aba7fd2e2412bad863a47b', 1, '2022-09-13 12:55:35.241720'),
+('cheesen.987@gmail.com', '$2y$10$oAsrSa5N5nqAvscC.mkKa.ROZ60FHv11xO9pB8NfTqChP8cBsBoOK', 'Student', 'cd109530ffd5e10e78c9d6f44db77847', 1, '2022-09-13 12:39:13.741453'),
+('FalseEmail@gmail.com', '$2y$10$ikZed/naSWbun7ezjiPcK.JA3InG3H01YKe5mwX.eSx0sgWqeT1/.', 'Staff', 'b8c0155d3d69c217bdc6520a7d2323b2', 0, '2022-09-13 22:26:41.219360'),
+('shaoyuan0228@gmail.com', '$2y$10$Xz4jUUB3uniD/59z6eYYYuRPeXx5L0RNejIzzl4cbu7st3pNSgdNa', 'Staff', '0aeece83f379a472d9456fdba72e2341', 1, '2022-10-03 13:44:52.171066'),
+('tancheesen123@hotmail.com', '$2y$10$cJFORh9y8tCQns4T56F3pecT179YAcuazOcgGvC/Mw7VQhggVZBD2', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856'),
+('tansen@graduate.utm.my', '$2y$10$1kpo9r3uO9DYIqMx4H0Jre1FM8X7zaBsG726/ITukDAdKaqjGI17q', 'Student', '0d5fd4e5a1345f60dee9301ce04067d1', 0, '2022-11-14 10:49:20.966154');
 
 -- --------------------------------------------------------
 
@@ -311,6 +313,7 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 --
 
 INSERT INTO `userinfo` (`MatricNum`, `name`, `userId`, `phoneNum`, `Image`) VALUES
+('123332', 'ads2313', 'tansen@graduate.utm.my', '01115386485', 'noprofil.jpg'),
 ('test2', 'testing243', 'cheesen.987@gmail.com', '321321321', 'testing2.2 - 2022.10.05 - 04.18.35pm.png');
 
 -- --------------------------------------------------------
