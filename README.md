@@ -1,4 +1,5 @@
 # SD_SEC01_G05_01
+
 1. Please download WampServer from the link 
 (https://www.wampserver.com/en/)
 2. Refer the youtube video to install and setup the WampServer 
@@ -12,6 +13,10 @@
 in the "Index of" page.
 6. Select "LoginSignupPage" folder in the index of project folder and now
 you can access to our system.
+7. Open phpmyadmin from WampServer panel or under Wampserver localhost page
+under "Your Aliases".
+8. Refer to the youtube video to setup the phpmyadmin and import sql dumb 
+file.(https://www.youtube.com/watch?v=2okNGAvCW7k)
 
 Link of Github for source code
 (https://github.com/syiraazhari/SD_SEC01_G05_01.git)
@@ -20,3 +25,15 @@ Link of the project
 (http://utmfacilitybooking.com/SD_SEC01_G05_01/LoginSignupPage/)
 
 List of the username and password
+
+Student
+User Id: cheesen.987@gmail.com
+Password: tancheesen43
+
+Staff
+User Id: tancheesen123@hotmail.com
+Password: tancheesen1254
+
+Admin
+User Id: chee.sen987@gmail.com
+Password: cheesen321
