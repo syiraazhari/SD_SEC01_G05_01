@@ -13,9 +13,8 @@
 }
 
 body {
-  background-image: url("");
   font-family: "Open Sans", sans-serif;
-  background-image: url('assets\images\StudentPagephoto\CampusUTMKL.png');
+  background-image: url('StudentPage\StaffPagePicture\CampusUTMKL.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;

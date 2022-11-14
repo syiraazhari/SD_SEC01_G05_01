@@ -92,7 +92,6 @@
                       
                     ?>
 <body>
-  <div class="bg"></div>
   <!-- Header Section Start -->
   <div id="page" class="section">
         <!-- Header Section Start -->
@@ -118,7 +117,7 @@
                                     <ul>
                                         <li>
                                             <a href="index.html"><span
-                                                        class="menu-text" style="color:whitesmoke">Homepage</span></a>
+                                              class="menu-text" style="color:whitesmoke">Homepage</span></a>
                                         </li>
                                         <li>
                                             <a href="about.html"><span class="menu-text" style="color:whitesmoke">About Us</span></a>
