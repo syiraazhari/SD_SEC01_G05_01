@@ -262,7 +262,10 @@ session_start();
              background-color: #03a9f4;
              color: white;
              pointer-events: none;
-        }           
+        }
+        table1{
+            margin: 25px 50px 75px 100px;
+        }
 
     </style>
 </head>
@@ -398,7 +401,8 @@ function displaySearchPanel()
 }
 function displayTableHeader()
 {
-    echo'<table class="w3-table w3-striped w3-border">';
+    echo '<div class="w3-container" id="table1">';
+    echo'<table class="w3-table w3-striped w3-border" >';
     echo'<br><tr style="background-color: #265887; color:white; justify-content:centre; align-itms:centre">
                 <th>Bil</th>
                 <th>Name</th>
@@ -412,9 +416,8 @@ function displayTableHeader()
                 </tr>';
 
 }
-
-echo '</div>';
 echo '<br>';
+echo'</table>';
 
 ?>
 
