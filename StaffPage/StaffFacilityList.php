@@ -55,78 +55,191 @@ session_start();
             background-color: pink;
         }
         body{
-            background: url(StaffPagePicture/building.jpg);
+            background: url(StaffPagePicture/CampusUTMKL.png);
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            animation: backwards;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(StaffPagePicture/CampusUTMKL.png);
         }
 
-        .chkbutton {
-        border-radius: 100px;
-        background-color: #154360;
-        border: none;
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 14px;
-        padding: 15px;
-        width: 170px;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 4px 330px;
-        }
-
-        .chkbutton span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-        }
-
-        .chkbutton span:after {
-        content: '\00bb';
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -20px;
-        transition: 0.5s;
-        }
-
-        .chkbutton:hover span {
-        padding-right: 25px;
-        }
-
-        .button:hover span:after {
-        opacity: 1;
-        right: 0;
-        }
-
-        .button1:hover {
-            background-color: #008080;
-            color: white;
-        }
-
-        .button2 {
-            background-color: #154360; /* Green */
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
+        .background body {
+            display: flex;
+            justify-content: center;
             align-items: center;
-            display: inline-block;
-            font-size: 15px;
-            margin: 4px 2px;
-            cursor: pointer;
-            
+            height: 100vh;
+            background: #222;
+            margin-top: 5%;
+        }
+        
+        .background-border {
+             --border-width: 3px;
+             position: relative;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             width: 100px;
+             height: 250px;
+             font-family: Lato, sans-serif;
+             font-size: 2.5rem;
+             text-transform: uppercase;
+             color: white;
+             background: #222;
+             border-radius: var(--border-width);
         }
 
-        .button5 {border-radius: 50%;}
+        .background-border::after{
+            position: absolute;
+            content: "";
+            top: calc(-1 * var(--border-width));
+            left: calc(-1 * var(--border-width));
+            z-index: -1;
+            width: calc(100% + var(--border-width) * 2);
+            height: calc(100% + var(--border-width) * 2);
+            background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+            background-size: 300% 300%;
+            background-position: 0 50%;
+            border-radius: calc(2 * var(--border-width));
+            animation: moveGradient 3s alternate infinite;
+        }
+        
+        @keyframes moveGradient {
+         50% {
+           background-position: 100% 50%;
+         }
+        }
 
-        .button5:hover {
-            background-color: #008080;
-            color: white;
+
+        .content body {
+        	display: flex;
+        	background: #000;
+        	min-height: 100vh;
+        	align-items: center;
+        	justify-content: center;
+        }
+
+        .content {
+        	position: relative;
+        }
+
+        .content h2 {
+        	color: #fff;
+        	font-size: 4em;
+        	position: absolute;
+        	transform: translate(-50%, -50%);
+          margin-left: 38%;
+        }
+
+        .content h2:nth-child(1) {
+        	color: transparent;
+        	-webkit-text-stroke: 2px #03a9f4;
+        }
+
+        .content h2:nth-child(2) {
+        	color: #03a9f4;
+        	animation: animate 4s ease-in-out infinite;
+        }
+
+        @keyframes animate {
+        	0%,
+        	100% {
+        		clip-path: polygon(
+        			0% 45%,
+        			16% 44%,
+        			33% 50%,
+        			54% 60%,
+        			70% 61%,
+        			84% 59%,
+        			100% 52%,
+        			100% 100%,
+        			0% 100%
+        		);
+        	}
+        
+        	50% {
+        		clip-path: polygon(
+        			0% 60%,
+        			15% 65%,
+        			34% 66%,
+        			51% 62%,
+        			67% 50%,
+        			84% 45%,
+        			100% 46%,
+        			100% 100%,
+        			0% 100%
+        		);
+        	}
+        }
+        .btn1 body {
+          height: 100vh;
+          background: #eee;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .btn1 {
+          width: 150px;
+          height: 50px;
+          border: 5px solid purple;
+          font-family: 'Cinzel', serif;
+          font-weight: 700;
+          font-size: 20px;
+          color: purple;
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          z-index: 0;
+          transition: 1s;
+          margin: auto;
+          margin-bottom: 2%;
+          margin-top: 2%;
+          font-size:medium; 
+          font-weight:900;
+        }
+
+        .btn1::before, .btn::after {
+          position: absolute;
+          background: #eee;
+          z-index: -1;
+          transition: 1s;
+          content: '';
+        }
+
+        .btn1::before {
+          height: 50px;
+          width: 130px;
+        }
+
+        .btn1::after {
+          width: 150px;
+          height: 30px;
+        }
+
+        .noselect {
+          -webkit-touch-callout: none;
+            -webkit-user-select: none;
+             -khtml-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+        }
+
+        .btn1:hover::before {
+          width: 0px;
+          background: #fff;
+        }
+
+        .btn1:hover::after {
+          height: 0px;
+          background: #fff;
+        }
+
+        .btn1:hover {
+          background: #fff;
         }
 
         tr:nth-child(odd)
@@ -134,6 +247,22 @@ session_start();
             background-color: #D4E6F1;
             color:black;
         }
+
+        tr:nth-child(even)
+        {
+            background-color: #D4E6F1;
+            color:black;
+        }
+
+        tr:hover :nth-child(even) {background-color: #A0E4CB;}
+
+        tr:hover :nth-child(odd) {background-color: #A0E4CB;}
+
+        th {
+             background-color: #03a9f4;
+             color: white;
+             pointer-events: none;
+        }           
 
     </style>
 </head>
@@ -152,29 +281,27 @@ session_start();
 <!--End of Tawk.to Script-->
 
 <body>
-<br><br><div class="w3-container" style="width:70%;margin:auto">'
-
-<br><br>
-
+<br><br><br><br><br><br>
+<div class="content" style="margin-left: 20%;">
+    <h2>SEARCH FACILITY</h2>
+    <h2>SEARCH FACILITY</h2>
+</div>
+<br><br><br>
+<div class="background-border" style="width:50%;margin:auto; border-radius:20px">
 <form action=" " method ="POST">
-    <div class="w3-container" style="background-color:#265887; color:red; border-radius:20px">
-    <h2>CHECK FACILITY</h2>
-    </div>
-    <div class="w3-container w3-white w3-padding-16" style=" border-radius:20px">
-        <div class="w3-row-padding" style="margin:20px; justify-content:center">
             <div class="w3-half w3-margin-bottom">
-                <label for="startDate">Start Date</label>
-                <input type="date" name = "startDate">
+                <label style="color:white; font-size:medium; font-weight:900" for="startDate">Start Date</label>
+                <br><input type="date" style="margin-left: 5%;font-size:25px;text-transform:uppercase; text-align:center" name = "startDate">
             </div>
             <div class="w3-half w3-margin-bottom">
-                <label for="endDate">End Date</label>
-                <input type="date" name = "endDate">
-            </div>
-        </div>
-        <button class="btn btn-primary" type="submit" name = "checkAvailable" value = "Check"><span></span>Check</button>
-        
+                <label style="margin-left: 5%;color:white; font-size:medium; font-weight:900" for="endDate">End Date</label>
+                <br><input type="date" style="margin-left: 15%;font-size: 25px;text-transform:uppercase; text-align:center" name = "endDate">
+            </div >
+            <button class="btn1" type="submit" name = "checkAvailable" value = "Check">
+                <br><br>
+                <span class="noselect">SEARCH</span>
+            </button>
 </form><br><br>
-
 </div>
 <?php
 include "../case1/FBS.php";
@@ -228,7 +355,7 @@ function displayAvailableList() {
         echo '<form action= "..\Test_stripe\index.php" method="POST">';
         echo'<input type="hidden" name="FacilityId" value = "'.$row["facilityId"].'">';
         echo'<input type="hidden" name="pictureCode" id= "pCode" value = "'.$detailfacility['Image'].'">';
-        echo'<input class="button2 button5" type="submit" name="" value="View">';
+        echo'<input class="btn btn-primary rounded-pill" type="submit" name="" value="Book Now">';
         echo '</form>';
         echo'</td>';
         
