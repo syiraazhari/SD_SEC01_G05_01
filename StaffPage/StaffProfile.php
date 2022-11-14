@@ -56,19 +56,8 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-    <style>
-        body{
-            background: url(StaffPagePicture/CampusUTMKL.png);
-            background-color: grey;
-            background-blend-mode: multiply;
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-
-        }
-    </style>
 </head>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -108,6 +97,26 @@
                       $verified = $row2['verified'];
                       
                     ?>
+                  <style>
+                  body{
+            background: url(StaffPagePicture/CampusUTMKL.png);
+            height: 100%;
+            background-position: cover;
+            background-size: cover;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(StaffPagePicture/CampusUTMKL.png);
+        }
+
+        .background body {
+            display: cover;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #222;
+            margin-top: 5%;
+        }
+        
+        
+        </style>
 <body>
   <!-- Header Section Start -->
   <div id="page" class="section">
@@ -121,7 +130,7 @@
                         <div class="col-xl-2 col-auto order-0">
                             <div class="header-logo">
                                 <a href="index.html">
-                                    <img class="dark-logo" src="assets/images/StudentPagephoto/UTM-LOGO1.png" width = "100" height="90" alt="UTM Logo">
+                                    <img class="dark-logo" src="assets/images/StudentPagephoto/UTM-LOGO1.png" width = "100" height="90" alt="UTM Logo" style="background-image: url ('StaffPagePicture/CampusUTMKL');">
                                 </a>
                             </div>
                         </div>
@@ -185,7 +194,7 @@
         </div>
         <!-- Header Section End -->
 
-    <div id="site-main-mobile-menu" class="site-main-mobile-menu">
+    <div id="site-main-mobile-menu" class="site-main-mobile-menu" style="background-image: StaffPagePicture/CampusUTMKL">
         <div class="site-main-mobile-menu-inner">
             <div class="mobile-menu-header">
                 <div class="mobile-menu-logo">
@@ -328,6 +337,13 @@
                     ?>
                   </div>
 
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">password</div>
+                    <?php
+                    echo '<div class="col-lg-9 col-md-8">'.$password.'</div>'
+
+                    ?>
+                  </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">User Category</div>
@@ -397,6 +413,16 @@
                       <?php
                          echo '<div class="col-lg-9 col-md-8">'.$email.'</div>';
                           echo '<input name="email" type="hidden" class="form-control" id="fullName" value="'.$email.'"readonly>';
+                        ?>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Password</label>
+                      <div class="col-md-8 col-lg-9">
+                      <?php
+                          echo '<div class="col-lg-9 col-md-8">'.$password.'</div>';
+                          echo '<input name="password" type="hidden" class="form-control" id="fullName"  style="color:red"value="'.$password.'"readonly>';
                         ?>
                       </div>
                     </div>
