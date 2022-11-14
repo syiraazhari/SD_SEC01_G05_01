@@ -379,7 +379,7 @@ function addRegister(){
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $headers .= 'From: cheesen987@gmail.com';
-    C:\wamp64\www\WebProgramming\www\MASTER PROJECT - UBS FACILITY BOOKING\LoginSignupPage\verify.php
+
     $message = ' ';
     $message .= "<a href=http://utmfacilitybooking.com/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
