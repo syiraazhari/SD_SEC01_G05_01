@@ -407,7 +407,7 @@
                     <tr>
                       <th scope="col" style="text-align: center;">Bil</th>
                       <th scope="col"style="text-align: center;"> Email</th>
-                      
+
                       <th scope="col" style="text-align: center;">User Type</th>
                       <th scope="col" style="text-align: center;">Verify Key</th>
                       <th scope="col" style="text-align: center;">Verify Status</th>
@@ -425,10 +425,37 @@
                     echo'<tr>';
                     echo '<th scope ="row"style="text-align: center;">'.$count.'</th>';
                     echo '<td style="text-align: center;">'.($acc['userId']).'</td>';
-                    //echo '<td style="text-align: center;">'.($acc['password']).'</td>';
-                    echo '<td style="text-align: center;">'.($acc['userType']).'</td>';
+                    if($acc['userType'] == "Staff"){
+                      echo '
+                      <div class="card">
+                      <td style="text-align: center;" name = "verified" ><span class="badge rounded-pill bg-info text-dark">Staff</span></td>
+                      </div>';
+                      
+                    }else if($acc['userType'] == "Student"){
+                      echo'
+                      <div class="card">
+                      <td style="text-align: center;" name = "verified" ><span class="badge rounded-pill bg-light text-dark">Student</span></td>
+                      </div>';
+                    }else if($acc['userType'] == "Admin"){
+                      echo'
+                      <div class="card">
+                      <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-dark">Admin</span></td>
+                      </div>';
+                    }
+                    //echo '<td style="text-align: center;">'.($acc['userType']).'</td>';
                     echo '<td style="text-align: center;">'.($acc['vkey']).'</td>';
-                    echo '<td style="text-align: center;">'.$acc['verified'].'</td>';
+                    if($acc['verified'] == 0){
+                      echo '
+                      <div class="card">
+                      <td style="text-align: center;" name = "verified" ><span  style="font-size:15px" class="badge rounded-pill bg-danger">Unverified</span></td>
+                      </div>';
+                      
+                    }else{
+                      echo'
+                      <div class="card">
+                      <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-success">Verified</span></td>
+                      </div>';
+                    }
                     echo '<td style="text-align: center;">'.$acc['createdate'].'</td>';
                     echo '<td style="text-align: center;"></td>';
                     echo '<td style="text-align: center;"></td>';
@@ -439,10 +466,37 @@
                       echo'<tr>';
                     echo '<th scope ="row" style="text-align: center;">'.$count.'</th>';
                     echo '<td style="text-align: center;"><input type="hidden" name="email" value='.($acc['userId']).' placeholder="Your Email" autocomplete="off">'.($acc['userId']).'</td>';
-                    //echo '<td style="text-align: center;" name = "password" >'.($acc['password']).'</td>';
-                    echo '<td style="text-align: center;" name = "userType" >'.($acc['userType']).'</td>';
+                    if($acc['userType'] == "Staff"){
+                      echo '
+                      
+                      <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-info text-dark">Staff</span></td>
+                      ';
+                      
+                    }else if($acc['userType'] == "Student"){
+                      echo'
+                      
+                      <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-warning text-dark">Student</span></td>
+                      ';
+                    }else if($acc['userType'] == "Admin"){
+                      echo'
+                      
+                      <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-dark">Admin</span></td>
+                      ';
+                    }
+                    //echo '<td style="text-align: center;" name = "userType" >'.($acc['userType']).'</td>';
                     echo '<td style="text-align: center;" name = "vkey" >'.($acc['vkey']).'</td>';
-                    echo '<td style="text-align: center;" name = "verified" >'.$acc['verified'].'</td>';
+                    if($acc['verified'] == 0){
+                      echo '
+                      
+                      <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-danger">Unverified</span></td>
+                      ';
+                      
+                    }else{
+                      echo'
+                      
+                      <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-success">Verified</span></td>
+                      ';
+                    }
                     echo '<td style="text-align: center;" name = "createdate" >'.$acc['createdate'].'</td>';
                     echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-check-circle"></i></button></td>';
                     echo '

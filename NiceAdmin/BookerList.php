@@ -540,7 +540,24 @@ $verified = $row2['verified'];
                                 echo '<td style="text-align: center;" name = "name" >' . ($acc['name']) . '</td>';
                                 echo '<td style="text-align: center;" name = "matricNum" >' . ($acc['MatricNum']) . '</td>';
                                 echo '<td style="text-align: center;" name = "phoneNum" >' . ($acc['phoneNum']) . '</td>';
-                                echo '<td style="text-align: center;"><input type="hidden" name="userType" value=' . ($acc['UserType']) . ' placeholder="Your Email" autocomplete="off">' . ($acc['UserType']) . '</td>';;
+                                if($acc['UserType'] == "Staff"){
+                                    echo '
+                                    
+                                    <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-info text-dark">Staff</span></td>
+                                    ';
+                                    
+                                  }else if($acc['UserType'] == "Student"){
+                                    echo'
+                                    
+                                    <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-warning text-dark">Student</span></td>
+                                    ';
+                                  }else if($acc['UserType'] == "Admin"){
+                                    echo'
+                                    
+                                    <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-dark">Admin</span></td>
+                                    ';
+                                  }
+                                echo '<input type="hidden" name="userType" value=' . ($acc['UserType']) . '>';
                                
                                 echo '<td style="text-align: center;"><button style="text-align: center;" type="submit" name ="info" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-info-circle"></i></button></td>';
                             echo'</form>';
