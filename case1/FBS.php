@@ -305,14 +305,13 @@ function addAdminAccount()
     values('$userId','$password','$userType','$vkey','1')";
     $sql2 ="insert into userinfoStaff(staffId,name, userId,phoneNum) 
     values('$staffId','$name','$userId','$phoneNum')";
-    $sql3 ="insert into bookerlist(MatricNum,name, userId,phoneNum,userType) 
-    values('$staffId','$name','$userId','$phoneNum','$userType')";
+    
     echo $sql;
     echo $sql2;
     echo $sql3;
     $qry =mysqli_query($con,$sql);//execute query
     $qry2 =mysqli_query($con,$sql2);
-    $qry3 =mysqli_query($con,$sql3);
+
 }
 function addRegister(){
     session_start(); 
@@ -708,7 +707,14 @@ function deleteUser($email,$userType){
     }else if($userType == "Staff"){
         $sql4 = "delete from user where userId ='".$userIdToDelete."'";
         $qry4 = mysqli_query($con, $sql4);
-        $sql5 = "delete from userinfo where userId ='".$userIdToDelete."'";
+        $sql5 = "delete from userinfostaff where userId ='".$userIdToDelete."'";
+        $qry5 = mysqli_query($con, $sql5);
+
+
+    }else if($userType == "Admin"){
+        $sql4 = "delete from user where userId ='".$userIdToDelete."'";
+        $qry4 = mysqli_query($con, $sql4);
+        $sql5 = "delete from userinfostaff where userId ='".$userIdToDelete."'";
         $qry5 = mysqli_query($con, $sql5);
 
 
@@ -740,7 +746,7 @@ function updateStaffProfile(){
     $sql .= 'where userId = "' . $userId . '"';
     
     $sql2 = 'update user set ';
-    $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
+    $sql2 .= 'userId= "' . $userId . '",userType="' . $userType . '"';
     $sql2 .= 'where userId = "' . $userId . '"';
 
     $sql3 = 'update bookerlist set ';
@@ -774,8 +780,6 @@ function updateStaffProfile(){
 }
 
 function updateStudentProfile(){
-    session_start();
-
 
     $con = mysqli_connect("localhost", "projectsd", "projectsd", "projectsd");
     if (mysqli_connect_errno()) {
@@ -798,7 +802,7 @@ function updateStudentProfile(){
     $sql .= 'where userId = "' . $userId . '"';
 
     $sql2 = 'update user set ';
-    $sql2 .= 'userId= "' . $userId . '",password="' . $password . '",userType="' . $userType . '"';
+    $sql2 .= 'userId= "' . $userId . '",userType="' . $userType . '"';
     $sql2 .= 'where userId = "' . $userId . '"';
 
     $sql3 = 'update bookerlist set ';

@@ -60,8 +60,7 @@
                       $vkey = $row2['vkey'];
                       $verified = $row2['verified'];
 
-                      
-                      
+                    
                       
                    
                     ?>
@@ -387,8 +386,7 @@
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
                     <?php
-                    echo '<div class="col-lg-9 col-md-8">'.$name.'</div>'
-
+                    echo '<div class="col-lg-9 col-md-8">'.$name.'</div>';
                     ?>
                     <!--<div class="col-lg-9 col-md-8">Sarah Asley</div>-->
                   </div>
@@ -396,7 +394,7 @@
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Matric Number</div>
                     <?php
-                    echo '<div class="col-lg-9 col-md-8">'.$matricNum.'</div>'
+                    echo '<div class="col-lg-9 col-md-8">'.$matricNum.'</div>';
 
                     ?>
                   </div>
@@ -404,7 +402,7 @@
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Phone Number</div>
                     <?php
-                    echo '<div class="col-lg-9 col-md-8">'.$phoneNum.'</div>'
+                    echo '<div class="col-lg-9 col-md-8">'.$phoneNum.'</div>';
 
                     ?>
                   </div>
@@ -412,7 +410,7 @@
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
                     <?php
-                    echo '<div class="col-lg-9 col-md-8">'.$email.'</div>'
+                    echo '<div class="col-lg-9 col-md-8">'.$email.'</div>';
 
                     ?>
                   </div>
@@ -421,7 +419,7 @@
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">User Category</div>
                     <?php
-                    echo '<div class="col-lg-9 col-md-8">'.$userType.'</div>'
+                    echo '<div class="col-lg-9 col-md-8">'.$userType.'</div>';
 
                     ?>
                   </div>

@@ -326,7 +326,7 @@
                   <label for="inputText" class="col-sm-2 col-form-label" >Name</label>
                   <div class="col-sm-10">
                     <?php
-                      echo '<input type="text" name="name" class="form-control" s >';
+                      echo '<input type="text" name="name" class="form-control" >';
                     ?>
                   </div>
                 </div>

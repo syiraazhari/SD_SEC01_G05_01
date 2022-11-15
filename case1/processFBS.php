@@ -49,7 +49,7 @@ else if(isSet($_POST['deleteFacilityButton'])) {
     header("Location:..\NiceAdmin\ViewStudentAccount.php");
 }else if(isSet($_POST['UpdateProfileStaff'])){
         updateStaffProfile();
-        header("Location:..\NiceAdmin\BookerList.php");
+        header("Location:..\StaffPage\StaffProfile.php");
 
     
 }else if(isSet($_POST['UpdateProfileAdmin'])){
@@ -206,7 +206,7 @@ else if(isSet($_POST['register'])){
     $phoneNum = $_POST['phoneNum'];
     $userType = $_POST['userType'];
     addAdminAccount();
-    header('Location:..\NiceAdmin\AddAdminAccount.php');
+    header('Location:..\NiceAdmin\verifyAccount.php');
 
 }else if(isSet($_POST['DeleteAccount'])){
     $email = $_POST['userId'];
@@ -292,9 +292,6 @@ else if(isSet($_POST['register'])){
                 $_SESSION['name'] =  $staffInfoRecord['name']; 
                 echo $_SESSION['name'];
                 header('Location:..\StaffPage');
-            }else if(($_POST['username'] == $userRecord['userId'])){
-                
-                header('Location:..\LoginSignupPage\index.php?error=falseemailorpassword');
             }else if($userRecord['verified'] == 0){
                 
                 header('Location:..\LoginSignupPage\index.php?error=noverify');
