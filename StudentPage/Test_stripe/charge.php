@@ -5,7 +5,7 @@ session_start();
   require_once('lib/pdo_db.php');
   require_once('models/Customer.php');
   require_once('models/Transaction.php');
-  include "../case1/FBS.php";
+  include "../../case1/FBS.php";
 
 
 

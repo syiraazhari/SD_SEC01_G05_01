@@ -30,7 +30,7 @@
 <body>
   <div class="container">
     <?php
-      include "..\case1\FBS.php";
+      include "../../case1/FBS.php";
       session_start(); 
 
       $email = $_SESSION['username'];
@@ -55,7 +55,7 @@
               <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                  <img style="text-align: center;" src="..\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 1300 height = 700 title="<?php echo $detailfacility['Image']; ?>" >
+                  <img style="text-align: center;" src="../../Facility/imgFacility/<?php echo $detailfacility['Image']; ?>" width = 1300 height = 700 title="<?php echo $detailfacility['Image']; ?>" >
                   </div>
                   
                 </div>
@@ -218,7 +218,7 @@
     <button style="height:40px;width:600px" type="submit" name="completePayment" class="btn btn-primary">Pay</button>
   </form>
 
-  <form action= "..\case1\processFBS.php" method="POST">
+  <form action= "../../case1/processFBS.php" method="POST">
   <br>
   <button style="height:40px;width:600px" type="submit" name="cancelPayment" class="btn btn-primary">Cancel Payment</button>
   </form>
