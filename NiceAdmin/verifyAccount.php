@@ -407,7 +407,7 @@
                     <tr>
                       <th scope="col" style="text-align: center;">Bil</th>
                       <th scope="col"style="text-align: center;"> Email</th>
-                      <th scope="col" style="text-align: center;">Password</th>
+                      
                       <th scope="col" style="text-align: center;">User Type</th>
                       <th scope="col" style="text-align: center;">Verify Key</th>
                       <th scope="col" style="text-align: center;">Verify Status</th>
@@ -425,7 +425,7 @@
                     echo'<tr>';
                     echo '<th scope ="row"style="text-align: center;">'.$count.'</th>';
                     echo '<td style="text-align: center;">'.($acc['userId']).'</td>';
-                    echo '<td style="text-align: center;">'.($acc['password']).'</td>';
+                    //echo '<td style="text-align: center;">'.($acc['password']).'</td>';
                     echo '<td style="text-align: center;">'.($acc['userType']).'</td>';
                     echo '<td style="text-align: center;">'.($acc['vkey']).'</td>';
                     echo '<td style="text-align: center;">'.$acc['verified'].'</td>';
@@ -439,7 +439,7 @@
                       echo'<tr>';
                     echo '<th scope ="row" style="text-align: center;">'.$count.'</th>';
                     echo '<td style="text-align: center;"><input type="hidden" name="email" value='.($acc['userId']).' placeholder="Your Email" autocomplete="off">'.($acc['userId']).'</td>';
-                    echo '<td style="text-align: center;" name = "password" >'.($acc['password']).'</td>';
+                    //echo '<td style="text-align: center;" name = "password" >'.($acc['password']).'</td>';
                     echo '<td style="text-align: center;" name = "userType" >'.($acc['userType']).'</td>';
                     echo '<td style="text-align: center;" name = "vkey" >'.($acc['vkey']).'</td>';
                     echo '<td style="text-align: center;" name = "verified" >'.$acc['verified'].'</td>';

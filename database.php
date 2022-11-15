@@ -11,7 +11,7 @@
 
     //$sql = 'update user set ';
     //$sql .= 'password= "' . $password . '"';
-    //$sql .= 'where userId = "FalseEmail@gmail.com"';
+    //$sql .= 'where userId = "cheesen.987@gmail.com"';
 
     //echo $sql;
     //$qry = mysqli_query($con, $sql);
