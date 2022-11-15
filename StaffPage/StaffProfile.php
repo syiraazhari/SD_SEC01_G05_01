@@ -101,8 +101,12 @@
                   body{
             background: url(StaffPagePicture/CampusUTMKL.png);
             height: 100%;
-            background-position: cover;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-repeat: no-repeat;
             background-size: cover;
+            background-attachment: fixed;
             background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(StaffPagePicture/CampusUTMKL.png);
         }
 
