@@ -427,20 +427,20 @@
                     echo '<td style="text-align: center;">'.($acc['userId']).'</td>';
                     if($acc['userType'] == "Staff"){
                       echo '
-                      <div class="card">
+                      
                       <td style="text-align: center;" name = "verified" ><span class="badge rounded-pill bg-info text-dark">Staff</span></td>
-                      </div>';
+                      ';
                       
                     }else if($acc['userType'] == "Student"){
                       echo'
-                      <div class="card">
+                      
                       <td style="text-align: center;" name = "verified" ><span class="badge rounded-pill bg-light text-dark">Student</span></td>
-                      </div>';
+                      ';
                     }else if($acc['userType'] == "Admin"){
                       echo'
-                      <div class="card">
+                      
                       <td style="text-align: center;" name = "verified" ><span style="font-size:15px" class="badge rounded-pill bg-dark">Admin</span></td>
-                      </div>';
+                      ';
                     }
                     //echo '<td style="text-align: center;">'.($acc['userType']).'</td>';
                     echo '<td style="text-align: center;">'.($acc['vkey']).'</td>';
