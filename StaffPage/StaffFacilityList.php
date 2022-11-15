@@ -355,7 +355,7 @@ function displayAvailableList() {
         echo'<input type="hidden" name="bookFacilityId" value = "'.$row["facilityId"].'">';
         //echo'<input class="button2 button5" type="submit" name="bookFacilityButton" value="Book">';
         echo'</form>';
-        echo '<form action= "..\Test_stripe\index.php" method="POST">';
+        echo '<form action= "../StudentPage/Test_stripe/index.php" method="POST">';
         echo'<input type="hidden" name="FacilityId" value = "'.$row["facilityId"].'">';
         echo'<input type="hidden" name="pictureCode" id= "pCode" value = "'.$detailfacility['Image'].'">';
         echo'<input class="btn btn-primary rounded-pill" type="submit" name="" value="Book Now">';
