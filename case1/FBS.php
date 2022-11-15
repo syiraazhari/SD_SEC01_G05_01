@@ -213,11 +213,14 @@ function addRegisterStaff(){
     $password = password_hash($passwordEncry, PASSWORD_DEFAULT);
 
     $sql = "insert into user(userId, password, userType,vkey)
-    values('$userId','$password','Staff','$vkey')";
+    values('$userId','$password','Staff','$vkey')"; 
+
     $sql2 ="insert into userinfoStaff(staffId,name, userId,phoneNum) 
     values('$MatricNum','$name','$userId','$phoneNum')";
+
     $sql3 ="insert into bookerlist(MatricNum,name, userId,phoneNum,userType) 
     values('$MatricNum','$name','$userId','$phoneNum','Staff')";
+
 
     echo $sql;
     echo $sql2;
@@ -235,17 +238,17 @@ function addRegisterStaff(){
 
       echo $sql2;
       if(!$qry2){
-        echo 'Record adding error';
+        echo 'Record adding error2';
         
     }else{
-        echo 'Record added';
+        echo 'Record added 2';
         
     }
     if(!$qry3){
-        echo 'Record adding error';
+        echo 'Record adding error3';
 
     }else{
-        echo 'Record added';
+        echo 'Record added3';
 
     }
     echo "we in email";
