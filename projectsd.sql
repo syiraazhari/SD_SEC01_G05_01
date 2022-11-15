@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 14, 2022 at 04:33 PM
+-- Generation Time: Nov 15, 2022 at 11:30 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `bookerlist` (
 
 INSERT INTO `bookerlist` (`MatricNum`, `name`, `userId`, `phoneNum`, `UserType`) VALUES
 ('123332', 'ads2313', 'tansen@graduate.utm.my', '01115386485', 'Student'),
+('454545', 'Yap Deh Kai', 'ydk1421@gmail.com', '01159908615', 'Staff'),
 ('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987', 'Staff'),
 ('test2', 'testing243', 'cheesen.987@gmail.com', '321321321', 'Student'),
 ('testingFail1', 'testingFail2', 'FalseEmail@gmail.com', '543534', 'Staff');
@@ -87,7 +88,11 @@ INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `created_at`)
 ('cus_MbBsyJWruVPNEE', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-12 15:36:33'),
 ('cus_MbDEX1g9p09FOK', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-12 17:00:28'),
 ('cus_MbDG56Bk0lWPUV', 'tan', 'asd', 'cheesen.987@gmail.com', '2022-10-12 17:03:14'),
-('cus_MbDYkYHCiVuZ8w', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 17:20:35');
+('cus_MbDYkYHCiVuZ8w', 'tan', 'asd', 'tancheesen123@hotmail.com', '2022-10-12 17:20:35'),
+('cus_Mnx2nlpdSeB2UM', 'Yap', 'Kai', 'cheesen.987@gmail.com', '2022-11-15 17:08:47'),
+('cus_Mnx6ZLEDlj2Aci', 'Yap', 'Kai', 'cheesen.987@gmail.com', '2022-11-15 17:12:51'),
+('cus_MnxAM8W3M29SAm', 'Yap', 'Kai', 'cheesen.987@gmail.com', '2022-11-15 17:16:38'),
+('cus_MnxFpV2nvZrqFU', 'Yap', 'Kai', 'tancheesen123@hotmail.com', '2022-11-15 17:21:51');
 
 -- --------------------------------------------------------
 
@@ -152,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `rent` (
   KEY `userId` (`userId`),
   KEY `facilityId` (`facilityId`),
   KEY `facilityId_2` (`facilityId`)
-) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rent`
@@ -171,52 +176,11 @@ INSERT INTO `rent` (`rent_reference`, `userId`, `date_reserved`, `reserved_by`, 
 (126, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-13', '2022-10-15', 'C133', 500),
 (127, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-13', '2022-10-15', 'D111', 1240),
 (128, 'cheesen.987@gmail.com', '2022-10-12', 'testing243', '2022-10-20', '2022-10-22', 'D122', 8000),
-(129, 'tancheesen123@hotmail.com', '2022-10-12', 'lonely1234', '2022-10-13', '2022-10-14', 'D155', 700);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `state_district`
---
-
-DROP TABLE IF EXISTS `state_district`;
-CREATE TABLE IF NOT EXISTS `state_district` (
-  `state` varchar(50) NOT NULL,
-  `district` varchar(50) NOT NULL,
-  `postcode` int(6) NOT NULL,
-  PRIMARY KEY (`district`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `state_district`
---
-
-INSERT INTO `state_district` (`state`, `district`, `postcode`) VALUES
-('MELAKA', 'ALOR GAJAH', 78000),
-('KELANTAN', 'BACHOK', 16310),
-('KEDAH', 'BALING', 9100),
-('KEDAH', 'BANDAR BAHARU', 34950),
-('JOHOR', 'BATU PAHAT', 83000),
-('PAHANG', 'BENTONG', 28700),
-('PAHANG', 'BERA', 28200),
-('SARAWAK', 'BINTULU', 93550),
-('PULAU PINANG', 'GEORGE TOWN', 10000),
-('PERAK', 'IPOH', 30000),
-('MELAKA', 'JASIN', 77000),
-('KELANTAN', 'JELI', 17600),
-('JOHOR', 'JOHOR BAHRU', 80594),
-('PERLIS', 'KANGAR', 1000),
-('TERENGGANU', 'KERTEH', 20550),
-('SABAH', 'KOTA KINABALU', 88500),
-('NEGERI SEMBILAN', 'KUALA KLAWANG', 71600),
-('TERENGGANU', 'KUALA TERENGGANU', 20000),
-('SARAWAK', 'KUCHING', 93000),
-('NEGERI SEMBILAN', 'MANTIN', 71750),
-('SABAH', 'RANAU', 88632),
-('SELANGOR', 'SHAH ALAM', 40000),
-('SELANGOR', 'SUNGAI BESAR', 40664),
-('PERAK', 'TAPAH', 35000),
-('PULAU PINANG', 'TELUK BAHANG', 10582);
+(129, 'tancheesen123@hotmail.com', '2022-10-12', 'lonely1234', '2022-10-13', '2022-10-14', 'D155', 700),
+(130, 'cheesen.987@gmail.com', '2022-11-15', 'testing243', '2022-11-16', '2022-11-17', 'C111', 300),
+(131, 'cheesen.987@gmail.com', '2022-11-15', 'testing243', '2022-11-16', '2022-11-17', 'C122', 200),
+(132, 'cheesen.987@gmail.com', '2022-11-15', 'testing243', '2022-11-15', '2022-11-17', 'F133', 600),
+(133, 'tancheesen123@hotmail.com', '2022-11-15', 'lonely1234', '2022-11-15', '2022-11-16', 'D133', 1700);
 
 -- --------------------------------------------------------
 
@@ -260,7 +224,11 @@ INSERT INTO `transactions` (`id`, `customer_id`, `email`, `product`, `amount`, `
 ('ch_3LrzUUIXxPbvwpsW0v4Yijpu', 'cus_MbBsyJWruVPNEE', 'cheesen.987@gmail.com', 'DATARAN ILMU', '500', 'myr', 'succeeded', '2022-10-12 15:36:33'),
 ('ch_3Ls0nhIXxPbvwpsW1b3eqHYI', 'cus_MbDEX1g9p09FOK', 'cheesen.987@gmail.com', 'DEWAN BANQUET', '1240', 'myr', 'succeeded', '2022-10-12 17:00:28'),
 ('ch_3Ls0qNIXxPbvwpsW2fHOSFQd', 'cus_MbDG56Bk0lWPUV', 'cheesen.987@gmail.com', 'DEWAN TAN SRI AINUDDIN WAHID', '8000', 'myr', 'succeeded', '2022-10-12 17:03:14'),
-('ch_3Ls17AIXxPbvwpsW2KaeHYRg', 'cus_MbDYkYHCiVuZ8w', 'tancheesen123@hotmail.com', 'DEWAN BANQUET II', '700', 'myr', 'succeeded', '2022-10-12 17:20:35');
+('ch_3Ls17AIXxPbvwpsW2KaeHYRg', 'cus_MbDYkYHCiVuZ8w', 'tancheesen123@hotmail.com', 'DEWAN BANQUET II', '700', 'myr', 'succeeded', '2022-10-12 17:20:35'),
+('ch_3M4L8KIXxPbvwpsW0cjCSkfP', 'cus_Mnx2nlpdSeB2UM', 'cheesen.987@gmail.com', 'FOYER A BANGUNAN PSZ', '300', 'myr', 'succeeded', '2022-11-15 17:08:47'),
+('ch_3M4LCGIXxPbvwpsW2bf51AQi', 'cus_Mnx6ZLEDlj2Aci', 'cheesen.987@gmail.com', 'FOYER B BANGUNAN PSZ', '200', 'myr', 'succeeded', '2022-11-15 17:12:51'),
+('ch_3M4LFvIXxPbvwpsW1UroAVnv', 'cus_MnxAM8W3M29SAm', 'cheesen.987@gmail.com', 'BILIK KULIAH MENARA RAZAK 7-13', '600', 'myr', 'succeeded', '2022-11-15 17:16:38'),
+('ch_3M4LKyIXxPbvwpsW2NdrtR68', 'cus_MnxFpV2nvZrqFU', 'tancheesen123@hotmail.com', 'DEWAN JUMAAH', '1700', 'myr', 'succeeded', '2022-11-15 17:21:51');
 
 -- --------------------------------------------------------
 
@@ -289,7 +257,8 @@ INSERT INTO `user` (`userId`, `password`, `userType`, `vkey`, `verified`, `creat
 ('FalseEmail@gmail.com', '$2y$10$ikZed/naSWbun7ezjiPcK.JA3InG3H01YKe5mwX.eSx0sgWqeT1/.', 'Staff', 'b8c0155d3d69c217bdc6520a7d2323b2', 0, '2022-09-13 22:26:41.219360'),
 ('shaoyuan0228@gmail.com', '$2y$10$Xz4jUUB3uniD/59z6eYYYuRPeXx5L0RNejIzzl4cbu7st3pNSgdNa', 'Staff', '0aeece83f379a472d9456fdba72e2341', 1, '2022-10-03 13:44:52.171066'),
 ('tancheesen123@hotmail.com', '$2y$10$cJFORh9y8tCQns4T56F3pecT179YAcuazOcgGvC/Mw7VQhggVZBD2', 'Staff', 'ab473ff9860294c8e77344b64b46d991', 1, '2022-09-13 23:39:12.138856'),
-('tansen@graduate.utm.my', '$2y$10$1kpo9r3uO9DYIqMx4H0Jre1FM8X7zaBsG726/ITukDAdKaqjGI17q', 'Student', '0d5fd4e5a1345f60dee9301ce04067d1', 0, '2022-11-14 10:49:20.966154');
+('tansen@graduate.utm.my', '$2y$10$1kpo9r3uO9DYIqMx4H0Jre1FM8X7zaBsG726/ITukDAdKaqjGI17q', 'Student', '0d5fd4e5a1345f60dee9301ce04067d1', 0, '2022-11-14 10:49:20.966154'),
+('ydk1421@gmail.com', '$2y$10$k.RCQyg5./v2D22VdXT8Fe7MpR3db.NLOtSyJ.rNcqTBkdkuNNXY2', 'Staff', 'ae329d2f713d514355277cf2a6048443', 1, '2022-11-15 05:42:22.092792');
 
 -- --------------------------------------------------------
 
@@ -338,6 +307,7 @@ CREATE TABLE IF NOT EXISTS `userinfostaff` (
 --
 
 INSERT INTO `userinfostaff` (`staffId`, `name`, `userId`, `phoneNum`, `Image`) VALUES
+('454545', 'Yap Deh Kai', 'ydk1421@gmail.com', '01159908615', 'noprofil.jpg'),
 ('A20DW1114', 'lonely1234', 'tancheesen123@hotmail.com', '01115386485  ', 'lonely123 - 2022.10.08 - 09.54.19am.jpg'),
 ('tancs', 'Tan Chee Sen', 'shaoyuan0228@gmail.com', '0178945987  ', 'noprofil.jpg'),
 ('test3', 'testing3.3.133', 'chee.sen987@gmail.com', '0123456789               ', 'testing3.3.133 - 2022.10.12 - 01.06.11am.png'),
