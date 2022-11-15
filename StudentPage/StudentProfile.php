@@ -94,10 +94,13 @@
                       body{
                         background: url(../StudentPage/assets/images/StudentPagephoto/CampusUTMKL.png);
                         height: 100%;
-                        background-position: center;
+                        background-position: cover;
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
                         background-repeat: no-repeat;
-                        display: flex;
-                        background-size: 100%;
+                        background-size: cover;
+                        background-attachment: fixed;
                         background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(../StudentPage/assets/images/StudentPagephoto/CampusUTMKL.png);
                       }
                 
