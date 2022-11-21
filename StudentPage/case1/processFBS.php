@@ -555,7 +555,7 @@ if(isset($_FILES["image"]["name"])){
       $query2 = "UPDATE userinfo SET Image = '$newImageName' WHERE  userId = '$userId'";
       $qry=mysqli_query($con, $query);
       $qry2=mysqli_query($con, $query2);
-      move_uploaded_file($tmpName, '../StudentPage/' . $newImageName);
+      move_uploaded_file($tmpName, '../img/' . $newImageName);
       if((!$qry)){
         echo 'Record adding error';
 
@@ -612,7 +612,7 @@ if(isset($_FILES["image"]["name"])){
           $query2 = "UPDATE userinfo SET Image = '$newImageName' WHERE  userId = '$userId'";
           $qry=mysqli_query($con, $query);
           $qry2=mysqli_query($con, $query2);
-          move_uploaded_file($tmpName, '../StudentPage/img/' . $newImageName);
+          move_uploaded_file($tmpName, '../img/' . $newImageName);
           if((!$qry)){
             echo 'Record adding error';
     
@@ -669,7 +669,7 @@ if(isset($_FILES["image"]["name"])){
           $query2 = "UPDATE userinfo SET Image = '$newImageName' WHERE  userId = '$userId'";
           $qry=mysqli_query($con, $query);
           $qry2=mysqli_query($con, $query2);
-          move_uploaded_file($tmpName, '../StudentPage/img/' . $newImageName);
+          move_uploaded_file($tmpName, '../img/' . $newImageName);
           if((!$qry)){
             echo 'Record adding error';
     

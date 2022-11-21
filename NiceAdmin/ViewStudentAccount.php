@@ -99,7 +99,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="../img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
+            <img src="../StudentPage/StudentPage/img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
             <?php
               echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$email.'</span>';
             ?>
@@ -340,7 +340,7 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-            <img src="../img/<?php echo $image; ?>" width = 200 height = 119 alt="Profile" class="rounded-circle">
+            <img src="../StudentPage/img/<?php echo $image; ?>" width = 200 height = 119 alt="Profile" class="rounded-circle">
             <?php
             
               echo '<h2>'.$email.'</h2>';
@@ -432,7 +432,7 @@
                       <div class="col-md-8 col-lg-9">
                         <!--<form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post"> -->                     
                             <div class="pt-2 ">
-                              <img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class="rounded-circle">
+                              <img src="../StudentPage/img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class="rounded-circle">
                               
                             </div>
                       <!--</from>-->

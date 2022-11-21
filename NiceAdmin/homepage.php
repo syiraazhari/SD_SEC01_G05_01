@@ -160,7 +160,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="../img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
+          <img src="../StudentPage/img/<?php echo $image; ?>" width = 40 height = 40 alt="Profile" class="rounded-circle">
             <?php
               echo '<span class="d-none d-md-block dropdown-toggle ps-2">'.$email.'</span>';
             ?>
