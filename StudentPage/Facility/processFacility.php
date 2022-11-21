@@ -1,6 +1,6 @@
 <?php
 
-include "../StudentPage/case1/FBS.php";
+include "../case1/FBS.php";
 //include "../email/email.php";
 //echo'your in processFBS';
 echo "in processFacility";
@@ -70,7 +70,7 @@ if(isset($_FILES["image"]["name"])){
         echo 'alert ("Successfully Update Profile")';
         echo '<script>';
     }
-    header("Location:..\NiceAdmin\AdminFacilityList.php?status=success");
+    header("Location:..\..\NiceAdmin\AdminFacilityList.php?status=success");
     
     }
   }

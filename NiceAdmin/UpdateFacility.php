@@ -421,9 +421,9 @@
             <div class="card-body">
               <h5 class="card-title"> Facility Picture</h5>
               <div class="col-md-8 col-lg-9">
-                      <form class="form" id = "form" action="..\Facility\processFacility.php" enctype="multipart/form-data" method="post">                      
+                      <form class="form" id = "form" action="..\StudentPage\Facility\processFacility.php" enctype="multipart/form-data" method="post">                      
                             <div class="pt-2 ">
-                              <img style="text-align: center;"src="..\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 590 height = 450 title="<?php echo $detailfacility['Image']; ?>" >
+                              <img style="text-align: center;"src="..\StudentPage\Facility\imgFacility\<?php echo $detailfacility['Image']; ?>" width = 590 height = 450 title="<?php echo $detailfacility['Image']; ?>" >
                               
                               <!--<img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>" class="rounded-circle">-->
                               <div class="round"style="text-align: center;">

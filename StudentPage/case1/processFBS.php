@@ -329,13 +329,10 @@ else if(isSet($_POST['register'])){
     $userType = $row['userType'];
 
 
-
-    header('Location:..\StaffPage\StaffFacilityList.php');
-
     if($userType == "Staff"){
-        header('Location:..\StaffPage\StaffFacilityList.php');
+        header('Location:..\..\StaffPage\StaffFacilityList.php');
     }else if($userType == "Student"){
-        header('Location:..\StudentPage\StudentFacilityList.php');
+        header('Location:..\..\StudentPage\StudentFacilityList.php');
     }
 
 
