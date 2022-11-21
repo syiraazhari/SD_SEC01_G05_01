@@ -141,7 +141,7 @@ session_start();
 
 
 <?php
-include "../case1/FBS.php";
+include "../StudentPage/case1/FBS.php";
 if(isSet($_POST['case3']) || isSet($_POST['bookFacilityButton'])){
     //    displayHeaderCustomer();
     //include "..\menu\menu.php";

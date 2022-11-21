@@ -99,7 +99,7 @@
     }
 </style>
 <?php
-  include "..\case1\FBS.php";
+  include "..\StudentPage\case1\FBS.php";
   session_start(); 
   //$email = $_SESSION['username'];
 
@@ -263,7 +263,7 @@
             </li>
 
             <li>
-            <a class="dropdown-item d-flex align-items-center" href="../LoginSignupPage/index.php">
+            <a class="dropdown-item d-flex align-items-center" href="../StudentPage/LoginSignupPage/index.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -473,7 +473,7 @@
                     
                     echo '<td><a href="..\NiceAdmin\UpdateFacility.php"><button style="position: relative; left: 28%;"" type="submit" class="btn btn-success"><i class="bi bi-check-circle"></i></button></td>';
                     echo '</form>';
-                    echo '<form action= "..\case1\processFBS.php" method="POST">';
+                    echo '<form action= "..\StudentPage\case1\processFBS.php" method="POST">';
                     echo '<input type="hidden" name="facilityId2" value='.($facility['facilityId']).'>';
                     echo '<td style="text-align: center;"><button style="text-align: center;" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal1"><i class="bi bi-x-circle"></i></button></td>';
                     echo '

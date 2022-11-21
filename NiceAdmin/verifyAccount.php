@@ -37,7 +37,7 @@
   ======================================================== -->
 </head>
 <?php
-                    include "..\case1\FBS.php";
+                    include "..\StudentPage\case1\FBS.php";
                       session_start(); 
                       //$email = $_SESSION['username'];
                 
@@ -284,7 +284,7 @@
             </li>
 
             <li>
-            <a class="dropdown-item d-flex align-items-center" href="../LoginSignupPage/index.php">
+            <a class="dropdown-item d-flex align-items-center" href="../StudentPage/LoginSignupPage/index.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -462,7 +462,7 @@
                     echo'</tr style="text-align: center;">';
 
                     }else{
-                      echo '<form action= "..\case1\processFBS.php" method="POST">';
+                      echo '<form action= "..\StudentPage\case1\processFBS.php" method="POST">';
                       echo'<tr>';
                     echo '<th scope ="row" style="text-align: center;">'.$count.'</th>';
                     echo '<td style="text-align: center;"><input type="hidden" name="email" value='.($acc['userId']).' placeholder="Your Email" autocomplete="off">'.($acc['userId']).'</td>';

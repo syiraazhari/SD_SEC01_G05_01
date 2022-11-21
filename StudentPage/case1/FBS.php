@@ -45,8 +45,8 @@ function deleteFacility()
     $facilityIdToDelete = $_POST['facilityId2'];
     $sql = "delete from facility where facilityId ='".$facilityIdToDelete."'";
     echo $sql;
-    $qry = mysqli_query($con, $sql);
-    return $qry;
+    //$qry = mysqli_query($con, $sql);
+    return $sql;
 
 }
 function updateFacilityInformation()
@@ -267,7 +267,7 @@ function addRegisterStaff(){
     //$message .= "<a href=http://utmfacilitybooking.com/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
 
     //Localhost Link
-    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
+    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/StudentPage/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
 
     //if (mail($email,$subject,$message)) {
@@ -389,7 +389,7 @@ function addRegister(){
 
     $message = ' ';
     //$message .= "<a href=http://utmfacilitybooking.com/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
-    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
+    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/StudentPage/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //$message .= '<a href ="'. $url.'">'.$url.'</a></p>';
 
     //if (mail($email,$subject,$message)) {
@@ -480,7 +480,7 @@ function displayHeaderCustomer(){
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
                                                 <li><a href="StudentProfile.php"><span class="menu-text" >View Profile</span></a></li>
-                                                <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
+                                                <li><a href="..\StudentPage\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -564,7 +564,7 @@ function displayHeaderStaff(){
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
                                                 <li><a href="StaffProfile.php"><span class="menu-text" >View Profile</span></a></li>
-                                                <li><a href="..\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
+                                                <li><a href="..\StudentPage\LoginSignupPage\index.php"><span class="menu-text">Logout</span></a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -1251,7 +1251,7 @@ function send_password_reset($get_email,$token){
     $message = '<p>We received a password reset request. The link to reset your password</p>';
     $message .= '<p>Here is your password reset link: </br>';
     //$message .= "<a href=http://utmfacilitybooking.com/SD_SEC01_G05_01/ForgotPassword/create-new-password.php?vkey=$token&email=$get_email&statusReset=normal>Reset<a/>";
-    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/ForgotPassword/create-new-password.php?vkey=$token&email=$get_email&statusReset=normal>Reset<a/>";
+    $message .= "<a href=http://webprogramming/MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/StudentPage/ForgotPassword/create-new-password.php?vkey=$token&email=$get_email&statusReset=normal>Reset<a/>";
     //$message .= "<a href=http://localhost/masterprofile/SD_SEC01_G05_01/LoginSignupPage/verify.php?vkey='".$vkey."'>Register Account<a/>";
     //C:\wamp64\www\masterprofile\SD_SEC01_G05_01\ForgotPassword\create-new-password.php
 

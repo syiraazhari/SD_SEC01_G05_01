@@ -37,7 +37,7 @@
 </head>
 
 <?php
-                    include "..\case1\FBS.php";
+                    include "..\StudentPage\case1\FBS.php";
                       session_start(); 
                       //$email = $_SESSION['username'];
                 
@@ -139,7 +139,7 @@
               <hr class="dropdown-divider">
             </li>
             <li>
-            <a class="dropdown-item d-flex align-items-center" href="../LoginSignupPage/index.php">
+            <a class="dropdown-item d-flex align-items-center" href="../StudentPage/LoginSignupPage/index.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -344,7 +344,7 @@
                 <div class="row mb-3">
                 <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                         <div class="col-md-8 col-lg-9">
-                        <form class="form" id = "form" action="..\case1\processFBS.php" enctype="multipart/form-data" method="post">
+                        <form class="form" id = "form" action="..\StudentPage\case1\processFBS.php" enctype="multipart/form-data" method="post">
                             <div class="pt-2 ">
                               <img src="../img/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>"  class="rounded-circle">
                               <div class="round">
@@ -364,7 +364,7 @@
 
                   
                   <!-- Profile Edit Form -->
-                  <form action= "..\case1\processFBS.php" method="POST">
+                  <form action= "..\StudentPage\case1\processFBS.php" method="POST">
                     
 
                     <div class="row mb-3">
@@ -463,7 +463,7 @@
                   
                     <div class="text-center">
                       <?php
-                      echo '<a href="..\ForgotPassword\resetpassword.php?email='.$email.'" class="btn btn-primary">Click Me to Change Password</a>';
+                      echo '<a href="..\StudentPage\ForgotPassword\resetpassword.php?email='.$email.'" class="btn btn-primary">Click Me to Change Password</a>';
                       ?>
                     </div>
                   </form><!-- End Change Password Form -->

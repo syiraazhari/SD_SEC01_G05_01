@@ -30,7 +30,7 @@
 								<div class="card-front">
 									<div class="center-wrap">
 										<div class="section text-center">
-                                            <form action= "..\case1\processFBS.php" method="POST">
+                                            <form action= "../case1/processFBS.php" method="POST">
 											<h4 class="mb-4 pb-3">Sign Up</h4>
 											<?php
 												if(isset($_GET['error'])){
@@ -89,7 +89,7 @@
 										<div class="section text-center">
 
 											<h4 class="mb-4 pb-3">Log In</h4>
-                                            <form action= "..\case1\processFBS.php" method="POST">
+                                            <form action= "..\MASTER PROJECT - UBS FACILITY BOOKING\StudentPage\case1\processFBS.php" method="POST">
 											<div class="form-group">
 												<input type="text" name="username" class="form-style" placeholder="Your Email" autocomplete="off">
 												<i class="input-icon uil uil-at"></i>

@@ -41,7 +41,7 @@
     <p>Your transaction ID is <?php echo $tid; ?></p>
     <p>Check your email for more info</p>
 
-    <form class="form" action="../../case1/processFBS.php"  method="post">
+    <form class="form" action="../case1/processFBS.php"  method="post">
       <?php
         echo '<input type="hidden" name = "userType" value ="'.$_GET['userType'].'">';
       ?>

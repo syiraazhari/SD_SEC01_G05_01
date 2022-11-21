@@ -307,7 +307,7 @@ session_start();
 </form><br><br>
 </div>
 <?php
-include "../case1/FBS.php";
+include "..\StudentPage\case1\FBS.php";
 //include "..\menu\menu.php";
 if(isSet($_POST['checkAvailable'])) {
     

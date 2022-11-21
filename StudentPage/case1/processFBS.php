@@ -8,7 +8,7 @@ include "FBS.php";
 if(isSet($_POST['addFacilityButton']))
 {
     $success = addFacility();
-    header("Location:..\NiceAdmin\AdminFacilityList.php");
+    header("Location:..\..\NiceAdmin\AdminFacilityList.php");
 
 }
 else if(isSet($_POST['deleteFacilityButton'])) {
@@ -33,35 +33,35 @@ else if(isSet($_POST['deleteFacilityButton'])) {
 }else if(isSet($_POST['returnToFacilityList'])){
     if($_POST['userType'] == "Student"){
 
-        header("Location:..\StudentPage\StudentFacilityList.php");
+        header("Location:..\..\StudentPage\StudentFacilityList.php");
         
     }else if($_POST['userType'] == "Staff"){
 
-        header("Location:..\StaffPage\StaffFacilityList.php");
+        header("Location:..\..\StaffPage\StaffFacilityList.php");
         
     }
     
 }else if(isSet($_POST['UpdateProfile'])){
     updateStudentProfile();
-    header("Location:..\StudentPage\StudentProfile.php");
+    header("Location:..\..\StudentPage\StudentProfile.php");
 }else if(isSet($_POST['info'])){
     
     header("Location:..\NiceAdmin\ViewStudentAccount.php");
 }else if(isSet($_POST['UpdateProfileStaff'])){
         updateStaffProfile();
-        header("Location:..\StaffPage\StaffProfile.php");
+        header("Location:..\..\StaffPage\StaffProfile.php");
 
     
 }else if(isSet($_POST['UpdateProfileAdmin'])){
     
     updateStaffProfile();
-    header("Location:..\NiceAdmin\users-profile.php");
+    header("Location:..\..\NiceAdmin\users-profile.php");
     
 }
 else if(isSet($_POST['returnBookerList'])){
    
 
-    header("Location:..\NiceAdmin\BookerList.php");
+    header("Location:..\..\NiceAdmin\BookerList.php");
 
 
 }else if(isSet($_POST['test'])){
@@ -69,12 +69,12 @@ else if(isSet($_POST['returnBookerList'])){
     if($_POST["userType"] == "Student"){
         echo "Student";
         updateStudentProfile();
-        header("Location:..\NiceAdmin\BookerList.php");
+        header("Location:..\..\NiceAdmin\BookerList.php");
 
     }else if($_POST["userType"] == "Staff"){
         echo "staff";
         updateStaffProfile();
-        header("Location:..\NiceAdmin\BookerList.php");
+        header("Location:..\..\NiceAdmin\BookerList.php");
     }
 
     //header("Location:..\NiceAdmin\BookerList.php");
@@ -84,7 +84,7 @@ else if(isSet($_POST['returnBookerList'])){
 else if(isSet($_POST['updateFacilityButton'])) {
     updateFacilityInformation();
     
-    header("Location:..\NiceAdmin\AdminFacilityList.php");
+    header("Location:..\..\NiceAdmin\AdminFacilityList.php");
 
 }else if(isSet($_POST['deleteUserButton'])) {
 
@@ -206,7 +206,7 @@ else if(isSet($_POST['register'])){
     $phoneNum = $_POST['phoneNum'];
     $userType = $_POST['userType'];
     addAdminAccount();
-    header('Location:..\NiceAdmin\verifyAccount.php');
+    header('Location:..\..\NiceAdmin\verifyAccount.php');
 
 }else if(isSet($_POST['DeleteAccount'])){
     $email = $_POST['userId'];
@@ -281,17 +281,18 @@ else if(isSet($_POST['register'])){
                 $userInfoQry = getListOfUserCustomer($userEmail);
                 $userInfoRecord =mysqli_fetch_assoc($userInfoQry);
                 $_SESSION['name'] =  $userInfoRecord['name']; 
-                header('Location:..\StudentPage');
+                header('Location:..\..\StudentPage');
             }else if (($_POST['username'] == $userRecord['userId'])  && ($userRecord['userType'] == 'Admin')&& ($userRecord['verified'] == 1)){
     
-                header('Location:..\NiceAdmin\homepage.php');
+                header('Location:..\..\NiceAdmin\homepage.php');
                 
             }else if(($_POST['username'] == $userRecord['userId']) && ($userRecord['userType'] == 'Staff')&& ($userRecord['verified'] == 1)){
                 $staffInfoQry = getListOfUserStaff($userEmail);
                 $staffInfoRecord =mysqli_fetch_assoc($staffInfoQry);
                 $_SESSION['name'] =  $staffInfoRecord['name']; 
                 echo $_SESSION['name'];
-                header('Location:..\StaffPage');
+                
+                header('Location:../../../MASTER%20PROJECT%20-%20UBS%20FACILITY%20BOOKING/StaffPage');
             }else if($userRecord['verified'] == 0){
                 
                 header('Location:..\LoginSignupPage\index.php?error=noverify');
@@ -340,7 +341,7 @@ else if(isSet($_POST['register'])){
 
 }else if(isSet($_POST['deleteFacility'])){
     deleteFacility();
-    header('Location:../NiceAdmin/AdminFacilityList.php');
+    //header('Location:../../NiceAdmin/AdminFacilityList.php');
     
 }else if(isSet($_POST['updateFacility'])){
 
@@ -388,9 +389,9 @@ else if(isSet($_POST['Scase3'])){
 
 }else if(isSet($_POST['approveVerify'])){
     $email = $_POST['email'];
-    echo 'email';
+    echo $email;
     updateApproveVerifyStatus($email);
-    header('Location:../NiceAdmin/verifyAccount.php');
+    header('Location:../../NiceAdmin/verifyAccount.php');
 
 
 }else if(isSet($_POST['disapproveVerify'])){
@@ -399,9 +400,9 @@ else if(isSet($_POST['Scase3'])){
     echo "in disapprove";
     updateDisapproveVerifyStatus($email);
     echo 'disapprove';
-    header('Location:../NiceAdmin/verifyAccount.php');
+    header('Location:../../NiceAdmin/verifyAccount.php');
 }else if(isSet($_POST['gobackVerify'])){
-    header('Location:../NiceAdmin/verifyAccount.php');
+    header('Location:../../NiceAdmin/verifyAccount.php');
 }
 
 if(isSet($_POST['reset-password-submit'])){
@@ -543,19 +544,18 @@ if(isset($_FILES["image"]["name"])){
     $imageExtension = strtolower(end($imageExtension));
     echo $userType;
     if (!in_array($imageExtension, $validImageExtension)){
-        header("Location:..\StaffPage\StaffProfile.php?status=updateFail1");
+        header("Location:..\..\StaffPage\StaffProfile.php?status=updateFail1");
       
     }elseif ($imageSize > 1200000){
-        header("Location:..\StaffPage\StaffProfile.php?status=updateFail2");
+        header("Location:..\..\StaffPage\StaffProfile.php?status=updateFail2");
     }else{
-        
       $newImageName = $name . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
       $newImageName .= '.' . $imageExtension;
       $query = "UPDATE userinfostaff SET Image = '$newImageName' WHERE  userId = '$userId'";
       $query2 = "UPDATE userinfo SET Image = '$newImageName' WHERE  userId = '$userId'";
       $qry=mysqli_query($con, $query);
       $qry2=mysqli_query($con, $query2);
-      move_uploaded_file($tmpName, '../img/' . $newImageName);
+      move_uploaded_file($tmpName, '../StudentPage/' . $newImageName);
       if((!$qry)){
         echo 'Record adding error';
 
@@ -564,7 +564,7 @@ if(isset($_FILES["image"]["name"])){
         echo 'alert ("Successfully Update Profile")';
         echo '<script>';
     }
-    header("Location:..\StaffPage\StaffProfile.php?status=success");
+    header("Location:..\..\StaffPage\StaffProfile.php?status=success");
     }
     
     }else if($userType == "Admin"){
@@ -600,10 +600,10 @@ if(isset($_FILES["image"]["name"])){
         $imageExtension = strtolower(end($imageExtension));
         echo $userType;
         if (!in_array($imageExtension, $validImageExtension)){
-            header("Location:..\NiceAdmin\users-profile.php?status=sucess");
+            header("Location:..\..\NiceAdmin\users-profile.php?status=sucess");
           
         }elseif ($imageSize > 1200000){
-            header("Location:..\NiceAdmin\users-profile.php?status=sucess");
+            header("Location:..\..\NiceAdmin\users-profile.php?status=sucess");
         }else{
             
           $newImageName = $name . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
@@ -612,7 +612,7 @@ if(isset($_FILES["image"]["name"])){
           $query2 = "UPDATE userinfo SET Image = '$newImageName' WHERE  userId = '$userId'";
           $qry=mysqli_query($con, $query);
           $qry2=mysqli_query($con, $query2);
-          move_uploaded_file($tmpName, '../img/' . $newImageName);
+          move_uploaded_file($tmpName, '../StudentPage/img/' . $newImageName);
           if((!$qry)){
             echo 'Record adding error';
     
@@ -621,7 +621,7 @@ if(isset($_FILES["image"]["name"])){
             echo 'alert ("Successfully Update Profile")';
             echo '<script>';
         }
-        header("Location:..\NiceAdmin\users-profile.php?status=sucess");
+        header("Location:..\..\NiceAdmin\users-profile.php?status=sucess");
         }
     
     }else if($userType == "Student"){
@@ -658,9 +658,9 @@ if(isset($_FILES["image"]["name"])){
         echo $userType;
         if (!in_array($imageExtension, $validImageExtension)){
 
-            header("Location:..\StudentPage\StudentProfile.php?status=sucess");
+            header("Location:..\..\StudentPage\StudentProfile.php?status=sucess");
         }elseif ($imageSize > 1200000){
-            header("Location:..\StudentPage\StudentProfile.php?status=sucess");
+            header("Location:..\..\StudentPage\StudentProfile.php?status=sucess");
         }else{
             
           $newImageName = $name . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
@@ -669,7 +669,7 @@ if(isset($_FILES["image"]["name"])){
           $query2 = "UPDATE userinfo SET Image = '$newImageName' WHERE  userId = '$userId'";
           $qry=mysqli_query($con, $query);
           $qry2=mysqli_query($con, $query2);
-          move_uploaded_file($tmpName, '../img/' . $newImageName);
+          move_uploaded_file($tmpName, '../StudentPage/img/' . $newImageName);
           if((!$qry)){
             echo 'Record adding error';
     
@@ -678,7 +678,7 @@ if(isset($_FILES["image"]["name"])){
             echo 'alert ("Successfully Update Profile")';
             echo '<script>';
         }
-        header("Location:..\StudentPage\StudentProfile.php?status=sucess");
+        header("Location:..\..\StudentPage\StudentProfile.php?status=sucess");
         }
     
     }

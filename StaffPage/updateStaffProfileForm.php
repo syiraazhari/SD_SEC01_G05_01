@@ -50,7 +50,7 @@
 </script>
 <!--End of Tawk.to Script-->
 <?php
-include "..\case1\FBS.php";
+include "..\StudentPage\case1\FBS.php";
 
 
 $userId=$_POST['CustomerUserIdToUpdate'];

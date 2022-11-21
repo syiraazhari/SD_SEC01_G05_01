@@ -5,7 +5,7 @@
   <title>UTMKL Facility Booking System</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../StaffPage/StaffPagePicture/UTM-LOGO.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../StaffPage/StaffPagePicture/UTM-LOGO.png">
 </head>
 <body>
 
@@ -31,9 +31,10 @@
 										<div class="section text-center">
 										
 											<h4 class="mb-4 pb-3">
-											<img class="dark-logo" src="../StaffPage/StaffPagePicture/UTM-LOGO.png" 	weight="150" height = "150" alt="UTM Logo">
+											<img class="dark-logo" src="../../StaffPage/StaffPagePicture/UTM-LOGO.png" 	weight="150" height = "150" alt="UTM Logo">
 											<br><br>UTMKL Facility Booking System</h4>
-                                            <form action= "..\case1\processFBS.php" method="POST">
+											
+                                            <form action= "..\..\StudentPage\case1\processFBS.php" method="POST">
 											<div class="form-group">
 												<input type="text" name="username" class="form-style" placeholder="Your Email" autocomplete="off" required>
 												<i class="input-icon uil uil-at"></i>

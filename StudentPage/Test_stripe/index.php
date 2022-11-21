@@ -30,7 +30,7 @@
 <body>
   <div class="container">
     <?php
-      include "../../case1/FBS.php";
+      include "../case1/FBS.php";
       session_start(); 
 
       $email = $_SESSION['username'];
@@ -45,7 +45,7 @@
 
       echo '<h2 class="my-4 text-center">'.$row['name'].'</h2>';
     ?>
-    <form action="./charge.php" method="post" id="payment-form">
+    <form action="../Test_stripe/charge.php" method="post" id="payment-form">
       <div class="form-row">
       <div class="row mb-3">
          
@@ -218,7 +218,7 @@
     <button style="height:40px;width:600px" type="submit" name="completePayment" class="btn btn-primary">Pay</button>
   </form>
 
-  <form action= "../../case1/processFBS.php" method="POST">
+  <form action= "../case1/processFBS.php" method="POST">
   <br>
   <button style="height:40px;width:600px" type="submit" name="cancelPayment" class="btn btn-primary">Cancel Payment</button>
   </form>

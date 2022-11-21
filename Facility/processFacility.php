@@ -1,6 +1,6 @@
 <?php
 
-include "../case1/FBS.php";
+include "../StudentPage/case1/FBS.php";
 //include "../email/email.php";
 //echo'your in processFBS';
 echo "in processFacility";
