@@ -28014,10 +28014,26 @@ textarea {
 /*  10. Testimonial CSS
 /*----------------------------------------*/
 .testimonial-slider .swiper-slide.swiper-slide-prev {
-  opacity: 0.5; }
+  opacity: 0.5;
+  width: 150px;
+    height: 100px;
+    shape-outside: inset(20px 50px 10px 0 round 50px);
+    border: 2px solid black;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 20px; 
+}
 
 .testimonial-slider .swiper-slide.swiper-slide-next {
-  opacity: 0.5; }
+  opacity: 0.5;
+  width: 150px;
+    height: 100px;
+    shape-outside: inset(20px 50px 10px 0 round 50px);
+    border: 2px solid black;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 20px;
+ }
 
 .static-testimonial {
   padding: 50px 40px 55px;
@@ -28029,12 +28045,26 @@ textarea {
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .static-testimonial {
+      width: 150px;
+    height: 100px;
+    shape-outside: inset(20px 50px 10px 0 round 50px);
+    border: 2px solid black;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 20px;
       padding: 30px 25px 35px; } }
   .static-testimonial .testimonial-image {
     margin-bottom: 25px; }
     .static-testimonial .testimonial-image img {
       border-radius: 50%; }
   .static-testimonial .testimonial-content {
+    width: 150px;
+    height: 100px;
+    shape-outside: inset(20px 50px 10px 0 round 50px);
+    border: 2px solid black;
+    border-radius: 30px;
+    margin: 20px;
+    padding: 20px;
     margin-bottom: 25px; }
     .static-testimonial .testimonial-content p {
       font-size: 18px;
