@@ -11,11 +11,15 @@
 (https://www.youtube.com/watch?v=-F_4JPohbcs&t=213s)
 5. Click on the VirtualHost that you created then select project folder 
 in the "Index of" page.
-6. Select "LoginSignupPage" folder in the index of project folder and now
-you can access to our system.
-7. Open phpmyadmin from WampServer panel or under Wampserver localhost page
+6. Select "StudentPage" folder in the index of project folder and it will
+redirect to student home page.
+7. Click "Profile" label at the student home page and click "Logout". It will
+redirect to Login and SignUp Page.
+8. Enter the user id and password of the users and you can now access to our 
+system.
+9. Open phpmyadmin from WampServer panel or under Wampserver localhost page
 under "Your Aliases".
-8. Refer to the youtube video to setup the phpmyadmin and import sql dumb 
+10. Refer to the youtube video to setup the phpmyadmin and import sql dumb 
 file.(https://www.youtube.com/watch?v=2okNGAvCW7k)
 
 Link of Github for source code
